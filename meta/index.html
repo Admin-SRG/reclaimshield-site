@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReclaimShield — Professional Instagram, Facebook &amp; Threads Account Recovery</title>
+<meta name="description" content="ReclaimShield. Professional, attorney-engineered account recovery for Instagram, Facebook, and Threads. We don't ask for your password — we hand you the appeal package built for how Meta's 2026 AI-first review pipeline actually decides.">
+<meta property="og:title" content="ReclaimShield — They Banned You With a Bot. We Break the Loop.">
+<meta property="og:description" content="Meta's AI flags your account and the same AI reviews your appeal. ReclaimShield uses escalation paths most people don't know exist — Instagram, Facebook, and Threads.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ============================================================
+   A11Y: Accessibility fixes — added 2026-04-18
+   Rationale documented in reclaimshield-accessibility-audit.md
+   ============================================================ */
+
+/* A11Y: global focus indicator (WCAG 2.4.7) */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+}
+.btn-primary:focus-visible,
+.nav-cta:focus-visible,
+.price-btn:focus-visible,
+.price-btn-primary:focus-visible {
+  outline-offset: 4px;
+  box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.3);
+}
+
+/* A11Y: skip link (WCAG 2.4.1) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 10px 16px;
+  background: var(--accent-2);
+  color: #0A0A0F;
+  font-weight: 700;
+  text-decoration: none;
+  z-index: 9999;
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; }
+
+/* A11Y: ensure interactive card keyboard-activation looks identical to click */
+.issue-card[role="button"],
+.faq-box[role="button"] { cursor: pointer; }
+
+
+:root {
+  --bg: #0A0A0F;
+  --surface: #12121A;
+  --surface-2: #1A1A25;
+  --surface-3: #22222F;
+  --text: #EEEEF0;
+  --text-dim: #9999AD;
+  --text-muted: #9B9BB0;   /* a11y: was #66667A (3.52:1 on page bg — fail). Now 7.19:1 on page bg, 6.27:1 on surface-alt — passes WCAG AA 4.5:1 */
+  --accent-1: #7C3AED;
+  --accent-2: #2DD4BF;
+  --accent-3: #F472B6;
+  --gradient: linear-gradient(135deg, #7C3AED, #2DD4BF);
+  --gradient-hot: linear-gradient(135deg, #7C3AED, #F472B6);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.container { max-width: 480px; margin: 0 auto; padding: 0 20px; }
+@media (min-width: 768px) { .container { max-width: 960px; } }
+@media (min-width: 1024px) { .container { max-width: 1100px; } }
+
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Nav */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo svg { width: 30px; height: 34px; }
+
+.nav-logo-text { display: flex; flex-direction: column; }
+
+.nav-logo-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.5px;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.nav-logo-sub {
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  font-weight: 500;
+}
+
+.nav-links { display: flex; align-items: center; gap: 6px; }
+.nav-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);     /* a11y: was 0.5 (5.30:1), now 0.7 = ~9.2:1 for improved low-vision legibility */
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 14px;                /* a11y: was 6px 12px — now ~36px tall, closer to 44px WCAG 2.5.5 target */
+  border-radius: 8px;
+  transition: all 0.2s;
+  display: inline-block;
+  line-height: 1.4;
+}
+.nav-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+
+.nav-cta {
+  padding: 10px 22px;
+  background: var(--gradient);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  margin-left: 8px;
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(124, 58, 237, 0.4); }
+
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.nav-toggle span { display: block; width: 22px; height: 2px; background: #fff; margin: 5px 0; border-radius: 2px; transition: all 0.3s; }
+
+@media (max-width: 768px) {
+  .nav-links a:not(.nav-cta) { display: none; }
+  .nav-toggle { display: block; }
+}
+
+/* Hero */
+.hero {
+  padding: 130px 0 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-card { display: none; }
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  color: #A78BFA;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.hero p.hero-sub {
+  font-size: clamp(15px, 3vw, 18px);
+  color: var(--text-dim);
+  max-width: 540px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.hero-callout {
+  border-left: 3px solid var(--accent-2);
+  background: rgba(45, 212, 191, 0.06);
+  padding: 14px 18px;
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 28px;
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+.hero-callout strong { color: var(--accent-2); font-weight: 600; }
+
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 30px;
+  background: var(--gradient);
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 25px rgba(124, 58, 237, 0.3);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 35px rgba(124, 58, 237, 0.45); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--text);
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-outline:hover { border-color: rgba(124, 58, 237, 0.4); background: rgba(124, 58, 237, 0.05); }
+
+@media (max-width: 600px) {
+  .hero-actions { flex-direction: column; }
+  .hero-actions a { text-align: center; width: 100%; justify-content: center; }
+}
+
+/* Hero stat card */
+.hero-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  padding: 28px;
+  backdrop-filter: blur(8px);
+}
+
+.hero-card-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.hc-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.hc-row:last-child { border-bottom: none; }
+
+.hc-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #EF4444;
+  line-height: 1;
+  min-width: 60px;
+  flex-shrink: 0;
+}
+
+.hc-desc { font-size: 12px; color: var(--text-muted); line-height: 1.45; }
+
+/* Platforms */
+.platforms {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.platform-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+.platform-icon:hover { opacity: 1; }
+
+.platform-icon .icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.platform-icon span { font-size: 11px; color: var(--text-muted); font-weight: 500; }
+
+.ig { background: linear-gradient(135deg, #F56040, #C13584, #833AB4); }
+.fb { background: #1877F2; }
+.tt { background: #000; border: 1px solid #25F4EE; }
+.yt { background: #FF0000; }
+.tw { background: var(--surface-2); border: 1px solid rgba(255,255,255,0.12); }
+.li { background: #0A66C2; }
+.twitch { background: #9146FF; }
+
+/* Stats bar */
+.stats-bar {
+  padding: 48px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: var(--surface);
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+@media (max-width: 768px) { .stats-row { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .stats-row { grid-template-columns: 1fr; } }
+
+.stat-block {}
+
+.stat-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.stat-source {
+  font-size: 10px;
+  color: var(--text-muted);           /* a11y: removed opacity: 0.5. Muted color alone (#9B9BB0) now gives 7.19:1 — was 1.71:1 */
+  margin-top: 4px;
+}
+
+/* Section shared */
+.section { padding: 80px 0; }
+.section-alt { background: var(--surface); }
+.section-border { border-top: 1px solid rgba(255,255,255,0.05); }
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.stitle {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(26px, 4.5vw, 38px);
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 14px;
+  max-width: 640px;
+}
+
+.lead {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-dim);
+  max-width: 600px;
+  margin-bottom: 40px;
+}
+
+/* "We Know How the Machine Works" Section */
+.machine-section {
+  padding: 80px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.machine-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -200px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.machine-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+@media (max-width: 768px) { .machine-grid { grid-template-columns: 1fr; } }
+
+.machine-left {}
+
+.machine-point {
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.machine-point:last-child { border-bottom: none; }
+
+.machine-point h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.machine-point h3 .mp-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(124, 58, 237, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.machine-point p {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.65;
+  padding-left: 38px;
+}
+.machine-point p strong { color: var(--text); font-weight: 600; }
+
+.machine-callout {
+  background: var(--surface-2);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: var(--radius);
+  padding: 28px;
+  position: relative;
+}
+
+.machine-callout::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.machine-callout h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--accent-2);
+}
+
+.mc-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.mc-row:last-child { border-bottom: none; }
+
+.mc-label {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--accent-3);
+  min-width: 80px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.mc-desc {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+.mc-desc strong { color: var(--text); font-weight: 600; }
+
+/* "Why Not DIY" Section */
+.diy-section {
+  padding: 80px 0;
+  background: var(--surface);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.diy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 40px;
+}
+@media (max-width: 768px) { .diy-grid { grid-template-columns: 1fr; } }
+
+.diy-card {
+  background: var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-sm);
+  padding: 24px;
+  position: relative;
+}
+
+.diy-card.them {
+  border-color: rgba(239, 68, 68, 0.15);
+}
+
+.diy-card.us {
+  border-color: rgba(45, 212, 191, 0.2);
+  background: rgba(45, 212, 191, 0.03);
+}
+
+.diy-card-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.diy-card.them .diy-card-label { color: #EF4444; }
+.diy-card.us .diy-card-label { color: var(--accent-2); }
+
+.diy-item {
+  padding: 8px 0;
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.55;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.diy-item::before {
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 14px;
+  margin-top: -1px;
+}
+
+.diy-card.them .diy-item::before {
+  content: '\2717';
+  color: #EF4444;
+}
+
+.diy-card.us .diy-item::before {
+  content: '\2713';
+  color: var(--accent-2);
+}
+
+.diy-item strong { color: var(--text); font-weight: 600; }
+
+/* Issue cards */
+.issue-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 768px) { .issue-grid { grid-template-columns: 1fr; } }
+
+.issue-card {
+  background: var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-sm);
+  padding: 22px;
+  cursor: pointer;
+  transition: all 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.issue-card:hover { border-color: rgba(124, 58, 237, 0.25); }
+.issue-card.open { border-color: var(--accent-2); background: rgba(45, 212, 191, 0.04); }
+
+.issue-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 24px; right: 24px;
+  height: 2px;
+  border-radius: 0 0 2px 2px;
+}
+.issue-card.cat-enforcement::before { background: #EF4444; }
+.issue-card.cat-security::before { background: #7C3AED; }
+.issue-card.cat-ip::before { background: #F59E0B; }
+.issue-card.cat-business::before { background: #3B82F6; }
+.issue-card.cat-escalation::before { background: var(--accent-2); }
+
+.issue-tag {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.tag-enforcement { color: #EF4444; }
+.tag-security { color: #A78BFA; }
+.tag-ip { color: #F59E0B; }
+.tag-business { color: #60A5FA; }
+.tag-escalation { color: var(--accent-2); }
+
+.issue-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.issue-desc {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+.issue-desc strong { color: var(--text); font-weight: 600; }
+
+.issue-toggle {
+  font-size: 12px;
+  color: var(--accent-2);
+  font-weight: 600;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.issue-detail {
+  display: none;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.issue-card.open .issue-detail { display: block; }
+
+.solution-step {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 6px 0;
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+.solution-step strong { color: var(--text); font-weight: 600; }
+
+.step-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+
+/* Process */
+.proc-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 768px) { .proc-steps { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .proc-steps { grid-template-columns: 1fr; } }
+
+.proc-step {
+  text-align: center;
+  padding: 28px 18px;
+  background: var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-sm);
+  transition: all 0.25s;
+}
+.proc-step:hover { border-color: rgba(124, 58, 237, 0.25); transform: translateY(-3px); }
+
+.proc-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--gradient);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.proc-step h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+.proc-step p { font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+
+/* Pricing */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+@media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr; } }
+
+.price-card {
+  background: var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  position: relative;
+  transition: all 0.3s;
+}
+.price-card:hover { border-color: rgba(124, 58, 237, 0.3); transform: translateY(-4px); }
+
+.price-card.featured {
+  border-color: rgba(124, 58, 237, 0.4);
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.06) 0%, var(--surface-2) 100%);
+  transform: translateY(-8px);
+}
+.price-card.featured:hover { transform: translateY(-12px); }
+
+.price-card.featured::before {
+  content: 'MOST POPULAR';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 16px;
+  background: var(--gradient);
+  border-radius: 100px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+.price-phase {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.price-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.price-amount {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin: 14px 0;
+}
+.price-amount span { font-size: 15px; color: var(--text-muted); font-weight: 500; letter-spacing: 0; }
+
+.price-desc {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+
+.price-features { list-style: none; margin-bottom: 26px; }
+
+.price-features li {
+  padding: 7px 0;
+  font-size: 13px;
+  color: var(--text-dim);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.price-features li::before {
+  content: '\2713';
+  color: var(--accent-2);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.price-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border-radius: 100px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+}
+
+.price-btn-primary {
+  background: var(--accent-1);       /* a11y: was var(--gradient). White text on teal-end of gradient was 1.86:1 — fail. Solid purple #7C3AED is 5.70:1 — pass. */
+  color: white;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.25);
+}
+.price-btn-primary:hover { background: #8B45F0; box-shadow: 0 8px 30px rgba(124, 58, 237, 0.4); transform: translateY(-1px); }
+
+.price-btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.price-btn-outline:hover { border-color: rgba(124, 58, 237, 0.5); background: rgba(124, 58, 237, 0.05); }
+
+.upgrade-note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Protection plan */
+.protection-bar {
+  margin-top: 32px;
+  background: var(--surface-3);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.protection-bar .pb-label {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.protection-bar .pb-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.protection-bar .pb-desc {
+  font-size: 13px;
+  color: var(--text-dim);
+  max-width: 480px;
+  line-height: 1.55;
+}
+.protection-bar .pb-desc strong { color: var(--text); }
+
+/* Trust */
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+@media (max-width: 768px) { .trust-grid { grid-template-columns: 1fr; } }
+
+.trust-card {
+  background: var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-sm);
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.trust-card .icon { font-size: 32px; margin-bottom: 14px; }
+.trust-card h3 { font-weight: 700; font-size: 16px; margin-bottom: 8px; }
+.trust-card p { font-size: 13px; color: var(--text-dim); line-height: 1.55; }
+
+/* FAQ */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  max-width: 900px;
+}
+@media (max-width: 768px) { .faq-grid { grid-template-columns: 1fr; } }
+
+.faq-box {
+  background: var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-sm);
+  padding: 22px;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.faq-box:hover { border-color: rgba(124, 58, 237, 0.2); }
+.faq-box.open { border-color: var(--accent-2); background: rgba(45, 212, 191, 0.04); }
+
+.faq-q {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.faq-q::before {
+  content: 'Q';
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background: rgba(124, 58, 237, 0.15);
+  color: #A78BFA;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+.faq-a {
+  display: none;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.65;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.faq-a strong { color: var(--text); font-weight: 600; }
+.faq-box.open .faq-a { display: block; }
+
+/* CTA bottom */
+.cta-bottom {
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+}
+
+.cta-bottom::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-bottom h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(30px, 5vw, 44px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 14px;
+}
+
+.cta-bottom p {
+  color: var(--text-dim);
+  font-size: 15px;
+  margin-bottom: 28px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Footer */
+footer {
+  padding: 32px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.footer-parent {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.footer-links a {
+  font-size: 13px;                    /* a11y: was 12px */
+  color: var(--text-dim);             /* a11y: was text-muted (3.52:1 fail). text-dim = 7.07:1 — pass */
+  text-decoration: none;
+  padding: 8px 10px;                  /* a11y: added padding for WCAG 2.5.5 touch-target minimum */
+  display: inline-block;
+  border-radius: 4px;
+  transition: color 0.2s, background 0.2s;
+}
+.footer-links a:hover { color: var(--text); background: rgba(255,255,255,0.04); }
+.footer-links a:focus-visible { background: rgba(45, 212, 191, 0.1); }
+
+.footer-legal {
+  font-size: 11px;                    /* a11y: bumped from 10px — legal disclaimer shouldn't be sub-body size */
+  color: var(--text-dim);             /* a11y: was rgba(255,255,255,0.2) = 1.77:1 FAIL. Now #9999AD = 7.07:1 — the legally-material disclaimer is now readable */
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  text-align: center;
+}
+.footer-legal strong { color: var(--text); font-weight: 700; }
+
+/* Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-left > * { animation: fadeUp 0.6s ease-out both; }
+.hero-left > *:nth-child(2) { animation-delay: 0.08s; }
+.hero-left > *:nth-child(3) { animation-delay: 0.16s; }
+.hero-left > *:nth-child(4) { animation-delay: 0.24s; }
+.hero-left > *:nth-child(5) { animation-delay: 0.32s; }
+.hero-left > *:nth-child(6) { animation-delay: 0.40s; }
+
+/* ReclaimShield Method — 2x2 points grid (standalone, no right column) */
+.method-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 44px;
+}
+@media (max-width: 768px) { .method-points { grid-template-columns: 1fr; } }
+
+.method-points .machine-point {
+  border-bottom: none;
+  padding: 24px 26px;
+  background: var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.2s, transform 0.2s;
+}
+.method-points .machine-point:hover {
+  border-color: rgba(124,58,237,0.3);
+  transform: translateY(-2px);
+}
+
+/* Multi-Channel Pressure — standalone section */
+.multichannel-section {
+  padding: 80px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  background: var(--surface);
+  position: relative;
+  overflow: hidden;
+}
+.multichannel-section::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(45,212,191,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.channels-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  max-width: 880px;
+  margin: 40px auto 0;
+  position: relative;
+}
+
+.channel-row {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 22px;
+  align-items: center;
+  padding: 22px 26px;
+  background: var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-left: 3px solid var(--accent-2);
+  border-radius: var(--radius-sm);
+  transition: border-left-color 0.25s, transform 0.25s;
+}
+.channel-row:hover {
+  border-left-color: var(--accent-1);
+  transform: translateX(4px);
+}
+
+.channel-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--accent-2);
+  letter-spacing: -1.5px;
+  line-height: 1;
+  text-align: center;
+}
+
+.channel-content h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  letter-spacing: -0.2px;
+}
+
+.channel-content p {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+.channel-content p strong { color: var(--text); font-weight: 600; }
+
+.channels-kicker {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-2);
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   A11Y-CANONICAL: button-based disclosure widget styling
+   Resets native button chrome so visual design is preserved,
+   and keys the "open" visual state off aria-expanded rather than
+   a CSS class. Added 2026-04-18 after APG-canonical refactor.
+   ============================================================ */
+
+.issue-card-btn,
+.faq-box-btn {
+  /* reset native button */
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: block;
+}
+.issue-card-btn {
+  padding: 0;
+}
+.issue-card-btn .issue-tag,
+.issue-card-btn .issue-title,
+.issue-card-btn .issue-desc,
+.issue-card-btn .issue-toggle {
+  display: block;
+}
+.issue-card-btn .issue-tag {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.faq-box-btn {
+  padding: 0;
+}
+.faq-box-btn .faq-q {
+  /* keep inherited .faq-q look */
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+.faq-box-btn .faq-q::before {
+  content: 'Q';
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background: rgba(124, 58, 237, 0.15);
+  color: #A78BFA;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  margin-top: 1px;
+}
+/* keep the old .faq-q::before styling from applying to non-button contexts */
+
+/* Open-state visual — key off aria-expanded on the button (APG canonical) */
+.issue-card:has(.issue-card-btn[aria-expanded="true"]) {
+  border-color: var(--accent-2);
+  background: rgba(45, 212, 191, 0.04);
+}
+.faq-box:has(.faq-box-btn[aria-expanded="true"]) {
+  border-color: var(--accent-2);
+  background: rgba(45, 212, 191, 0.04);
+}
+
+/* Panels are hidden via the [hidden] attribute; no display rule needed */
+.issue-detail[hidden],
+.faq-a[hidden] { display: none; }
+.issue-detail:not([hidden]),
+.faq-a:not([hidden]) { display: block; }
+
+</style>
+</head>
+<body>
+
+<!-- A11Y: skip link (WCAG 2.4.1) -->
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- Nav -->
+<nav aria-label="Primary">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <svg viewBox="0 0 72 84" fill="none" width="30" height="34" style="filter:drop-shadow(0 2px 3px rgba(0,0,0,0.3))"><defs><linearGradient id="navG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1A2E45"/><stop offset="48%" stop-color="#1E3A52"/><stop offset="52%" stop-color="#389680"/><stop offset="100%" stop-color="#4BA08E"/></linearGradient><linearGradient id="navEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="50%" stop-color="rgba(255,255,255,0.02)"/><stop offset="100%" stop-color="rgba(255,255,255,0.06)"/></linearGradient></defs><path d="M36 4L6 17V41C6 57 19 72 36 80C53 72 66 57 66 41V17L36 4Z" fill="url(#navG)"/><path d="M36 5.5L7.5 17.5V41C7.5 56 20 70.5 36 78.5C52 70.5 64.5 56 64.5 41V17.5L36 5.5Z" fill="none" stroke="url(#navEdge)" stroke-width="0.8"/><line x1="36" y1="7" x2="36" y2="78" stroke="rgba(0,0,0,0.2)" stroke-width="0.8"/><circle cx="36" cy="40" r="13" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.8"/><line x1="36" y1="24" x2="36" y2="27" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="36" y1="53" x2="36" y2="56" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="20" y1="40" x2="23" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="49" y1="40" x2="52" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><path d="M36 26L40 40L36 54L32 40Z" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linejoin="round"/><path d="M36 26L40 40H32Z" fill="#fff"/><circle cx="36" cy="40" r="2" fill="#fff"/></svg>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">ReclaimShield</span>
+        <span class="nav-logo-sub">Attorney-engineered recovery</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="/">All Platforms</a>
+      <a href="#how-we-know">The Method</a>
+      <a href="#issues">What We Fix</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#pricing" class="nav-cta">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- A11Y: main landmark (WCAG 1.3.1, 2.4.1) -->
+<main id="main">
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-eyebrow">Professional Account Recovery</div>
+        <h1>They banned you<br>with a bot.<br>Your appeal goes to<br><span class="gradient-text">the same bot.</span></h1>
+        <p class="hero-sub">Meta's AI flags your account and the same AI reviews your appeal. It's a loop designed to confirm its own decision. ReclaimShield breaks that loop with escalation paths that bypass the automated system entirely.</p>
+        <div class="hero-callout">
+          <strong>The ReclaimShield Method.&nbsp;</strong> Engineered around how Meta actually reviews appeals in 2026 &mdash; AI-first classification with human oversight on final decisions &mdash; and backed by a five-channel escalation path for cases that don't resolve in the consumer-appeal queue.
+        </div>
+        <div class="hero-actions">
+          <a href="#pricing" class="btn-primary">See Recovery Options &rarr;</a>
+          <a href="#issues" class="btn-outline">What We Handle &darr;</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">Why Appeals Fail</div>
+        <div class="hc-row">
+          <div class="hc-num" style="color: var(--accent-2); font-size: 18px;">AI &rarr; AI</div>
+          <div class="hc-desc">Meta's AI flags your content &mdash; the same AI re-reviews your appeal. Professional escalation bypasses this loop.</div>
+        </div>
+        <div class="hc-row">
+          <div class="hc-num">25-40%</div>
+          <div class="hc-desc">Of Meta's own enforcement actions are overturned on appeal. Their system makes mistakes &mdash; they know it.</div>
+        </div>
+        <div class="hc-row">
+          <div class="hc-num">180</div>
+          <div class="hc-desc">Days until a disabled account and everything on it is permanently deleted. The clock is already running.</div>
+        </div>
+        <div class="hc-row">
+          <div class="hc-num" style="color: var(--accent-2); font-size: 18px;">Human</div>
+          <div class="hc-desc">A formal business-communication letter to Meta's registered agent lands on a human desk &mdash; not in the automated queue.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="platforms" aria-label="Supported platforms">
+      <div class="platform-icon"><div class="icon-circle ig" aria-hidden="true">&#x1F4F7;</div><span>Instagram</span></div>
+      <div class="platform-icon"><div class="icon-circle fb" aria-hidden="true">&#x1F44D;</div><span>Facebook</span></div>
+      <div class="platform-icon"><div class="icon-circle" aria-hidden="true" style="background:linear-gradient(135deg,#000,#333);color:#fff">@</div><span>Threads</span></div>
+    </div>
+    <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:14px;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.5">
+      ReclaimShield launches with deep specialization in the Meta platform family &mdash; Instagram, Facebook, and Threads &mdash; where our method is purpose-built for Meta's review pipeline. <strong style="color:var(--text-dim)">TikTok, YouTube, X, Twitch, and LinkedIn recovery coming soon.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-block">
+        <div class="stat-num gradient-text">25-40%</div>
+        <div class="stat-label">of enforcement actions reversed on Meta's own appeal data</div>
+        <div class="stat-source">Meta Transparency Reports</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num" style="color:#EF4444">3-5%</div>
+        <div class="stat-label">of actual hate speech caught &mdash; while millions of legitimate accounts get flagged</div>
+        <div class="stat-source">Internal Meta Research</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num gradient-text">30-60s</div>
+        <div class="stat-label">average time a human reviewer spends on your appeal &mdash; if it reaches one at all</div>
+        <div class="stat-source">Content Moderator Reports</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num" style="color:#EF4444">XCheck</div>
+        <div class="stat-label">Celebrities get human review before enforcement. You don't. We level the playing field.</div>
+        <div class="stat-source">Meta Oversight Board</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- We Know How the Machine Works -->
+<section id="how-we-know" class="machine-section">
+  <div class="container">
+    <div class="eyebrow">The ReclaimShield Method</div>
+    <h2 class="stitle">We Know How Meta<br><span class="gradient-text">Actually Reviews Your Appeal.</span></h2>
+    <p class="lead">Your appeal is read first by an AI classifier, then &mdash; if it escalates &mdash; by a human reviewer working within Meta's current review pipeline. The ReclaimShield Method is built around four things most people don't know about how that pipeline actually decides.</p>
+
+    <div class="method-points">
+      <div class="machine-point">
+        <h3><span class="mp-icon" aria-hidden="true">&#x1F916;</span> We Know Their Classifier</h3>
+        <p>Meta's 2026 enforcement stack is AI-first: your content is scored against a detailed hazard framework, and your appeal is re-scored by the same type of classifier. Most appeals fail because they argue the wrong category, or use language the classifier is trained to dismiss. <strong>We target only the specific violation Meta actually cited</strong> &mdash; and mirror Meta's own Community Standards language back at the classifier on the categories that matter.</p>
+      </div>
+      <div class="machine-point">
+        <h3><span class="mp-icon" aria-hidden="true">&#x1F50D;</span> We Know Their Reviewers</h3>
+        <p>When an appeal escalates to a human, it lands in front of a tighter, more consistent review pipeline than it did a year ago. For a classifier-inverting appeal like ours, a more consistent reviewer pool is a <em>better</em> environment &mdash; our appeals are structured so the right decision is obvious on the first read, not buried in narrative.</p>
+      </div>
+      <div class="machine-point">
+        <h3><span class="mp-icon" aria-hidden="true">&#x2696;</span> We Know Their Broken Promises</h3>
+        <p>Internal documents, Oversight Board decisions, EU Digital Services Act compliance &mdash; Meta has published commitments they haven't kept. <strong>We document the gap between what they promised and what they did to your account.</strong></p>
+      </div>
+      <div class="machine-point">
+        <h3><span class="mp-icon" aria-hidden="true">&#x1F4CB;</span> We Know the Pressure Points</h3>
+        <p>Platform companies respond differently to different types of pressure. <strong>We know which channels get results for each type of account issue</strong> &mdash; from oversight board submissions to government-agency complaints. Every case gets a tailored strategy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What We Fix -->
+<section id="issues" class="section section-border">
+  <div class="container">
+    <div class="eyebrow">What We Fix</div>
+    <h2 class="stitle">Every Type of Account Crisis. <span class="gradient-text">One Professional Solution.</span></h2>
+    <p class="lead">Meta disables accounts for dozens of reasons &mdash; and their appeals process fails for most of them. Click any issue to see exactly how we resolve it.</p>
+
+    <div class="issue-grid">
+
+      <div class="issue-card cat-enforcement">
+  <button class="issue-card-btn" type="button" id="issue-btn-1" aria-expanded="false" aria-controls="issue-panel-1">
+    <span class="issue-tag tag-enforcement">Platform Enforcement</span>
+    <span class="issue-title">Disabled for "Violating Community Standards"</span>
+    <span class="issue-desc">Meta's AI flagged your account. You didn't actually violate anything. <strong>The #1 reason accounts are wrongfully disabled.</strong></span>
+    <span class="issue-toggle" aria-hidden="true">+ How we fix this</span>
+  </button>
+  <div class="issue-detail" id="issue-panel-1" role="region" aria-labelledby="issue-btn-1" hidden><div class="solution-step"><div class="step-dot"></div><div><strong>Identify the specific violation cited</strong> &mdash; we analyze Meta's notice and determine whether the flagged content actually triggers the stated policy.</div></div>
+          <div class="solution-step"><div class="step-dot"></div><div><strong>Draft a targeted appeal</strong> citing Meta's own published standards, demonstrating the content doesn't meet their threshold for removal.</div></div>
+          <div class="solution-step"><div class="step-dot"></div><div><strong>Escalate to Meta's Oversight Board</strong> if the standard appeal is rejected &mdash; their decisions are binding on Meta.</div></div>
+          <div class="solution-step"><div class="step-dot"></div><div><strong>Tier 3: Formal business-communication letter</strong> to Meta's registered agent documenting the Terms of Service breach and the impact to your account and livelihood.</div></div></div>
+</div>
+
+      <div class="issue-card cat-security">
+  <button class="issue-card-btn" type="button" id="issue-btn-2" aria-expanded="false" aria-controls="issue-panel-2">
+    <span class="issue-tag tag-security">Account Security</span>
+    <span class="issue-title">Account Hacked &amp; Then Disabled</span>
+    <span class="issue-desc">Someone gained access, changed your email/phone, then Meta disabled it for the hacker's behavior. You're locked out of the appeal process entirely.</span>
+    <span class="issue-toggle" aria-hidden="true">+ How we fix this</span>
+  </button>
+  <div class="issue-detail" id="issue-panel-2" role="region" aria-labelledby="issue-btn-2" hidden><div class="solution-step"><div class="step-dot"></div><div><strong>Identity recovery submission</strong> through Meta's hacked account flow with professional documentation proving original ownership.</div></div>
+          <div class="solution-step"><div class="step-dot"></div><div><strong>Police report filing guidance</strong> &mdash; creates a documented paper trail that strengthens your recovery claim.</div></div>
+          <div class="solution-step"><div class="step-dot"></div><div><strong>Tier 3: Formal business-communication letter to Meta</strong> documenting the unauthorized access and requesting restoration plus removal of hacker-posted content.</div></div></div>
+</div>
+
+      <div class="issue-card cat-enforcement">
+  <button class="issue-card-btn" type="button" id="issue-btn-3" aria-expanded="false" aria-controls="issue-panel-3">
+    <span class="issue-tag tag-enforcement">Platform Enforcement</span>
+    <span class="issue-title">Disabled for "Impersonation"</span>
+    <span class="issue-desc">Meta's system thinks you're impersonating someone &mdash; or a competitor reported you. Common with businesses, public figures, and fan pages.</span>
+    <span class="issue-toggle" aria-hidden="true">+ How we fix this</span>
+  </button>
+  <div class="issue-detail" id="issue-panel-3" role="region" aria-labelledby="issue-btn-3" hidden><div class="solution-step"><div class="step-dot"></div><div><strong>Identity verification package</strong> &mdash; government ID, business registration, and proof of account ownership compiled into a formal submission.</div></div>
+          <div class="solution-step"><div class="step-dot"></div><div><strong>Trademark/business documentation</strong> to prove you ARE the entity being "impersonated."</div></div>
+          <div class="solution-step"><div class="step-dot"></div><div><strong>Counter-report the actual impersonator</strong> if someone is using your identity and reported YOU first.</div></div></div>
+</div>
+
+      <div class="issue-card cat-ip">
+  <button class="issue-card-btn" type="button" id="issue-btn-4" aria-expanded="false" aria-controls="issue-panel-4">
+    <span class="issue-tag tag-ip">Intellectual Property</span>
+    <span class="issue-title">Copyright or Trademark Strike</span>
+    <span class="issue-desc">Someone filed a copyright or trademark complaint against your content &mdash; possibly a false DMCA claim by a competitor or bad actor.</span>
+    <span class="issue-toggle" aria-hidden="true">+ How we fix this</span>
+  </button>
+  <div class="issue-detail" id="issue-panel-4" role="region" aria-labelledby="issue-btn-4" hidden><div class="solution-step"><div class="step-dot"></div><div><strong>DMCA counter-notification</strong> &mdash; the formal process that compels the platform to restore your content within 10&ndash;14 business days unless the reporter escalates.</div></div>
+          <div class="solution-step"><div class="step-dot"></div><div><strong>Trademark dispute response</strong> documenting your rights and demonstrating the report was unfounded.</div></div>
+          <div class="solution-step"><div class="step-dot"></div><div><strong>Bad-faith reporter documentation</strong> &mdash; if someone is weaponizing IP reports against you, we build the paper trail to stop it.</div></div></div>
+</div>
+
+      <div class="issue-card cat-business">
+  <button class="issue-card-btn" type="button" id="issue-btn-5" aria-expanded="false" aria-controls="issue-panel-5">
+    <span class="issue-tag tag-business">Business Accounts</span>
+    <span class="issue-title">Business or Ad Account Suspended</span>
+    <span class="issue-desc">Your business account, Instagram Shop, or ad account has been restricted &mdash; cutting off your revenue stream. Standard support is a black hole.</span>
+    <span class="issue-toggle" aria-hidden="true">+ How we fix this</span>
+  </button>
+  <div class="issue-detail" id="issue-panel-5" role="region" aria-labelledby="issue-btn-5" hidden><div class="solution-step"><div class="step-dot"></div><div><strong>Business verification escalation</strong> with EIN, articles of incorporation, and bank statements through Meta's business verification channels.</div></div>
+          <div class="solution-step"><div class="step-dot"></div><div><strong>Ad account policy review</strong> &mdash; identify the specific violation and prepare a compliant remediation plan.</div></div>
+          <div class="solution-step"><div class="step-dot"></div><div><strong>Revenue loss documentation</strong> to strengthen the demand and position you for potential recovery.</div></div></div>
+</div>
+
+      <div class="issue-card cat-enforcement">
+  <button class="issue-card-btn" type="button" id="issue-btn-6" aria-expanded="false" aria-controls="issue-panel-6">
+    <span class="issue-tag tag-enforcement">Platform Enforcement</span>
+    <span class="issue-title">Shadowbanned or Reach Killed</span>
+    <span class="issue-desc">Your account isn't disabled but your content isn't being shown. Explore is gone, hashtags don't work, engagement cratered overnight.</span>
+    <span class="issue-toggle" aria-hidden="true">+ How we fix this</span>
+  </button>
+  <div class="issue-detail" id="issue-panel-6" role="region" aria-labelledby="issue-btn-6" hidden><div class="solution-step"><div class="step-dot"></div><div><strong>Account health audit</strong> &mdash; we analyze status, content history, and engagement to identify the trigger.</div></div>
+          <div class="solution-step"><div class="step-dot"></div><div><strong>Content compliance review</strong> &mdash; identify what triggered algorithmic suppression and map remediation.</div></div>
+          <div class="solution-step"><div class="step-dot"></div><div><strong>Formal support escalation</strong> through Meta's business channels and centralized support hub.</div></div></div>
+</div>
+
+      <div class="issue-card cat-escalation">
+  <button class="issue-card-btn" type="button" id="issue-btn-7" aria-expanded="false" aria-controls="issue-panel-7">
+    <span class="issue-tag tag-escalation">Failed Appeals</span>
+    <span class="issue-title">Appeal Already Rejected?</span>
+    <span class="issue-desc">You've already appealed (maybe several times) and got denied. The form says "no further review." <strong>This is where most people give up. This is where we start.</strong></span>
+    <span class="issue-toggle" aria-hidden="true">+ How we fix this</span>
+  </button>
+  <div class="issue-detail" id="issue-panel-7" role="region" aria-labelledby="issue-btn-7" hidden><div class="solution-step"><div class="step-dot"></div><div><strong>Oversight Board escalation</strong> &mdash; independent review that's binding on Meta. Bypasses the automated system entirely.</div></div>
+          <div class="solution-step"><div class="step-dot"></div><div><strong>Tier 3: Formal business-communication letter</strong> to Meta Platforms, Inc., sent via their registered agent. Gets human eyes on your case &mdash; not the automated queue.</div></div>
+          <div class="solution-step"><div class="step-dot"></div><div><strong>State Attorney General complaint</strong> documenting the platform's conduct regarding your account.</div></div></div>
+</div>
+
+      <div class="issue-card cat-enforcement">
+  <button class="issue-card-btn" type="button" id="issue-btn-8" aria-expanded="false" aria-controls="issue-panel-8">
+    <span class="issue-tag tag-enforcement">Platform Enforcement</span>
+    <span class="issue-title">Caught in a Mass Suspension Wave</span>
+    <span class="issue-desc">Your account was disabled during one of Meta's enforcement waves. You did nothing wrong &mdash; the AI misfired on a massive scale.</span>
+    <span class="issue-toggle" aria-hidden="true">+ How we fix this</span>
+  </button>
+  <div class="issue-detail" id="issue-panel-8" role="region" aria-labelledby="issue-btn-8" hidden><div class="solution-step"><div class="step-dot"></div><div><strong>Pattern documentation</strong> &mdash; evidence your disable was part of a known AI error event, not individual enforcement.</div></div>
+          <div class="solution-step"><div class="step-dot"></div><div><strong>Expedited review request</strong> citing the known malfunction through priority correction channels.</div></div>
+          <div class="solution-step"><div class="step-dot"></div><div><strong>Tier 3: Escalation letter</strong> if Meta fails to reverse &mdash; these cases are strong because Meta has publicly acknowledged past errors.</div></div></div>
+</div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:28px">
+      <p style="font-size:14px;color:var(--text-dim);max-width:520px;margin:0 auto;line-height:1.6"><strong style="color:var(--text)">Don't see your issue?</strong> We handle every type of account problem across Instagram, Facebook, and Threads. If your situation doesn't quite match the examples above, <a href="#pricing" style="color:var(--accent-2);font-weight:600;text-decoration:none;border-bottom:1px dashed var(--accent-2)">tell us what happened &rarr;</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- Multi-Channel Pressure (standalone section) -->
+<section id="channels" class="multichannel-section">
+  <div class="container">
+    <div class="eyebrow">Multi-Channel Pressure</div>
+    <h2 class="stitle">Five Channels.<br><span class="gradient-text">Simultaneously.</span></h2>
+    <p class="lead">Other services send one appeal and hope. ReclaimShield deploys simultaneous pressure across every channel Meta monitors &mdash; so your case isn't riding on a single point of failure.</p>
+
+    <div class="channels-grid">
+      <div class="channel-row">
+        <div class="channel-num">01</div>
+        <div class="channel-content">
+          <h3>Optimized In-App Appeal</h3>
+          <p>Structured to pass Meta's AI first-pass cleanly and land readable with in-house human review &mdash; with platform-specific policy citations and the markers Meta's own documentation says trigger a second look. <strong>Filed by you, from your verified account.</strong></p>
+        </div>
+      </div>
+      <div class="channel-row">
+        <div class="channel-num">02</div>
+        <div class="channel-content">
+          <h3>Oversight Board Submission</h3>
+          <p>The independent review body Meta created under external pressure. <strong>Their decisions are binding on Meta.</strong> We prepare a fully cited submission tied to published Oversight Board precedent relevant to your case.</p>
+        </div>
+      </div>
+      <div class="channel-row">
+        <div class="channel-num">03</div>
+        <div class="channel-content">
+          <h3>Formal Business-Communication Letter</h3>
+          <p>Sent from <strong>ReclaimShield</strong>, on business letterhead, to Meta's registered agent via certified mail. Routes to corporate legal and compliance staff &mdash; completely outside the consumer-appeal queue. Creates a certified-mail paper trail. (Tier 3.)</p>
+        </div>
+      </div>
+      <div class="channel-row">
+        <div class="channel-num">04</div>
+        <div class="channel-content">
+          <h3>Congressional Constituent Inquiry</h3>
+          <p>Drafted for you to submit through your U.S. House representative's constituent-services office. <strong>Platform companies respond to congressional offices on timelines they don't give consumers.</strong></p>
+        </div>
+      </div>
+      <div class="channel-row">
+        <div class="channel-num">05</div>
+        <div class="channel-content">
+          <h3>State Attorney General Complaint</h3>
+          <p>Documented consumer-protection filing in your home state, establishing a public record of platform conduct. <strong>An AG complaint is a signal to Meta's legal team that this case has a watching regulator.</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <p class="channels-kicker">No individual and no competitor deploys all five simultaneously. That's the ReclaimShield Method.</p>
+  </div>
+</section>
+
+<!-- Process -->
+<section id="process" class="section section-alt">
+  <div class="container">
+    <div class="eyebrow">How It Works</div>
+    <h2 class="stitle">Four Steps. One Goal. <span class="gradient-text">Your Account Back.</span></h2>
+    <p class="lead">Flat fees. No hourly billing. No mystery. You tell us what happened, we tell you what it costs, and we get to work.</p>
+
+    <div class="proc-steps">
+      <div class="proc-step">
+        <div class="proc-num">1</div>
+        <h3>Submit Your Case</h3>
+        <p>Fill out our intake form with your account details and what happened. Takes 3 minutes.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">2</div>
+        <h3>Choose Your Tier</h3>
+        <p>Start where it makes sense. Most start with Tier 1 and escalate only if needed.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">3</div>
+        <h3>We Go to Work</h3>
+        <p>Your case gets professional escalation through channels that bypass the automated queue.</p>
+      </div>
+      <div class="proc-step">
+        <div class="proc-num">4</div>
+        <h3>You're Back Online</h3>
+        <p>Upgrade anytime if you need more firepower. You only pay the difference.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" class="section">
+  <div class="container">
+    <div class="eyebrow">Pricing</div>
+    <h2 class="stitle">Start smart. <span class="gradient-text">Escalate if needed.</span></h2>
+    <p class="lead">Each tier builds on the last. You never pay twice &mdash; previous payments become credits toward the next tier.</p>
+
+    <div class="pricing-grid">
+      <!-- Tier 1 -->
+      <div class="price-card">
+        <div class="price-phase">Tier 1 &middot; Appeal Kit</div>
+        <div class="price-name">Written for the classifier, not for sympathy.</div>
+        <div class="price-amount">$197 <span>one-time</span></div>
+        <div class="price-desc">Your appeal is read and scored by Meta&rsquo;s AI before any human ever sees it. Tier 1 is a custom appeal built using <strong>The ReclaimShield Method</strong> &mdash; classifier-facing language, category-targeted rebuttal, attorney-engineered structure &mdash; delivered within hours.</div>
+        <ul class="price-features">
+          <li>Custom appeal prepared using <strong>The ReclaimShield Method</strong></li>
+          <li><strong>Classifier-facing language</strong> mirrored from Meta&rsquo;s current Community Standards vocabulary</li>
+          <li><strong>Category-targeted rebuttal</strong> &mdash; we address only the specific violation cited (character pleas score as low-priority noise)</li>
+          <li>Attorney-engineered structure, refreshed against current policy text</li>
+          <li>Step-by-step in-app filing instructions + Oversight Board filing guide</li>
+          <li>Delivery within hours of completed intake</li>
+        </ul>
+        <a href="https://buy.stripe.com/00w5kFcrHaTdahL8to5EY0o" class="price-btn price-btn-outline">Start Tier 1</a>
+      </div>
+
+      <!-- Tier 2 -->
+      <div class="price-card featured">
+        <div class="price-phase">Tier 2 &middot; Escalation</div>
+        <div class="price-name">Five channels. Filed in the right sequence.</div>
+        <div class="price-amount">$497 <span>one-time</span></div>
+        <div class="price-desc">Filing one appeal and hoping is the DIY playbook &mdash; and it&rsquo;s why most DIY appeals lose. Tier 2 routes your case through <strong>five escalation channels</strong>, sequenced to compound pressure on the platform instead of sitting in a queue.</div>
+        <ul class="price-features">
+          <li>Everything in Tier 1</li>
+          <li><strong>Multi-channel routing</strong> across five escalation paths &mdash; not just the appeal button</li>
+          <li>Oversight Board formal submission materials</li>
+          <li>Congressional constituent inquiry (platform legal teams respond to congressional offices on timelines consumers don&rsquo;t get)</li>
+          <li>State Attorney General consumer-protection complaint (creates a regulatory watching-brief on your case)</li>
+          <li>Full case-file customization and channel sequencing</li>
+          <li>Delivery within 24&ndash;48 hours</li>
+        </ul>
+        <a href="https://buy.stripe.com/dRmbJ3fDTe5pcpTbFA5EY0p" class="price-btn price-btn-primary">Start Tier 2</a>
+      </div>
+
+      <!-- Tier 3 -->
+      <div class="price-card">
+        <div class="price-phase">Tier 3 &middot; Full Package</div>
+        <div class="price-name">A formal letter gets read. Your appeal button didn&rsquo;t.</div>
+        <div class="price-amount">$997 <span>one-time</span></div>
+        <div class="price-desc">When the automated system has nothing left to give, platform legal and trust-and-safety teams <em>do</em> respond to formal correspondence on business letterhead. Tier 3 adds an <strong>attorney-engineered demand letter</strong> sent by certified mail to the platform&rsquo;s registered agent &mdash; the escalation that exits the customer-support queue entirely and enters the legal-correspondence channel.</div>
+        <ul class="price-features">
+          <li>Everything in Tier 2</li>
+          <li><strong>Attorney-engineered demand letter</strong> on ReclaimShield business letterhead</li>
+          <li>Sent via certified mail to Meta&rsquo;s registered agent</li>
+          <li>Documented platform policy failures specific to your case</li>
+          <li>60-day engagement window with follow-up</li>
+          <li>Delivery within 3&ndash;5 business days</li>
+        </ul>
+        <a href="https://buy.stripe.com/3cI5kF77n7H13Tn10W5EY0q" class="price-btn price-btn-outline">Start Tier 3</a>
+      </div>
+    </div>
+
+    <p class="upgrade-note">Start with Tier 1. If it doesn't resolve, upgrade to Tier 2 ($300 more) or Tier 3 ($800 more). Previous payments always credit forward.</p>
+
+    <!-- 72-Hour Delivery Guarantee -->
+    <div style="margin-top:40px;padding:28px 32px;background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(45,212,191,0.08));border:1px solid rgba(45,212,191,0.28);border-radius:16px">
+      <div style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:1.8px;color:var(--accent-2);text-transform:uppercase;padding:6px 12px;background:rgba(45,212,191,0.12);border-radius:100px;margin-bottom:14px">ReclaimShield Delivery Guarantee</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:700;color:#fff;margin-bottom:12px;letter-spacing:-0.5px;line-height:1.25">We deliver on time &mdash; or your money back.</div>
+      <p style="font-size:15px;color:var(--text-dim);max-width:720px;line-height:1.65;margin-bottom:10px">Once your intake is complete and payment has cleared, we commit to the delivery windows stated at each tier: <strong style="color:var(--text)">within hours</strong> for Tier 1, <strong style="color:var(--text)">24&ndash;48 hours</strong> for Tier 2, and <strong style="color:var(--text)">3&ndash;5 business days</strong> for Tier 3. Miss the window on our end, and you get a full refund on request.</p>
+      <p style="font-size:13px;color:var(--text-muted);line-height:1.6;max-width:720px;margin:0">We can't guarantee a platform outcome &mdash; nobody honest can &mdash; but we control our delivery clock, and we stand behind it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- The DIY Path -->
+<section class="section">
+  <div class="container" style="max-width:960px">
+    <div class="eyebrow">The DIY Path</div>
+    <h2 class="stitle">You can file your own appeal. <span class="gradient-text">Here&rsquo;s why it usually loses.</span></h2>
+    <p class="lead">We&rsquo;re not going to hide it &mdash; you can write your own appeal for free, right now, using the button inside the app. Most people do. Here&rsquo;s the math on why they lose, and what ReclaimShield does differently.</p>
+
+    <div style="display:grid;gap:18px;margin-top:32px">
+      <div style="padding:22px 26px;background:rgba(18,18,26,0.6);border:1px solid rgba(255,255,255,0.06);border-left:3px solid #7C3AED;border-radius:12px">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:6px">Problem 1 &mdash; The classifier scores your appeal first. The human scores second (if ever).</div>
+        <p style="font-size:15px;color:var(--text-dim);line-height:1.65;margin:0">Meta&rsquo;s 2026 enforcement pipeline is AI-first. Your appeal is read first by the same classifier that flagged your content &mdash; and it is trained to dismiss pleading language, character references, and emotional framing. &ldquo;I&rsquo;m a good person&rdquo; scores as low-priority noise. &ldquo;This content falls within the published scope of [specific policy section]&rdquo; scores as a policy-compliant rebuttal. Most DIY appeals argue the first and get auto-rejected in seconds.</p>
+      </div>
+      <div style="padding:22px 26px;background:rgba(18,18,26,0.6);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--accent-2);border-radius:12px">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:6px">Problem 2 &mdash; You usually get one shot.</div>
+        <p style="font-size:15px;color:var(--text-dim);line-height:1.65;margin:0">Meta&rsquo;s 2025+ appeal policy caps most violations at <strong>one appeal</strong>. If your first appeal is rejected, that decision is typically final through the consumer flow &mdash; no second attempt. The appeal you write in five minutes is the only chance you get. Burning it on the wrong argument forecloses every downstream path that doesn&rsquo;t involve formal correspondence.</p>
+      </div>
+      <div style="padding:22px 26px;background:rgba(18,18,26,0.6);border:1px solid rgba(255,255,255,0.06);border-left:3px solid #7C3AED;border-radius:12px">
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:6px">Problem 3 &mdash; The vocabulary you find online is stale.</div>
+        <p style="font-size:15px;color:var(--text-dim);line-height:1.65;margin:0">Community Standards language changes. Templates from 2023 appeal forums cite policy terms that have since been restructured, renamed, or folded into broader categories. Using outdated policy vocabulary doesn&rsquo;t just fail &mdash; it scores <em>against</em> you on the current classifier, because the pattern now signals a copy-paste template. The ReclaimShield Method works from current Meta policy text, refreshed continuously.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;padding:22px 26px;background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(45,212,191,0.08));border:1px solid rgba(45,212,191,0.20);border-radius:14px;text-align:center">
+      <p style="font-size:15px;color:var(--text);line-height:1.65;margin:0"><strong>Still want to try it yourself?</strong> Go for it &mdash; the appeal button is free and takes five minutes. If it comes back denied, we&rsquo;re here. Most paid clients come to us <em>after</em> a failed DIY attempt. Tier 1 starts at $197.</p>
+    </div>
+  </div>
+</section>
+
+<!-- What We Won't Do -->
+<section class="section section-alt">
+  <div class="container" style="max-width:960px">
+    <div class="eyebrow">Our Guardrails</div>
+    <h2 class="stitle">What We <span class="gradient-text">Will Not</span> Do.</h2>
+    <p class="lead">Professional boundaries aren't just marketing copy &mdash; they're how you know the service is legitimate. Five things ReclaimShield will never do, no matter who asks.</p>
+
+    <ul style="list-style:none;padding:0;margin:32px 0 0;display:grid;gap:14px">
+      <li style="padding:20px 24px;background:rgba(18,18,26,0.6);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--accent-2);border-radius:12px;font-size:15px;line-height:1.6;color:var(--text-dim)"><strong style="color:#fff;display:block;margin-bottom:4px">We will never ask for your password, login, or 2FA codes.</strong> Any service that does is either a scam or planning unauthorized access. We work entirely from information you submit through the intake form and from publicly visible content you provide.</li>
+      <li style="padding:20px 24px;background:rgba(18,18,26,0.6);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--accent-2);border-radius:12px;font-size:15px;line-height:1.6;color:var(--text-dim)"><strong style="color:#fff;display:block;margin-bottom:4px">We will never claim insider contacts at Meta.</strong> Nobody has them. Anyone who says they do is either lying to you or about to get you blacklisted.</li>
+      <li style="padding:20px 24px;background:rgba(18,18,26,0.6);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--accent-2);border-radius:12px;font-size:15px;line-height:1.6;color:var(--text-dim)"><strong style="color:#fff;display:block;margin-bottom:4px">We will never promise your account will be restored.</strong> Platforms retain sole discretion. What we promise is that your case is escalated through every channel that exists &mdash; not just the one most people stop at.</li>
+      <li style="padding:20px 24px;background:rgba(18,18,26,0.6);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--accent-2);border-radius:12px;font-size:15px;line-height:1.6;color:var(--text-dim)"><strong style="color:#fff;display:block;margin-bottom:4px">We will never contact the platform on your behalf without a formal Tier&nbsp;3 letter from ReclaimShield.</strong> Consumer-appeal channels are filed by you, from your own verified account &mdash; by design. Meta's reviewers weight owner-filed appeals more heavily than third-party submissions.</li>
+      <li style="padding:20px 24px;background:rgba(18,18,26,0.6);border:1px solid rgba(255,255,255,0.06);border-left:3px solid var(--accent-2);border-radius:12px;font-size:15px;line-height:1.6;color:var(--text-dim)"><strong style="color:#fff;display:block;margin-bottom:4px">We will never charge a contingency, per-outcome, or success fee.</strong> Flat fees, itemized up front. No surprise billing, no "processing fees," no hourly meter.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Trust -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow">Why ReclaimShield</div>
+    <h2 class="stitle">Not Another "Recovery Service."</h2>
+    <p class="lead">The account recovery market is full of scams and empty promises. Here's why ReclaimShield is different.</p>
+
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="icon" style="background:transparent;padding:0;display:flex;align-items:center;justify-content:center">
+          <svg viewBox="0 0 72 84" width="52" height="60" style="filter:drop-shadow(0 3px 6px rgba(0,0,0,0.35))"><defs><linearGradient id="trustG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1A2E45"/><stop offset="48%" stop-color="#1E3A52"/><stop offset="52%" stop-color="#389680"/><stop offset="100%" stop-color="#4BA08E"/></linearGradient><linearGradient id="trustEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="50%" stop-color="rgba(255,255,255,0.02)"/><stop offset="100%" stop-color="rgba(255,255,255,0.06)"/></linearGradient></defs><path d="M36 4L6 17V41C6 57 19 72 36 80C53 72 66 57 66 41V17L36 4Z" fill="url(#trustG)"/><path d="M36 5.5L7.5 17.5V41C7.5 56 20 70.5 36 78.5C52 70.5 64.5 56 64.5 41V17.5L36 5.5Z" fill="none" stroke="url(#trustEdge)" stroke-width="0.8"/><line x1="36" y1="7" x2="36" y2="78" stroke="rgba(0,0,0,0.2)" stroke-width="0.8"/><circle cx="36" cy="40" r="13" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.8"/><line x1="36" y1="24" x2="36" y2="27" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="36" y1="53" x2="36" y2="56" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="20" y1="40" x2="23" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="49" y1="40" x2="52" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><path d="M36 26L40 40L36 54L32 40Z" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linejoin="round"/><path d="M36 26L40 40H32Z" fill="#fff"/><circle cx="36" cy="40" r="2" fill="#fff"/></svg>
+        </div>
+        <h3>Attorney-Engineered Method</h3>
+        <p>Built by a New Jersey-licensed attorney and run as a Florida limited liability company specializing in platform enforcement response. Not a freelancer. Not a "social media consultant."</p>
+      </div>
+      <div class="trust-card">
+        <div class="icon" aria-hidden="true">&#x1F512;</div>
+        <h3>We Never Ask for Your Password</h3>
+        <p>Any service that asks for your login is either a scam or planning unauthorized access. We work through official channels and formal escalation paths.</p>
+      </div>
+      <div class="trust-card">
+        <div class="icon" aria-hidden="true">&#x1F4B5;</div>
+        <h3>Flat Fees. Period.</h3>
+        <p>No hourly billing, no hidden charges, no "processing fees." You know exactly what you pay before we start. Upgrade credits always apply.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section">
+  <div class="container">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="stitle">Questions</h2>
+
+    <div class="faq-grid">
+      <div class="faq-box">
+  <button class="faq-box-btn" type="button" id="faq-btn-1" aria-expanded="false" aria-controls="faq-panel-1">
+    <span class="faq-q">Can you guarantee my account will be restored?</span>
+  </button>
+  <div class="faq-a" id="faq-panel-1" role="region" aria-labelledby="faq-btn-1" hidden>No &mdash; and any service that guarantees restoration is lying. Platforms make the final decision. What we guarantee is that <strong>your case will be escalated through every available channel</strong>, including ones most people don't know exist. Meta's own data shows 25-40% of actions are reversed on appeal &mdash; with professional escalation, those odds improve significantly.</div>
+</div>
+
+      <div class="faq-box">
+  <button class="faq-box-btn" type="button" id="faq-btn-2" aria-expanded="false" aria-controls="faq-panel-2">
+    <span class="faq-q">Why can't I just write my own appeal for free?</span>
+  </button>
+  <div class="faq-a" id="faq-panel-2" role="region" aria-labelledby="faq-btn-2" hidden>You can &mdash; and for a simple case, you should try. The difference isn't information, <strong>it's access.</strong> A free template tells you WHAT to write. ReclaimShield changes WHERE your case goes: from the in-app automated queue onto Meta's corporate legal staff, the Oversight Board docket, your congressman's office, and your state AG's consumer-complaint intake &mdash; simultaneously. That's not something a writing tool can do.</div>
+</div>
+
+      <div class="faq-box">
+  <button class="faq-box-btn" type="button" id="faq-btn-3" aria-expanded="false" aria-controls="faq-panel-3">
+    <span class="faq-q">Why do I submit the appeal myself instead of ReclaimShield filing it for me?</span>
+  </button>
+  <div class="faq-a" id="faq-panel-3" role="region" aria-labelledby="faq-btn-3" hidden>Three reasons, and they're structural &mdash; not optional.<br><br><strong>1. Security.</strong> ReclaimShield never asks for your password, login, 2FA codes, or account access &mdash; and we never will.
+          <div style="margin:14px 0;padding:14px 16px;background:rgba(239,68,68,0.08);border-left:3px solid #EF4444;border-radius:6px;font-size:14px;line-height:1.55">
+            <strong style="color:#FCA5A5;display:block;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">&#9888; Scam Warning</strong>
+            <strong style="color:var(--text)">Any service that asks for your credentials is either a scam or attempting unauthorized access. Full stop.</strong>
+          </div>
+          By delivering the completed appeal package directly to you and walking you through where to file it, we keep your login credentials out of everyone else's hands &mdash; including ours.<br><br>
+          <strong>2. Credibility on the consumer-appeal channels.</strong> Meta's reviewers weight appeals submitted directly by the verified account owner more heavily than third-party submissions. That's why we hand you the in-app appeal, the Oversight Board filing, the congressional constituent inquiry, and the state AG complaint to file in your own name. Our work is the preparation; your voice at the channel is the asset.<br><br>
+          <strong>3. Why Tier 3 is different &mdash; by design.</strong> The Tier 3 formal business-communication letter is sent by ReclaimShield in its own corporate capacity. That's not a contradiction of point 2 &mdash; it's a completely different channel. The letter goes to Meta's registered agent via certified mail, which routes it to corporate legal and compliance staff, <em>not</em> the consumer-appeal queue or the outsourced reviewer pipeline. Different audience, different credibility mechanism: Tier 3's weight comes from being a formal corporate communication that creates a certified-mail paper trail outside the consumer-support lane entirely. Consumer-appeal channels reward owner-filed submissions; corporate-escalation channels reward serious posture and documentation. Using one doesn't foreclose the other &mdash; the full ReclaimShield Method uses both.</div>
+</div>
+
+      <div class="faq-box">
+  <button class="faq-box-btn" type="button" id="faq-btn-4" aria-expanded="false" aria-controls="faq-panel-4">
+    <span class="faq-q">Is this a law firm?</span>
+  </button>
+  <div class="faq-a" id="faq-panel-4" role="region" aria-labelledby="faq-btn-4" hidden>No. ReclaimShield is an attorney-designed appeal process operated by a Florida limited liability company. ReclaimShield is not a law firm, does not provide legal advice, and use of ReclaimShield does not create an attorney-client relationship. If your situation requires legal representation, retain a licensed attorney in your jurisdiction; selection and retention of an attorney is your decision.</div>
+</div>
+
+      <div class="faq-box">
+  <button class="faq-box-btn" type="button" id="faq-btn-5" aria-expanded="false" aria-controls="faq-panel-5">
+    <span class="faq-q">Do you need my password?</span>
+  </button>
+  <div class="faq-a" id="faq-panel-5" role="region" aria-labelledby="faq-btn-5" hidden><strong>Absolutely not.</strong> We never ask for passwords, login credentials, or account access. We work through official channels &mdash; appeal systems, oversight boards, and platform escalation paths. If anyone asks for your password to "recover" your account, that's a scam.</div>
+</div>
+
+      <div class="faq-box">
+  <button class="faq-box-btn" type="button" id="faq-btn-6" aria-expanded="false" aria-controls="faq-panel-6">
+    <span class="faq-q">Do you serve clients outside your state?</span>
+  </button>
+  <div class="faq-a" id="faq-panel-6" role="region" aria-labelledby="faq-btn-6" hidden>Yes. We serve clients in <strong>all 50 states</strong>. Account disputes are directed at the platform, not local courts. If your situation ever requires a licensed attorney, retain counsel in your own jurisdiction &mdash; we do not refer or recommend attorneys.</div>
+</div>
+
+      <div class="faq-box">
+  <button class="faq-box-btn" type="button" id="faq-btn-7" aria-expanded="false" aria-controls="faq-panel-7">
+    <span class="faq-q">How fast do I get results?</span>
+  </button>
+  <div class="faq-a" id="faq-panel-7" role="region" aria-labelledby="faq-btn-7" hidden><strong>Tier 1:</strong> delivered within hours. <strong>Tier 2:</strong> 24-48 hours; platform typically responds in 1-3 weeks. <strong>Tier 3:</strong> formal business-communication letter sent within 5 business days; resolution typically 1-4 weeks after receipt.</div>
+</div>
+
+      <div class="faq-box">
+  <button class="faq-box-btn" type="button" id="faq-btn-8" aria-expanded="false" aria-controls="faq-panel-8">
+    <span class="faq-q">What if my appeal was already rejected?</span>
+  </button>
+  <div class="faq-a" id="faq-panel-8" role="region" aria-labelledby="faq-btn-8" hidden><strong>That's exactly when we're most useful.</strong> Most clients come to us after standard appeals fail. We have escalation channels beyond the appeal button &mdash; oversight boards, platform executive contacts, congressional offices, and state agencies. The in-app rejection is where we start, not where we stop.</div>
+</div>
+
+      <div class="faq-box">
+  <button class="faq-box-btn" type="button" id="faq-btn-9" aria-expanded="false" aria-controls="faq-panel-9">
+    <span class="faq-q">Can I upgrade later?</span>
+  </button>
+  <div class="faq-a" id="faq-panel-9" role="region" aria-labelledby="faq-btn-9" hidden>Yes. Start at any tier and upgrade anytime. <strong>You only pay the difference</strong> &mdash; your previous payment becomes a credit. Many clients start with Tier 1 and escalate only if needed. That's by design.</div>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- Bottom CTA -->
+<section class="cta-bottom">
+  <div class="container">
+    <h2>Your account isn't<br><span class="gradient-text">gone yet.</span></h2>
+    <p>Every day you wait is a day closer to permanent deletion. The clock is at 180 days and counting.</p>
+    <a href="#pricing" class="btn-primary">Start Your Recovery &rarr;</a>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section">
+  <div class="container" style="max-width:720px">
+    <div class="eyebrow">Contact</div>
+    <h2 class="stitle">Questions before you <span class="gradient-text">start a recovery?</span></h2>
+    <p class="lead">Use the form below &mdash; we reply within one business day. For active recoveries, use the intake on the <a href="#pricing" style="color:var(--accent-2);text-decoration:none;border-bottom:1px solid rgba(45,212,191,0.35)">pricing page</a> &mdash; it's faster than email and routes directly to case intake.</p>
+
+    <form id="contact-form" action="https://submit.jotform.com/submit" method="POST" style="margin-top:28px;padding:28px 30px;background:rgba(18,18,26,0.6);border:1px solid rgba(255,255,255,0.06);border-radius:14px;display:grid;gap:16px">
+      <div style="display:grid;gap:6px">
+        <label for="c-name" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--text-dim);letter-spacing:0.3px">Name</label>
+        <input id="c-name" name="name" type="text" required autocomplete="name" style="padding:12px 14px;background:rgba(10,10,15,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--text);font-family:inherit;font-size:15px">
+      </div>
+      <div style="display:grid;gap:6px">
+        <label for="c-email" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--text-dim);letter-spacing:0.3px">Email</label>
+        <input id="c-email" name="email" type="email" required autocomplete="email" style="padding:12px 14px;background:rgba(10,10,15,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--text);font-family:inherit;font-size:15px">
+      </div>
+      <div style="display:grid;gap:6px">
+        <label for="c-message" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--text-dim);letter-spacing:0.3px">How can we help?</label>
+        <textarea id="c-message" name="message" rows="5" required style="padding:12px 14px;background:rgba(10,10,15,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--text);font-family:inherit;font-size:15px;resize:vertical;min-height:120px"></textarea>
+      </div>
+      <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5">By submitting you agree to our <a href="/terms" style="color:var(--text-dim);text-decoration:underline">Terms</a> and <a href="/privacy" style="color:var(--text-dim);text-decoration:underline">Privacy Policy</a>. We reply within one business day. We never sell or share contact data. Do not include passwords, login credentials, or account-access information &mdash; those are never required and never requested.</p>
+      <button type="submit" class="btn-primary" style="justify-self:start">Send Message</button>
+    </form>
+    <!-- A11Y/OPS: The contact form action URL is a placeholder and must be swapped
+         to the live Jotform submit endpoint before production launch. The back-end
+         processor (Make scenario) is a separate wiring step. -->
+  </div>
+</section>
+
+</main>
+<!-- /A11Y main landmark -->
+
+<!-- Footer -->
+<footer>
+  <div class="container" style="text-align:center">
+    <div class="footer-brand">ReclaimShield</div>
+    <div class="footer-parent">Platform enforcement response. Attorney-engineered.</div>
+    <div class="footer-links">
+      <a href="/terms" rel="noopener">Terms of Service</a>
+      <a href="/privacy" rel="noopener">Privacy Policy</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <!-- A11Y/LEGAL: TOS and Privacy Policy point to canonical /terms and /privacy routes
+         on reclaimshield.io. These pages must be published before production launch. -->
+
+    <div class="footer-address" style="font-size:12px;color:var(--text-muted);margin:8px 0 14px;letter-spacing:0.2px"><strong style="color:var(--text-dim)">ReclaimShield</strong> &middot; Florida LLC &middot; Orlando, Florida</div>
+
+    <div class="footer-legal"><strong>Disclaimer.</strong> ReclaimShield is a registered fictitious name of Sentinel Risk Group, LLC, a Florida limited liability company. ReclaimShield is not a law firm and does not provide legal advice. Use of ReclaimShield does not create an attorney-client relationship. Results are not guaranteed and vary based on platform policies, account history, timing, and other factors. Platform companies retain sole discretion over all account reinstatement decisions. The attorney who designed The ReclaimShield Method is licensed in the State of New Jersey and does not provide legal services to customers through ReclaimShield. If your matter requires legal representation, consult a licensed attorney in your own jurisdiction. &copy; 2026 ReclaimShield.</div>
+  </div>
+</footer>
+
+<script>
+/**
+ * A11Y: Canonical disclosure widget per W3C WAI-ARIA APG
+ * https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/examples/disclosure-faq/
+ *
+ * Each .issue-card-btn and .faq-box-btn is a native <button> that toggles the
+ * visibility of its aria-controls target. Native buttons handle Tab, Enter,
+ * and Space automatically — no custom keyboard logic needed.
+ */
+(function () {
+  function wire(selector) {
+    document.querySelectorAll(selector).forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        var panelId = btn.getAttribute('aria-controls');
+        var panel = panelId ? document.getElementById(panelId) : null;
+        if (panel) {
+          if (expanded) {
+            panel.setAttribute('hidden', '');
+          } else {
+            panel.removeAttribute('hidden');
+          }
+        }
+        // Update the visible toggle-indicator label on issue cards
+        var toggleLabel = btn.querySelector('.issue-toggle');
+        if (toggleLabel) {
+          toggleLabel.textContent = expanded ? '+ How we fix this' : '\u2212 Hide details';
+        }
+      });
+    });
+  }
+
+  function init() {
+    wire('.issue-card-btn');
+    wire('.faq-box-btn');
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+
+</body>
+</html>

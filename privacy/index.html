@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReclaimShield Privacy Policy — Sentinel Risk Group</title>
+<meta name="description" content="ReclaimShield Privacy Policy. How Sentinel Risk Group, LLC collects, uses, and protects information submitted through ReclaimShield.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://sentinelriskgrp.com/reclaimshield-privacy">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0A0A0F;
+  --surface: #12121A;
+  --surface-2: #1A1A25;
+  --text: #EEEEF0;
+  --text-dim: #9999AD;
+  --text-muted: #9B9BB0;
+  --accent-1: #7C3AED;
+  --accent-2: #2DD4BF;
+  --accent-3: #F472B6;
+  --gradient: linear-gradient(135deg, #7C3AED, #2DD4BF);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 10px 16px;
+  background: var(--accent-2);
+  color: #0A0A0F;
+  font-weight: 700;
+  text-decoration: none;
+  z-index: 9999;
+  border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo-text { display: flex; flex-direction: column; }
+.nav-logo-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.5px;
+  color: #fff;
+  line-height: 1.1;
+}
+.nav-logo-sub {
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  font-weight: 500;
+}
+.nav-back {
+  font-size: 13px;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s;
+  line-height: 1.4;
+}
+.nav-back:hover { color: #fff; background: rgba(255,255,255,0.05); }
+
+main { padding: 64px 0 96px; }
+
+.page-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  color: #A78BFA;
+  margin-bottom: 20px;
+}
+
+.page-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(30px, 5vw, 44px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 12px;
+}
+
+.page-subtitle {
+  font-size: 16px;
+  color: var(--text-dim);
+  margin-bottom: 40px;
+}
+
+.disclaimer {
+  background: var(--surface);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  border-left: 3px solid var(--accent-2);
+  border-radius: var(--radius-sm);
+  padding: 20px 22px;
+  margin-bottom: 48px;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.7;
+}
+.disclaimer strong { color: var(--accent-2); font-weight: 700; letter-spacing: 0.5px; }
+
+article h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #fff;
+  margin-top: 40px;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+article h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--accent-2);
+  margin-top: 24px;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+article p {
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+article ul {
+  padding-left: 22px;
+  margin-bottom: 20px;
+}
+article ul li {
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 10px;
+  padding-left: 4px;
+}
+article ul li::marker { color: var(--accent-2); }
+
+article strong { color: #fff; font-weight: 700; }
+
+article a { color: var(--accent-2); text-decoration: underline; }
+article a:hover { color: #5EEAD4; }
+
+.rights-grid {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0;
+}
+.right-card {
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+}
+.right-card h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-2);
+  margin-bottom: 6px;
+}
+.right-card p { font-size: 14px; margin-bottom: 0; }
+
+.contact-card {
+  background: var(--surface-2);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-top: 48px;
+}
+.contact-card h2 { margin-top: 0; }
+.contact-card p { font-size: 15px; }
+.contact-line {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+.contact-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+  min-width: 90px;
+  font-weight: 600;
+}
+.contact-value { color: #fff; font-weight: 500; }
+
+footer {
+  padding: 40px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  margin-top: 64px;
+  text-align: center;
+}
+.footer-brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+.footer-parent {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.footer-links {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.footer-links a {
+  font-size: 13px;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 8px 10px;
+  display: inline-block;
+  border-radius: 4px;
+  transition: color 0.2s, background 0.2s;
+}
+.footer-links a:hover { color: var(--text); background: rgba(255,255,255,0.04); }
+.footer-legal {
+  font-size: 11px;
+  color: var(--text-dim);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+  padding: 0 24px;
+}
+.footer-legal strong { color: var(--text); font-weight: 700; }
+
+@media (max-width: 600px) {
+  main { padding: 40px 0 64px; }
+  article h2 { font-size: 20px; }
+  article p, article ul li { font-size: 14px; }
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="ReclaimShield home">
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">ReclaimShield</span>
+        <span class="nav-logo-sub">By Sentinel Risk Group</span>
+      </div>
+    </a>
+    <a href="/" class="nav-back">&larr; Back to site</a>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="container">
+    <span class="page-eyebrow">Legal</span>
+    <h1 class="page-title">Privacy Policy</h1>
+    <p class="page-subtitle">Effective April 2026 &middot; Version 1.0</p>
+
+    <div class="disclaimer" role="note">
+      <strong>AT A GLANCE.</strong> ReclaimShield is a product of Sentinel Risk Group, LLC. We collect the information you give us through intake forms and email, and we use it only to prepare your appeal materials and communicate with you about your order. We do not sell customer data. Because no attorney-client relationship is formed, communications with ReclaimShield are not protected by attorney-client privilege &mdash; keep that in mind when deciding what to share.
+    </div>
+
+    <article>
+
+      <h2>1. Who We Are</h2>
+      <p>This Privacy Policy applies to ReclaimShield, a product of Sentinel Risk Group, LLC (&ldquo;Sentinel,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; &ldquo;our&rdquo;), a Florida limited liability company, and governs information collected through the ReclaimShield website, intake forms, and related customer-service channels (the &ldquo;Services&rdquo;).</p>
+      <p>Sentinel is the data controller for information you submit to ReclaimShield.</p>
+
+      <h2>2. Information We Collect</h2>
+
+      <h3>2.1 Information You Provide to Us</h3>
+      <ul>
+        <li><strong>Contact information:</strong> name, email address, mailing address, and phone number, when you submit an intake form, purchase a product, or contact us.</li>
+        <li><strong>Matter information:</strong> the social-media platform involved, account handle, nature of the enforcement action, timeline, relevant communications with the platform, and the narrative and supporting material you provide to help us prepare your appeal.</li>
+        <li><strong>Payment information:</strong> your payment is processed by Stripe. Sentinel does not see or store full card numbers. We receive only a transaction reference, the last four digits, and the billing name and email necessary to reconcile the order.</li>
+        <li><strong>Correspondence:</strong> the content of emails and messages you send to us.</li>
+      </ul>
+      <p><strong>We never ask for your account password or login credentials.</strong> Any message claiming to be from ReclaimShield that asks for those is fraudulent &mdash; report it and do not respond.</p>
+
+      <h3>2.2 Information Collected Automatically</h3>
+      <ul>
+        <li><strong>Technical data:</strong> IP address, browser type, operating system, referring URL, pages visited, and timestamps &mdash; standard web server and analytics logs.</li>
+        <li><strong>Cookies:</strong> we use a minimal set of first-party cookies required for the site to function and to measure aggregate traffic. We do not use cross-site advertising trackers. You can disable cookies in your browser; the site will still function, but some conveniences (such as remembering form progress) may not.</li>
+      </ul>
+
+      <h3>2.3 Information We Do Not Collect</h3>
+      <ul>
+        <li>We do not collect your social-media password or login credentials.</li>
+        <li>We do not request or store government-issued ID, Social Security numbers, or financial account numbers.</li>
+        <li>We do not purchase or ingest data brokers&rsquo; profiles about you.</li>
+      </ul>
+
+      <h2>3. How We Use Information</h2>
+      <p>We use the information you provide to:</p>
+      <ul>
+        <li>Prepare your appeal materials using The ReclaimShield Method.</li>
+        <li>Communicate with you about your order &mdash; confirmations, requests for clarification, delivery of materials, and follow-up.</li>
+        <li>Process payments and issue receipts.</li>
+        <li>Provide customer support and respond to your inquiries.</li>
+        <li>Maintain records required by our professional, tax, and accounting obligations.</li>
+        <li>Detect and prevent fraud, abuse, and misuse of the Services.</li>
+        <li>Improve the ReclaimShield product &mdash; in aggregate and de-identified form where reasonably possible.</li>
+        <li>Comply with law and respond to lawful process.</li>
+      </ul>
+
+      <h2>4. Legal Bases (EEA / UK Residents)</h2>
+      <p>If you are in the European Economic Area or United Kingdom, we rely on the following legal bases under the GDPR / UK GDPR:</p>
+      <ul>
+        <li><strong>Contract:</strong> to provide the Services you purchased.</li>
+        <li><strong>Legitimate interests:</strong> to operate, secure, and improve the Services, prevent fraud, and communicate with you about your order.</li>
+        <li><strong>Legal obligation:</strong> to comply with applicable law, including tax and record-keeping requirements.</li>
+        <li><strong>Consent:</strong> where required (for example, for non-essential analytics), you may withdraw consent at any time without affecting the lawfulness of processing before withdrawal.</li>
+      </ul>
+
+      <h2>5. How We Share Information</h2>
+      <p>We share information only as necessary to provide the Services, and only with the categories of recipients below. <strong>We do not sell customer data.</strong></p>
+      <ul>
+        <li><strong>Service providers / subprocessors,</strong> each of which is contractually bound to use the information only for the services they provide to us. Current subprocessors include:
+          <ul style="margin-top: 8px;">
+            <li><strong>Stripe, Inc.</strong> &mdash; payment processing.</li>
+            <li><strong>Airtable, Inc.</strong> &mdash; intake, order, and matter records database.</li>
+            <li><strong>Zoho Corporation</strong> &mdash; customer email and correspondence.</li>
+            <li><strong>Jotform, Inc.</strong> &mdash; intake forms and file uploads.</li>
+            <li><strong>Make.com (Celonis / Integromat s.r.o.)</strong> &mdash; workflow orchestration between the above systems.</li>
+            <li><strong>Anthropic, PBC</strong> &mdash; large-language-model processing of the narrative you submit, used strictly to prepare appeal drafts for your matter. Submissions are not used to train Anthropic&rsquo;s foundation models.</li>
+          </ul>
+        </li>
+        <li><strong>Platforms and governmental bodies:</strong> we transfer your prepared materials to you. <em>You</em> submit them to Meta, TikTok, other platforms, or any governmental body. We do not submit on your behalf.</li>
+        <li><strong>Professional advisors:</strong> our accountants, auditors, insurers, and outside counsel, where necessary and under confidentiality obligations.</li>
+        <li><strong>Legal compliance:</strong> to respond to subpoenas, court orders, or other legal process, or to protect Sentinel&rsquo;s rights or the rights of others, in each case consistent with applicable law.</li>
+        <li><strong>Business transfers:</strong> if Sentinel or the ReclaimShield product is acquired or merged, information may transfer as part of that transaction, subject to this Policy.</li>
+      </ul>
+
+      <h2>6. International Transfers</h2>
+      <p>Sentinel is based in the United States, and our service providers may process data in the United States and other jurisdictions. If you are outside the United States, you understand that information you submit will be transferred to and processed in the United States. Where required, we rely on appropriate safeguards (such as Standard Contractual Clauses) with our subprocessors.</p>
+
+      <h2>7. Data Retention</h2>
+      <p>We retain information only as long as reasonably necessary for the purposes set out in Section 3:</p>
+      <ul>
+        <li><strong>Matter and intake records:</strong> for the duration of the engagement and for up to seven (7) years thereafter, consistent with professional-services record-keeping norms and tax requirements, unless a shorter period is required by law.</li>
+        <li><strong>Payment records:</strong> for the period required by applicable tax and accounting law (generally seven years in the United States).</li>
+        <li><strong>Email correspondence:</strong> three (3) years after the last contact, unless a longer period is necessary for legal reasons.</li>
+        <li><strong>Analytics and server logs:</strong> up to 13 months.</li>
+      </ul>
+      <p>You may request earlier deletion under Section 9; we will honor those requests except where we are required by law or legitimate interests (such as fraud-prevention records) to retain information longer. In those cases, we will restrict further processing.</p>
+
+      <h2>8. Security</h2>
+      <p>We apply reasonable administrative, technical, and physical safeguards to protect information, including:</p>
+      <ul>
+        <li>Encryption of data in transit (TLS).</li>
+        <li>OAuth-based access to back-end systems rather than shared credentials, wherever supported.</li>
+        <li>Role-based access to matter records, limited to personnel with a need to know.</li>
+        <li>Credentials and API keys stored in encrypted credential stores, not in source files.</li>
+        <li>Periodic review of subprocessors&rsquo; security posture.</li>
+      </ul>
+      <p>No system is perfectly secure. If we ever learn of a security incident affecting your personal information, we will notify you and any applicable regulators as required by law.</p>
+
+      <h2>9. Your Rights</h2>
+      <p>Depending on where you reside, you may have the following rights:</p>
+      <div class="rights-grid">
+        <div class="right-card">
+          <h4>Access</h4>
+          <p>Ask us what personal information we hold about you and obtain a copy.</p>
+        </div>
+        <div class="right-card">
+          <h4>Correction</h4>
+          <p>Ask us to correct inaccurate or incomplete information.</p>
+        </div>
+        <div class="right-card">
+          <h4>Deletion</h4>
+          <p>Ask us to delete your information, subject to our retention obligations under Section 7.</p>
+        </div>
+        <div class="right-card">
+          <h4>Restriction &amp; Objection</h4>
+          <p>Ask us to restrict or object to certain processing, including processing based on legitimate interests.</p>
+        </div>
+        <div class="right-card">
+          <h4>Portability</h4>
+          <p>Ask us to provide certain information in a portable format.</p>
+        </div>
+        <div class="right-card">
+          <h4>Opt-out of Sale / Sharing</h4>
+          <p>We do not sell personal information or share it for cross-context behavioral advertising. If that ever changes, California and similar-state residents will have the right to opt out.</p>
+        </div>
+        <div class="right-card">
+          <h4>Non-discrimination</h4>
+          <p>We will not discriminate against you for exercising any of these rights.</p>
+        </div>
+        <div class="right-card">
+          <h4>Complaints</h4>
+          <p>EEA / UK residents may lodge a complaint with their local supervisory authority.</p>
+        </div>
+      </div>
+      <p>To exercise any right, email <a href="mailto:admin@sentinelriskgrp.com">admin@sentinelriskgrp.com</a> with the subject line &ldquo;Privacy Request.&rdquo; We will verify your identity and respond within the time limits required by applicable law (typically 30&ndash;45 days).</p>
+
+      <h2>10. California Residents (CCPA / CPRA)</h2>
+      <p>In the past 12 months we have collected the categories of personal information described in Section 2 (identifiers, commercial information, internet/network activity, and inferences drawn from the matter you describe). We have not sold personal information and have not shared it for cross-context behavioral advertising. California residents have the access, deletion, correction, and non-discrimination rights described in Section 9, as well as the right to limit the use of sensitive personal information &mdash; though we do not use sensitive categories for any purpose beyond the Services you requested.</p>
+
+      <h2>11. Children</h2>
+      <p>ReclaimShield is not directed to children under 16, and we do not knowingly collect personal information from children under 16. If you believe a child has provided us information, contact us and we will delete it.</p>
+
+      <h2>12. No Attorney-Client Privilege</h2>
+      <p>Because no attorney-client relationship is formed at any ReclaimShield tier (see our <a href="/reclaimshield-terms">Terms of Service</a>), communications between you and ReclaimShield are <strong>not</strong> protected by attorney-client privilege or the attorney work product doctrine. Do not send privileged, highly sensitive, or legally contested material through ReclaimShield channels. If your situation requires protected communications, retain a licensed attorney in your jurisdiction.</p>
+
+      <h2>13. Changes to This Policy</h2>
+      <p>We may update this Policy from time to time. Changes take effect when posted; material changes will be emailed to customers on file. The &ldquo;Effective&rdquo; date at the top of this page reflects the most recent revision.</p>
+
+      <div class="contact-card">
+        <h2>Contact Us</h2>
+        <p>Questions, rights requests, or concerns about this Policy or how we handle your information:</p>
+        <div class="contact-line"><span class="contact-label">Email</span><a class="contact-value" href="mailto:admin@sentinelriskgrp.com">admin@sentinelriskgrp.com</a></div>
+        <div class="contact-line"><span class="contact-label">Subject line</span><span class="contact-value">Privacy Request</span></div>
+        <div class="contact-line"><span class="contact-label">Entity</span><span class="contact-value">Sentinel Risk Group, LLC &mdash; Florida</span></div>
+      </div>
+
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-brand">ReclaimShield</div>
+    <div class="footer-parent">A product of Sentinel Risk Group, LLC</div>
+    <div class="footer-links">
+      <a href="/reclaimshield-terms" rel="noopener">Terms of Service</a>
+      <a href="/reclaimshield-privacy" rel="noopener">Privacy Policy</a>
+      <a href="mailto:admin@sentinelriskgrp.com">Contact</a>
+      <a href="/">Home</a>
+    </div>
+    <div style="font-size:12px;color:var(--text-muted);margin:0 auto 14px;max-width:700px;line-height:1.6"><strong style="color:var(--text-dim)">Sentinel Risk Group, LLC</strong> &middot; Orlando, Florida &middot; <a href="mailto:admin@sentinelriskgrp.com" style="color:var(--text-dim);text-decoration:none">admin@sentinelriskgrp.com</a></div>
+    <div class="footer-legal">
+      <strong>ReclaimShield is a product of Sentinel Risk Group, LLC, a Florida limited liability company.</strong> ReclaimShield is not a law firm and does not provide legal advice. Use of ReclaimShield does not create an attorney-client relationship. Results are not guaranteed and vary based on platform policies, account history, timing, and other factors. The attorney who designed The ReclaimShield Method is licensed in the State of New Jersey and does not provide legal services to customers through ReclaimShield. If your matter requires legal representation, retain a licensed attorney in your own jurisdiction.
+    </div>
+  </div>
+</footer>
+</body>
+</html>
