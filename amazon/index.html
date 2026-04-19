@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ReclaimShield for Amazon — Seller Account Suspension Plan of Action</title>
-<meta name="description" content="Amazon suspended your seller account? ReclaimShield builds the Plan of Action that addresses what Seller Performance is actually looking for. Attorney-engineered appeal package. Not a law firm.">
-<meta property="og:title" content="ReclaimShield for Amazon — Plan of Action Appeal Package">
-<meta property="og:description" content="Attorney-engineered Plan of Action documents for suspended Amazon Seller accounts. Section 3, inauthentic, IP, and safety complaints. Delivered in 3 business days.">
+<title>ReclaimShield for Amazon — Seller Account Suspension Plan of Action. Attorney-Designed.</title>
+<meta name="description" content="Amazon deactivated your Seller account under Section 3 of the Business Solutions Agreement. ReclaimShield builds the Plan of Action that addresses the specific Code of Conduct section and the evidence standard Seller Performance actually applies. Attorney-designed. Delivered in three business days.">
+<meta property="og:title" content="ReclaimShield for Amazon — Plan of Action. Attorney-Designed.">
+<meta property="og:description" content="Root cause. Corrective. Preventive. Written to the exact Seller Code of Conduct section cited in your deactivation notice. Delivered in three business days.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -39,7 +39,7 @@ a:focus-visible, button:focus-visible {
   --text-muted: #9B9BB0;
   --accent-amazon: #FF9900;        /* Amazon marigold */
   --accent-deep: #146EB4;          /* Amazon deep blue */
-  --accent-2: #2DD4BF;             /* ReclaimShield teal (kept for continuity) */
+  --accent-2: #2DD4BF;             /* ReclaimShield teal */
   --gradient: linear-gradient(135deg, #FF9900, #146EB4);
   --gradient-hot: linear-gradient(135deg, #FF9900, #F08A00);
   --radius: 16px;
@@ -190,16 +190,16 @@ nav {
   color: var(--accent-amazon); font-weight: 700; margin-bottom: 20px;
 }
 .hc-row {
-  display: grid; grid-template-columns: 100px 1fr; gap: 16px;
+  display: grid; grid-template-columns: 96px 1fr; gap: 16px;
   padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 .hc-row:last-child { border-bottom: none; }
-.hc-num {
+.hc-label {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 28px; font-weight: 800;
-  color: var(--accent-amazon); line-height: 1; letter-spacing: -1px;
+  font-size: 13px; font-weight: 700; letter-spacing: 0.3px;
+  color: var(--accent-amazon); line-height: 1.25; text-transform: uppercase;
 }
-.hc-desc { font-size: 13.5px; color: var(--text-dim); line-height: 1.5; }
+.hc-desc { font-size: 13.5px; color: var(--text-dim); line-height: 1.55; }
 
 /* Section base */
 .section { padding: 80px 0; }
@@ -218,9 +218,9 @@ nav {
   font-weight: 800; letter-spacing: -1px;
   margin-bottom: 16px; line-height: 1.1;
 }
-.section-header p { color: var(--text-dim); font-size: 17px; max-width: 680px; margin: 0 auto; }
+.section-header p { color: var(--text-dim); font-size: 17px; max-width: 720px; margin: 0 auto; }
 
-/* Issues grid */
+/* Code of Conduct grid */
 .issues { background: var(--surface); }
 .issues-grid {
   display: grid; gap: 18px;
@@ -244,10 +244,53 @@ nav {
 }
 .issue-card h3 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 18px; font-weight: 700;
+  font-size: 17.5px; font-weight: 700;
   color: #fff; margin-bottom: 10px; letter-spacing: -0.3px;
+  line-height: 1.3;
 }
 .issue-card p { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
+
+/* Escalation ladder */
+.ladder-wrap { max-width: 820px; margin: 0 auto; }
+.ladder-block {
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  padding: 24px 26px;
+  margin-bottom: 14px;
+  display: grid; grid-template-columns: 52px 1fr; gap: 22px;
+  align-items: flex-start;
+  position: relative;
+}
+.ladder-block::after {
+  content: ''; position: absolute; left: 51px; bottom: -14px;
+  width: 2px; height: 14px; background: rgba(255, 153, 0, 0.25);
+}
+.ladder-block:last-child::after { display: none; }
+.ladder-step {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px; font-weight: 800;
+  color: var(--accent-amazon);
+  line-height: 1; padding-top: 2px;
+}
+.ladder-body h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 17px; font-weight: 700;
+  color: #fff; margin-bottom: 6px; letter-spacing: -0.2px;
+}
+.ladder-body-label {
+  display: inline-block; font-size: 10px;
+  letter-spacing: 1.3px; text-transform: uppercase;
+  color: var(--accent-amazon); font-weight: 700;
+  margin-bottom: 6px;
+}
+.ladder-body p { color: var(--text-dim); font-size: 14px; line-height: 1.65; }
+.ladder-body p code {
+  font-family: 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 12.5px; padding: 2px 6px;
+  background: rgba(255, 153, 0, 0.1); color: #FFB84D;
+  border-radius: 4px; border: 1px solid rgba(255, 153, 0, 0.2);
+}
 
 /* Method steps */
 .method-grid {
@@ -318,8 +361,9 @@ nav {
 }
 .price-card h3 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 24px; font-weight: 700;
+  font-size: 22px; font-weight: 700;
   color: #fff; margin-bottom: 12px; letter-spacing: -0.5px;
+  line-height: 1.3;
 }
 .price-amount {
   font-family: 'Space Grotesk', sans-serif;
@@ -335,7 +379,7 @@ nav {
   padding-left: 28px; position: relative; line-height: 1.55;
 }
 .price-list li::before {
-  content: '✓'; position: absolute; left: 0;
+  content: '\2713'; position: absolute; left: 0;
   color: var(--accent-amazon); font-weight: 700; font-size: 16px; top: 5px;
 }
 .price-btn {
@@ -388,6 +432,28 @@ nav {
   margin-bottom: 6px;
 }
 .poa-body p { color: var(--text-dim); font-size: 14.5px; line-height: 1.65; }
+
+/* Evidence pullquote */
+.evidence { background: var(--surface); }
+.evidence-inner {
+  max-width: 820px; margin: 0 auto;
+  background: var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  padding: 36px 34px;
+}
+.evidence-label {
+  font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase;
+  color: var(--accent-amazon); font-weight: 700; margin-bottom: 14px;
+}
+.evidence-inner h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px; font-weight: 700;
+  color: #fff; margin-bottom: 18px; letter-spacing: -0.5px; line-height: 1.25;
+}
+.evidence-inner p { color: var(--text-dim); font-size: 15px; line-height: 1.7; margin-bottom: 14px; }
+.evidence-inner p:last-child { margin-bottom: 0; }
+.evidence-inner strong { color: var(--text); font-weight: 600; }
 
 /* FAQ */
 .faq-list { max-width: 820px; margin: 0 auto; display: grid; gap: 12px; }
@@ -445,7 +511,6 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
   padding: 6px 10px; border-radius: 6px; transition: all 0.2s;
 }
 .footer-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
-.footer-address { font-size: 12px; color: var(--text-muted); margin: 8px 0 14px; letter-spacing: 0.2px; }
 .footer-legal {
   font-size: 11px; color: var(--text-dim);
   max-width: 820px; margin: 14px auto 0;
@@ -469,8 +534,9 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
     </a>
     <div class="nav-links">
       <a href="/">Home</a>
-      <a href="#what-we-fix">What We Fix</a>
-      <a href="#method">The POA Method</a>
+      <a href="#coc">Code of Conduct</a>
+      <a href="#method">POA Structure</a>
+      <a href="#ladder">Escalation Path</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a href="#pricing" class="nav-cta">Get My POA</a>
@@ -485,97 +551,115 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
   <div class="container">
     <div class="hero-grid">
       <div>
-        <div class="hero-eyebrow">Amazon Seller Suspension</div>
-        <h1>Amazon suspended your account.<br><span class="gradient-text">Your Plan of Action is the only thing that gets it back.</span></h1>
-        <p class="hero-sub">There is no phone number to call, no appeal button that resubmits your story, and no Seller Performance rep who will negotiate. Amazon's Seller Performance team reads a document called a Plan of Action. If it's generic, emotional, or doesn't address the exact complaint, your account stays suspended.</p>
+        <div class="hero-eyebrow">Attorney-Designed &middot; Amazon Plan of Action</div>
+        <h1>Deactivated under <span class="gradient-text">Section 3</span>.<br>The POA is what brings you back.</h1>
+        <p class="hero-sub">There is no phone number, no appeal button that restarts the clock, and no Seller Performance rep who will negotiate. Your notice cited a specific Seller Code of Conduct section. Your Plan of Action has to answer that section, with the evidence Amazon actually accepts, in the order Seller Performance reads.</p>
         <div class="hero-callout">
-          <strong>The ReclaimShield POA.</strong> A three-part Plan of Action structured around the framework Seller Performance actually uses &mdash; root cause, corrective actions, and preventive measures &mdash; written to address the specific violation code, complaint type, or policy section in your suspension notice.
+          <strong>The ReclaimShield POA.</strong> Root cause. Corrective actions. Preventive measures. Written to the specific section of the Code of Conduct cited in your deactivation email &mdash; Accurate Information, Acting Fairly, Ratings/Feedback/Reviews, Communications, Customer Information, Circumventing the Sales Process, Multiple Selling Accounts, or Filing Infringement Notices as an Agent &mdash; with the exact evidence Amazon will accept for that category.
         </div>
         <div class="hero-actions">
-          <a href="#pricing" class="btn-primary">Start My Appeal →</a>
-          <a href="#method" class="btn-outline">See the Method ↓</a>
+          <a href="#pricing" class="btn-primary">Start My POA &rarr;</a>
+          <a href="#method" class="btn-outline">See the Structure &darr;</a>
         </div>
       </div>
       <div class="hero-card">
-        <div class="hero-card-label">Why Amazon Appeals Fail</div>
+        <div class="hero-card-label">Why POAs Get Rejected</div>
         <div class="hc-row">
-          <div class="hc-num" style="font-size:22px">Wrong<br>Structure</div>
-          <div class="hc-desc">Most sellers write a long emotional explanation. Seller Performance is scanning for three things in this order: root cause, corrective, preventive.</div>
+          <div class="hc-label">Wrong<br>Section</div>
+          <div class="hc-desc">Addresses &ldquo;the complaint&rdquo; instead of the specific Code of Conduct section cited. Seller Performance scans for the section; if it isn&rsquo;t answered, the POA is rejected regardless of quality.</div>
         </div>
         <div class="hc-row">
-          <div class="hc-num" style="font-size:22px">Wrong<br>Evidence</div>
-          <div class="hc-desc">Invoices that don't match ASIN counts. Supplier letters without contact info. Distributor documents that Amazon can't verify. Reads as a red flag, not a defense.</div>
+          <div class="hc-label">Wrong<br>Evidence</div>
+          <div class="hc-desc">Invoices outside the 365-day window. Supplier letters with no verifiable phone. Authenticity documents from a distributor Amazon can&rsquo;t confirm. Reads as a red flag, not a defense.</div>
         </div>
         <div class="hc-row">
-          <div class="hc-num" style="font-size:22px">One<br>Shot</div>
-          <div class="hc-desc">The first reply is your best shot. Every subsequent POA has lower odds of reinstatement because Amazon sees a pattern &mdash; and escalates internally.</div>
+          <div class="hc-label">Wrong<br>Order</div>
+          <div class="hc-desc">Long emotional preface before root cause. Seller Performance reads root cause, then corrective, then preventive &mdash; and stops reading if the structure isn&rsquo;t there.</div>
         </div>
         <div class="hc-row">
-          <div class="hc-num" style="font-size:22px">Human</div>
-          <div class="hc-desc">A structured, evidence-aligned POA reads like it came from an operator who understands how Amazon works. That's the reviewer you want.</div>
+          <div class="hc-label">One<br>Shot</div>
+          <div class="hc-desc">First POA is your strongest submission. Every subsequent POA gets tighter scrutiny because Seller Performance is now tracking a pattern of attempts, not a first response.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- What we fix -->
-<section class="section issues" id="what-we-fix">
+<!-- Code of Conduct sections -->
+<section class="section issues" id="coc">
   <div class="container">
     <div class="section-header">
-      <div class="section-eyebrow">What We Handle</div>
-      <h2>Suspension reasons we build POAs for</h2>
-      <p>If your Seller Performance notice cites any of these, you're in the right place. Each category has a different evidence standard and a different POA structure — we build to the specific one.</p>
+      <div class="section-eyebrow">The Eight Named Sections</div>
+      <h2>Amazon&rsquo;s Seller Code of Conduct isn&rsquo;t numbered. It&rsquo;s named.</h2>
+      <p>Every deactivation under &ldquo;Seller Code of Conduct&rdquo; cites one of these eight named sections. The POA you send has to answer that specific section &mdash; not the general idea of conduct, not an adjacent section, and not all eight at once. We build to the one you were cited for.</p>
     </div>
     <div class="issues-grid">
 
       <div class="issue-card">
+        <div class="issue-label">Section 1</div>
+        <h3>Accurate Information</h3>
+        <p>Business name, category placement, listing attributes, UPC/GTIN accuracy, shipping and inventory data. Most &ldquo;inaccurate information&rdquo; deactivations cite this section, not &ldquo;inauthentic.&rdquo; POA addresses what the reviewer saw as inaccurate and what has been corrected at the listing level.</p>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-label">Section 2</div>
+        <h3>Acting Fairly</h3>
+        <p>Sales-rank manipulation, duplicate detail pages, price manipulation after order confirmation, artificial traffic, targeting other sellers. The broadest category &mdash; Amazon uses it when the conduct doesn&rsquo;t fit a narrower section. POA has to identify what specific conduct the reviewer is reading into your account.</p>
+      </div>
+
+      <div class="issue-card">
         <div class="issue-label">Section 3</div>
-        <h3>Violation of Amazon's Seller Code of Conduct</h3>
-        <p>The broadest and most common suspension category. Covers manipulation, account linking, review abuse, and "otherwise violating Section 3." Requires a POA that identifies what Amazon thinks you did — not just what you actually did.</p>
+        <h3>Ratings, Feedback, and Reviews</h3>
+        <p>Review solicitation, incentivized reviews, review gating, review manipulation, self-reviewing, reviewing competitors. Amazon&rsquo;s fastest-growing enforcement category. POA documents what review-request methodology was actually used, identifies the reviews or behavior being flagged, and lays out system changes.</p>
       </div>
 
       <div class="issue-card">
-        <div class="issue-label">Inauthentic</div>
-        <h3>Inauthentic product or listing complaints</h3>
-        <p>Customer or Amazon rights-holder complaint that the product doesn't match the listing or isn't legitimate. Requires authentic purchase documentation — invoices from manufacturer or authorized distributor, quantities matching your sales.</p>
+        <div class="issue-label">Section 4</div>
+        <h3>Communications</h3>
+        <p>Unsolicited messaging, off-Buyer-Seller-Messaging contact, marketing communications, inappropriate content in customer messages. POA shows message logs, identifies the violation pattern, and documents the new Buyer-Seller Messaging compliance protocol.</p>
       </div>
 
       <div class="issue-card">
-        <div class="issue-label">IP Complaint</div>
-        <h3>Intellectual property infringement</h3>
-        <p>Notice of rights-owner complaint for copyright, trademark, patent, or counterfeit. POA addresses both the retraction path (contact the complainant) and the Amazon-facing defense (why the complaint is resolved or inaccurate).</p>
+        <div class="issue-label">Section 5</div>
+        <h3>Customer Information</h3>
+        <p>Using customer addresses or phone numbers for anything other than order fulfillment. Sharing customer data with a third party. Retaining customer data after fulfillment. Triggers data-handling scrutiny &mdash; POA has to address retention and deletion policy, not just the specific incident.</p>
       </div>
 
       <div class="issue-card">
-        <div class="issue-label">Safety</div>
-        <h3>Product safety or condition complaints</h3>
-        <p>Customer reports of defective, damaged, expired, or used-sold-as-new product. POA addresses the specific complaint cluster, corrective action on affected inventory, and sourcing or QC changes going forward.</p>
+        <div class="issue-label">Section 6</div>
+        <h3>Circumventing the Sales Process</h3>
+        <p>Linking out to an external site, directing the customer to transact off-platform, redirect language in listing copy, insert cards in shipments. Amazon treats this as severe; POA has to address the specific touchpoint and demonstrate it is removed across all inventory and listings.</p>
       </div>
 
       <div class="issue-card">
-        <div class="issue-label">Review Abuse</div>
-        <h3>Review manipulation or fake-review allegations</h3>
-        <p>One of Amazon's fastest-growing enforcement categories. POA addresses whether any review solicitation was compliant, identifies the specific reviews or behaviors flagged, and lays out the operational changes Amazon wants to see.</p>
+        <div class="issue-label">Section 7</div>
+        <h3>Multiple Selling Accounts</h3>
+        <p>A second account without a legitimate business need, or with any account in poor standing. When Seller Performance deactivates for this, all related accounts are typically deactivated together. POA has to identify every linked account and either justify the legitimate business need or commit to consolidation.</p>
       </div>
 
       <div class="issue-card">
-        <div class="issue-label">Account Health</div>
-        <h3>Order Defect Rate or performance-metric suspensions</h3>
-        <p>Suspension driven by ODR, cancellation rate, late shipment rate, or pre-fulfillment cancel rate breaching threshold. POA ties the metric breach to a specific operational root cause and shows the fix.</p>
+        <div class="issue-label">Section 8</div>
+        <h3>Filing Infringement Notices as an Agent</h3>
+        <p>Filing IP infringement notices against competitors while holding an active Amazon seller account. Amazon treats this as one of the most severe Code of Conduct violations &mdash; often results in permanent termination. POA requires a substantially different posture than the other seven sections.</p>
+      </div>
+
+      <div class="issue-card">
+        <div class="issue-label">Performance</div>
+        <h3>Account Health Rating and ODR</h3>
+        <p>Separate path from the Code of Conduct: performance-metric deactivation driven by Account Health Rating, Order Defect Rate, cancellation rate, or late shipment rate crossing threshold. Different POA structure &mdash; metric diagnosis, corrective operation, preventive dashboard &mdash; and different escalation path.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- The POA Method -->
+<!-- POA structure -->
 <section class="section" id="method">
   <div class="container">
     <div class="section-header">
       <div class="section-eyebrow">The POA Structure</div>
-      <h2>Amazon reads three things. In this order.</h2>
-      <p>Seller Performance doesn't read your POA like a letter. They scan it for specific answers. If your POA doesn't answer all three clearly — with evidence where Amazon expects evidence — it gets rejected and you burn your best shot.</p>
+      <h2>Three parts. In this order. Nothing else.</h2>
+      <p>Seller Performance does not read your POA like a letter. They scan it for three specific sections, in a specific order, with specific evidence attached to each. A POA that opens with apologies or context will be rejected before the reviewer reaches the first substantive paragraph.</p>
     </div>
     <div class="poa-wrap">
 
@@ -583,8 +667,8 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
         <div class="poa-num">01</div>
         <div class="poa-body">
           <div class="poa-body-label">Root Cause</div>
-          <h3>Why did the issue happen?</h3>
-          <p>Not "we apologize" or "we didn't mean to." Amazon wants a concrete operational or procedural cause — the specific supplier that shipped mixed lot, the listing page detail that was misleading, the inventory process that failed QC. Root cause is not emotional; it's diagnostic.</p>
+          <h3>What specifically went wrong, operationally?</h3>
+          <p>Not &ldquo;we apologize,&rdquo; not &ldquo;we didn&rsquo;t mean to,&rdquo; not &ldquo;we don&rsquo;t know how this happened.&rdquo; Amazon wants a concrete operational or procedural cause: the supplier that shipped a mixed lot, the listing-page field that was misaligned with the ASIN it matched to, the review-request template that crossed the incentive line, the second account a family member opened without a business justification. Root cause is diagnostic, not emotional &mdash; and it has to match the Code of Conduct section that was cited.</p>
         </div>
       </div>
 
@@ -592,8 +676,8 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
         <div class="poa-num">02</div>
         <div class="poa-body">
           <div class="poa-body-label">Corrective Actions</div>
-          <h3>What have you already done to fix it?</h3>
-          <p>Concrete, past-tense, ideally verifiable. Removed affected ASINs, contacted the complaining rights-holder, destroyed questionable inventory, refunded affected buyers, switched suppliers. Each action ties to the root cause. Vague promises get rejected.</p>
+          <h3>What have you already done, past tense, verifiable?</h3>
+          <p>Removed the affected ASINs. Contacted the complaining rights-holder. Destroyed the inventory batch. Refunded the affected buyers. Changed the supplier. Purged the customer-data retention system. Deactivated the second account. Each action ties to the root cause. Vague commitments &mdash; &ldquo;we will be reviewing our process&rdquo; &mdash; read as non-corrective and get the POA rejected. The strongest POAs attach an evidence exhibit for each corrective action.</p>
         </div>
       </div>
 
@@ -601,8 +685,8 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
         <div class="poa-num">03</div>
         <div class="poa-body">
           <div class="poa-body-label">Preventive Measures</div>
-          <h3>How will you keep it from happening again?</h3>
-          <p>This is where most POAs fall apart. "We will be more careful" is not a preventive measure. Amazon wants system-level changes: new supplier vetting process, new listing-QC checklist, new returns-analysis cadence, specific software you've added, specific staff role you've created.</p>
+          <h3>What system-level change keeps it from recurring?</h3>
+          <p>This is where most POAs fall apart. &ldquo;We will be more careful&rdquo; is not a preventive measure. Amazon wants process-level changes the reviewer can picture: a new supplier-onboarding checklist, a listing-QC protocol with a named owner, a review-request template that has been verified against the Code of Conduct, a Buyer-Seller Messaging audit cadence, a customer-data-deletion script that runs on a schedule, a listing-copy scanner that flags off-platform-redirect language. Written as if the reviewer were signing off on your new operations manual.</p>
         </div>
       </div>
 
@@ -610,35 +694,108 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
   </div>
 </section>
 
-<!-- Our Method (3-step customer-facing) -->
+<!-- Evidence callout -->
+<section class="section evidence">
+  <div class="container">
+    <div class="evidence-inner">
+      <div class="evidence-label">Evidence Standards Amazon Actually Applies</div>
+      <h3>What Seller Performance will accept, and what they&rsquo;ll flag as a red flag.</h3>
+      <p><strong>Authenticity.</strong> Invoices from the manufacturer or a direct authorized distributor, dated within the prior 365 days, with a supplier name, address, and phone number Amazon can verify. Order quantities on the invoices must plausibly correspond to sales quantities on your ASIN detail pages. Reseller paperwork, grey-market receipts, and supplier letters without verifiable contact information read as a red flag, not a defense.</p>
+      <p><strong>IP and rights-holder complaints.</strong> Two-track response. Track one is the retraction: a letter to the complaining rights-holder explaining why the complaint should be withdrawn, with supporting documentation. Track two is the POA itself, addressed to Seller Performance, demonstrating the complaint is resolved or inaccurate. For utility-patent complaints, Amazon&rsquo;s APEX (Amazon Patent Evaluation Express) program is a separate parallel track when the complaint is eligible.</p>
+      <p><strong>Review-related deactivations.</strong> Screenshots of the exact outreach template used, records of any rebate or incentive activity on the account, and a documented review-request policy that survives Amazon&rsquo;s standards for neutral solicitation. Denying review manipulation that Amazon has already correlated to your account through buyer-side data reads as a credibility failure.</p>
+      <p><strong>Performance-metric deactivations.</strong> ODR breakdown by defect category. Late-shipment analysis by carrier, lane, and ASIN. Cancellation reasons by source (pre-fulfillment inventory, post-order customer request, seller-initiated). POA has to tie the metric breach to a specific operational issue with a named fix, not to platform-wide conditions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Escalation ladder -->
+<section class="section" id="ladder">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">The Escalation Path</div>
+      <h2>There is a ladder. Most sellers only touch the bottom rung.</h2>
+      <p>If your first POA is rejected, the Seller Central appeal button is not your only remaining channel. Each of these steps is real, documented, and used by operators who recover Seller accounts. Which ones are appropriate depends on the section cited, the funds at risk, and where you are in the deactivation timeline.</p>
+    </div>
+    <div class="ladder-wrap">
+
+      <div class="ladder-block">
+        <div class="ladder-step">01</div>
+        <div class="ladder-body">
+          <div class="ladder-body-label">Seller Central</div>
+          <h3>Reactivate My Account button with the POA attached</h3>
+          <p>Where every appeal starts. The POA is submitted through the Performance Notifications page in Seller Central. Single chance to make the strongest first-read case.</p>
+        </div>
+      </div>
+
+      <div class="ladder-block">
+        <div class="ladder-step">02</div>
+        <div class="ladder-body">
+          <div class="ladder-body-label">Account Health Services</div>
+          <h3>AHS callback request</h3>
+          <p>Account Health Services is Amazon&rsquo;s seller-facing review team. Sellers in certain tiers can request an AHS callback after a rejected POA. Not every account qualifies; when it does, it moves the case to a human reviewer and is worth pursuing.</p>
+        </div>
+      </div>
+
+      <div class="ladder-block">
+        <div class="ladder-step">03</div>
+        <div class="ladder-body">
+          <div class="ladder-body-label">Executive Seller Relations</div>
+          <h3>Escalation email to <code>jeff@amazon.com</code> / ESR</h3>
+          <p>The Executive Seller Relations team monitors the <code>jeff@amazon.com</code> inbox and is the internal escalation channel for seller complaints that have exhausted ordinary appeal. A well-written ESR email references the case IDs, names the section cited, summarizes the POA history, and asks for specific human review. Not a complaint letter.</p>
+        </div>
+      </div>
+
+      <div class="ladder-block">
+        <div class="ladder-step">04</div>
+        <div class="ladder-body">
+          <div class="ladder-body-label">Disbursement</div>
+          <h3>Withheld-funds appeal to <code>disbursement-appeals@amazon.com</code></h3>
+          <p>Under Section 2 of the Business Solutions Agreement, Amazon may withhold payments when risks persist &mdash; and permanently withhold them on determinations of deceptive, fraudulent, or illegal activity. Funds-hold cases have a different channel than account-status cases. Different letter, different evidence standard, different inbox.</p>
+        </div>
+      </div>
+
+      <div class="ladder-block">
+        <div class="ladder-step">05</div>
+        <div class="ladder-body">
+          <div class="ladder-body-label">Arbitration</div>
+          <h3>AAA demand under BSA dispute resolution</h3>
+          <p>For U.S., Canada, and Mexico sellers, the Business Solutions Agreement requires binding arbitration through the American Arbitration Association under the AAA&rsquo;s Supplementary Procedures for Consumer-Related Disputes. An arbitration demand letter goes to Amazon&rsquo;s registered agent, <strong>CSC Services of Nevada, Inc., 2215-B Renaissance Drive, Las Vegas, NV 89119</strong>. For claims totaling less than $10,000, Amazon reimburses the AAA filing, administration, and arbitrator fees (absent a frivolousness finding). Individual-basis only &mdash; the BSA contains a class-action waiver. An AAA demand is the end of the ladder, not the beginning, but it is a real channel and it is what brings many stalled cases to resolution.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- How we deliver -->
 <section class="section issues">
   <div class="container">
     <div class="section-header">
-      <div class="section-eyebrow">The ReclaimShield Method for Amazon</div>
-      <h2>From intake to POA, in three business days</h2>
-      <p>The whole workflow is asynchronous. No calls. No scheduling. You give us the facts, we build the POA.</p>
+      <div class="section-eyebrow">Delivery</div>
+      <h2>From intake to POA, in three business days.</h2>
+      <p>Fully asynchronous. No calls, no scheduling, no consultation. You give us the facts, we build the POA and the submission instructions.</p>
     </div>
     <div class="method-grid">
 
       <div class="method-card">
         <div class="method-num">01</div>
-        <div class="method-tag">Purchase</div>
-        <h3>Pick your tier and pay</h3>
-        <p>Standard POA or Complex POA — priced based on suspension type, multi-ASIN scope, and whether a rights-holder retraction is part of the package. Stripe checkout, no subscription, no hidden add-ons.</p>
+        <div class="method-tag">Select &amp; Pay</div>
+        <h3>Standard POA or Complex POA</h3>
+        <p>Pick your tier and pay through Stripe checkout. No subscription, no add-ons, no hidden fees. Intake link is delivered by email immediately.</p>
       </div>
 
       <div class="method-card">
         <div class="method-num">02</div>
         <div class="method-tag">Structured Intake</div>
-        <h3>Answer the right questions</h3>
-        <p>You're routed to a form built around Amazon's evaluation framework. It asks for the exact fields Seller Performance looks for — suspension notice text, ASIN list, order history, sourcing documents. Most sellers finish in 15–20 minutes.</p>
+        <h3>The questions that actually matter</h3>
+        <p>Paste your deactivation notice. Tell us the Code of Conduct section cited (or we&rsquo;ll identify it from the notice). Upload the evidence you have. Most sellers finish in 15&ndash;20 minutes.</p>
       </div>
 
       <div class="method-card">
         <div class="method-num">03</div>
         <div class="method-tag">POA Delivered</div>
         <h3>Ready-to-submit package</h3>
-        <p>Within three business days you receive a complete Plan of Action email and a separate document package with submission instructions. You review, you edit if anything needs adjusting, you submit through Seller Central. We don't submit for you — you stay in control.</p>
+        <p>Within three business days you receive the complete POA, the evidence index, the submission instructions for Seller Central, and &mdash; for Complex cases &mdash; the escalation letter, retraction letter, or ESR escalation draft.</p>
       </div>
 
     </div>
@@ -651,47 +808,48 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
     <div class="section-header">
       <div class="section-eyebrow">Pricing</div>
       <h2>Two tiers. Flat fee. No hourly.</h2>
-      <p>Amazon suspension appeal work is priced by complexity, not hours. You pay once, and you get the complete POA package — not a draft, not a "starting point," not a consultation.</p>
+      <p>Amazon POA work is priced by case complexity, not by time. Flat fee, one-time charge, full package delivered. Incumbent consulting firms charge $1,500 to $10,000 for the same work product.</p>
     </div>
     <div class="pricing-grid">
 
       <div class="price-card">
         <div class="price-tier">Standard POA</div>
-        <h3>Single-ASIN or single-complaint suspension</h3>
+        <h3>Single-ASIN or single-section cases</h3>
         <div class="price-amount">$497</div>
-        <div class="price-suffix">one-time · delivered in 3 business days</div>
-        <p class="price-desc">For suspensions involving a single ASIN, single complaint cluster, or a straightforward Section 3 violation. Majority of Amazon seller suspensions fit this tier.</p>
+        <div class="price-suffix">one-time &middot; delivered in 3 business days</div>
+        <p class="price-desc">Single-ASIN, single-section Code of Conduct deactivations. The majority of first-time Amazon Seller deactivations fit this tier &mdash; Accurate Information citations, single-complaint Acting Fairly cases, straightforward Communications or Customer Information violations.</p>
         <ul class="price-list">
-          <li>Complete Plan of Action document (root cause / corrective / preventive)</li>
-          <li>Evidence checklist tailored to your complaint type</li>
-          <li>Supporting cover letter or appendix if the complaint type needs one</li>
-          <li>Submission instructions for Seller Central appeal flow</li>
-          <li>One free follow-up POA revision if Amazon requests more information within 14 days</li>
+          <li>Full Plan of Action: root cause, corrective actions, preventive measures</li>
+          <li>Written to the specific Code of Conduct section cited in your deactivation</li>
+          <li>Evidence index tailored to that section&rsquo;s evidence standard</li>
+          <li>Submission instructions for the Seller Central Reactivate flow</li>
+          <li>One revision cycle if Amazon responds within 14 days asking for more information</li>
         </ul>
         <a href="#contact" class="price-btn price-btn-outline">Start Standard POA</a>
-        <div class="price-fineprint">Billed once at checkout via Stripe. No subscription, no recurring charges. Secure intake link delivered by email.</div>
+        <div class="price-fineprint">One-time Stripe charge. No subscription, no renewal. Secure intake link delivered by email immediately after checkout.</div>
       </div>
 
       <div class="price-card price-card-featured">
         <div class="price-tier">Complex POA</div>
-        <h3>Multi-ASIN, brand-level, or IP-complaint cases</h3>
+        <h3>Multi-ASIN, IP, linked-account, or funds-hold cases</h3>
         <div class="price-amount">$997</div>
-        <div class="price-suffix">one-time · delivered in 3 business days</div>
-        <p class="price-desc">For suspensions involving multiple ASINs, brand-registry issues, rights-holder IP complaints, counterfeit allegations, or Section 3 cases with account-linking or review-abuse factors.</p>
+        <div class="price-suffix">one-time &middot; delivered in 3 business days</div>
+        <p class="price-desc">Multi-ASIN, brand-level, rights-holder IP or counterfeit complaints, Filing Infringement Notices violations, Multiple Selling Accounts deactivations, cases with a prior rejected POA, or cases with Section 2 disbursement holds on withheld funds.</p>
         <ul class="price-list">
           <li>Everything in the Standard POA</li>
-          <li>Rights-holder retraction-request letter (for IP complaints)</li>
-          <li>Multi-ASIN coverage and cross-listing corrective plan</li>
-          <li>Supplier-authentication documentation guidance</li>
-          <li>Escalation letter to Seller Performance if first POA is rejected</li>
-          <li>Two free follow-up POA revisions within 21 days</li>
+          <li>Rights-holder retraction-request letter (for IP and counterfeit complaints)</li>
+          <li>Multi-ASIN cross-listing corrective plan</li>
+          <li>Supplier-authentication evidence guidance (365-day window, phone-verifiable)</li>
+          <li>ESR / Executive Seller Relations escalation letter if the first POA is rejected</li>
+          <li>Disbursement-appeal letter for withheld-funds cases</li>
+          <li>Two revision cycles within 21 days</li>
         </ul>
         <a href="#contact" class="price-btn">Start Complex POA</a>
-        <div class="price-fineprint">Billed once at checkout via Stripe. No subscription, no recurring charges. If the case on review turns out to fit the Standard tier, you are refunded the difference.</div>
+        <div class="price-fineprint">One-time Stripe charge. If the case on review turns out to fit the Standard tier, the difference is refunded before drafting begins.</div>
       </div>
 
     </div>
-    <p style="text-align:center;margin-top:40px;color:var(--text-muted);font-size:13.5px;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.6">Not sure which tier? Pick Standard and describe your situation in the intake. If the case on review turns out to be Complex, we'll reach out about the tier upgrade before drafting begins.</p>
+    <p style="text-align:center;margin-top:40px;color:var(--text-muted);font-size:13.5px;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.6">Not sure which tier? Start with Standard and describe your situation in the intake. If the case on review is Complex, we&rsquo;ll tell you before drafting begins and only charge the difference.</p>
   </div>
 </section>
 
@@ -701,25 +859,25 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
     <div class="section-header">
       <div class="section-eyebrow">FAQ</div>
       <h2>Amazon-specific questions</h2>
-      <p>If you don't see your question here, the contact form at the bottom goes to a real human.</p>
+      <p>If your question isn&rsquo;t here, email us at <strong style="color:var(--text-dim)">hello@reclaimshield.io</strong>.</p>
     </div>
     <div class="faq-list">
 
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false" aria-controls="amz-faq-1">
-          Can you guarantee my Amazon account comes back?<span class="faq-q-icon">+</span>
+          Can you guarantee Amazon reinstates my account?<span class="faq-q-icon">+</span>
         </button>
         <div class="faq-a" id="amz-faq-1" hidden>
-          No. Amazon retains sole discretion over reinstatement decisions, and anyone who guarantees reinstatement is lying to you. What we can do is put your strongest, best-structured case in front of Seller Performance using the framework they actually evaluate. We are up-front: results vary based on suspension type, account history, evidence available, and the specifics of your case.
+          No. Amazon retains sole discretion over reinstatement decisions under Section 3 of the Business Solutions Agreement, and anyone who guarantees reinstatement is lying. What we can do is put the strongest, best-structured Plan of Action in front of Seller Performance using the exact Code of Conduct section, evidence standard, and escalation path that Amazon applies. Outcomes vary with the section cited, account history, available evidence, and case facts.
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false" aria-controls="amz-faq-2">
-          Do you submit the POA for me in Seller Central?<span class="faq-q-icon">+</span>
+          Do you submit the POA for me through Seller Central?<span class="faq-q-icon">+</span>
         </button>
         <div class="faq-a" id="amz-faq-2" hidden>
-          No. We deliver the complete POA and submission instructions. You log into your own Seller Central account and submit it. That protects you in two ways: Amazon sees the appeal coming from the seller of record, and we never need your Seller Central credentials. Anyone who asks you to share your Seller Central login is violating Amazon's terms and should not be trusted.
+          No. We deliver the POA and the submission instructions. You log into your Seller Central account and submit through the Reactivate My Account flow on the Performance Notifications page. That is both the right process (Amazon expects submissions from the seller of record) and the right security posture (we never see, request, or need your Seller Central credentials). Anyone who asks for your Seller Central login is violating Amazon&rsquo;s terms and should not be hired.
         </div>
       </div>
 
@@ -728,43 +886,61 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
           Amazon already rejected one POA. Can you still help?<span class="faq-q-icon">+</span>
         </button>
         <div class="faq-a" id="amz-faq-3" hidden>
-          Yes, but understand the dynamic. Each rejected POA makes the next one harder because Seller Performance sees a pattern of attempts. If you've already submitted one that was rejected, the Complex POA tier is the right entry point — we rebuild the appeal from scratch, address why the previous POA failed, and write an escalation letter if the case warrants it. Send us the rejection notice in your intake.
+          Yes, and this is the Complex tier. A rejected first POA changes the case dynamics &mdash; Seller Performance is now tracking a pattern, not a first response. We rebuild the appeal from scratch, identify why the previous submission was rejected (wrong section addressed, wrong evidence standard, wrong POA structure), and draft an Executive Seller Relations escalation letter if the case warrants one. Send the original deactivation notice, your prior POA, and any rejection reply with the intake.
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false" aria-controls="amz-faq-4">
-          What if my account is deactivated, not just suspended?<span class="faq-q-icon">+</span>
+          Deactivated versus suspended &mdash; does that change the appeal?<span class="faq-q-icon">+</span>
         </button>
         <div class="faq-a" id="amz-faq-4" hidden>
-          "Deactivated" and "suspended" are used somewhat interchangeably by Amazon — the underlying appeal path is the same until the account is permanently closed. If your account shows as closed/permanently-removed and the appeal button is no longer available, that's a higher-stakes case and we'll tell you up front whether a POA is still the right instrument or whether you need to pursue a different path.
+          Amazon uses the words somewhat interchangeably; the underlying path is the POA until the account is permanently terminated. If your account shows as permanently closed and the Reactivate button no longer appears, the case is higher-stakes &mdash; and the POA alone may not be the right instrument. We&rsquo;ll tell you in the intake whether the POA path is viable or whether Executive Seller Relations escalation and/or AAA arbitration are more appropriate, and refund if the POA is not the right product for the case.
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false" aria-controls="amz-faq-5">
-          Does this replace hiring an attorney?<span class="faq-q-icon">+</span>
+          Are you a law firm? Are you an attorney?<span class="faq-q-icon">+</span>
         </button>
         <div class="faq-a" id="amz-faq-5" hidden>
-          No. ReclaimShield is not a law firm and does not provide legal advice or legal representation. If your matter involves a lawsuit, a cease-and-desist, funds held in an Amazon Payments balance being withheld under legal process, or a rights-holder who is pursuing legal action, retain a licensed attorney in your jurisdiction. For the specific task of writing and structuring a Plan of Action document to submit through Seller Central, most sellers don't need — and most can't afford — an attorney, and that's the gap we fill.
+          ReclaimShield is an attorney-designed Plan of Action service. The method, the intake, and the document structure were designed by a licensed attorney with platform enforcement experience. ReclaimShield is not a law firm and does not provide legal advice, legal representation, or an attorney-client relationship. For writing and structuring a Plan of Action for Seller Central submission, most sellers don&rsquo;t need a law firm and most can&rsquo;t afford one &mdash; that is the gap we fill. If your situation involves a lawsuit, a cease-and-desist, or an AAA arbitration that is already under way, hire an attorney licensed in your jurisdiction.
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false" aria-controls="amz-faq-6">
-          How soon can I have the POA in hand?<span class="faq-q-icon">+</span>
+          How soon will I have the POA in hand?<span class="faq-q-icon">+</span>
         </button>
         <div class="faq-a" id="amz-faq-6" hidden>
-          Three business days from the time your intake is submitted. If you submit on Monday morning you have the package by Thursday morning. We don't offer a rush tier — the process takes the time it takes to do correctly, and sending Amazon a rushed POA is a good way to get it rejected.
+          Three business days from the time your intake is submitted. Monday intake, Thursday delivery. We don&rsquo;t offer a rush tier &mdash; the process takes the time it takes to do correctly, and a rushed POA that omits the right section analysis or the right evidence is a rejected POA, which costs you more than the time saved.
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false" aria-controls="amz-faq-7">
-          How do you handle rights-holder IP complaints?<span class="faq-q-icon">+</span>
+          What&rsquo;s the difference between a Section 3 deactivation and a Code of Conduct deactivation?<span class="faq-q-icon">+</span>
         </button>
         <div class="faq-a" id="amz-faq-7" hidden>
-          IP complaints have a two-track path. Track one is the retraction request — a letter to the complaining rights-holder asking them to withdraw the complaint. Track two is the POA itself, which addresses why the complaint is resolved or inaccurate. The Complex POA tier includes both. The retraction letter is delivered to you; you send it to the rights-holder directly.
+          &ldquo;Section 3&rdquo; refers to Section 3 of the Business Solutions Agreement &mdash; the Term and Termination clause that gives Amazon the contractual authority to deactivate or suspend. Every deactivation is technically a Section 3 action. The Seller Code of Conduct is a separate Amazon policy document; deactivation notices that cite &ldquo;Seller Code of Conduct&rdquo; identify which named section (Accurate Information, Acting Fairly, etc.) Amazon believes was violated. The POA has to answer the Code of Conduct section, operating under the Section 3 authority Amazon used to act.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="amz-faq-8">
+          What about funds held in my disbursement balance?<span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a" id="amz-faq-8" hidden>
+          Held funds are governed by Section 2 of the Business Solutions Agreement, which permits Amazon to withhold payments when risk persists and to permanently withhold them on a determination of deceptive, fraudulent, or illegal activity. Funds-hold appeals route through <strong>disbursement-appeals@amazon.com</strong> (not through the Seller Central POA flow) and require a different letter with a different evidence standard. Both are included in the Complex POA tier when the case involves funds on hold.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false" aria-controls="amz-faq-9">
+          Do you handle AAA arbitration?<span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a" id="amz-faq-9" hidden>
+          ReclaimShield does not represent sellers in AAA arbitration proceedings &mdash; that is legal representation and requires an attorney. What we do is produce the pre-arbitration record: the POA history, the ESR escalation correspondence, the disbursement-appeal record, and the documented exhaustion of Amazon&rsquo;s internal appeal channels. Sellers who later proceed to AAA arbitration (through their own attorney) commonly use that record as the factual predicate for their demand.
         </div>
       </div>
 
@@ -777,12 +953,12 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
   <div class="container">
     <div class="cta-final-inner">
       <h2>Get your <span class="gradient-text">Plan of Action</span> in three business days.</h2>
-      <p>Stop rewriting the same POA and hoping it lands. Start a structured intake and have a complete, Amazon-framework-aligned appeal package in your inbox this week.</p>
+      <p>Stop cycling rejected POAs. Start a structured intake and have a complete, section-aligned, evidence-backed appeal package in your inbox this week.</p>
       <div class="hero-actions" style="justify-content:center">
-        <a href="https://form.jotform.com/reclaimshield-amazon-intake" class="btn-primary">Start Standard POA — $497 →</a>
-        <a href="https://form.jotform.com/reclaimshield-amazon-complex" class="btn-outline">Complex POA — $997 →</a>
+        <a href="https://form.jotform.com/reclaimshield-amazon-intake" class="btn-primary">Start Standard POA &mdash; $497 &rarr;</a>
+        <a href="https://form.jotform.com/reclaimshield-amazon-complex" class="btn-outline">Complex POA &mdash; $997 &rarr;</a>
       </div>
-      <p style="font-size:12px;margin-top:24px;color:var(--text-muted)">Intake forms are live within 24 hours of Stripe product activation. If you arrived before the links are live, email <strong style="color:var(--text-dim)">hello@reclaimshield.io</strong> with your suspension notice and we'll route you manually.</p>
+      <p style="font-size:12px;margin-top:24px;color:var(--text-muted)">Intake links activate within 24 hours of Stripe product provisioning. If you arrive before the links are live, email <strong style="color:var(--text-dim)">hello@reclaimshield.io</strong> with your deactivation notice and we&rsquo;ll route you manually.</p>
     </div>
   </div>
 </section>
@@ -792,7 +968,7 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
 <footer>
   <div class="container" style="text-align:center">
     <div class="footer-brand">ReclaimShield</div>
-    <div class="footer-parent">Platform enforcement response. Attorney-engineered.</div>
+    <div class="footer-parent">Platform enforcement response. Attorney-designed.</div>
     <div class="footer-links">
       <a href="/">Home</a>
       <a href="/meta/">Meta</a>
@@ -800,9 +976,7 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
       <a href="/privacy/">Privacy Policy</a>
     </div>
 
-    <div class="footer-address"><strong style="color:var(--text-dim)">ReclaimShield</strong> &middot; Florida LLC &middot; Orlando, Florida</div>
-
-    <div class="footer-legal"><strong>Disclaimer.</strong> ReclaimShield is a registered fictitious name of Sentinel Risk Group, LLC, a Florida limited liability company. ReclaimShield is not a law firm and does not provide legal advice. Use of ReclaimShield does not create an attorney-client relationship. Results are not guaranteed and vary based on platform policies, account history, timing, and other factors. Amazon, Inc. retains sole discretion over all Amazon Seller account reinstatement decisions. ReclaimShield is not affiliated with, endorsed by, or sponsored by Amazon.com, Inc. or any of its subsidiaries. The attorney who designed The ReclaimShield Method is licensed in the State of New Jersey and does not provide legal services to customers through ReclaimShield. If your matter requires legal representation, consult a licensed attorney in your own jurisdiction. &copy; 2026 ReclaimShield.</div>
+    <div class="footer-legal"><strong>Disclaimer.</strong> ReclaimShield is a registered fictitious name of Sentinel Risk Group, LLC, a Florida limited liability company. ReclaimShield is not a law firm and does not provide legal advice. Use of ReclaimShield does not create an attorney-client relationship. Results are not guaranteed and vary based on platform policies, account history, evidence, timing, and other factors. Amazon.com, Inc. retains sole discretion over all Amazon Seller account reinstatement decisions under Section 3 of the Amazon Services Business Solutions Agreement. ReclaimShield is not affiliated with, endorsed by, or sponsored by Amazon.com, Inc. or any of its subsidiaries. The attorney who designed the ReclaimShield method is licensed in the State of New Jersey and does not provide legal services to customers through ReclaimShield. If your matter requires legal representation, consult a licensed attorney in your own jurisdiction. &copy; 2026 ReclaimShield.</div>
   </div>
 </footer>
 
