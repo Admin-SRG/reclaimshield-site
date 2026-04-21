@@ -229,45 +229,6 @@ nav {
   margin-bottom: 24px;
 }
 
-/* Hero brand lockup — dominant ReclaimShield identity above tagline */
-.hero-brand-lockup {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-bottom: 28px;
-  padding-bottom: 22px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-.hero-brand-text { display: flex; flex-direction: column; }
-.hero-brand-name {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 800;
-  font-size: clamp(34px, 5.2vw, 46px);
-  letter-spacing: -1.3px;
-  line-height: 1;
-  color: #fff;
-}
-.hero-brand-tm {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.42em;
-  font-weight: 600;
-  vertical-align: super;
-  margin-left: 4px;
-  color: var(--accent-2);
-  letter-spacing: 0;
-}
-.hero-brand-sub {
-  font-size: 12px;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  color: var(--accent-2);
-  font-weight: 600;
-  margin-top: 8px;
-}
-@media (max-width: 600px) {
-  .hero-brand-lockup { gap: 14px; }
-}
-
 .hero h1 {
   font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(32px, 6vw, 52px);
@@ -1525,13 +1486,6 @@ footer {
   <div class="container">
     <div class="hero-grid">
       <div class="hero-left">
-        <div class="hero-brand-lockup" aria-label="ReclaimShield">
-          <svg viewBox="0 0 72 84" fill="none" width="64" height="74" aria-hidden="true" style="flex-shrink:0;filter:drop-shadow(0 4px 10px rgba(0,0,0,0.45))"><defs><linearGradient id="heroG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1A2E45"/><stop offset="48%" stop-color="#1E3A52"/><stop offset="52%" stop-color="#389680"/><stop offset="100%" stop-color="#4BA08E"/></linearGradient><linearGradient id="heroEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="rgba(255,255,255,0.12)"/><stop offset="50%" stop-color="rgba(255,255,255,0.02)"/><stop offset="100%" stop-color="rgba(255,255,255,0.08)"/></linearGradient></defs><path d="M36 4L6 17V41C6 57 19 72 36 80C53 72 66 57 66 41V17L36 4Z" fill="url(#heroG)"/><path d="M36 5.5L7.5 17.5V41C7.5 56 20 70.5 36 78.5C52 70.5 64.5 56 64.5 41V17.5L36 5.5Z" fill="none" stroke="url(#heroEdge)" stroke-width="0.8"/><line x1="36" y1="7" x2="36" y2="78" stroke="rgba(0,0,0,0.2)" stroke-width="0.8"/><circle cx="36" cy="40" r="13" fill="none" stroke="rgba(255,255,255,0.65)" stroke-width="1.8"/><line x1="36" y1="24" x2="36" y2="27" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round"/><line x1="36" y1="53" x2="36" y2="56" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round"/><line x1="20" y1="40" x2="23" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round"/><line x1="49" y1="40" x2="52" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round"/><path d="M36 26L40 40L36 54L32 40Z" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="1.8" stroke-linejoin="round"/><path d="M36 26L40 40H32Z" fill="#fff"/><circle cx="36" cy="40" r="2" fill="#fff"/></svg>
-          <div class="hero-brand-text">
-            <div class="hero-brand-name">ReclaimShield<span class="hero-brand-tm" aria-label="Trademark">&trade;</span></div>
-            <div class="hero-brand-sub">Attorney-Designed Recovery for Meta Accounts</div>
-          </div>
-        </div>
         <div class="hero-eyebrow">Professional Account Recovery</div>
         <h1>They banned you<br>with a bot.<br>Your appeal goes to<br><span class="gradient-text">the same bot.</span></h1>
         <p class="hero-sub">Meta's AI flags your account and the same AI reviews your appeal. It's a loop designed to confirm its own decision. ReclaimShield breaks that loop with escalation paths that bypass the automated system entirely.</p>
@@ -1626,13 +1580,13 @@ footer {
       <div class="nat-pillar">
         <div class="nat-pillar-num">03</div>
         <h3>RECLAIM V-100 Deep-Dive Analysis.</h3>
-        <p>Our internal <strong>RECLAIM V-100</strong> taxonomy breaks Meta's enforcement universe into 14 violation categories, each mapped to its own rebuttal strategy, classifier patterns, and escalation playbook. Your case is classified against that taxonomy first, then argued on the terms that category actually responds to.</p>
+        <p>Our internal <strong>RECLAIM V-100</strong> framework recognizes that every type of Meta enforcement has a different winning argument. Your case is analyzed against that framework before a single line of your appeal is drafted &mdash; so the argument you file matches the category Meta actually cited.</p>
       </div>
 
       <div class="nat-pillar">
         <div class="nat-pillar-num">04</div>
-        <h3>Classifier-Facing Language.</h3>
-        <p>Meta's AI reads your appeal before any human does. The difference between an appeal that escalates to human review and one that gets auto-closed is often a single phrase. We write for the machine first, the human second &mdash; because that&rsquo;s the order they actually read in.</p>
+        <h3>Built for the Real Review Pipeline.</h3>
+        <p>Meta&rsquo;s current review pipeline is not what their help page describes. Your appeal is written for the pipeline your case will actually travel &mdash; the one that decides whether it closes on a first pass or escalates to a human who can reverse it.</p>
       </div>
     </div>
 
@@ -1681,7 +1635,7 @@ footer {
 
         <div class="compare-row" role="row">
           <div class="compare-cell compare-dim" role="rowheader">Turnaround</div>
-          <div class="compare-cell compare-us" role="cell"><strong>Delivered within hours of intake &mdash; automation-speed drafting, professional-grade output.</strong></div>
+          <div class="compare-cell compare-us" role="cell"><strong>Delivered within hours of intake &mdash; professional-grade output, every time.</strong></div>
           <div class="compare-cell compare-them" role="cell">Instant download (because it&rsquo;s the same file every time) or multi-day queue.</div>
         </div>
 
@@ -1703,31 +1657,13 @@ footer {
   </div>
 </section>
 
-<!-- We Know How the Machine Works -->
+<!-- Positioning — what we stand for, not how we build it -->
 <section id="how-we-know" class="machine-section">
   <div class="container">
     <div class="eyebrow">The ReclaimShield Method</div>
-    <h2 class="stitle">We Know How Meta<br><span class="gradient-text">Actually Reviews Your Appeal.</span></h2>
-    <p class="lead">Your appeal is read first by an AI classifier, then &mdash; if it escalates &mdash; by a human reviewer working within Meta's current review pipeline. The ReclaimShield Method is built around four things most people don't know about how that pipeline actually decides.</p>
-
-    <div class="method-points">
-      <div class="machine-point">
-        <h3><span class="mp-icon" aria-hidden="true">&#x1F916;</span> We Know Their Classifier</h3>
-        <p>Meta's 2026 enforcement stack is AI-first: your content is scored against a detailed hazard framework, and your appeal is re-scored by the same type of classifier. Most appeals fail because they argue the wrong category, or use language the classifier is trained to dismiss. <strong>We target only the specific violation Meta actually cited</strong> &mdash; and mirror Meta's own Community Standards language back at the classifier on the categories that matter.</p>
-      </div>
-      <div class="machine-point">
-        <h3><span class="mp-icon" aria-hidden="true">&#x1F50D;</span> We Know Their Reviewers</h3>
-        <p>When an appeal escalates to a human, it lands in front of a tighter, more consistent review pipeline than it did a year ago. For a classifier-inverting appeal like ours, a more consistent reviewer pool is a <em>better</em> environment &mdash; our appeals are structured so the right decision is obvious on the first read, not buried in narrative.</p>
-      </div>
-      <div class="machine-point">
-        <h3><span class="mp-icon" aria-hidden="true">&#x2696;</span> We Know Their Broken Promises</h3>
-        <p>Internal documents, Oversight Board decisions, EU Digital Services Act compliance &mdash; Meta has published commitments they haven't kept. <strong>We document the gap between what they promised and what they did to your account.</strong></p>
-      </div>
-      <div class="machine-point">
-        <h3><span class="mp-icon" aria-hidden="true">&#x1F4CB;</span> We Know the Pressure Points</h3>
-        <p>Platform companies respond differently to different types of pressure. <strong>We know which channels get results for each type of account issue</strong> &mdash; from oversight board submissions to government-agency complaints. Every case gets a tailored strategy.</p>
-      </div>
-    </div>
+    <h2 class="stitle">Built for How Meta<br><span class="gradient-text">Actually Reviews Appeals.</span></h2>
+    <p class="lead" style="max-width:720px;margin:0 auto 28px;">Appeals fail when they&rsquo;re generic, template-driven, or aimed at the wrong audience inside Meta&rsquo;s review pipeline. ReclaimShield is engineered for the real pipeline your case will travel &mdash; not the one on Meta&rsquo;s help page.</p>
+    <p class="lead" style="max-width:720px;margin:0 auto;color:var(--text-dim);font-size:15px;">We keep our mechanics private for the same reason every serious practice does: exposing the method is how it stops working. The output is what you&rsquo;re buying &mdash; and the output is what lands in front of Meta&rsquo;s reviewer.</p>
   </div>
 </section>
 
@@ -1894,33 +1830,23 @@ footer {
   </div>
 </section>
 
-<!-- Process -->
+<!-- Process — customer-facing touchpoints only -->
 <section id="process" class="section section-alt">
   <div class="container">
-    <div class="eyebrow">How It Works</div>
-    <h2 class="stitle">Four Steps. One Goal. <span class="gradient-text">Your Account Back.</span></h2>
-    <p class="lead">Flat fees. No hourly billing. No mystery. You tell us what happened, we tell you what it costs, and we get to work.</p>
+    <div class="eyebrow">What You Do</div>
+    <h2 class="stitle">Two Touchpoints. <span class="gradient-text">Your Account Back.</span></h2>
+    <p class="lead">Flat fees. No hourly billing. No calls. You tell us what happened. Your appeal package arrives ready to file.</p>
 
-    <div class="proc-steps">
+    <div class="proc-steps" style="grid-template-columns:1fr 1fr;max-width:720px;margin:0 auto;">
       <div class="proc-step">
         <div class="proc-num">1</div>
         <h3>Submit Your Case</h3>
-        <p>Fill out our intake form with your account details and what happened. Takes 3 minutes.</p>
+        <p>A short intake captures the details we need. You&rsquo;re done in minutes.</p>
       </div>
       <div class="proc-step">
         <div class="proc-num">2</div>
-        <h3>Choose Your Tier</h3>
-        <p>Start where it makes sense. Most start with Tier 1 and escalate only if needed.</p>
-      </div>
-      <div class="proc-step">
-        <div class="proc-num">3</div>
-        <h3>We Go to Work</h3>
-        <p>Your case gets professional escalation through channels that bypass the automated queue.</p>
-      </div>
-      <div class="proc-step">
-        <div class="proc-num">4</div>
-        <h3>You're Back Online</h3>
-        <p>Upgrade anytime if you need more firepower. You only pay the difference.</p>
+        <h3>Receive Your Package</h3>
+        <p>A custom-drafted appeal, ready to file from your own account, with step-by-step guidance.</p>
       </div>
     </div>
   </div>
