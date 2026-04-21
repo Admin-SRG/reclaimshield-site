@@ -124,25 +124,25 @@ nav {
   text-decoration: none;
 }
 
-.nav-logo svg { width: 30px; height: 34px; }
+.nav-logo svg { width: 40px; height: 46px; }
 
 .nav-logo-text { display: flex; flex-direction: column; }
 
 .nav-logo-name {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
-  font-size: 17px;
-  letter-spacing: -0.5px;
+  font-size: 22px;
+  letter-spacing: -0.6px;
   color: #fff;
-  line-height: 1.1;
+  line-height: 1.05;
 }
 
 .nav-logo-sub {
-  font-size: 9px;
-  letter-spacing: 1.2px;
+  font-size: 10.5px;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  font-weight: 600;
 }
 
 .nav-links { display: flex; align-items: center; gap: 6px; }
@@ -227,6 +227,45 @@ nav {
   border: 1px solid rgba(124, 58, 237, 0.25);
   color: #A78BFA;
   margin-bottom: 24px;
+}
+
+/* Hero brand lockup — dominant ReclaimShield identity above tagline */
+.hero-brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.hero-brand-text { display: flex; flex-direction: column; }
+.hero-brand-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 800;
+  font-size: clamp(34px, 5.2vw, 46px);
+  letter-spacing: -1.3px;
+  line-height: 1;
+  color: #fff;
+}
+.hero-brand-tm {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.42em;
+  font-weight: 600;
+  vertical-align: super;
+  margin-left: 4px;
+  color: var(--accent-2);
+  letter-spacing: 0;
+}
+.hero-brand-sub {
+  font-size: 12px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  font-weight: 600;
+  margin-top: 8px;
+}
+@media (max-width: 600px) {
+  .hero-brand-lockup { gap: 14px; }
 }
 
 .hero h1 {
@@ -424,6 +463,147 @@ nav {
 .section { padding: 80px 0; }
 .section-alt { background: var(--surface); }
 .section-border { border-top: 1px solid rgba(255,255,255,0.05); }
+
+/* "Not A Template" — custom appeal positioning + comparison */
+#not-a-template { position: relative; }
+#not-a-template::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 700px; height: 500px;
+  background: radial-gradient(ellipse, rgba(45,212,191,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.nat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 48px 0 72px;
+}
+@media (max-width: 780px) {
+  .nat-grid { grid-template-columns: 1fr; }
+}
+.nat-pillar {
+  position: relative;
+  padding: 30px 28px 26px;
+  background: linear-gradient(180deg, rgba(45,212,191,0.04), rgba(18,18,26,0.6));
+  border: 1px solid rgba(45,212,191,0.15);
+  border-radius: 14px;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.nat-pillar:hover {
+  border-color: rgba(45,212,191,0.4);
+  transform: translateY(-2px);
+}
+.nat-pillar-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--accent-2);
+  margin-bottom: 10px;
+}
+.nat-pillar h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+.nat-pillar p {
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--text-dim);
+}
+
+/* Compare table */
+.compare-wrap {
+  margin-top: 40px;
+  padding-top: 52px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.compare-eyebrow { color: #F472B6 !important; }
+.compare-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(26px, 3.6vw, 36px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.12;
+  color: #fff;
+  margin: 14px 0 14px;
+}
+.compare-sub {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-dim);
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+.compare-table {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--surface);
+}
+.compare-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.compare-row:first-child { border-top: 0; }
+.compare-cell {
+  padding: 18px 20px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-dim);
+  border-left: 1px solid rgba(255,255,255,0.04);
+}
+.compare-cell:first-child { border-left: 0; }
+.compare-head .compare-cell {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  color: #fff;
+  text-transform: uppercase;
+  background: rgba(45,212,191,0.06);
+  padding: 16px 20px;
+}
+.compare-dim {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  color: #fff;
+  background: rgba(255,255,255,0.02);
+}
+.compare-us {
+  color: var(--text);
+  background: linear-gradient(90deg, rgba(45,212,191,0.04) 0%, transparent 100%);
+}
+.compare-us strong { color: #fff; }
+.compare-them { color: var(--text-muted); }
+.compare-footnote {
+  margin-top: 24px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  font-style: italic;
+  max-width: 720px;
+}
+@media (max-width: 780px) {
+  .compare-row { grid-template-columns: 1fr; }
+  .compare-cell { border-left: 0; border-top: 1px solid rgba(255,255,255,0.04); }
+  .compare-cell:first-child { border-top: 0; }
+  .compare-head { display: none; }
+  .compare-dim { background: rgba(45,212,191,0.08); color: var(--accent-2); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; padding: 12px 20px; }
+  .compare-us::before { content: "ReclaimShield: "; font-weight: 700; color: var(--accent-2); }
+  .compare-them::before { content: "Template mills: "; font-weight: 700; color: #F472B6; font-size: 11px; letter-spacing: 0.5px; }
+}
+
 
 .eyebrow {
   font-size: 11px;
@@ -1319,7 +1499,7 @@ footer {
 <nav aria-label="Primary">
   <div class="nav-inner">
     <a href="../" class="nav-logo">
-      <svg viewBox="0 0 72 84" fill="none" width="30" height="34" style="filter:drop-shadow(0 2px 3px rgba(0,0,0,0.3))"><defs><linearGradient id="navG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1A2E45"/><stop offset="48%" stop-color="#1E3A52"/><stop offset="52%" stop-color="#389680"/><stop offset="100%" stop-color="#4BA08E"/></linearGradient><linearGradient id="navEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="50%" stop-color="rgba(255,255,255,0.02)"/><stop offset="100%" stop-color="rgba(255,255,255,0.06)"/></linearGradient></defs><path d="M36 4L6 17V41C6 57 19 72 36 80C53 72 66 57 66 41V17L36 4Z" fill="url(#navG)"/><path d="M36 5.5L7.5 17.5V41C7.5 56 20 70.5 36 78.5C52 70.5 64.5 56 64.5 41V17.5L36 5.5Z" fill="none" stroke="url(#navEdge)" stroke-width="0.8"/><line x1="36" y1="7" x2="36" y2="78" stroke="rgba(0,0,0,0.2)" stroke-width="0.8"/><circle cx="36" cy="40" r="13" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.8"/><line x1="36" y1="24" x2="36" y2="27" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="36" y1="53" x2="36" y2="56" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="20" y1="40" x2="23" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="49" y1="40" x2="52" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><path d="M36 26L40 40L36 54L32 40Z" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linejoin="round"/><path d="M36 26L40 40H32Z" fill="#fff"/><circle cx="36" cy="40" r="2" fill="#fff"/></svg>
+      <svg viewBox="0 0 72 84" fill="none" width="40" height="46" style="filter:drop-shadow(0 2px 3px rgba(0,0,0,0.3))"><defs><linearGradient id="navG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1A2E45"/><stop offset="48%" stop-color="#1E3A52"/><stop offset="52%" stop-color="#389680"/><stop offset="100%" stop-color="#4BA08E"/></linearGradient><linearGradient id="navEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="50%" stop-color="rgba(255,255,255,0.02)"/><stop offset="100%" stop-color="rgba(255,255,255,0.06)"/></linearGradient></defs><path d="M36 4L6 17V41C6 57 19 72 36 80C53 72 66 57 66 41V17L36 4Z" fill="url(#navG)"/><path d="M36 5.5L7.5 17.5V41C7.5 56 20 70.5 36 78.5C52 70.5 64.5 56 64.5 41V17.5L36 5.5Z" fill="none" stroke="url(#navEdge)" stroke-width="0.8"/><line x1="36" y1="7" x2="36" y2="78" stroke="rgba(0,0,0,0.2)" stroke-width="0.8"/><circle cx="36" cy="40" r="13" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.8"/><line x1="36" y1="24" x2="36" y2="27" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="36" y1="53" x2="36" y2="56" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="20" y1="40" x2="23" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="49" y1="40" x2="52" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><path d="M36 26L40 40L36 54L32 40Z" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linejoin="round"/><path d="M36 26L40 40H32Z" fill="#fff"/><circle cx="36" cy="40" r="2" fill="#fff"/></svg>
       <div class="nav-logo-text">
         <span class="nav-logo-name">ReclaimShield</span>
         <span class="nav-logo-sub">Attorney-designed recovery</span>
@@ -1327,6 +1507,7 @@ footer {
     </a>
     <div class="nav-links">
       <a href="../">All Platforms</a>
+      <a href="#not-a-template">Why Us</a>
       <a href="#how-we-know">The Method</a>
       <a href="#issues">What We Fix</a>
       <a href="#pricing">Pricing</a>
@@ -1344,6 +1525,13 @@ footer {
   <div class="container">
     <div class="hero-grid">
       <div class="hero-left">
+        <div class="hero-brand-lockup" aria-label="ReclaimShield">
+          <svg viewBox="0 0 72 84" fill="none" width="64" height="74" aria-hidden="true" style="flex-shrink:0;filter:drop-shadow(0 4px 10px rgba(0,0,0,0.45))"><defs><linearGradient id="heroG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1A2E45"/><stop offset="48%" stop-color="#1E3A52"/><stop offset="52%" stop-color="#389680"/><stop offset="100%" stop-color="#4BA08E"/></linearGradient><linearGradient id="heroEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="rgba(255,255,255,0.12)"/><stop offset="50%" stop-color="rgba(255,255,255,0.02)"/><stop offset="100%" stop-color="rgba(255,255,255,0.08)"/></linearGradient></defs><path d="M36 4L6 17V41C6 57 19 72 36 80C53 72 66 57 66 41V17L36 4Z" fill="url(#heroG)"/><path d="M36 5.5L7.5 17.5V41C7.5 56 20 70.5 36 78.5C52 70.5 64.5 56 64.5 41V17.5L36 5.5Z" fill="none" stroke="url(#heroEdge)" stroke-width="0.8"/><line x1="36" y1="7" x2="36" y2="78" stroke="rgba(0,0,0,0.2)" stroke-width="0.8"/><circle cx="36" cy="40" r="13" fill="none" stroke="rgba(255,255,255,0.65)" stroke-width="1.8"/><line x1="36" y1="24" x2="36" y2="27" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round"/><line x1="36" y1="53" x2="36" y2="56" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round"/><line x1="20" y1="40" x2="23" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round"/><line x1="49" y1="40" x2="52" y2="40" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round"/><path d="M36 26L40 40L36 54L32 40Z" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="1.8" stroke-linejoin="round"/><path d="M36 26L40 40H32Z" fill="#fff"/><circle cx="36" cy="40" r="2" fill="#fff"/></svg>
+          <div class="hero-brand-text">
+            <div class="hero-brand-name">ReclaimShield<span class="hero-brand-tm" aria-label="Trademark">&trade;</span></div>
+            <div class="hero-brand-sub">Attorney-Designed Recovery for Meta Accounts</div>
+          </div>
+        </div>
         <div class="hero-eyebrow">Professional Account Recovery</div>
         <h1>They banned you<br>with a bot.<br>Your appeal goes to<br><span class="gradient-text">the same bot.</span></h1>
         <p class="hero-sub">Meta's AI flags your account and the same AI reviews your appeal. It's a loop designed to confirm its own decision. ReclaimShield breaks that loop with escalation paths that bypass the automated system entirely.</p>
@@ -1411,6 +1599,106 @@ footer {
         <div class="stat-label">Celebrities get human review before enforcement. You don't. We level the playing field.</div>
         <div class="stat-source">Meta Oversight Board</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Not A Template — Custom Appeal Positioning + Comparison Chart -->
+<section id="not-a-template" class="section section-alt" aria-labelledby="nat-title">
+  <div class="container">
+    <div class="eyebrow" style="color:var(--accent-2)">Crafted For You. Not Generated From A Template.</div>
+    <h2 id="nat-title" class="stitle">Every appeal is <span class="gradient-text">analyzed, drafted, and argued<br>for the specific case in front of us.</span></h2>
+    <p class="lead">Template mills and form generators sell you the same letter that went to ten thousand other accounts. Meta's classifier has seen that letter. It scores against you the moment it recognizes the pattern. ReclaimShield builds the opposite.</p>
+
+    <div class="nat-grid">
+      <div class="nat-pillar">
+        <div class="nat-pillar-num">01</div>
+        <h3>Your Facts. Your Appeal.</h3>
+        <p>We analyze the exact violation Meta cited on <em>your</em> account, the content that triggered it, and the context around your specific enforcement event. No pre-written letter, no fill-in-the-blank paragraph. Every appeal is drafted for a single case &mdash; yours.</p>
+      </div>
+
+      <div class="nat-pillar">
+        <div class="nat-pillar-num">02</div>
+        <h3>Active Policy Review &mdash; Not Stale Citations.</h3>
+        <p>We re-read Meta's current published Community Standards, Terms of Service, and enforcement guidelines <em>before</em> we draft. The policy sections we cite are the ones in force on Meta's servers this week &mdash; not a copy-paste from a 2022 forum thread or a link to a policy page Meta has since restructured.</p>
+      </div>
+
+      <div class="nat-pillar">
+        <div class="nat-pillar-num">03</div>
+        <h3>RECLAIM V-100 Deep-Dive Analysis.</h3>
+        <p>Our internal <strong>RECLAIM V-100</strong> taxonomy breaks Meta's enforcement universe into 14 violation categories, each mapped to its own rebuttal strategy, classifier patterns, and escalation playbook. Your case is classified against that taxonomy first, then argued on the terms that category actually responds to.</p>
+      </div>
+
+      <div class="nat-pillar">
+        <div class="nat-pillar-num">04</div>
+        <h3>Classifier-Facing Language.</h3>
+        <p>Meta's AI reads your appeal before any human does. The difference between an appeal that escalates to human review and one that gets auto-closed is often a single phrase. We write for the machine first, the human second &mdash; because that&rsquo;s the order they actually read in.</p>
+      </div>
+    </div>
+
+    <!-- Comparison table -->
+    <div class="compare-wrap">
+      <div class="eyebrow compare-eyebrow">How We Compare</div>
+      <h3 class="compare-title">ReclaimShield <span class="gradient-text">vs. template mills &amp; DIY form letters.</span></h3>
+      <p class="compare-sub">We&rsquo;re not naming names. You&rsquo;ve seen the category: $29 fill-in-the-blank letter generators, copy-paste "appeal templates" from forums, and form mills that send the same document for every case. Here&rsquo;s what separates a professional appeal from a recycled one.</p>
+
+      <div class="compare-table" role="table" aria-label="ReclaimShield compared to template mills and form letter services">
+        <div class="compare-row compare-head" role="row">
+          <div class="compare-cell compare-dim" role="columnheader">Dimension</div>
+          <div class="compare-cell compare-us" role="columnheader">ReclaimShield<span class="hero-brand-tm" aria-label="Trademark" style="color:#2DD4BF;margin-left:2px">&trade;</span></div>
+          <div class="compare-cell compare-them" role="columnheader">Template Mills &amp; Form Letters</div>
+        </div>
+
+        <div class="compare-row" role="row">
+          <div class="compare-cell compare-dim" role="rowheader">Appeal content</div>
+          <div class="compare-cell compare-us" role="cell"><strong>Drafted for your specific case &mdash; violation cited, content in question, account context.</strong></div>
+          <div class="compare-cell compare-them" role="cell">Same letter sent to thousands of accounts with your name swapped in.</div>
+        </div>
+
+        <div class="compare-row" role="row">
+          <div class="compare-cell compare-dim" role="rowheader">Policy citations</div>
+          <div class="compare-cell compare-us" role="cell"><strong>Meta&rsquo;s current, in-force Community Standards &mdash; reviewed before drafting.</strong></div>
+          <div class="compare-cell compare-them" role="cell">Links to archived policy pages, renamed sections, and cached language from 2022&ndash;2023 forums.</div>
+        </div>
+
+        <div class="compare-row" role="row">
+          <div class="compare-cell compare-dim" role="rowheader">Violation classification</div>
+          <div class="compare-cell compare-us" role="cell"><strong>RECLAIM V-100 taxonomy &mdash; 14 categories, each with its own rebuttal strategy.</strong></div>
+          <div class="compare-cell compare-them" role="cell">One-size-fits-all letter. Same arguments regardless of whether you got hit for CSAM-misclassify, impersonation, or bot-detection.</div>
+        </div>
+
+        <div class="compare-row" role="row">
+          <div class="compare-cell compare-dim" role="rowheader">Escalation path</div>
+          <div class="compare-cell compare-us" role="cell"><strong>Five simultaneous channels: consumer appeal, Oversight Board, regulatory (FTC/AG/EU DSA), business correspondence to registered agent, and platform legal.</strong></div>
+          <div class="compare-cell compare-them" role="cell">One in-app appeal form. If it fails, so do you.</div>
+        </div>
+
+        <div class="compare-row" role="row">
+          <div class="compare-cell compare-dim" role="rowheader">Legal posture</div>
+          <div class="compare-cell compare-us" role="cell"><strong>Attorney-designed structure. Compliant with TX &sect;81.101(c). EU DSA Article 21 aware for EU residents.</strong></div>
+          <div class="compare-cell compare-them" role="cell">Unsigned pseudo-legal language that reads like it&rsquo;s trying to look like a lawyer wrote it. Not jurisdiction-aware.</div>
+        </div>
+
+        <div class="compare-row" role="row">
+          <div class="compare-cell compare-dim" role="rowheader">Turnaround</div>
+          <div class="compare-cell compare-us" role="cell"><strong>Delivered within hours of intake &mdash; automation-speed drafting, professional-grade output.</strong></div>
+          <div class="compare-cell compare-them" role="cell">Instant download (because it&rsquo;s the same file every time) or multi-day queue.</div>
+        </div>
+
+        <div class="compare-row" role="row">
+          <div class="compare-cell compare-dim" role="rowheader">Who files</div>
+          <div class="compare-cell compare-us" role="cell"><strong>You file, from your verified account &mdash; Meta weights owner-filed appeals higher, and third-party submissions violate platform terms.</strong></div>
+          <div class="compare-cell compare-them" role="cell">Some promise "we&rsquo;ll submit for you" &mdash; which violates Meta&rsquo;s ToS and lowers appeal scoring even when it works.</div>
+        </div>
+
+        <div class="compare-row" role="row">
+          <div class="compare-cell compare-dim" role="rowheader">Transparency</div>
+          <div class="compare-cell compare-us" role="cell"><strong>Documented methodology. Disclosed scope. Signed certification artifacts. You see what you&rsquo;re filing before you file it.</strong></div>
+          <div class="compare-cell compare-them" role="cell">"Trust us." Opaque template text, no methodology disclosed.</div>
+        </div>
+      </div>
+
+      <p class="compare-footnote">We won&rsquo;t publish the internal mechanics of the ReclaimShield Method. You don&rsquo;t need to see the blueprint to know the difference between a custom build and a stamped-out template &mdash; the output speaks for itself when it lands in front of Meta&rsquo;s reviewer.</p>
     </div>
   </div>
 </section>
