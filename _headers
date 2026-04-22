@@ -1,2 +1,6 @@
+# Block search indexing on customer-facing intake forms
 /meta-intake.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/meta-intake
   X-Robots-Tag: noindex, nofollow, noarchive
