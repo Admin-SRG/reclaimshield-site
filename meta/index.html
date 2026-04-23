@@ -9,6 +9,7 @@
 <meta property="og:description" content="Meta's AI flags your account and the same AI reviews your appeal. ReclaimShield uses escalation paths most people don't know exist — Instagram, Facebook, and Threads.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -1853,25 +1854,142 @@ footer {
     <h2 class="stitle">Questions before you <span class="gradient-text">start a recovery?</span></h2>
     <p class="lead">Use the form below &mdash; we reply within one business day. For active recoveries, use the intake on the <a href="#pricing" style="color:var(--accent-2);text-decoration:none;border-bottom:1px solid rgba(45,212,191,0.35)">pricing page</a> &mdash; it's faster than email and routes directly to case intake.</p>
 
-    <form id="contact-form" action="https://submit.jotform.com/submit/261104906170044" method="POST" style="margin-top:28px;padding:28px 30px;background:rgba(18,18,26,0.6);border:1px solid rgba(255,255,255,0.06);border-radius:14px;display:grid;gap:16px">
+    <!-- Contact form: posts JSON to same-origin /api/contact (CF Pages Function).
+         Function verifies Turnstile server-side, then forwards to CONTACT-WEB
+         Make scenario (Sc 4835703) which emails admin@reclaimshield.io via Postmark. -->
+    <div id="c-alert-success" style="display:none;margin-top:28px;padding:20px 24px;background:rgba(45,212,191,0.1);border:1px solid rgba(45,212,191,0.3);border-radius:14px;color:var(--text)">
+      <strong style="color:var(--accent-2);font-family:'Space Grotesk',sans-serif;font-size:14px;letter-spacing:0.5px">MESSAGE SENT</strong>
+      <p style="margin-top:8px;font-size:14px;line-height:1.6;color:var(--text-dim)">Thanks — we'll reply to you within one business day.</p>
+    </div>
+    <div id="c-alert-error" style="display:none;margin-top:28px;padding:20px 24px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:14px;color:var(--text)">
+      <strong style="color:#F87171;font-family:'Space Grotesk',sans-serif;font-size:14px;letter-spacing:0.5px">COULDN'T SEND MESSAGE</strong>
+      <p id="c-alert-error-msg" style="margin-top:8px;font-size:14px;line-height:1.6;color:var(--text-dim)">Please try again, or email admin@reclaimshield.io directly.</p>
+    </div>
+
+    <form id="contact-form" style="margin-top:28px;padding:28px 30px;background:rgba(18,18,26,0.6);border:1px solid rgba(255,255,255,0.06);border-radius:14px;display:grid;gap:16px" novalidate>
       <div style="display:grid;gap:6px">
         <label for="c-name" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--text-dim);letter-spacing:0.3px">Name</label>
-        <input id="c-name" name="name" type="text" required autocomplete="name" style="padding:12px 14px;background:rgba(10,10,15,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--text);font-family:inherit;font-size:15px">
+        <input id="c-name" name="name" type="text" required autocomplete="name" maxlength="120" style="padding:12px 14px;background:rgba(10,10,15,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--text);font-family:inherit;font-size:15px">
       </div>
       <div style="display:grid;gap:6px">
         <label for="c-email" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--text-dim);letter-spacing:0.3px">Email</label>
-        <input id="c-email" name="email" type="email" required autocomplete="email" style="padding:12px 14px;background:rgba(10,10,15,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--text);font-family:inherit;font-size:15px">
+        <input id="c-email" name="email" type="email" required autocomplete="email" maxlength="254" style="padding:12px 14px;background:rgba(10,10,15,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--text);font-family:inherit;font-size:15px">
       </div>
       <div style="display:grid;gap:6px">
         <label for="c-message" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;color:var(--text-dim);letter-spacing:0.3px">How can we help?</label>
-        <textarea id="c-message" name="message" rows="5" required style="padding:12px 14px;background:rgba(10,10,15,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--text);font-family:inherit;font-size:15px;resize:vertical;min-height:120px"></textarea>
+        <textarea id="c-message" name="message" rows="5" required maxlength="5000" style="padding:12px 14px;background:rgba(10,10,15,0.7);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--text);font-family:inherit;font-size:15px;resize:vertical;min-height:120px"></textarea>
+      </div>
+      <!-- Honeypot (bot trap): hidden from humans, flagged server-side if filled -->
+      <div style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+        <label for="c-website">Website (leave blank)</label>
+        <input id="c-website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <!-- Cloudflare Turnstile widget -->
+      <div style="display:flex;justify-content:flex-start;margin:4px 0 0">
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAADBYJ2yA225E0Gpg" data-theme="dark"></div>
       </div>
       <p style="font-size:12px;color:var(--text-muted);margin:0;line-height:1.5">By submitting you agree to our <a href="../terms/" style="color:var(--text-dim);text-decoration:underline">Terms</a> and <a href="../privacy/" style="color:var(--text-dim);text-decoration:underline">Privacy Policy</a>. We reply within one business day. We never sell or share contact data. Do not include passwords, login credentials, or account-access information &mdash; those are never required and never requested.</p>
-      <button type="submit" class="btn-primary" style="justify-self:start">Send Message</button>
+      <button id="c-submit" type="submit" class="btn-primary" style="justify-self:start">Send Message</button>
     </form>
-    <!-- A11Y/OPS: The contact form action URL is a placeholder and must be swapped
-         to the live Jotform submit endpoint before production launch. The back-end
-         processor (Make scenario) is a separate wiring step. -->
+    <script>
+    (function(){
+      'use strict';
+      var CONTACT_ENDPOINT = '/api/contact';
+      var LOAD_TS = Date.now();
+      var form = document.getElementById('contact-form');
+      var submitBtn = document.getElementById('c-submit');
+      var alertSuccess = document.getElementById('c-alert-success');
+      var alertError = document.getElementById('c-alert-error');
+      var alertErrorMsg = document.getElementById('c-alert-error-msg');
+
+      function showError(msg){
+        if(msg){ alertErrorMsg.textContent = msg; }
+        alertError.style.display = 'block';
+        alertSuccess.style.display = 'none';
+      }
+      function showSuccess(){
+        alertSuccess.style.display = 'block';
+        alertError.style.display = 'none';
+        form.style.display = 'none';
+      }
+      function setLoading(on){
+        submitBtn.disabled = on;
+        submitBtn.textContent = on ? 'Sending…' : 'Send Message';
+      }
+
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        alertError.style.display = 'none';
+
+        // Honeypot
+        if(document.getElementById('c-website').value.trim() !== ''){
+          showSuccess(); // silent success for bots
+          return;
+        }
+        // Too-fast submit guard (<3s = likely bot)
+        if(Date.now() - LOAD_TS < 3000){
+          showError('Submission was flagged as automated. Please review and try again.');
+          return;
+        }
+        if(!form.checkValidity()){
+          form.reportValidity();
+          return;
+        }
+
+        // Turnstile token
+        var tsToken = '';
+        try {
+          if(window.turnstile){
+            var resp = document.querySelector('[name="cf-turnstile-response"]');
+            if(resp) tsToken = resp.value || '';
+          }
+        } catch(err){}
+        if(!tsToken){
+          showError('Please complete the human-verification checkbox above, then submit again.');
+          return;
+        }
+
+        var payload = {
+          turnstileToken: tsToken,
+          name: document.getElementById('c-name').value.trim(),
+          email: document.getElementById('c-email').value.trim(),
+          message: document.getElementById('c-message').value.trim(),
+          sourcePath: '/meta'
+        };
+
+        setLoading(true);
+        fetch(CONTACT_ENDPOINT, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(payload)
+        }).then(function(r){
+          return r.json().then(function(data){ return { ok: r.ok, data: data }; });
+        }).then(function(result){
+          setLoading(false);
+          if(result.ok){
+            showSuccess();
+          } else {
+            var code = (result.data && result.data.error) || 'unknown_error';
+            if(code === 'turnstile_failed'){
+              showError('Human-verification check failed. Refresh the page and try again.');
+            } else if(code === 'invalid_email'){
+              showError('That email address looks invalid. Please double-check and resend.');
+            } else if(code === 'invalid_name' || code === 'invalid_message'){
+              showError('Please fill in all fields with more than a couple of characters.');
+            } else {
+              showError('Couldn\u2019t send right now (' + code + '). Please email admin@reclaimshield.io directly.');
+            }
+            // Reset Turnstile widget so user can retry
+            try { if(window.turnstile) window.turnstile.reset(); } catch(err){}
+          }
+        }).catch(function(){
+          setLoading(false);
+          showError('Network error. Please check your connection and try again.');
+          try { if(window.turnstile) window.turnstile.reset(); } catch(err){}
+        });
+      });
+    })();
+    </script>
   </div>
 </section>
 
