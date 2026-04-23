@@ -4,3 +4,15 @@
 
 /meta-intake
   X-Robots-Tag: noindex, nofollow, noarchive
+
+/amazon-intake.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/amazon-intake
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+# R2-backed evidence files are private-by-obscurity + served only via signed Function
+/files/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: private, max-age=86400
+  X-Content-Type-Options: nosniff
