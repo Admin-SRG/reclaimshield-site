@@ -11,6 +11,13 @@
 /amazon-intake
   X-Robots-Tag: noindex, nofollow, noarchive
 
+# Shield Support page — customer-facing AI chat, noindex
+/help
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/help/
+  X-Robots-Tag: noindex, nofollow, noarchive
+
 # R2-backed evidence files are private-by-obscurity + served only via signed Function
 /files/*
   X-Robots-Tag: noindex, nofollow, noarchive

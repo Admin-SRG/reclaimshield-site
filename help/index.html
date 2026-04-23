@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shield Support — ReclaimShield</title>
+<meta name="description" content="Get help with your Meta or Amazon appeal filing. Shield Support — the ReclaimShield AI assistant.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{font-family:Inter,-apple-system,Segoe UI,Arial,sans-serif;background:#F3F4F6;color:#111827;min-height:100vh;display:flex;flex-direction:column}
+  header{background:linear-gradient(135deg,#0B1F3A 0%,#1FA69F 100%);color:#fff;padding:22px 20px;text-align:center;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+  header .logo{width:52px;height:52px;background:#fff;border-radius:10px;padding:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,.15)}
+  header .logo img{width:100%;height:auto;display:block}
+  header .title-block{text-align:left;display:flex;flex-direction:column;gap:2px}
+  header h1{font-family:Cormorant Garamond,Georgia,serif;font-size:28px;font-weight:600;letter-spacing:.3px;line-height:1}
+  header .sub{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.92;font-weight:500}
+  @media (max-width:480px){
+    header{flex-direction:column;gap:8px}
+    header .title-block{text-align:center}
+    header h1{font-size:24px}
+  }
+  main{flex:1;display:flex;flex-direction:column;max-width:780px;width:100%;margin:0 auto;padding:18px;gap:14px}
+  .intro{background:#fff;border-radius:12px;padding:18px 20px;font-size:14.5px;line-height:1.55;color:#374151;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+  .intro strong{color:#0B1F3A}
+  #chat{flex:1;background:#fff;border-radius:12px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.06);min-height:500px}
+  #messages{flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:12px;background:#F9FAFB}
+  .msg{max-width:82%;padding:12px 15px;border-radius:14px;font-size:15px;line-height:1.5;white-space:pre-wrap;word-wrap:break-word}
+  .msg-user{align-self:flex-end;background:#1FA69F;color:#fff;border-bottom-right-radius:4px}
+  .msg-bot{align-self:flex-start;background:#fff;color:#111827;border:1px solid #E5E7EB;border-bottom-left-radius:4px}
+  .msg-bot a{color:#1FA69F;text-decoration:underline}
+  .typing{align-self:flex-start;color:#6B7280;font-size:13px;font-style:italic;padding:4px 8px}
+  .error{align-self:center;color:#B91C1C;font-size:13px;background:#FEE2E2;padding:8px 14px;border-radius:8px}
+  #composer{border-top:1px solid #E5E7EB;padding:12px;display:flex;gap:10px;background:#fff}
+  #msg-input{flex:1;resize:none;border:1px solid #D1D5DB;border-radius:10px;padding:12px 14px;font-size:15px;font-family:inherit;outline:none;min-height:44px;max-height:180px;line-height:1.45}
+  #msg-input:focus{border-color:#1FA69F;box-shadow:0 0 0 3px rgba(31,166,159,.15)}
+  #send-btn{background:#0B1F3A;color:#fff;border:none;border-radius:10px;padding:0 20px;cursor:pointer;font-weight:600;font-size:15px}
+  #send-btn:hover{background:#1FA69F}
+  #send-btn:disabled{background:#9CA3AF;cursor:not-allowed}
+  footer{padding:16px 20px;text-align:center;font-size:11.5px;color:#6B7280}
+  footer a{color:#1FA69F;text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  .pills{display:flex;flex-wrap:wrap;gap:8px;padding:10px 16px;background:#FAFAFA;border-top:1px solid #E5E7EB;font-size:12px}
+  .pill{background:#E0F2F1;color:#0F766E;padding:6px 12px;border-radius:14px;cursor:pointer;font-weight:500;border:1px solid #A7E0DC;transition:background .15s}
+  .pill:hover{background:#1FA69F;color:#fff;border-color:#1FA69F}
+  @media (max-width:600px){
+    header h1{font-size:24px}
+    main{padding:10px}
+    #chat{min-height:400px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><img src="/assets/reclaimshield-logo-150.png" alt="ReclaimShield"></div>
+  <div class="title-block">
+    <h1>Shield Support</h1>
+    <div class="sub">ReclaimShield AI Assistant</div>
+  </div>
+</header>
+<main>
+  <div class="intro">
+    <strong>Get help with your filing.</strong> I can help you navigate Meta (Instagram/Facebook/Threads) or Amazon's appeal UI, answer questions about the packet you received, or escalate to the ReclaimShield team when you need a human.
+    Ask in any language — I'll respond in yours.
+  </div>
+  <div id="chat">
+    <div id="messages" aria-live="polite"></div>
+    <div class="pills" id="pills">
+      <span class="pill" data-q="Where's the Request Review button on Instagram?">Request Review button?</span>
+      <span class="pill" data-q="My account is fully disabled — how do I appeal?">Account fully disabled</span>
+      <span class="pill" data-q="What's the Oversight Board and when do I use it?">Oversight Board?</span>
+      <span class="pill" data-q="Amazon rejected my Plan of Action. What do I do now?">Amazon rejected POA</span>
+      <span class="pill" data-q="I don't know which violation category applies to me.">Which category?</span>
+      <span class="pill" data-q="I need to talk to a human.">Talk to a human</span>
+    </div>
+    <div id="composer">
+      <textarea id="msg-input" placeholder="Ask anything about your filing — in English, Spanish, French, or any language…" rows="1"></textarea>
+      <button id="send-btn" type="button">Send</button>
+    </div>
+  </div>
+</main>
+<footer>
+  AI-assisted support with human oversight. Not legal advice. &middot;
+  <a href="/terms">Terms</a> &middot;
+  <a href="mailto:admin@reclaimshield.io">Email ReclaimShield</a>
+</footer>
+<script>
+(function(){
+  function uuid(){
+    if (crypto && crypto.randomUUID) return crypto.randomUUID();
+    return 'sess-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,10);
+  }
+  var sessionId='';
+  try { sessionId = localStorage.getItem('shield_support_session')||''; } catch(_){}
+  if (!sessionId){ sessionId = uuid(); try { localStorage.setItem('shield_support_session',sessionId); } catch(_){} }
+
+  var messagesEl = document.getElementById('messages');
+  var inputEl = document.getElementById('msg-input');
+  var sendEl = document.getElementById('send-btn');
+  var pillsEl = document.getElementById('pills');
+
+  var history = [];
+  try { var s = localStorage.getItem('shield_support_history'); if (s) history = JSON.parse(s).slice(-12); } catch(_){}
+
+  function saveHistory(){ try { localStorage.setItem('shield_support_history', JSON.stringify(history.slice(-12))); } catch(_){} }
+
+  function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function renderMessage(role, text){
+    var el = document.createElement('div');
+    el.className = 'msg ' + (role==='user'?'msg-user':'msg-bot');
+    var html = escapeHtml(text);
+    if (role !== 'user'){
+      html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function(_,l,u){ return '<a href="'+escapeHtml(u)+'" target="_blank" rel="noopener">'+escapeHtml(l)+'</a>'; });
+    }
+    el.innerHTML = html;
+    messagesEl.appendChild(el);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  function renderTyping(){
+    var el = document.createElement('div');
+    el.className = 'typing';
+    el.id = 'typing';
+    el.textContent = 'Shield Support is typing…';
+    messagesEl.appendChild(el);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+  function clearTyping(){ var t = messagesEl.querySelector('#typing'); if (t) t.remove(); }
+  function renderError(t){ var el = document.createElement('div'); el.className='error'; el.textContent = t; messagesEl.appendChild(el); messagesEl.scrollTop = messagesEl.scrollHeight; }
+
+  function restore(){
+    messagesEl.innerHTML = '';
+    if (history.length === 0){
+      renderMessage('bot', "Hi — I'm Shield Support. I can help you navigate Meta or Amazon filings, answer questions about your packet, or pass something to the ReclaimShield team. What do you need?");
+      return;
+    }
+    for (var i=0;i<history.length;i++) renderMessage(history[i].role, history[i].content);
+  }
+
+  function send(text){
+    var t = (text || inputEl.value || '').trim();
+    if (!t || sendEl.disabled) return;
+    inputEl.value = '';
+    inputEl.style.height = 'auto';
+    sendEl.disabled = true;
+
+    history.push({ role:'user', content: t });
+    saveHistory();
+    renderMessage('user', t);
+    renderTyping();
+
+    fetch('/api/support-chat', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ session_id: sessionId, message: t, history: history.slice(0,-1), product_context: '' })
+    }).then(function(r){ return r.json().then(function(j){ if (!r.ok || !j.ok) throw new Error(j&&j.error?j.error:'request_failed'); return j; }); })
+      .then(function(j){
+        clearTyping();
+        var a = j.answer || '(no response)';
+        history.push({ role:'assistant', content: a });
+        saveHistory();
+        renderMessage('bot', a);
+      })
+      .catch(function(err){
+        clearTyping();
+        renderError('Sorry — I hit a snag. Try again in a moment, or email admin@reclaimshield.io directly.');
+        console.warn('shield-support error:', err);
+      })
+      .finally(function(){ sendEl.disabled = false; inputEl.focus(); });
+  }
+
+  inputEl.addEventListener('keydown', function(e){ if (e.key==='Enter' && !e.shiftKey){ e.preventDefault(); send(); } });
+  inputEl.addEventListener('input', function(){ inputEl.style.height='auto'; inputEl.style.height = Math.min(inputEl.scrollHeight, 180) + 'px'; });
+  sendEl.addEventListener('click', function(){ send(); });
+  pillsEl.addEventListener('click', function(e){
+    var p = e.target.closest('.pill');
+    if (!p) return;
+    send(p.getAttribute('data-q'));
+  });
+
+  restore();
+  inputEl.focus();
+})();
+</script>
+</body>
+</html>
