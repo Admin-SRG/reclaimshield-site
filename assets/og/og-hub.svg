@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ReclaimShield OG Card — Hub (reclaimshield.io/)
+  1200x630 (Open Graph / Twitter large card)
+  Locked 2026-04-24. Parent brand with both platform shields.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <!-- Background radial glow (subtle purple→pink on the left) -->
+    <radialGradient id="bgGlowHub" cx="0.2" cy="0.4" r="0.7">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.15"/>
+      <stop offset="60%" stop-color="#F472B6" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#0A0A0F" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bgGlowHub2" cx="0.85" cy="0.7" r="0.5">
+      <stop offset="0%" stop-color="#FF9900" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#146EB4" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Meta shield gradients -->
+    <linearGradient id="metaB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9F6BF2"/>
+      <stop offset="100%" stop-color="#F472B6"/>
+    </linearGradient>
+    <linearGradient id="metaBev" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#7C3AED" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="metaClip">
+      <path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"/>
+    </clipPath>
+    <!-- Amazon shield gradients -->
+    <linearGradient id="amzB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF9900"/>
+      <stop offset="100%" stop-color="#146EB4"/>
+    </linearGradient>
+    <linearGradient id="amzBev" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFB84D" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#FF9900" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="amzClip">
+      <path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"/>
+    </clipPath>
+    <!-- Headline gradient -->
+    <linearGradient id="headlineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C4B5FD"/>
+      <stop offset="50%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#FFB84D"/>
+    </linearGradient>
+    <!-- Accent divider -->
+    <linearGradient id="dividerGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F472B6" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#F472B6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FF9900" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0A0A0F"/>
+  <rect width="1200" height="630" fill="url(#bgGlowHub)"/>
+  <rect width="1200" height="630" fill="url(#bgGlowHub2)"/>
+
+  <!-- Eyebrow pill -->
+  <g transform="translate(80, 92)">
+    <rect x="0" y="0" width="320" height="36" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <text x="160" y="24" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif"
+          font-size="14" font-weight="700" fill="#EEEEF0" text-anchor="middle" letter-spacing="3.5">
+      PLATFORM APPEAL RECOVERY
+    </text>
+  </g>
+
+  <!-- Headline -->
+  <text x="80" y="220" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif"
+        font-size="68" font-weight="700" fill="#EEEEF0" letter-spacing="-2">
+    The platform took your business.
+  </text>
+  <text x="80" y="300" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif"
+        font-size="68" font-weight="700" fill="url(#headlineGrad)" letter-spacing="-2">
+    We build the appeal.
+  </text>
+
+  <!-- Subhead -->
+  <text x="80" y="360" font-family="'Inter',-apple-system,sans-serif"
+        font-size="22" font-weight="400" fill="#9B9BB0" letter-spacing="-0.3">
+    Attorney-designed appeal packages for Meta and Amazon
+  </text>
+  <text x="80" y="392" font-family="'Inter',-apple-system,sans-serif"
+        font-size="22" font-weight="400" fill="#9B9BB0" letter-spacing="-0.3">
+    account enforcement actions. Delivered as document sets.
+  </text>
+
+  <!-- Divider -->
+  <line x1="80" y1="455" x2="720" y2="455" stroke="url(#dividerGrad)" stroke-width="2"/>
+
+  <!-- Wordmark + TM -->
+  <text x="80" y="508" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif"
+        font-size="36" font-weight="700" fill="#FFFFFF" letter-spacing="-0.8">
+    ReclaimShield<tspan font-size="16" baseline-shift="super" dx="2">™</tspan>
+  </text>
+  <text x="80" y="545" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif"
+        font-size="14" font-weight="600" fill="#9B9BB0" letter-spacing="2">
+    reclaimshield.io
+  </text>
+
+  <!-- Both shields (right side, stacked) -->
+  <!-- Meta shield (top) -->
+  <g transform="translate(880, 120) scale(1.2)">
+    <path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"
+          fill="#0A0A0F" stroke="url(#metaB)" stroke-width="4"
+          filter="drop-shadow(0 10px 30px rgba(244,114,182,0.25))"/>
+    <g clip-path="url(#metaClip)">
+      <rect x="40" y="10" width="130" height="26" fill="url(#metaBev)"/>
+    </g>
+    <text x="105" y="108" text-anchor="middle"
+          font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif"
+          font-size="96" font-weight="700" fill="#FFFFFF" letter-spacing="-3">R</text>
+  </g>
+  <text x="955" y="368" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="12" font-weight="700" fill="#F472B6" letter-spacing="2.5">META</text>
+
+  <!-- Amazon shield (bottom) -->
+  <g transform="translate(880, 395) scale(0.75)">
+    <path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"
+          fill="#0A0A0F" stroke="url(#amzB)" stroke-width="5"
+          filter="drop-shadow(0 6px 20px rgba(255,153,0,0.25))"/>
+    <g clip-path="url(#amzClip)">
+      <rect x="40" y="10" width="130" height="26" fill="url(#amzBev)"/>
+    </g>
+    <text x="105" y="108" text-anchor="middle"
+          font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif"
+          font-size="96" font-weight="700" fill="#FFFFFF" letter-spacing="-3">R</text>
+  </g>
+  <text x="955" y="555" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="12" font-weight="700" fill="#FF9900" letter-spacing="2.5">AMAZON</text>
+</svg>

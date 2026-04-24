@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ReclaimShield OG Card — /amazon (reclaimshield.io/amazon)
+  1200x630 (Open Graph / Twitter large card)
+  Locked 2026-04-24. Amazon orange-blue sub-brand.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="bgGlowA" cx="0.25" cy="0.5" r="0.75">
+      <stop offset="0%" stop-color="#FF9900" stop-opacity="0.15"/>
+      <stop offset="60%" stop-color="#146EB4" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#0A0A0F" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="aShB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF9900"/>
+      <stop offset="100%" stop-color="#146EB4"/>
+    </linearGradient>
+    <linearGradient id="aShBev" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFB84D" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#FF9900" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="aShClip">
+      <path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"/>
+    </clipPath>
+    <linearGradient id="aHeadGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFB84D"/>
+      <stop offset="100%" stop-color="#3B9FD8"/>
+    </linearGradient>
+    <linearGradient id="aDiv" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF9900" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FF9900" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#146EB4" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0A0A0F"/>
+  <rect width="1200" height="630" fill="url(#bgGlowA)"/>
+
+  <!-- Platform pill -->
+  <g transform="translate(80, 92)">
+    <rect x="0" y="0" width="240" height="36" rx="18" fill="rgba(255,153,0,0.10)" stroke="rgba(255,153,0,0.32)" stroke-width="1"/>
+    <text x="120" y="24" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif"
+          font-size="14" font-weight="700" fill="#FF9900" text-anchor="middle" letter-spacing="3">
+      FOR AMAZON · SELLER POA
+    </text>
+  </g>
+
+  <!-- Headline -->
+  <text x="80" y="216" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif"
+        font-size="64" font-weight="700" fill="#EEEEF0" letter-spacing="-2">
+    Seller Central suspended
+  </text>
+  <text x="80" y="292" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif"
+        font-size="64" font-weight="700" fill="url(#aHeadGrad)" letter-spacing="-2">
+    your account?
+  </text>
+
+  <!-- Subhead -->
+  <text x="80" y="350" font-family="'Inter',-apple-system,sans-serif"
+        font-size="22" font-weight="400" fill="#9B9BB0" letter-spacing="-0.3">
+    Attorney-designed Plan of Action built around how
+  </text>
+  <text x="80" y="382" font-family="'Inter',-apple-system,sans-serif"
+        font-size="22" font-weight="400" fill="#9B9BB0" letter-spacing="-0.3">
+    Amazon Seller Performance actually reviews appeals in 2026.
+  </text>
+
+  <!-- Value callout -->
+  <g transform="translate(80, 420)">
+    <rect x="0" y="0" width="380" height="58" rx="12" fill="rgba(255,153,0,0.08)" stroke="rgba(255,153,0,0.25)" stroke-width="1"/>
+    <text x="22" y="38" font-family="'Space Grotesk',sans-serif" font-size="26" font-weight="700" fill="#EEEEF0" letter-spacing="-0.5">Flat fee · Root cause + 3-part POA</text>
+  </g>
+
+  <line x1="80" y1="512" x2="760" y2="512" stroke="url(#aDiv)" stroke-width="2"/>
+
+  <text x="80" y="562" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif"
+        font-size="32" font-weight="700" fill="#FFFFFF" letter-spacing="-0.6">
+    ReclaimShield<tspan font-size="14" baseline-shift="super" dx="2">™</tspan> for Amazon
+  </text>
+  <text x="80" y="592" font-family="'Space Grotesk',sans-serif"
+        font-size="13" font-weight="600" fill="#9B9BB0" letter-spacing="2">
+    reclaimshield.io/amazon
+  </text>
+
+  <!-- Amazon shield (right side, large) -->
+  <g transform="translate(830, 140) scale(1.8)">
+    <path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"
+          fill="#0A0A0F" stroke="url(#aShB)" stroke-width="4"
+          filter="drop-shadow(0 12px 40px rgba(255,153,0,0.30))"/>
+    <g clip-path="url(#aShClip)">
+      <rect x="40" y="10" width="130" height="26" fill="url(#aShBev)"/>
+    </g>
+    <text x="105" y="108" text-anchor="middle"
+          font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif"
+          font-size="96" font-weight="700" fill="#FFFFFF" letter-spacing="-3">R</text>
+  </g>
+</svg>

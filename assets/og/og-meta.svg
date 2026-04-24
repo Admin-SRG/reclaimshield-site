@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ReclaimShield OG Card — /meta (reclaimshield.io/meta)
+  1200x630 (Open Graph / Twitter large card)
+  Locked 2026-04-24. Meta purple-pink sub-brand.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="bgGlowM" cx="0.25" cy="0.5" r="0.75">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.18"/>
+      <stop offset="60%" stop-color="#F472B6" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0A0A0F" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mShB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9F6BF2"/>
+      <stop offset="100%" stop-color="#F472B6"/>
+    </linearGradient>
+    <linearGradient id="mShBev" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#7C3AED" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="mShClip">
+      <path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"/>
+    </clipPath>
+    <linearGradient id="mHeadGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C4B5FD"/>
+      <stop offset="100%" stop-color="#F472B6"/>
+    </linearGradient>
+    <linearGradient id="mDiv" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7C3AED" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#F472B6" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#F472B6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0A0A0F"/>
+  <rect width="1200" height="630" fill="url(#bgGlowM)"/>
+
+  <!-- Platform pill -->
+  <g transform="translate(80, 92)">
+    <rect x="0" y="0" width="260" height="36" rx="18" fill="rgba(244,114,182,0.08)" stroke="rgba(244,114,182,0.30)" stroke-width="1"/>
+    <circle cx="22" cy="18" r="5" fill="#1877F2"/>
+    <text x="44" y="24" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif"
+          font-size="14" font-weight="700" fill="#F472B6" letter-spacing="3">
+      FOR META · IG / FB / THREADS
+    </text>
+  </g>
+
+  <!-- Headline -->
+  <text x="80" y="216" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif"
+        font-size="64" font-weight="700" fill="#EEEEF0" letter-spacing="-2">
+    Instagram, Facebook, or Threads
+  </text>
+  <text x="80" y="292" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif"
+        font-size="64" font-weight="700" fill="url(#mHeadGrad)" letter-spacing="-2">
+    locked you out?
+  </text>
+
+  <!-- Subhead -->
+  <text x="80" y="350" font-family="'Inter',-apple-system,sans-serif"
+        font-size="22" font-weight="400" fill="#9B9BB0" letter-spacing="-0.3">
+    Attorney-designed 3-document appeal packet.
+  </text>
+  <text x="80" y="382" font-family="'Inter',-apple-system,sans-serif"
+        font-size="22" font-weight="400" fill="#9B9BB0" letter-spacing="-0.3">
+    Oversight Board routing. EU DSA Article 21. Flat fee.
+  </text>
+
+  <!-- Price callout -->
+  <g transform="translate(80, 420)">
+    <rect x="0" y="0" width="320" height="58" rx="12" fill="rgba(244,114,182,0.08)" stroke="rgba(244,114,182,0.25)" stroke-width="1"/>
+    <text x="22" y="38" font-family="'Space Grotesk',sans-serif" font-size="28" font-weight="700" fill="#EEEEF0" letter-spacing="-0.5">$197 flat · 2-hour delivery</text>
+  </g>
+
+  <line x1="80" y1="512" x2="760" y2="512" stroke="url(#mDiv)" stroke-width="2"/>
+
+  <text x="80" y="562" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif"
+        font-size="32" font-weight="700" fill="#FFFFFF" letter-spacing="-0.6">
+    ReclaimShield<tspan font-size="14" baseline-shift="super" dx="2">™</tspan> for Meta
+  </text>
+  <text x="80" y="592" font-family="'Space Grotesk',sans-serif"
+        font-size="13" font-weight="600" fill="#9B9BB0" letter-spacing="2">
+    reclaimshield.io/meta
+  </text>
+
+  <!-- Meta shield (right side, large) -->
+  <g transform="translate(830, 140) scale(1.8)">
+    <path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"
+          fill="#0A0A0F" stroke="url(#mShB)" stroke-width="4"
+          filter="drop-shadow(0 12px 40px rgba(244,114,182,0.35))"/>
+    <g clip-path="url(#mShClip)">
+      <rect x="40" y="10" width="130" height="26" fill="url(#mShBev)"/>
+    </g>
+    <text x="105" y="108" text-anchor="middle"
+          font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif"
+          font-size="96" font-weight="700" fill="#FFFFFF" letter-spacing="-3">R</text>
+  </g>
+</svg>
