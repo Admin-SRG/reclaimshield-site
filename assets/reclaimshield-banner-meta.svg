@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360">
+  <defs>
+    <linearGradient id="metaB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9F6BF2"/>
+      <stop offset="100%" stop-color="#F472B6"/>
+    </linearGradient>
+    <linearGradient id="metaH" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#7C3AED" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="metaStrip" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#F472B6"/>
+    </linearGradient>
+    <clipPath id="metaC">
+      <path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1200" height="360" fill="#0A0A0F"/>
+
+  <g transform="translate(110, 80) scale(1.15)">
+    <path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"
+          fill="#0A0A0F" stroke="url(#metaB)" stroke-width="4"/>
+    <g clip-path="url(#metaC)">
+      <rect x="40" y="10" width="130" height="26" fill="url(#metaH)"/>
+    </g>
+    <text x="105" y="108" text-anchor="middle"
+          font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif"
+          font-size="96" font-weight="700" fill="#FFFFFF" letter-spacing="-3">R</text>
+  </g>
+
+  <g transform="translate(350, 138)">
+    <text x="0" y="0"
+          font-family="'Space Grotesk','Helvetica Neue','DM Sans',Arial,sans-serif"
+          font-weight="700" font-size="64" fill="#EEEEF0" letter-spacing="0.5">ReclaimShield<tspan font-size="26" dy="-28" dx="4" font-weight="500">&#8482;</tspan></text>
+    <text x="0" y="44"
+          font-family="'Space Grotesk','Inter','DM Sans',Arial,sans-serif"
+          font-weight="500" font-size="28" fill="#1877F2">for Meta</text>
+    <text x="0" y="86"
+          font-family="'Inter','DM Sans',Arial,sans-serif"
+          font-weight="500" font-size="15" fill="#9999AD" letter-spacing="5">INSTAGRAM &#183; FACEBOOK &#183; THREADS APPEAL RECOVERY</text>
+    <rect x="0" y="110" width="680" height="3" fill="url(#metaStrip)"/>
+  </g>
+</svg>

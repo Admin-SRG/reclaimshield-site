@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ReclaimShield canonical logo — FINAL v2 BEVEL (medium-spec lock)
-  Confirmed by C on 2026-04-24. Use verbatim in all RS surfaces.
-
-  Spec:
-  - Shield path: M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z
-  - Fill: #0A0A0F (RS ink)
-  - Outer stroke: 4px, linear-gradient top-down #9F6BF2 → #2DD4BF
-  - Crown highlight sliver: 40,10 / 130 wide / 26 tall, clipped to shield, linear-gradient #A889F5@0.55 → #7C3AED@0
-  - Letter R: Space Grotesk Bold 96px, x=105, y=108, text-anchor middle, letter-spacing -3, fill #FFFFFF
-  - viewBox 35 0 140 180 crops tight with small margins
+  ReclaimShield R-Shield - META variant (v3 PINK)
+  Locked 2026-04-24 by C.
+  Spec: purple-pink gradient, dark ink fill, Space Grotesk Bold R.
+  Used on: reclaimshield.io/ (landing hub), /meta, /help, and ReclaimShield-for-Meta email surfaces.
+  Palette: border #9F6BF2 -> #F472B6; crown #C4B5FD@0.55 -> #7C3AED@0; fill #0A0A0F; R #FFFFFF.
 -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="35 0 140 180">
   <defs>
     <linearGradient id="rsBorder" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#9F6BF2"/>
-      <stop offset="100%" stop-color="#2DD4BF"/>
+      <stop offset="100%" stop-color="#F472B6"/>
     </linearGradient>
     <linearGradient id="rsBevelHi" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#A889F5" stop-opacity="0.55"/>
+      <stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/>
       <stop offset="55%" stop-color="#7C3AED" stop-opacity="0"/>
     </linearGradient>
     <clipPath id="rsClip">

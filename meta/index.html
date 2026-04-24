@@ -121,9 +121,10 @@ nav {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
   text-decoration: none;
 }
+@media (max-width: 600px) { .nav-logo { gap: 14px; } }
 
 .nav-logo svg { width: 30px; height: 34px; }
 
@@ -1319,11 +1320,11 @@ footer {
 <!-- Nav -->
 <nav aria-label="Primary">
   <div class="nav-inner">
-    <a href="../" class="nav-logo">
-      <svg viewBox="0 0 72 84" fill="none" width="30" height="34" style="filter:drop-shadow(0 2px 3px rgba(0,0,0,0.3))"><defs><linearGradient id="navG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1A2E45"/><stop offset="48%" stop-color="#1E3A52"/><stop offset="52%" stop-color="#389680"/><stop offset="100%" stop-color="#4BA08E"/></linearGradient><linearGradient id="navEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="50%" stop-color="rgba(255,255,255,0.02)"/><stop offset="100%" stop-color="rgba(255,255,255,0.06)"/></linearGradient></defs><path d="M36 4L6 17V41C6 57 19 72 36 80C53 72 66 57 66 41V17L36 4Z" fill="url(#navG)"/><path d="M36 5.5L7.5 17.5V41C7.5 56 20 70.5 36 78.5C52 70.5 64.5 56 64.5 41V17.5L36 5.5Z" fill="none" stroke="url(#navEdge)" stroke-width="0.8"/><line x1="36" y1="7" x2="36" y2="78" stroke="rgba(0,0,0,0.2)" stroke-width="0.8"/><circle cx="36" cy="40" r="13" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.8"/><line x1="36" y1="24" x2="36" y2="27" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="36" y1="53" x2="36" y2="56" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="20" y1="40" x2="23" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="49" y1="40" x2="52" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><path d="M36 26L40 40L36 54L32 40Z" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linejoin="round"/><path d="M36 26L40 40H32Z" fill="#fff"/><circle cx="36" cy="40" r="2" fill="#fff"/></svg>
+    <a href="../" class="nav-logo" aria-label="ReclaimShield home">
+      <svg viewBox="35 0 140 180" width="30" height="34" style="filter:drop-shadow(0 2px 4px rgba(0,0,0,0.4))" aria-hidden="true"><defs><linearGradient id="navRsBorder" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9F6BF2"/><stop offset="100%" stop-color="#F472B6"/></linearGradient><linearGradient id="navRsBevel" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/><stop offset="55%" stop-color="#7C3AED" stop-opacity="0"/></linearGradient><clipPath id="navRsClip"><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"/></clipPath></defs><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z" fill="#0A0A0F" stroke="url(#navRsBorder)" stroke-width="4"/><g clip-path="url(#navRsClip)"><rect x="40" y="10" width="130" height="26" fill="url(#navRsBevel)"/></g><text x="105" y="108" text-anchor="middle" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="96" font-weight="700" fill="#FFFFFF" letter-spacing="-3">R</text></svg>
       <div class="nav-logo-text">
-        <span class="nav-logo-name">ReclaimShield</span>
-        <span class="nav-logo-sub">Attorney-designed recovery</span>
+        <span class="nav-logo-name">ReclaimShield&trade;</span>
+        <span class="nav-logo-sub">Platform Appeal Recovery</span>
       </div>
     </a>
     <div class="nav-links">
@@ -1349,7 +1350,7 @@ footer {
         <h1>They banned you<br>with a bot.<br>Your appeal goes to<br><span class="gradient-text">the same bot.</span></h1>
         <p class="hero-sub">Meta's AI flags your account and the same AI reviews your appeal. It's a loop designed to confirm its own decision. ReclaimShield breaks that loop with escalation paths that bypass the automated system entirely.</p>
         <div class="hero-callout">
-          <strong>The ReclaimShield Method.&nbsp;</strong> Engineered around how Meta actually reviews appeals in 2026 &mdash; AI-first classification with human oversight on final decisions &mdash; and backed by a five-channel escalation path for cases that don't resolve in the consumer-appeal queue.
+          <strong>The ReclaimShield&trade; Method.&nbsp;</strong> Engineered around how Meta actually reviews appeals in 2026 &mdash; AI-first classification with human oversight on final decisions &mdash; and backed by a five-channel escalation path for cases that don't resolve in the consumer-appeal queue.
         </div>
         <div class="hero-actions">
           <a href="https://buy.stripe.com/cNiaEZ3VbaTd9dHbFA5EY0z" class="btn-primary">Start My Appeal &mdash; $197 &rarr;</a>
@@ -1419,7 +1420,7 @@ footer {
 <!-- We Know How the Machine Works -->
 <section id="how-we-know" class="machine-section">
   <div class="container">
-    <div class="eyebrow">The ReclaimShield Method</div>
+    <div class="eyebrow">The ReclaimShield&trade; Method</div>
     <h2 class="stitle">We Know How Meta<br><span class="gradient-text">Actually Reviews Your Appeal.</span></h2>
     <p class="lead">Your appeal is read first by an AI classifier, then &mdash; if it escalates &mdash; by a human reviewer working within Meta's current review pipeline. The ReclaimShield Method is built around four things most people don't know about how that pipeline actually decides.</p>
 
@@ -1649,7 +1650,7 @@ footer {
 
     <div style="margin-top:40px;padding:36px 36px 32px;background:linear-gradient(135deg,rgba(11,31,58,0.55),rgba(31,166,159,0.08));border:1px solid rgba(45,212,191,0.32);border-radius:18px;position:relative;overflow:hidden">
       <div style="position:absolute;top:18px;right:22px;font-size:10px;font-weight:700;letter-spacing:1.8px;color:var(--accent-2);text-transform:uppercase;padding:6px 12px;background:rgba(45,212,191,0.12);border-radius:100px">RECLAIM V-100 Method</div>
-      <div style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;letter-spacing:2.5px;color:var(--accent-2);text-transform:uppercase;margin-bottom:14px">ReclaimShield for Meta &middot; Appeal Kit</div>
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;letter-spacing:2.5px;color:var(--accent-2);text-transform:uppercase;margin-bottom:14px">ReclaimShield&trade; for Meta &middot; Appeal Kit</div>
       <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px;flex-wrap:wrap">
         <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:72px;font-weight:600;color:#fff;line-height:1">$197</div>
         <div style="font-size:14px;color:var(--text-muted)">one-time &middot; everything included</div>
@@ -1677,7 +1678,7 @@ footer {
 
     <!-- Delivery Guarantee -->
     <div style="margin-top:32px;padding:28px 32px;background:linear-gradient(135deg,rgba(31,166,159,0.06),rgba(11,31,58,0.4));border:1px solid rgba(45,212,191,0.22);border-radius:16px">
-      <div style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:1.8px;color:var(--accent-2);text-transform:uppercase;padding:6px 12px;background:rgba(45,212,191,0.12);border-radius:100px;margin-bottom:14px">ReclaimShield Delivery Guarantee</div>
+      <div style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:1.8px;color:var(--accent-2);text-transform:uppercase;padding:6px 12px;background:rgba(45,212,191,0.12);border-radius:100px;margin-bottom:14px">ReclaimShield&trade; Delivery Guarantee</div>
       <div style="font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:10px;letter-spacing:-0.5px;line-height:1.25">We deliver on time &mdash; or your money back.</div>
       <p style="font-size:15px;color:var(--text-dim);max-width:720px;line-height:1.65;margin-bottom:10px">Once your intake is complete and payment has cleared, we commit to delivery <strong style="color:var(--text)">within two hours</strong> of typical turnaround. If we miss that window on our end, you get a full refund on request.</p>
       <p style="font-size:13px;color:var(--text-muted);line-height:1.6;max-width:720px;margin:0">We can't guarantee a platform outcome &mdash; nobody honest can &mdash; but we control our delivery clock, and we stand behind it.</p>
@@ -1733,14 +1734,14 @@ footer {
 <!-- Trust -->
 <section class="section section-alt">
   <div class="container">
-    <div class="eyebrow">Why ReclaimShield</div>
+    <div class="eyebrow">Why ReclaimShield&trade;</div>
     <h2 class="stitle">Not Another "Recovery Service."</h2>
     <p class="lead">The account recovery market is full of scams and empty promises. Here's why ReclaimShield is different.</p>
 
     <div class="trust-grid">
       <div class="trust-card">
         <div class="icon" style="background:transparent;padding:0;display:flex;align-items:center;justify-content:center">
-          <svg viewBox="0 0 72 84" width="52" height="60" style="filter:drop-shadow(0 3px 6px rgba(0,0,0,0.35))"><defs><linearGradient id="trustG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1A2E45"/><stop offset="48%" stop-color="#1E3A52"/><stop offset="52%" stop-color="#389680"/><stop offset="100%" stop-color="#4BA08E"/></linearGradient><linearGradient id="trustEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="50%" stop-color="rgba(255,255,255,0.02)"/><stop offset="100%" stop-color="rgba(255,255,255,0.06)"/></linearGradient></defs><path d="M36 4L6 17V41C6 57 19 72 36 80C53 72 66 57 66 41V17L36 4Z" fill="url(#trustG)"/><path d="M36 5.5L7.5 17.5V41C7.5 56 20 70.5 36 78.5C52 70.5 64.5 56 64.5 41V17.5L36 5.5Z" fill="none" stroke="url(#trustEdge)" stroke-width="0.8"/><line x1="36" y1="7" x2="36" y2="78" stroke="rgba(0,0,0,0.2)" stroke-width="0.8"/><circle cx="36" cy="40" r="13" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.8"/><line x1="36" y1="24" x2="36" y2="27" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="36" y1="53" x2="36" y2="56" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="20" y1="40" x2="23" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="49" y1="40" x2="52" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><path d="M36 26L40 40L36 54L32 40Z" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linejoin="round"/><path d="M36 26L40 40H32Z" fill="#fff"/><circle cx="36" cy="40" r="2" fill="#fff"/></svg>
+          <svg viewBox="35 0 140 180" width="52" height="60" style="filter:drop-shadow(0 3px 6px rgba(0,0,0,0.4))" aria-hidden="true"><defs><linearGradient id="trustRsBorder" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9F6BF2"/><stop offset="100%" stop-color="#F472B6"/></linearGradient><linearGradient id="trustRsBevel" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/><stop offset="55%" stop-color="#7C3AED" stop-opacity="0"/></linearGradient><clipPath id="trustRsClip"><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"/></clipPath></defs><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z" fill="#0A0A0F" stroke="url(#trustRsBorder)" stroke-width="4"/><g clip-path="url(#trustRsClip)"><rect x="40" y="10" width="130" height="26" fill="url(#trustRsBevel)"/></g><text x="105" y="108" text-anchor="middle" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="96" font-weight="700" fill="#FFFFFF" letter-spacing="-3">R</text></svg>
         </div>
         <h3>Attorney-Designed Method</h3>
         <p>Every appeal is built on the five-channel escalation path Meta's public form doesn't mention — classifier-facing language, Oversight Board filing logic, congressional constituent route, state AG consumer-complaint channel, and corporate registered-agent escalation. That's not a template. That's a method.</p>
@@ -2000,7 +2001,7 @@ footer {
 <!-- Footer -->
 <footer>
   <div class="container" style="text-align:center">
-    <div class="footer-brand">ReclaimShield</div>
+    <div class="footer-brand">ReclaimShield&trade;</div>
     <div class="footer-parent">Platform enforcement response. Attorney-designed.</div>
     <div class="footer-links">
       <a href="../terms/" rel="noopener">Terms of Service</a>

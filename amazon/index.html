@@ -77,7 +77,8 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
   padding: 14px 20px; max-width: 1100px; margin: 0 auto;
 }
-.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo { display: flex; align-items: center; gap: 20px; text-decoration: none; }
+@media (max-width: 600px) { .nav-logo { gap: 14px; } }
 .nav-logo svg { width: 30px; height: 34px; }
 .nav-logo-text { display: flex; flex-direction: column; }
 .nav-logo-name {
@@ -525,10 +526,10 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
 
 <nav aria-label="Primary">
   <div class="nav-inner">
-    <a href="../" class="nav-logo">
-      <svg viewBox="0 0 72 84" fill="none" width="30" height="34" style="filter:drop-shadow(0 2px 3px rgba(0,0,0,0.3))"><defs><linearGradient id="navG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1A2E45"/><stop offset="48%" stop-color="#1E3A52"/><stop offset="52%" stop-color="#389680"/><stop offset="100%" stop-color="#4BA08E"/></linearGradient><linearGradient id="navEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="50%" stop-color="rgba(255,255,255,0.02)"/><stop offset="100%" stop-color="rgba(255,255,255,0.06)"/></linearGradient></defs><path d="M36 4L6 17V41C6 57 19 72 36 80C53 72 66 57 66 41V17L36 4Z" fill="url(#navG)"/><path d="M36 5.5L7.5 17.5V41C7.5 56 20 70.5 36 78.5C52 70.5 64.5 56 64.5 41V17.5L36 5.5Z" fill="none" stroke="url(#navEdge)" stroke-width="0.8"/><line x1="36" y1="7" x2="36" y2="78" stroke="rgba(0,0,0,0.2)" stroke-width="0.8"/><circle cx="36" cy="40" r="13" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.8"/><line x1="36" y1="24" x2="36" y2="27" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="36" y1="53" x2="36" y2="56" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="20" y1="40" x2="23" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="49" y1="40" x2="52" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><path d="M36 26L40 40L36 54L32 40Z" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linejoin="round"/><path d="M36 26L40 40H32Z" fill="#fff"/><circle cx="36" cy="40" r="2" fill="#fff"/></svg>
+    <a href="../" class="nav-logo" aria-label="ReclaimShield home">
+      <svg viewBox="35 0 140 180" width="30" height="34" style="filter:drop-shadow(0 2px 4px rgba(0,0,0,0.4))" aria-hidden="true"><defs><linearGradient id="navRsAmzBorder" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF9900"/><stop offset="100%" stop-color="#146EB4"/></linearGradient><linearGradient id="navRsAmzBevel" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFB84D" stop-opacity="0.55"/><stop offset="55%" stop-color="#FF9900" stop-opacity="0"/></linearGradient><clipPath id="navRsAmzClip"><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"/></clipPath></defs><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z" fill="#0A0A0F" stroke="url(#navRsAmzBorder)" stroke-width="4"/><g clip-path="url(#navRsAmzClip)"><rect x="40" y="10" width="130" height="26" fill="url(#navRsAmzBevel)"/></g><text x="105" y="108" text-anchor="middle" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="96" font-weight="700" fill="#FFFFFF" letter-spacing="-3">R</text></svg>
       <div class="nav-logo-text">
-        <span class="nav-logo-name">ReclaimShield</span>
+        <span class="nav-logo-name">ReclaimShield&trade;</span>
         <span class="nav-logo-platform">For Amazon Sellers</span>
       </div>
     </a>
@@ -555,7 +556,7 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
         <h1>Deactivated under <span class="gradient-text">Section 3</span>.<br>The POA is what brings you back.</h1>
         <p class="hero-sub">There is no phone number, no appeal button that restarts the clock, and no Seller Performance rep who will negotiate. Your notice cited a specific Seller Code of Conduct section. Your Plan of Action has to answer that section, with the evidence Amazon actually accepts, in the order Seller Performance reads.</p>
         <div class="hero-callout">
-          <strong>The ReclaimShield POA.</strong> Root cause. Corrective actions. Preventive measures. Written to the specific section of the Code of Conduct cited in your deactivation email &mdash; Accurate Information, Acting Fairly, Ratings/Feedback/Reviews, Communications, Customer Information, Circumventing the Sales Process, Multiple Selling Accounts, or Filing Infringement Notices as an Agent &mdash; with the exact evidence Amazon will accept for that category.
+          <strong>The ReclaimShield&trade; POA.</strong> Root cause. Corrective actions. Preventive measures. Written to the specific section of the Code of Conduct cited in your deactivation email &mdash; Accurate Information, Acting Fairly, Ratings/Feedback/Reviews, Communications, Customer Information, Circumventing the Sales Process, Multiple Selling Accounts, or Filing Infringement Notices as an Agent &mdash; with the exact evidence Amazon will accept for that category.
         </div>
         <div class="hero-actions">
           <a href="#pricing" class="btn-primary">Start My POA &rarr;</a>
@@ -967,7 +968,7 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
 
 <footer>
   <div class="container" style="text-align:center">
-    <div class="footer-brand">ReclaimShield</div>
+    <div class="footer-brand">ReclaimShield&trade;</div>
     <div class="footer-parent">Platform enforcement response. Attorney-designed.</div>
     <div class="footer-links">
       <a href="../">Home</a>

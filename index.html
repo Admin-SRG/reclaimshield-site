@@ -78,7 +78,8 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
   padding: 14px 20px; max-width: 1100px; margin: 0 auto;
 }
-.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav-logo { display: flex; align-items: center; gap: 20px; text-decoration: none; }
+@media (max-width: 600px) { .nav-logo { gap: 14px; } }
 .nav-logo svg { width: 30px; height: 34px; }
 .nav-logo-text { display: flex; flex-direction: column; }
 .nav-logo-name {
@@ -203,7 +204,7 @@ nav {
   border-color: rgba(45, 212, 191, 0.4);
   box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
-.platform-card-meta { --card-accent: linear-gradient(135deg, #1877F2, #E4405F, #833AB4); }
+.platform-card-meta { --card-accent: linear-gradient(135deg, #1877F2, #0064E0); }
 .platform-card-amazon { --card-accent: linear-gradient(135deg, #FF9900, #146EB4); }
 
 .platform-icon {
@@ -213,7 +214,7 @@ nav {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700; font-size: 20px; color: #fff;
 }
-.platform-card-meta .platform-icon { background: rgba(228, 64, 95, 0.12); color: #E4405F; }
+.platform-card-meta .platform-icon { background: rgba(24, 119, 242, 0.15); color: #1877F2; }
 .platform-card-amazon .platform-icon { background: rgba(255, 153, 0, 0.12); color: #FF9900; }
 
 .platform-tag {
@@ -397,11 +398,11 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
 
 <nav aria-label="Primary">
   <div class="nav-inner">
-    <a href="#top" class="nav-logo">
-      <svg viewBox="0 0 72 84" fill="none" width="30" height="34" style="filter:drop-shadow(0 2px 3px rgba(0,0,0,0.3))"><defs><linearGradient id="navG" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#1A2E45"/><stop offset="48%" stop-color="#1E3A52"/><stop offset="52%" stop-color="#389680"/><stop offset="100%" stop-color="#4BA08E"/></linearGradient><linearGradient id="navEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="50%" stop-color="rgba(255,255,255,0.02)"/><stop offset="100%" stop-color="rgba(255,255,255,0.06)"/></linearGradient></defs><path d="M36 4L6 17V41C6 57 19 72 36 80C53 72 66 57 66 41V17L36 4Z" fill="url(#navG)"/><path d="M36 5.5L7.5 17.5V41C7.5 56 20 70.5 36 78.5C52 70.5 64.5 56 64.5 41V17.5L36 5.5Z" fill="none" stroke="url(#navEdge)" stroke-width="0.8"/><line x1="36" y1="7" x2="36" y2="78" stroke="rgba(0,0,0,0.2)" stroke-width="0.8"/><circle cx="36" cy="40" r="13" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.8"/><line x1="36" y1="24" x2="36" y2="27" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="36" y1="53" x2="36" y2="56" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="20" y1="40" x2="23" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><line x1="49" y1="40" x2="52" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/><path d="M36 26L40 40L36 54L32 40Z" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linejoin="round"/><path d="M36 26L40 40H32Z" fill="#fff"/><circle cx="36" cy="40" r="2" fill="#fff"/></svg>
+    <a href="#top" class="nav-logo" aria-label="ReclaimShield home">
+      <svg viewBox="35 0 140 180" width="30" height="34" style="filter:drop-shadow(0 2px 4px rgba(0,0,0,0.4))" aria-hidden="true"><defs><linearGradient id="navRsBorder" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9F6BF2"/><stop offset="100%" stop-color="#F472B6"/></linearGradient><linearGradient id="navRsBevel" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/><stop offset="55%" stop-color="#7C3AED" stop-opacity="0"/></linearGradient><clipPath id="navRsClip"><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"/></clipPath></defs><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z" fill="#0A0A0F" stroke="url(#navRsBorder)" stroke-width="4"/><g clip-path="url(#navRsClip)"><rect x="40" y="10" width="130" height="26" fill="url(#navRsBevel)"/></g><text x="105" y="108" text-anchor="middle" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="96" font-weight="700" fill="#FFFFFF" letter-spacing="-3">R</text></svg>
       <div class="nav-logo-text">
-        <span class="nav-logo-name">ReclaimShield</span>
-        <span class="nav-logo-sub">Attorney-designed recovery</span>
+        <span class="nav-logo-name">ReclaimShield&trade;</span>
+        <span class="nav-logo-sub">Platform Appeal Recovery</span>
       </div>
     </a>
     <div class="nav-links">
@@ -441,7 +442,7 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
       <a href="meta/" class="platform-card platform-card-meta" aria-label="ReclaimShield for Meta: Instagram, Facebook, and Threads">
         <div class="platform-tag platform-tag-live">Live Service</div>
         <div class="platform-icon">M</div>
-        <h3>ReclaimShield for Meta</h3>
+        <h3>ReclaimShield&trade; for Meta</h3>
         <div class="platform-card-covers">Instagram · Facebook · Threads</div>
         <p>Meta's AI-first review pipeline bans your account, then the same AI reviews your appeal. We break that loop with the five-channel escalation path Meta's public appeal form doesn't mention.</p>
         <ul>
@@ -457,7 +458,7 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
       <a href="amazon/" class="platform-card platform-card-amazon" aria-label="ReclaimShield for Amazon Seller account recovery">
         <div class="platform-tag platform-tag-new">New</div>
         <div class="platform-icon">A</div>
-        <h3>ReclaimShield for Amazon</h3>
+        <h3>ReclaimShield&trade; for Amazon</h3>
         <div class="platform-card-covers">Seller Central · FBA · Brand Registry</div>
         <p>Amazon's Seller Performance team wants a Plan of Action — root cause, corrective actions, preventive measures. Write it wrong and your account stays suspended. We build the POA that addresses what Amazon is actually looking for.</p>
         <ul>
@@ -477,7 +478,7 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
 <section class="how" id="how">
   <div class="container">
     <div class="how-header">
-      <div class="section-eyebrow">The ReclaimShield Method</div>
+      <div class="section-eyebrow">The ReclaimShield&trade; Method</div>
       <h2>Three steps. No calls. No scheduling.</h2>
       <p>We built this to work at platform-scale, because the platforms that banned you work at platform-scale. The whole process is asynchronous from first click to delivered package.</p>
     </div>
@@ -563,7 +564,7 @@ footer { padding: 60px 0 40px; background: var(--surface); border-top: 1px solid
 
 <footer>
   <div class="container" style="text-align:center">
-    <div class="footer-brand">ReclaimShield</div>
+    <div class="footer-brand">ReclaimShield&trade;</div>
     <div class="footer-parent">Platform enforcement response. Attorney-designed.</div>
     <div class="footer-links">
       <a href="meta/">Meta</a>
