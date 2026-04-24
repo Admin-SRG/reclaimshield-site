@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360">
+  <defs>
+    <linearGradient id="bB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9F6BF2"/>
+      <stop offset="100%" stop-color="#2DD4BF"/>
+    </linearGradient>
+    <linearGradient id="bH" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A889F5" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#7C3AED" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bStrip" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#2DD4BF"/>
+    </linearGradient>
+    <clipPath id="bC">
+      <path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"/>
+    </clipPath>
+  </defs>
+
+  <rect width="1200" height="360" fill="#0A0A0F"/>
+
+  <g transform="translate(110, 80) scale(1.15)">
+    <path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"
+          fill="#0A0A0F" stroke="url(#bB)" stroke-width="4"/>
+    <g clip-path="url(#bC)">
+      <rect x="40" y="10" width="130" height="26" fill="url(#bH)"/>
+    </g>
+    <text x="105" y="108" text-anchor="middle"
+          font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif"
+          font-size="96" font-weight="700" fill="#FFFFFF" letter-spacing="-3">R</text>
+  </g>
+
+  <g transform="translate(350, 150)">
+    <text x="0" y="0"
+          font-family="'Space Grotesk','Helvetica Neue','DM Sans',Arial,sans-serif"
+          font-weight="700" font-size="72" fill="#EEEEF0" letter-spacing="2">RECLAIMSHIELD<tspan font-size="28" dy="-38" dx="4" font-weight="500">&#8482;</tspan></text>
+    <text x="0" y="46"
+          font-family="'Inter','DM Sans',Arial,sans-serif"
+          font-weight="500" font-size="20" fill="#9999AD" letter-spacing="6">PLATFORM APPEAL RECOVERY</text>
+    <rect x="0" y="70" width="680" height="3" fill="url(#bStrip)"/>
+  </g>
+</svg>
