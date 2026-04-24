@@ -1,27 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 84" fill="none">
   <defs>
-    <linearGradient id="navG" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#1A2E45"/>
-      <stop offset="48%" stop-color="#1E3A52"/>
-      <stop offset="52%" stop-color="#389680"/>
-      <stop offset="100%" stop-color="#4BA08E"/>
+    <!-- Primary gradient: deep navy base with teal bloom on the right/bottom -->
+    <linearGradient id="rsShieldMain" x1="0.15" y1="0.05" x2="0.85" y2="0.95">
+      <stop offset="0%" stop-color="#0B1F3A"/>
+      <stop offset="38%" stop-color="#163A5C"/>
+      <stop offset="58%" stop-color="#1FA69F"/>
+      <stop offset="100%" stop-color="#3BC0B7"/>
     </linearGradient>
-    <linearGradient id="navEdge" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.1)"/>
-      <stop offset="50%" stop-color="rgba(255,255,255,0.02)"/>
-      <stop offset="100%" stop-color="rgba(255,255,255,0.06)"/>
+
+    <!-- Top-left specular highlight for glossy dimension -->
+    <radialGradient id="rsShieldSpec" cx="28%" cy="20%" r="42%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.32"/>
+      <stop offset="55%" stop-color="#FFFFFF" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Bottom inner shadow for curved dimension -->
+    <linearGradient id="rsShieldDepth" x1="0.5" y1="0.55" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.28"/>
     </linearGradient>
+
+    <!-- Edge chrome bevel -->
+    <linearGradient id="rsShieldBevel" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.22"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.18"/>
+    </linearGradient>
+
+    <!-- Soft glow behind compass center -->
+    <radialGradient id="rsCenterGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <path d="M36 4L6 17V41C6 57 19 72 36 80C53 72 66 57 66 41V17L36 4Z" fill="url(#navG)"/>
-  <path d="M36 5.5L7.5 17.5V41C7.5 56 20 70.5 36 78.5C52 70.5 64.5 56 64.5 41V17.5L36 5.5Z" fill="none" stroke="url(#navEdge)" stroke-width="0.8"/>
-  <line x1="36" y1="7" x2="36" y2="78" stroke="rgba(0,0,0,0.2)" stroke-width="0.8"/>
-  <circle cx="36" cy="40" r="13" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.8"/>
-  <line x1="36" y1="24" x2="36" y2="27" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/>
-  <line x1="36" y1="53" x2="36" y2="56" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/>
-  <line x1="20" y1="40" x2="23" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/>
-  <line x1="49" y1="40" x2="52" y2="40" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round"/>
-  <path d="M36 26L40 40L36 54L32 40Z" fill="none" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linejoin="round"/>
-  <path d="M36 26L40 40H32Z" fill="#fff"/>
-  <circle cx="36" cy="40" r="2" fill="#fff"/>
+
+  <!-- Shield body -->
+  <path d="M36 4L6 17V41C6 57 19 72 36 80C53 72 66 57 66 41V17L36 4Z" fill="url(#rsShieldMain)"/>
+
+  <!-- Bottom depth shadow -->
+  <path d="M36 4L6 17V41C6 57 19 72 36 80C53 72 66 57 66 41V17L36 4Z" fill="url(#rsShieldDepth)"/>
+
+  <!-- Top-left specular highlight -->
+  <path d="M36 4L6 17V41C6 57 19 72 36 80C53 72 66 57 66 41V17L36 4Z" fill="url(#rsShieldSpec)"/>
+
+  <!-- Inner stroke bevel -->
+  <path d="M36 6L8 18.2V40.5C8 55.5 20.5 69.5 36 77C51.5 69.5 64 55.5 64 40.5V18.2L36 6Z" fill="none" stroke="url(#rsShieldBevel)" stroke-width="0.9"/>
+
+  <!-- Center vertical fold crease (very subtle) -->
+  <line x1="36" y1="8" x2="36" y2="77" stroke="#000000" stroke-opacity="0.18" stroke-width="0.7"/>
+
+  <!-- Compass ring: offset shadow + bright ring -->
+  <circle cx="36" cy="40.8" r="13" fill="url(#rsCenterGlow)"/>
+  <circle cx="36" cy="40.8" r="13" fill="none" stroke="#000000" stroke-opacity="0.22" stroke-width="1.9"/>
+  <circle cx="36" cy="40" r="13" fill="none" stroke="#FFFFFF" stroke-opacity="0.65" stroke-width="1.7"/>
+
+  <!-- Compass cardinal tick marks: drop-shadow + white stroke -->
+  <line x1="36" y1="23.7" x2="36" y2="26.7" stroke="#000000" stroke-opacity="0.25" stroke-width="2" stroke-linecap="round"/>
+  <line x1="36" y1="53.7" x2="36" y2="56.7" stroke="#000000" stroke-opacity="0.25" stroke-width="2" stroke-linecap="round"/>
+  <line x1="19.3" y1="40.7" x2="22.3" y2="40.7" stroke="#000000" stroke-opacity="0.25" stroke-width="2" stroke-linecap="round"/>
+  <line x1="49.7" y1="40.7" x2="52.7" y2="40.7" stroke="#000000" stroke-opacity="0.25" stroke-width="2" stroke-linecap="round"/>
+
+  <line x1="36" y1="23" x2="36" y2="26" stroke="#FFFFFF" stroke-opacity="0.95" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="36" y1="53" x2="36" y2="56" stroke="#FFFFFF" stroke-opacity="0.95" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="19" y1="40" x2="22" y2="40" stroke="#FFFFFF" stroke-opacity="0.95" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="50" y1="40" x2="53" y2="40" stroke="#FFFFFF" stroke-opacity="0.95" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- North needle: drop shadow behind + crisp outline + filled tip -->
+  <path d="M36 26.5L40.3 40.5L36 54.5L31.7 40.5Z" fill="#000000" fill-opacity="0.22"/>
+  <path d="M36 26L40 40L36 54L32 40Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.95" stroke-width="1.6" stroke-linejoin="round"/>
+  <path d="M36 26L40 40H32Z" fill="#FFFFFF"/>
+  <path d="M36 26L40 40H32Z" fill="url(#rsShieldSpec)"/>
+
+  <!-- Center pivot: glow + solid dot -->
+  <circle cx="36" cy="40" r="3.2" fill="#FFFFFF" fill-opacity="0.25"/>
+  <circle cx="36" cy="40" r="2" fill="#FFFFFF"/>
 </svg>
