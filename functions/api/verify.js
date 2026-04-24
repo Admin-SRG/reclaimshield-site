@@ -55,6 +55,17 @@ async function onRequestPost({ request, env }) {
     }), { status: 403, headers: corsHeaders });
   }
 
+  // Defense-in-depth: require minimum viable identifying fields.
+  // Blocks bot payloads that pass Turnstile but submit empty/stub bodies.
+  const emailStr = String(payload.email || payload.contactEmail || '').trim();
+  const nameStr = String(payload.clientName || payload.practiceName || payload.vendorName || payload.contactName || '').trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailStr)) {
+    return new Response(JSON.stringify({ error: 'invalid_email' }), { status: 400, headers: corsHeaders });
+  }
+  if (nameStr.length < 2) {
+    return new Response(JSON.stringify({ error: 'invalid_name' }), { status: 400, headers: corsHeaders });
+  }
+
   const { turnstileToken: _drop, ...forwardPayload } = payload;
   forwardPayload.verifiedAt = new Date().toISOString();
   forwardPayload.clientIp = clientIp;
