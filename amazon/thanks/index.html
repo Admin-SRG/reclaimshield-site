@@ -45,7 +45,8 @@ a:hover { text-decoration: underline; }
   align-items: center;
   gap: 18px;
 }
-.nav-logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: var(--text); letter-spacing: -0.01em; }
+.nav-logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: var(--text); letter-spacing: -0.01em; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.nav-logo svg { width: 30px; height: 38px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4)); }
 .nav-sep { color: var(--text-muted); opacity: 0.5; }
 .nav-platform { color: var(--accent-amazon); font-weight: 600; font-size: 14px; letter-spacing: 0.01em; text-transform: uppercase; }
 
@@ -190,7 +191,7 @@ footer {
 <body>
 
 <nav class="nav" role="navigation" aria-label="Site">
-  <a href="../../" class="nav-logo">ReclaimShield&trade;</a>
+  <a href="../../" class="nav-logo" aria-label="ReclaimShield home"><svg viewBox="35 0 140 180" aria-hidden="true"><defs><linearGradient id="amzThxBorder" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF9900"/><stop offset="100%" stop-color="#146EB4"/></linearGradient><linearGradient id="amzThxBevel" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFB84D" stop-opacity="0.55"/><stop offset="55%" stop-color="#FF9900" stop-opacity="0"/></linearGradient><clipPath id="amzThxClip"><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"/></clipPath></defs><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z" fill="#0A0A0F" stroke="url(#amzThxBorder)" stroke-width="4"/><g clip-path="url(#amzThxClip)"><rect x="40" y="10" width="130" height="26" fill="url(#amzThxBevel)"/></g><text x="105" y="108" text-anchor="middle" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="96" font-weight="700" fill="#FFFFFF" letter-spacing="-3">R</text></svg><span>ReclaimShield&trade;</span></a>
   <span class="nav-sep" aria-hidden="true">·</span>
   <span class="nav-platform">Amazon</span>
 </nav>

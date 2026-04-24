@@ -45,8 +45,8 @@ header.page-header{background:var(--bg);padding:2.5rem 0 2rem;position:relative;
 header.page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(124,58,237,0.12) 0%,transparent 55%),radial-gradient(ellipse at 15% 80%,rgba(45,212,191,0.08) 0%,transparent 50%);pointer-events:none}
 .header-inner{max-width:780px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
 .brand-lockup{display:flex;align-items:center;gap:14px;margin-bottom:1.8rem}
-.brand-shield{width:40px;height:44px;display:flex;align-items:center;justify-content:center}
-.brand-shield svg{width:100%;height:100%;filter:drop-shadow(0 4px 10px rgba(124,58,237,0.4))}
+.brand-shield{width:40px;height:51px;display:flex;align-items:center;justify-content:center}
+.brand-shield svg{width:100%;height:100%;filter:drop-shadow(0 4px 10px rgba(244,114,182,0.35))}
 .brand-text{display:flex;flex-direction:column}
 .brand-name{font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:-0.3px;color:var(--text);line-height:1.1;background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .brand-sub{font-size:0.66rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-mute);font-weight:600;margin-top:4px}
@@ -139,20 +139,10 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
   <div class="header-inner">
     <div class="brand-lockup">
       <div class="brand-shield">
-        <svg viewBox="0 0 40 44" fill="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="rsg" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#7C3AED"/>
-              <stop offset="100%" stop-color="#2DD4BF"/>
-            </linearGradient>
-          </defs>
-          <path d="M20 2 L36 8 L36 22 C36 32 28 40 20 42 C12 40 4 32 4 22 L4 8 Z"
-                fill="url(#rsg)" stroke="#F5F5F8" stroke-width="1" stroke-linejoin="round" opacity="0.95"/>
-          <path d="M14 20 L18 24 L26 16" stroke="#0A0A0F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        </svg>
+        <svg viewBox="35 0 140 180" aria-hidden="true"><defs><linearGradient id="miRsBorder" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9F6BF2"/><stop offset="100%" stop-color="#F472B6"/></linearGradient><linearGradient id="miRsBevel" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/><stop offset="55%" stop-color="#7C3AED" stop-opacity="0"/></linearGradient><clipPath id="miRsClip"><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"/></clipPath></defs><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z" fill="#0A0A0F" stroke="url(#miRsBorder)" stroke-width="4"/><g clip-path="url(#miRsClip)"><rect x="40" y="10" width="130" height="26" fill="url(#miRsBevel)"/></g><text x="105" y="108" text-anchor="middle" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="96" font-weight="700" fill="#FFFFFF" letter-spacing="-3">R</text></svg>
       </div>
       <div class="brand-text">
-        <span class="brand-name">ReclaimShield</span>
+        <span class="brand-name">ReclaimShield&trade;</span>
         <span class="brand-sub">Meta Appeal Kit</span>
       </div>
     </div>
