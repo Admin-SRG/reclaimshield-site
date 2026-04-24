@@ -14,8 +14,8 @@
   html,body{height:100%}
   body{font-family:Inter,-apple-system,Segoe UI,Arial,sans-serif;background:#F3F4F6;color:#111827;min-height:100vh;display:flex;flex-direction:column}
   header{background:#0A0A0F;background-image:linear-gradient(135deg,#7C3AED 0%,#2DD4BF 100%);color:#fff;padding:22px 20px;text-align:center;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
-  header .logo{width:52px;height:52px;background:#fff;border-radius:10px;padding:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,.18)}
-  header .logo img{width:100%;height:auto;display:block}
+  header .logo{display:flex;align-items:center;justify-content:center;flex-shrink:0;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3))}
+  header .logo svg{display:block}
   header .title-block{text-align:left;display:flex;flex-direction:column;gap:2px}
   header h1{font-family:Cormorant Garamond,Georgia,serif;font-size:28px;font-weight:600;letter-spacing:.3px;line-height:1}
   header .sub{font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.92;font-weight:500}
@@ -56,10 +56,29 @@
 </head>
 <body>
 <header>
-  <div class="logo"><img src="/assets/reclaimshield-logo-150.png" alt="ReclaimShield"></div>
+  <div class="logo">
+    <svg viewBox="35 0 140 180" width="44" height="57" xmlns="http://www.w3.org/2000/svg" aria-label="ReclaimShield">
+      <defs>
+        <linearGradient id="rsBh" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#9F6BF2"/>
+          <stop offset="100%" stop-color="#2DD4BF"/>
+        </linearGradient>
+        <linearGradient id="rsHh" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#A889F5" stop-opacity="0.55"/>
+          <stop offset="55%" stop-color="#7C3AED" stop-opacity="0"/>
+        </linearGradient>
+        <clipPath id="rsCh">
+          <path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"/>
+        </clipPath>
+      </defs>
+      <path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z" fill="#0A0A0F" stroke="url(#rsBh)" stroke-width="4"/>
+      <g clip-path="url(#rsCh)"><rect x="40" y="10" width="130" height="26" fill="url(#rsHh)"/></g>
+      <text x="105" y="108" text-anchor="middle" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="96" font-weight="700" fill="#FFFFFF" letter-spacing="-3">R</text>
+    </svg>
+  </div>
   <div class="title-block">
-    <h1>Shield Support</h1>
-    <div class="sub">ReclaimShield&trade; AI Assistant</div>
+    <h1>ReclaimShield<sup style="font-size:0.45em;vertical-align:super;margin-left:2px;font-weight:500;">&trade;</sup> Shield Support</h1>
+    <div class="sub">Platform Appeal Recovery</div>
   </div>
 </header>
 <main>

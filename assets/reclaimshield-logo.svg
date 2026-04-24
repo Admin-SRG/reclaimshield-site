@@ -1,79 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 84" fill="none">
+<!--
+  ReclaimShield canonical logo — FINAL v2 BEVEL (medium-spec lock)
+  Confirmed by C on 2026-04-24. Use verbatim in all RS surfaces.
+
+  Spec:
+  - Shield path: M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z
+  - Fill: #0A0A0F (RS ink)
+  - Outer stroke: 4px, linear-gradient top-down #9F6BF2 → #2DD4BF
+  - Crown highlight sliver: 40,10 / 130 wide / 26 tall, clipped to shield, linear-gradient #A889F5@0.55 → #7C3AED@0
+  - Letter R: Space Grotesk Bold 96px, x=105, y=108, text-anchor middle, letter-spacing -3, fill #FFFFFF
+  - viewBox 35 0 140 180 crops tight with small margins
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="35 0 140 180">
   <defs>
-    <!-- RS primary gradient: accent-1 purple #7C3AED -> accent-2 teal #2DD4BF -->
-    <linearGradient id="rsShieldMain" x1="0.15" y1="0.05" x2="0.85" y2="0.95">
-      <stop offset="0%" stop-color="#7C3AED"/>
-      <stop offset="48%" stop-color="#8B46F0"/>
-      <stop offset="58%" stop-color="#2DD4BF"/>
-      <stop offset="100%" stop-color="#5CE4D1"/>
+    <linearGradient id="rsBorder" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9F6BF2"/>
+      <stop offset="100%" stop-color="#2DD4BF"/>
     </linearGradient>
-
-    <!-- Top-left specular highlight for glossy dimension -->
-    <radialGradient id="rsShieldSpec" cx="28%" cy="20%" r="42%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.32"/>
-      <stop offset="55%" stop-color="#FFFFFF" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-    </radialGradient>
-
-    <!-- Bottom inner shadow for curved dimension -->
-    <linearGradient id="rsShieldDepth" x1="0.5" y1="0.55" x2="0.5" y2="1">
-      <stop offset="0%" stop-color="#0A0A0F" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#0A0A0F" stop-opacity="0.32"/>
+    <linearGradient id="rsBevelHi" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#A889F5" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#7C3AED" stop-opacity="0"/>
     </linearGradient>
-
-    <!-- Edge chrome bevel -->
-    <linearGradient id="rsShieldBevel" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.22"/>
-      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.04"/>
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.18"/>
-    </linearGradient>
-
-    <!-- Soft glow behind compass center -->
-    <radialGradient id="rsCenterGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.45"/>
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-    </radialGradient>
+    <clipPath id="rsClip">
+      <path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"/>
+    </clipPath>
   </defs>
 
-  <!-- Shield body -->
-  <path d="M36 4L6 17V41C6 57 19 72 36 80C53 72 66 57 66 41V17L36 4Z" fill="url(#rsShieldMain)"/>
+  <path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"
+        fill="#0A0A0F" stroke="url(#rsBorder)" stroke-width="4"/>
 
-  <!-- Bottom depth shadow -->
-  <path d="M36 4L6 17V41C6 57 19 72 36 80C53 72 66 57 66 41V17L36 4Z" fill="url(#rsShieldDepth)"/>
+  <g clip-path="url(#rsClip)">
+    <rect x="40" y="10" width="130" height="26" fill="url(#rsBevelHi)"/>
+  </g>
 
-  <!-- Top-left specular highlight -->
-  <path d="M36 4L6 17V41C6 57 19 72 36 80C53 72 66 57 66 41V17L36 4Z" fill="url(#rsShieldSpec)"/>
-
-  <!-- Inner stroke bevel -->
-  <path d="M36 6L8 18.2V40.5C8 55.5 20.5 69.5 36 77C51.5 69.5 64 55.5 64 40.5V18.2L36 6Z" fill="none" stroke="url(#rsShieldBevel)" stroke-width="0.9"/>
-
-  <!-- Center vertical fold crease (very subtle) -->
-  <line x1="36" y1="8" x2="36" y2="77" stroke="#0A0A0F" stroke-opacity="0.2" stroke-width="0.7"/>
-
-  <!-- Compass ring: offset shadow + bright ring -->
-  <circle cx="36" cy="40.8" r="13" fill="url(#rsCenterGlow)"/>
-  <circle cx="36" cy="40.8" r="13" fill="none" stroke="#0A0A0F" stroke-opacity="0.28" stroke-width="1.9"/>
-  <circle cx="36" cy="40" r="13" fill="none" stroke="#FFFFFF" stroke-opacity="0.7" stroke-width="1.7"/>
-
-  <!-- Compass cardinal tick marks: drop-shadow + white stroke -->
-  <line x1="36" y1="23.7" x2="36" y2="26.7" stroke="#0A0A0F" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round"/>
-  <line x1="36" y1="53.7" x2="36" y2="56.7" stroke="#0A0A0F" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round"/>
-  <line x1="19.3" y1="40.7" x2="22.3" y2="40.7" stroke="#0A0A0F" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round"/>
-  <line x1="49.7" y1="40.7" x2="52.7" y2="40.7" stroke="#0A0A0F" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round"/>
-
-  <line x1="36" y1="23" x2="36" y2="26" stroke="#FFFFFF" stroke-opacity="0.96" stroke-width="1.8" stroke-linecap="round"/>
-  <line x1="36" y1="53" x2="36" y2="56" stroke="#FFFFFF" stroke-opacity="0.96" stroke-width="1.8" stroke-linecap="round"/>
-  <line x1="19" y1="40" x2="22" y2="40" stroke="#FFFFFF" stroke-opacity="0.96" stroke-width="1.8" stroke-linecap="round"/>
-  <line x1="50" y1="40" x2="53" y2="40" stroke="#FFFFFF" stroke-opacity="0.96" stroke-width="1.8" stroke-linecap="round"/>
-
-  <!-- North needle: drop shadow behind + crisp outline + filled tip -->
-  <path d="M36 26.5L40.3 40.5L36 54.5L31.7 40.5Z" fill="#0A0A0F" fill-opacity="0.28"/>
-  <path d="M36 26L40 40L36 54L32 40Z" fill="none" stroke="#FFFFFF" stroke-opacity="0.96" stroke-width="1.6" stroke-linejoin="round"/>
-  <path d="M36 26L40 40H32Z" fill="#FFFFFF"/>
-  <path d="M36 26L40 40H32Z" fill="url(#rsShieldSpec)"/>
-
-  <!-- Center pivot: glow + solid dot -->
-  <circle cx="36" cy="40" r="3.2" fill="#FFFFFF" fill-opacity="0.28"/>
-  <circle cx="36" cy="40" r="2" fill="#FFFFFF"/>
+  <text x="105" y="108" text-anchor="middle"
+        font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif"
+        font-size="96" font-weight="700" fill="#FFFFFF" letter-spacing="-3">R</text>
 </svg>
