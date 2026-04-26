@@ -2,244 +2,32 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payment Confirmed — ReclaimShield for Amazon</title>
-<meta name="description" content="Your ReclaimShield Amazon POA payment has been confirmed. Next step: complete your intake form so we can draft your Plan of Action.">
-<meta name="robots" content="noindex, nofollow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Coming Soon | ReclaimShield&trade;</title>
 <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-  --bg: #0A0A0F;
-  --surface: #12121A;
-  --surface-2: #1A1A25;
-  --text: #EEEEF0;
-  --text-dim: #9999AD;
-  --text-muted: #9B9BB0;
-  --accent-amazon: #FF9900;
-  --accent-deep: #146EB4;
-  --gradient: linear-gradient(135deg, #FF9900, #146EB4);
-  --radius: 16px;
-  --radius-sm: 10px;
-}
-
-body {
-  font-family: 'Inter', -apple-system, sans-serif;
-  background: var(--bg); color: var(--text);
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-a { color: var(--accent-amazon); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-.nav {
-  padding: 24px 32px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-.nav-logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; color: var(--text); letter-spacing: -0.01em; text-decoration: none; display: flex; align-items: center; gap: 10px; }
-.nav-logo svg { width: 30px; height: 38px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4)); }
-.nav-sep { color: var(--text-muted); opacity: 0.5; }
-.nav-platform { color: var(--accent-amazon); font-weight: 600; font-size: 14px; letter-spacing: 0.01em; text-transform: uppercase; }
-
-main {
-  flex: 1;
-  padding: 56px 24px 72px;
-  max-width: 760px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.badge {
-  display: inline-block;
-  padding: 6px 14px;
-  background: rgba(45, 212, 191, 0.12);
-  color: #2DD4BF;
-  border: 1px solid rgba(45, 212, 191, 0.28);
-  border-radius: 999px;
-  font-size: 12.5px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-}
-
-h1 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(28px, 4.6vw, 40px);
-  font-weight: 800;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  color: var(--text);
-  margin-bottom: 20px;
-}
-
-h1 .grad {
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.lede {
-  font-size: 17.5px;
-  color: var(--text-dim);
-  margin-bottom: 40px;
-  max-width: 620px;
-}
-
-.step-card {
-  background: var(--surface);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius);
-  padding: 32px 28px;
-  margin-bottom: 22px;
-}
-
-.step-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px; height: 32px;
-  border-radius: 50%;
-  background: var(--accent-amazon);
-  color: #0A0A0F;
-  font-weight: 800;
-  font-size: 15px;
-  margin-right: 14px;
-}
-
-.step-head {
-  display: flex;
-  align-items: center;
-  margin-bottom: 14px;
-}
-
-.step-head h2 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 19px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--text);
-}
-
-.step-card p {
-  color: var(--text-dim);
-  font-size: 15.5px;
-}
-
-.step-card p + p { margin-top: 12px; }
-
-.intake-cta {
-  display: inline-block;
-  margin-top: 18px;
-  padding: 14px 26px;
-  background: var(--gradient);
-  color: #0A0A0F;
-  font-weight: 700;
-  font-size: 15.5px;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-.intake-cta:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(255, 153, 0, 0.28);
-  text-decoration: none;
-}
-
-.support-note {
-  background: var(--surface-2);
-  border-left: 3px solid var(--accent-deep);
-  padding: 18px 22px;
-  border-radius: 8px;
-  margin-top: 32px;
-  font-size: 14.5px;
-  color: var(--text-dim);
-}
-
-.support-note strong { color: var(--text); }
-
-.meta-line {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-top: 40px;
-  text-align: center;
-  opacity: 0.75;
-}
-
-.meta-line a { color: var(--text-muted); }
-
-footer {
-  padding: 24px 32px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  text-align: center;
-  font-size: 12.5px;
-  color: var(--text-muted);
-  line-height: 1.75;
-}
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',-apple-system,sans-serif;background:#F3F4F6;color:#0A0A0F;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:48px 40px;max-width:520px;text-align:center;box-shadow:0 4px 24px rgba(10,10,15,0.06)}
+.brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-0.3px;color:#0A0A0F;margin-bottom:6px}
+.tm{font-size:0.7em;vertical-align:super;font-weight:500;margin-left:1px}
+.sub{font-size:0.78rem;letter-spacing:1.2px;text-transform:uppercase;color:#7C3AED;margin-bottom:32px;font-weight:600}
+h1{font-family:'Space Grotesk',sans-serif;font-size:2rem;color:#0A0A0F;margin-bottom:16px;font-weight:700;line-height:1.2}
+p{color:#4B5563;line-height:1.65;margin-bottom:14px;font-size:1rem}
+.divider{width:48px;height:2px;background:linear-gradient(135deg,#7C3AED 0%,#2DD4BF 100%);margin:24px auto;border:none}
+.foot{font-size:0.78rem;color:#9CA3AF;margin-top:32px;letter-spacing:0.3px}
 </style>
 </head>
 <body>
-
-<nav class="nav" role="navigation" aria-label="Site">
-  <a href="../../" class="nav-logo" aria-label="ReclaimShield home"><svg viewBox="35 0 140 180" aria-hidden="true"><defs><linearGradient id="amzThxBorder" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FF9900"/><stop offset="100%" stop-color="#146EB4"/></linearGradient><linearGradient id="amzThxBevel" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFB84D" stop-opacity="0.55"/><stop offset="55%" stop-color="#FF9900" stop-opacity="0"/></linearGradient><clipPath id="amzThxClip"><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"/></clipPath></defs><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z" fill="#0A0A0F" stroke="url(#amzThxBorder)" stroke-width="4"/><g clip-path="url(#amzThxClip)"><rect x="40" y="10" width="130" height="26" fill="url(#amzThxBevel)"/></g><text x="105" y="108" text-anchor="middle" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="96" font-weight="700" fill="#FFFFFF" letter-spacing="-3">R</text></svg><span>ReclaimShield&trade;</span></a>
-  <span class="nav-sep" aria-hidden="true">·</span>
-  <span class="nav-platform">Amazon</span>
-</nav>
-
-<main>
-  <span class="badge">Payment confirmed</span>
-  <h1>Your POA engagement is <span class="grad">active.</span></h1>
-  <p class="lede">We received your payment. A confirmation receipt is on the way from Stripe, and a separate email from <strong>admin@reclaimshield.io</strong> will land in your inbox within a few minutes with your secure intake link and next steps.</p>
-
-  <div class="step-card">
-    <div class="step-head">
-      <span class="step-num" aria-hidden="true">1</span>
-      <h2>Complete your intake</h2>
-    </div>
-    <p>The intake form asks for your Seller Central information, the full text of your deactivation notice, your ASIN list, evidence files (supplier invoices, authorization letters, product images), and your Account Health metrics. It takes most sellers 15&ndash;25 minutes.</p>
-    <p>If you don&rsquo;t see the email from admin@reclaimshield.io within a few minutes, check spam, then use the button below to open the intake directly.</p>
-    <a href="https://reclaimshield.io/amazon-intake" class="intake-cta">Open Intake Form &rarr;</a>
-  </div>
-
-  <div class="step-card">
-    <div class="step-head">
-      <span class="step-num" aria-hidden="true">2</span>
-      <h2>We draft your Plan of Action</h2>
-    </div>
-    <p>Once your intake is in, we draft the full POA &mdash; root cause, corrective actions, preventive measures &mdash; written to the specific Seller Code of Conduct section cited in your deactivation notice, with an evidence index matched to that section&rsquo;s evidence standard. Turnaround is three business days from a complete intake.</p>
-  </div>
-
-  <div class="step-card">
-    <div class="step-head">
-      <span class="step-num" aria-hidden="true">3</span>
-      <h2>Delivery &amp; submission</h2>
-    </div>
-    <p>You&rsquo;ll receive your Plan of Action packet by email along with filing instructions for the Seller Central Reactivate flow. You retain full control of when and how to submit &mdash; we do not contact Amazon on your behalf.</p>
-  </div>
-
-  <div class="support-note">
-    <strong>Need to reach us?</strong> Reply to your receipt or write to <a href="mailto:admin@reclaimshield.io">admin@reclaimshield.io</a>. Please include your full name so we can match you to your engagement.
-  </div>
-
-  <p class="meta-line">ReclaimShield is a DBA of Sentinel Risk Group LLC (Florida). We are not a law firm. The service is attorney-designed. Disputes with Amazon are governed by the Amazon Business Solutions Agreement Section 18 and administered by the American Arbitration Association (AAA). <a href="../../terms/">Terms</a> &middot; <a href="../../privacy/">Privacy</a></p>
-</main>
-
-<footer>
-  &copy; Sentinel Risk Group LLC &middot; ReclaimShield&trade; is a DBA of Sentinel Risk Group LLC. Not a law firm. No attorney-client relationship is created by use of this service.
-</footer>
-
-<!-- Shield Support floating chat widget -->
-<script src="/assets/shield-support-widget.js" data-product="Amazon" defer></script>
-
+<div class="card">
+  <div class="brand">ReclaimShield<span class="tm">&trade;</span></div>
+  <div class="sub">Platform Appeal Recovery</div>
+  <h1>Coming Soon</h1>
+  <div class="divider"></div>
+  <p>ReclaimShield is currently offline for maintenance and final pre-launch testing.</p>
+  <p>If you have an existing matter with us, please reply to your most recent email from us.</p>
+  <p class="foot">&copy; 2026 ReclaimShield&trade; &middot; a service of Sentinel Risk Group, LLC</p>
+</div>
 </body>
 </html>
