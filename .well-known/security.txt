@@ -1,0 +1,39 @@
+# ReclaimShield — security disclosure policy
+# (DBA of Sentinel Risk Group LLC)
+# Reference: RFC 9116 (https://www.rfc-editor.org/rfc/rfc9116)
+# Place this file at: /.well-known/security.txt
+
+Contact: https://reclaimshield.io/contact
+Expires: 2027-04-28T21:27:59.000Z
+Preferred-Languages: en
+Canonical: https://reclaimshield.io/.well-known/security.txt
+Policy: https://reclaimshield.io/security-policy
+
+# Reporting guidance
+# Use the /contact form to report a suspected vulnerability, data exposure,
+# or security concern related to:
+#   - reclaimshield.io (this site)
+#   - the /meta or /amazon intake flows
+#   - the AccountShield (AS-1, AS-2, AS-3) or Amazon (AZ-1, AZ-3) pipelines
+#   - the contact, support-chat, or verify CF Pages Functions
+#   - the Stripe payment flow ($197 Meta flat-price)
+#   - any ReclaimShield deliverable email or letter
+#
+# Please include:
+#   - URL or endpoint affected
+#   - reproduction steps (if any)
+#   - your assessment of severity
+#   - whether you intend to publicly disclose, and on what timeline
+#
+# We commit to:
+#   - acknowledge a valid report within 72 hours
+#   - confirm or refute the issue within 14 calendar days
+#   - coordinate a remediation timeline before any public disclosure
+#
+# Out of scope:
+#   - rate-limit / DDoS reports against the public site (use your provider's process)
+#   - reports against vendor services (Cloudflare, AWS, Postmark, Airtable, Make,
+#     Stripe, Anthropic, GitHub, etc.) — please report directly to those vendors
+#   - findings against Meta, Instagram, Threads, or Amazon themselves (those go
+#     to their respective bug bounty programs, not us)
+#   - findings that depend on social engineering of ReclaimShield personnel
