@@ -93,7 +93,7 @@ async function onRequestPost({ request, env }) {
 
   // Collect text fields (sanitize)
   const textFields = {};
-  const textKeys = ['formType','sessionId','submittedAt','fullName','email','phoneNumber','businessLegalEntityName','storeName','sellerId','marketplace','accountType','tierSelected','suspensionType','suspensionDate','appealDeadline','suspensionNoticeText','asinList','complaintDetails','rightsHolderName','rightsHolderContact','rightsHolderContacted','odr','lsr','cr','vtr','yearsSelling','annualRevenue','previousAppeal','lastAmazonResponse','mailingAddress','termsAck','disclaimerAck','arbitrationAck'];
+  const textKeys = ['formType','sessionId','submittedAt','fullName','email','phoneNumber','businessLegalEntityName','storeName','sellerId','marketplace','accountType','tierSelected','suspensionType','suspensionDate','appealDeadline','suspensionNoticeText','asinList','complaintDetails','rightsHolderName','rightsHolderContact','rightsHolderContacted','odr','lsr','cr','vtr','yearsSelling','annualRevenue','previousAppeal','lastAmazonResponse','mailingAddress','termsAck','disclaimerAck','arbitrationAck','intakeUserAgent','intakeDisclosureVersion','intakeTimestamp'];
   for (const k of textKeys) {
     const v = fd.get(k);
     if (v !== null) textFields[k] = sanitize(String(v), 10000);
