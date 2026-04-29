@@ -2,32 +2,577 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="robots" content="noindex,nofollow">
-<title>Coming Soon | ReclaimShield&trade;</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Meta Appeal Kit Intake — ReclaimShield</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',-apple-system,sans-serif;background:#F3F4F6;color:#0A0A0F;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-.card{background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:48px 40px;max-width:520px;text-align:center;box-shadow:0 4px 24px rgba(10,10,15,0.06)}
-.brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:-0.3px;color:#0A0A0F;margin-bottom:6px}
-.tm{font-size:0.7em;vertical-align:super;font-weight:500;margin-left:1px}
-.sub{font-size:0.78rem;letter-spacing:1.2px;text-transform:uppercase;color:#7C3AED;margin-bottom:32px;font-weight:600}
-h1{font-family:'Space Grotesk',sans-serif;font-size:2rem;color:#0A0A0F;margin-bottom:16px;font-weight:700;line-height:1.2}
-p{color:#4B5563;line-height:1.65;margin-bottom:14px;font-size:1rem}
-.divider{width:48px;height:2px;background:linear-gradient(135deg,#7C3AED 0%,#2DD4BF 100%);margin:24px auto;border:none}
-.foot{font-size:0.78rem;color:#9CA3AF;margin-top:32px;letter-spacing:0.3px}
+:root{
+  --bg:#0A0A0F;
+  --surface:#12121A;
+  --surface-2:#1A1A24;
+  --surface-3:#22222E;
+  --border:#2A2A38;
+  --border-light:#3A3A4A;
+  --text:#F5F5F8;
+  --text-dim:#B0B0C0;
+  --text-mute:#7A7A8A;
+  --violet:#7C3AED;
+  --violet-light:#A78BFA;
+  --teal:#2DD4BF;
+  --teal-light:#5EEAD4;
+  --teal-dark:#14B8A6;
+  --danger:#EF4444;
+  --danger-bg:rgba(239,68,68,0.08);
+  --success:#10B981;
+  --success-bg:rgba(16,185,129,0.08);
+  --display:'Space Grotesk',-apple-system,sans-serif;
+  --body:'Inter',-apple-system,sans-serif;
+  --gradient:linear-gradient(135deg,#7C3AED 0%,#2DD4BF 100%);
+  --gradient-soft:linear-gradient(135deg,rgba(124,58,237,0.12) 0%,rgba(45,212,191,0.12) 100%);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;color-scheme:dark only;background:var(--bg)}
+body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* HEADER */
+header.page-header{background:var(--bg);padding:2.5rem 0 2rem;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+header.page-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(124,58,237,0.12) 0%,transparent 55%),radial-gradient(ellipse at 15% 80%,rgba(45,212,191,0.08) 0%,transparent 50%);pointer-events:none}
+.header-inner{max-width:780px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
+.brand-lockup{display:flex;align-items:center;gap:14px;margin-bottom:1.8rem}
+.brand-shield{width:40px;height:51px;display:flex;align-items:center;justify-content:center}
+.brand-shield svg{width:100%;height:100%;filter:drop-shadow(0 4px 10px rgba(244,114,182,0.35))}
+.brand-text{display:flex;flex-direction:column}
+.brand-name{font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:-0.3px;color:var(--text);line-height:1.1;background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.brand-sub{font-size:0.66rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-mute);font-weight:600;margin-top:4px}
+h1.page-title{font-family:var(--display);font-weight:600;font-size:clamp(1.8rem,3.4vw,2.5rem);line-height:1.15;color:var(--text);letter-spacing:-0.6px;margin-bottom:0.5rem}
+.page-eyebrow{font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:0.8rem;display:flex;align-items:center;gap:10px;background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.page-eyebrow::before{content:'';width:28px;height:1px;background:var(--teal)}
+.page-lead{font-size:0.95rem;color:var(--text-dim);margin-top:0.8rem;max-width:620px;line-height:1.7}
+
+/* FORM SURFACE */
+.form-surface{max-width:780px;margin:0 auto;padding:2.5rem 2rem 4rem}
+.form-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:2.2rem 2rem;box-shadow:0 4px 24px rgba(0,0,0,0.35);margin-bottom:1.2rem;position:relative}
+.form-card h2{font-family:var(--display);font-weight:600;font-size:1.3rem;color:var(--text);margin-bottom:1.4rem;padding-bottom:0.8rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;letter-spacing:-0.3px}
+.form-card h2 .section-num{font-family:var(--body);font-size:0.7rem;letter-spacing:1.5px;background:var(--gradient);color:#fff;padding:3px 11px;border-radius:4px;font-weight:700;text-transform:uppercase}
+.form-card p.section-desc{font-size:0.88rem;color:var(--text-dim);margin-top:-0.8rem;margin-bottom:1.2rem;line-height:1.65}
+
+/* FIELDS */
+.field{margin-bottom:1.2rem}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.2rem}
+@media(max-width:640px){.field-grid{grid-template-columns:1fr;gap:0;margin-bottom:0}.field-grid .field{margin-bottom:1.2rem}}
+label{display:block;font-size:0.83rem;font-weight:600;color:var(--text);letter-spacing:0.1px;margin-bottom:0.4rem}
+label .req{color:var(--violet-light);margin-left:3px}
+label .opt{font-size:0.7rem;color:var(--text-mute);font-weight:500;margin-left:6px;text-transform:uppercase;letter-spacing:0.8px}
+.hint{font-size:0.76rem;color:var(--text-mute);margin-top:0.35rem;margin-bottom:0.35rem;line-height:1.55}
+input[type=text],input[type=email],input[type=tel],input[type=date],input[type=number],select,textarea{
+  width:100%;padding:11px 14px;border:1px solid var(--border-light);border-radius:8px;
+  background:var(--surface-2);color:var(--text);font-family:var(--body);font-size:0.94rem;line-height:1.5;
+  transition:border-color 0.15s,box-shadow 0.15s,background 0.15s;
+  -webkit-appearance:none;appearance:none;
+}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--teal);background:var(--surface-3);box-shadow:0 0 0 3px rgba(45,212,191,0.12)}
+input::placeholder,textarea::placeholder{color:var(--text-mute)}
+textarea{min-height:120px;resize:vertical}
+select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1.5l5 5 5-5' stroke='%23B0B0C0' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px;cursor:pointer}
+select option{background:var(--surface-2);color:var(--text)}
+select optgroup{background:var(--surface);color:var(--text-dim);font-style:normal;font-weight:600}
+
+/* DISCLOSURE BOX */
+.disclosure-box{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:8px;padding:1.2rem 1.3rem;margin-bottom:1rem}
+.disclosure-box p{font-size:0.86rem;color:var(--text-dim);line-height:1.7;margin-bottom:0.75rem}
+.disclosure-box p:last-child{margin-bottom:0}
+.disclosure-box strong{color:var(--text);font-weight:600}
+.disclosure-checkbox{display:flex;align-items:flex-start;gap:12px;padding:1rem 1.1rem;background:var(--gradient-soft);border:1px solid var(--violet);border-radius:8px;cursor:pointer;transition:background 0.15s,border-color 0.15s}
+.disclosure-checkbox:hover{border-color:var(--teal)}
+.disclosure-checkbox input[type=checkbox]{margin-top:3px;width:18px;height:18px;accent-color:var(--teal);flex-shrink:0;cursor:pointer}
+.disclosure-checkbox-text{font-size:0.86rem;color:var(--text);line-height:1.65}
+.disclosure-checkbox-text strong{font-weight:700;color:var(--text)}
+
+/* UPLOAD HINT */
+.upload-note{background:var(--surface-2);border:1px dashed var(--border-light);border-radius:8px;padding:1rem 1.1rem;margin-top:0.4rem}
+.upload-note p{font-size:0.85rem;color:var(--text-dim);line-height:1.65;margin-bottom:0.5rem}
+.upload-note p:last-child{margin-bottom:0}
+.upload-note strong{color:var(--text);font-weight:600}
+
+/* SUBMIT */
+.submit-row{margin-top:2rem;text-align:center}
+.submit-btn{display:inline-block;padding:14px 44px;background:var(--gradient);color:#fff;font-size:0.85rem;letter-spacing:1.2px;text-transform:uppercase;font-weight:700;border-radius:8px;border:none;cursor:pointer;font-family:var(--body);transition:all 0.2s;min-width:240px;box-shadow:0 4px 14px rgba(124,58,237,0.25)}
+.submit-btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 8px 24px rgba(124,58,237,0.45)}
+.submit-btn:disabled{background:var(--surface-3);color:var(--text-mute);cursor:not-allowed;transform:none;box-shadow:none}
+.submit-note{font-size:0.78rem;color:var(--text-mute);margin-top:0.9rem;line-height:1.6}
+
+/* ALERTS */
+.alert{padding:1rem 1.2rem;border-radius:8px;margin-bottom:1.2rem;font-size:0.9rem;line-height:1.6}
+.alert.success{background:var(--success-bg);border:1px solid var(--success);color:var(--text)}
+.alert.error{background:var(--danger-bg);border:1px solid var(--danger);color:var(--text)}
+.alert strong{font-weight:700}
+.hidden{display:none !important}
+
+/* TURNSTILE */
+.turnstile-wrap{display:flex;justify-content:center;margin:1.5rem 0 0.5rem}
+
+/* HONEYPOT */
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+
+/* FOOTER */
+.page-footer{background:var(--bg);padding:2rem 0;text-align:center;border-top:1px solid var(--border)}
+.footer-inner{max-width:780px;margin:0 auto;padding:0 2rem}
+.footer-text{font-size:0.78rem;color:var(--text-mute);line-height:1.7}
+.footer-text a{color:var(--text-dim);text-decoration:none}
+.footer-text a:hover{color:var(--teal)}
+.footer-brand{font-family:var(--display);font-weight:700;letter-spacing:-0.3px;font-size:0.95rem;margin-bottom:0.5rem;background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* LOADING */
+.spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,0.3);border-top-color:#fff;border-radius:50%;animation:spin 0.8s linear infinite;vertical-align:middle;margin-right:8px}
+@keyframes spin{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
-<div class="card">
-  <div class="brand">ReclaimShield<span class="tm">&trade;</span></div>
-  <div class="sub">Platform Appeal Recovery</div>
-  <h1>Coming Soon</h1>
-  <div class="divider"></div>
-  <p>ReclaimShield is currently offline for maintenance and final pre-launch testing.</p>
-  <p>If you have an existing matter with us, please reply to your most recent email from us.</p>
-  <p class="foot">&copy; 2026 ReclaimShield&trade; &middot; a service of Sentinel Risk Group, LLC</p>
-</div>
+
+<header class="page-header">
+    <div style="text-align:center;margin-bottom:14px;">
+      <div style="display:flex;gap:14px;justify-content:center;align-items:center;margin:6px 0;opacity:0.85;">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="color:var(--text-dim);" aria-label="Instagram"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.25.07 1.62.07 4.78s0 3.53-.07 4.78c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.25.06-1.62.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.6 2.2 15.23 2.2 12s0-3.6.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.4 2.21 8.78 2.2 12 2.2zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.34 4.14.63a5.92 5.92 0 0 0-2.13 1.39A5.92 5.92 0 0 0 .63 4.14C.34 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.27 2.15.56 2.91.3.79.7 1.46 1.39 2.13a5.92 5.92 0 0 0 2.13 1.39c.76.29 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.27 2.91-.56a5.92 5.92 0 0 0 2.13-1.39 5.92 5.92 0 0 0 1.39-2.13c.29-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.27-2.15-.56-2.91a5.92 5.92 0 0 0-1.39-2.13A5.92 5.92 0 0 0 19.86.63c-.76-.29-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="color:var(--text-dim);" aria-label="Facebook"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.43H7.08v-3.5h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.27h3.33l-.53 3.5h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="color:var(--text-dim);" aria-label="Threads"><path d="M17.83 11.13c-.08-.04-.16-.07-.24-.11-.14-2.55-1.55-4.02-3.92-4.04h-.04c-1.42 0-2.6.6-3.33 1.7l1.31.9c.55-.83 1.4-1 2.02-1h.03c.78 0 1.36.23 1.74.67.27.33.45.78.55 1.36-.71-.12-1.49-.16-2.31-.11-2.31.13-3.79 1.48-3.69 3.36.05.95.53 1.78 1.34 2.32.69.46 1.57.69 2.49.64 1.21-.07 2.16-.53 2.83-1.36.5-.63.83-1.45.96-2.46.55.33.96.77 1.18 1.3.39.9.41 2.39-.8 3.6-1.06 1.06-2.34 1.52-4.27 1.53-2.13-.02-3.74-.7-4.79-2.04-.99-1.25-1.5-3.06-1.52-5.39.02-2.33.53-4.14 1.52-5.39 1.05-1.34 2.66-2.02 4.79-2.04 2.15.02 3.78.7 4.85 2.05.53.66.92 1.5 1.18 2.47l1.55-.41c-.31-1.2-.81-2.23-1.49-3.08C16.48.91 14.41.04 11.85.02h-.02c-2.55.02-4.59.89-6.07 2.59C4.42 4.13 3.74 6.32 3.71 9.04v.04c.03 2.72.71 4.91 2.05 6.43 1.49 1.7 3.53 2.57 6.07 2.58h.01c2.26-.01 3.86-.61 5.18-1.92 1.73-1.73 1.68-3.9 1.11-5.23-.41-.96-1.18-1.74-2.31-2.31zm-3.97 3.72c-1.02.06-2.07-.4-2.13-1.42-.04-.76.54-1.6 2.18-1.7.19-.01.37-.02.55-.02.6 0 1.16.06 1.66.17-.19 2.32-1.27 2.91-2.27 2.97z"/></svg>
+      </div>
+      <div style="font-style:italic;color:var(--text-dim);font-size:0.85rem;margin-bottom:8px;">Instagram &middot; Facebook &middot; Threads &mdash; appeals on the Meta family of apps</div>
+      <div style="font-size:0.7rem;color:var(--text-mute);line-height:1.45;max-width:540px;margin:0 auto;">
+        ReclaimShield&trade; is <strong style="color:var(--text-dim);">not affiliated with, endorsed by, or partnered with</strong> Meta Platforms, Inc., Instagram LLC, Facebook, or Threads. All trademarks are the property of their respective owners.
+      </div>
+    </div>
+  <div class="header-inner">
+    <div class="brand-lockup">
+      <div class="brand-shield">
+        <svg viewBox="35 0 140 180" aria-hidden="true"><defs><linearGradient id="miRsBorder" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9F6BF2"/><stop offset="100%" stop-color="#F472B6"/></linearGradient><linearGradient id="miRsBevel" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#C4B5FD" stop-opacity="0.55"/><stop offset="55%" stop-color="#7C3AED" stop-opacity="0"/></linearGradient><clipPath id="miRsClip"><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"/></clipPath></defs><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z" fill="#0A0A0F" stroke="url(#miRsBorder)" stroke-width="4"/><g clip-path="url(#miRsClip)"><rect x="40" y="10" width="130" height="26" fill="url(#miRsBevel)"/></g><text x="105" y="108" text-anchor="middle" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="96" font-weight="700" fill="#FFFFFF" letter-spacing="-3">R</text></svg>
+      </div>
+      <div class="brand-text">
+        <span class="brand-name">ReclaimShield&trade;</span>
+        <span class="brand-sub">Meta Appeal Kit</span>
+      </div>
+    </div>
+    <div class="page-eyebrow">Meta Appeal Kit — Intake</div>
+    <h1 class="page-title">Your Appeal Packet Intake</h1>
+    <p class="page-lead">Complete the intake below so we can assemble your three-document appeal packet for Instagram, Facebook, or Threads. Delivery is within approximately 2 hours to the email address you provide. You will personally review and send every document.</p>
+  </div>
+</header>
+
+<main class="form-surface">
+
+  <div id="alertSuccess" class="alert success hidden">
+    <strong>Intake received.</strong> A confirmation has been sent to the email address you provided, with a reference number and instructions for replying with any screenshots. Your appeal packet will arrive within approximately 2 hours. You may close this tab.
+  </div>
+  <div id="alertError" class="alert error hidden">
+    <strong>Submission could not be completed.</strong> <span id="alertErrorMsg">Please try again. If the issue persists, email admin@reclaimshield.io with your intake details and we will process it manually.</span>
+  </div>
+
+  <form id="metaIntakeForm" novalidate>
+
+    <!-- Honeypot -->
+    <div class="hp-field" aria-hidden="true">
+      <label for="website">Leave this field empty</label>
+      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+    </div>
+
+    <!-- SECTION 1 — CONTACT -->
+    <div class="form-card">
+      <h2><span class="section-num">1</span> Contact &amp; Location</h2>
+
+      <div class="field">
+        <label for="clientName">Your Full Legal Name<span class="req">*</span></label>
+        <input type="text" id="clientName" name="clientName" required maxlength="200" autocomplete="name">
+      </div>
+
+      <div class="field-grid">
+        <div class="field">
+          <label for="email">Your Email Address<span class="req">*</span></label>
+          <div class="hint">The email we'll send your appeal packet to.</div>
+          <input type="email" id="email" name="email" required maxlength="200" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="phone">Phone<span class="opt">optional</span></label>
+          <input type="tel" id="phone" name="phone" maxlength="40" autocomplete="tel">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="country">Country of Residence<span class="req">*</span></label>
+        <div class="hint">Enter the ISO 2-letter country code (US, GB, DE, FR, IE, etc.). Determines US vs. EU/EEA appeal routing (including DSA Article 21 for EU residents).</div>
+        <input type="text" id="country" name="country" required maxlength="2" minlength="2" pattern="[A-Za-z]{2}" placeholder="US" style="text-transform:uppercase;max-width:120px">
+      </div>
+    </div>
+
+
+    <!-- SECTION 2 — APPEAL STATUS (NEW: hard-stop / blocking path) -->
+    <div class="form-card">
+      <h2><span class="section-num">2</span> Where you are in Meta's process</h2>
+      <p class="hint" style="margin-bottom:14px;">Your honest answer here determines which service path we deliver. We also AI-scan your evidence uploads (Section 5) to verify and route you correctly.</p>
+
+      <div id="usAppealBranch" data-branch="us">
+        <fieldset class="field" style="border:none;padding:0;margin:0;">
+          <legend style="font-weight:600;color:var(--text);margin-bottom:6px;font-size:0.95rem;">Have you already submitted Meta's official appeal?<span class="req">*</span></legend>
+          <div class="hint" style="margin-bottom:10px;">"Appeal" includes (a) the in-app <em>Appeal / Disagree / Request Review</em> button on the notice, (b) submitting a Meta response form, or (c) emailing Meta support about this specific issue.</div>
+          <label style="display:flex;align-items:flex-start;padding:11px 13px;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;background:var(--surface-2);cursor:pointer;">
+            <input type="radio" name="intakeAppealStatusUS" value="Not Yet" style="margin-top:3px;margin-right:10px;flex-shrink:0;accent-color:var(--violet);">
+            <span><strong>No, I haven't appealed yet</strong><br><span style="font-size:0.78rem;color:var(--text-dim);">My in-app appeal is still available.</span></span>
+          </label>
+          <label style="display:flex;align-items:flex-start;padding:11px 13px;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;background:var(--surface-2);cursor:pointer;">
+            <input type="radio" name="intakeAppealStatusUS" value="Already Submitted" style="margin-top:3px;margin-right:10px;flex-shrink:0;accent-color:var(--violet);">
+            <span><strong>Yes, I already appealed</strong><br><span style="font-size:0.78rem;color:var(--text-dim);">Meta has my response. The in-app appeal is used.</span></span>
+          </label>
+          <label style="display:flex;align-items:flex-start;padding:11px 13px;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;background:var(--surface-2);cursor:pointer;">
+            <input type="radio" name="intakeAppealStatusUS" value="Unsure" style="margin-top:3px;margin-right:10px;flex-shrink:0;accent-color:var(--violet);">
+            <span><strong>I'm not sure</strong><br><span style="font-size:0.78rem;color:var(--text-dim);">Our scanner will check your screenshots and we'll route you correctly.</span></span>
+          </label>
+          <details style="font-size:0.78rem;color:var(--violet-light);margin-top:8px;cursor:pointer;">
+            <summary style="font-weight:600;">Not sure what counts as an appeal?</summary>
+            <div style="background:var(--surface-3);color:var(--text-dim);padding:11px 13px;border-radius:8px;margin-top:6px;line-height:1.55;">Any in-app or emailed response to the notice &mdash; "Appeal," "Request a review," "Disagree with decision," "Submit additional information" &mdash; counts as your one shot. If you sent ANY response to Meta about this issue, choose "Yes." If you only screenshotted the notice and did nothing, choose "No."</div>
+          </details>
+        </fieldset>
+      </div>
+
+      <div id="euAppealBranch" data-branch="eu" style="display:none;">
+        <fieldset class="field" style="border:none;padding:0;margin:0 0 18px;">
+          <legend style="font-weight:600;color:var(--text);margin-bottom:6px;font-size:0.95rem;">Have you used Meta's internal complaints mechanism (DSA Article 17)?<span class="req">*</span></legend>
+          <div class="hint" style="margin-bottom:10px;">Typically the in-app "Appeal" or "Disagree" button on the notice. Required before Appeals Centre Europe is available.</div>
+          <label style="display:flex;align-items:flex-start;padding:11px 13px;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;background:var(--surface-2);cursor:pointer;">
+            <input type="radio" name="intakeInternalComplaintEU" value="Not Yet" style="margin-top:3px;margin-right:10px;accent-color:var(--violet);">
+            <span><strong>No, I haven't yet</strong></span>
+          </label>
+          <label style="display:flex;align-items:flex-start;padding:11px 13px;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;background:var(--surface-2);cursor:pointer;">
+            <input type="radio" name="intakeInternalComplaintEU" value="Already Submitted" style="margin-top:3px;margin-right:10px;accent-color:var(--violet);">
+            <span><strong>Yes, I already used it</strong></span>
+          </label>
+          <label style="display:flex;align-items:flex-start;padding:11px 13px;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;background:var(--surface-2);cursor:pointer;">
+            <input type="radio" name="intakeInternalComplaintEU" value="Unsure" style="margin-top:3px;margin-right:10px;accent-color:var(--violet);">
+            <span><strong>I'm not sure</strong></span>
+          </label>
+        </fieldset>
+
+        <fieldset class="field" style="border:none;padding:0;margin:0;">
+          <legend style="font-weight:600;color:var(--text);margin-bottom:6px;font-size:0.95rem;">Have you submitted to Appeals Centre Europe (ACE) yet?<span class="req">*</span></legend>
+          <div class="hint" style="margin-bottom:10px;">ACE is the DSA Article 21 out-of-court dispute body. Across its first ~1,500 disputes, ACE has reversed Meta in roughly 75% of decisions. Available only after the internal mechanism above.</div>
+          <label style="display:flex;align-items:flex-start;padding:11px 13px;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;background:var(--surface-2);cursor:pointer;">
+            <input type="radio" name="intakeAceEU" value="Not Yet" style="margin-top:3px;margin-right:10px;accent-color:var(--violet);">
+            <span><strong>No, not yet</strong></span>
+          </label>
+          <label style="display:flex;align-items:flex-start;padding:11px 13px;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;background:var(--surface-2);cursor:pointer;">
+            <input type="radio" name="intakeAceEU" value="Already Submitted" style="margin-top:3px;margin-right:10px;accent-color:var(--violet);">
+            <span><strong>Yes, already submitted to ACE</strong></span>
+          </label>
+          <label style="display:flex;align-items:flex-start;padding:11px 13px;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;background:var(--surface-2);cursor:pointer;">
+            <input type="radio" name="intakeAceEU" value="Unsure" style="margin-top:3px;margin-right:10px;accent-color:var(--violet);">
+            <span><strong>I haven't heard of ACE</strong></span>
+          </label>
+        </fieldset>
+      </div>
+    </div>
+
+    <!-- SECTION 3 — PLATFORM & VIOLATION -->
+    <div class="form-card">
+      <h2><span class="section-num">3</span> Platform &amp; Violation</h2>
+
+      <div class="field-grid">
+        <div class="field">
+          <label for="platform">Platform<span class="req">*</span></label>
+          <select id="platform" name="platform" required>
+            <option value="">Select…</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Facebook">Facebook</option>
+            <option value="Threads">Threads</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="issueType">Issue Type<span class="req">*</span></label>
+          <select id="issueType" name="issueType" required>
+            <option value="">Select…</option>
+            <option value="Account Disabled">Account Disabled</option>
+            <option value="Account Suspended">Account Suspended</option>
+            <option value="Community Standards Violation">Community Standards Violation</option>
+            <option value="Content Removed">Content Removed</option>
+            <option value="Strike / Reduced Reach">Strike / Reduced Reach</option>
+            <option value="Shadowban / Restricted">Shadowban / Restricted</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="violationCategory">Meta's Stated Violation<span class="req">*</span></label>
+        <div class="hint">Select the closest match to what Meta told you was the reason for the action. If Meta gave no reason, choose "Other / not sure." Certain categories (such as child safety, terrorism, credible threats, or coordinating harm) are outside the scope of this product and will not be processed.</div>
+        <select id="violationCategory" name="violationCategory" required>
+          <option value="">Select…</option>
+          <optgroup label="Covered Categories">
+            <option value="Account Integrity">Account Integrity</option>
+            <option value="Adult Nudity &amp; Sexual Activity">Adult Nudity &amp; Sexual Activity</option>
+            <option value="Bullying &amp; Harassment">Bullying &amp; Harassment</option>
+            <option value="Hate Speech">Hate Speech</option>
+            <option value="Impersonation">Impersonation</option>
+            <option value="Inauthentic Behavior">Inauthentic Behavior</option>
+            <option value="Intellectual Property">Intellectual Property</option>
+            <option value="Misinformation">Misinformation</option>
+            <option value="Privacy">Privacy</option>
+            <option value="Regulated Goods">Regulated Goods</option>
+            <option value="Spam / platform manipulation">Spam / platform manipulation</option>
+            <option value="Suicide / Self-Injury">Suicide / Self-Injury</option>
+            <option value="Violent &amp; Graphic">Violent &amp; Graphic</option>
+            <option value="Other / not sure">Other / not sure</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+
+    <!-- SECTION 4 — ACCOUNT & NARRATIVE -->
+    <div class="form-card">
+      <h2><span class="section-num">4</span> Account &amp; Case Narrative</h2>
+
+      <div class="field">
+        <label for="accountUsername">Account Handle / Username<span class="req">*</span></label>
+        <div class="hint">The @handle of the affected account. Omitting the @ is fine.</div>
+        <input type="text" id="accountUsername" name="accountUsername" required maxlength="120" placeholder="yourhandle">
+      </div>
+
+      <div class="field">
+        <label for="accountDescription">Case Narrative<span class="req">*</span></label>
+        <div class="hint">Describe (in your own words): when the action occurred, the exact notice Meta sent, the content or behavior that was flagged, any prior appeals you've already filed, the outcome of those appeals, and anything else you believe is relevant. The more specific you are, the stronger the appeal packet.</div>
+        <textarea id="accountDescription" name="accountDescription" required maxlength="6000" placeholder="Example: On March 14 2026 my Instagram account @example was disabled. The notice said 'community standards on spam.' I appealed in-app the same day and received an automated denial on March 16. The posts in question were promotional posts about my small-business products…"></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 5 — CONTEXT & DOCS -->
+    <div class="form-card">
+      <h2><span class="section-num">5</span> Context &amp; Supporting Documents</h2>
+
+      <div class="field-grid">
+        <div class="field">
+          <label for="revenueBucket">Monthly Account Revenue<span class="opt">optional</span></label>
+          <div class="hint">For business accounts. Used only to calibrate escalation tone. Never displayed in your appeal packet.</div>
+          <select id="revenueBucket" name="revenueBucket">
+            <option value="">Not applicable</option>
+            <option value="Under $1,000/month">Under $1,000/month</option>
+            <option value="$1,000–$10,000/month">$1,000–$10,000/month</option>
+            <option value="$10,000–$50,000/month">$10,000–$50,000/month</option>
+            <option value="$50,000+/month">$50,000+/month</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="appealDeadline">Platform Appeal Deadline<span class="opt">optional</span></label>
+          <div class="hint">If Meta's notice stated a deadline, enter it here.</div>
+          <input type="date" id="appealDeadline" name="appealDeadline">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="clientAddress">Mailing Address<span class="opt">optional</span></label>
+        <div class="hint">Format: Street / City, State ZIP / Country. Used only on letterhead if your appeal packet includes an escalation-tier deliverable.</div>
+        <textarea id="clientAddress" name="clientAddress" maxlength="500" style="min-height:80px"></textarea>
+      </div>
+
+      <div class="upload-note">
+        <p><strong>Screenshots and supporting documents.</strong> After you submit this intake, you will receive a confirmation email with a reference number. Reply to that email with attachments of: (1) Meta's notice showing the action, (2) the content that was flagged or removed (if available), and (3) any prior appeal correspondence or supporting documents. Standard email attachment limits apply.</p>
+        <p>Attachments are optional but significantly strengthen the appeal packet. If you have no screenshots, we can still proceed with the narrative you provided above.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 6 — DISCLOSURE -->
+    <div class="form-card">
+      <h2><span class="section-num">6</span> Required Acknowledgment</h2>
+
+      <div class="disclosure-box">
+        <p><strong>Read carefully &mdash; these terms apply to all ReclaimShield&trade; services.</strong></p>
+        <ol style="margin-left:20px;line-height:1.65;font-size:0.92rem;">
+          <li><strong>No outcome guaranteed.</strong> Meta retains sole discretion over the result of any appeal. ReclaimShield does not promise reinstatement, content restoration, or any specific Meta decision.</li>
+          <li><strong>You are responsible for submission.</strong> ReclaimShield prepares appeal materials. You &mdash; the customer &mdash; are responsible for actually submitting them to Meta and for the timing of that submission.</li>
+          <li><strong>Service depends on your honest intake answers AND your uploaded evidence.</strong> If you've already used your in-app appeal (US) or your internal complaint (EU), the service we deliver is different. Our AI scanner reviews your uploads to verify your stated status. If your answers and uploads disagree, we route you to the appropriate path automatically and email you the explanation.</li>
+          <li><strong>Not legal advice.</strong> ReclaimShield is a non-attorney document preparation service. We do not provide legal advice, do not represent you in legal proceedings, and do not establish an attorney-client relationship. For legal questions, consult a licensed attorney in your jurisdiction.</li>
+          <li><strong>No third-party reliance.</strong> Materials are prepared for your use only. Meta, courts, regulators, and other third parties are not parties to this engagement.</li>
+          <li><strong>You indemnify ReclaimShield.</strong> You agree to indemnify and hold harmless ReclaimShield from any claims, losses, or damages arising from (a) your misrepresentation at intake, (b) your misuse or improper submission of deliverables, or (c) your prior violation of Meta's terms of service.</li>
+          <li><strong>Refund policy.</strong> Refunds are available only where ReclaimShield has not yet begun preparation of deliverables. Once preparation has begun, no refund is available unless ReclaimShield fails to deliver as described. Misrepresentation at intake voids any refund right.</li>
+          <li><strong>Limitation of liability.</strong> ReclaimShield's aggregate liability is limited to the fees you paid for the services from which any claim arises. Florida law governs.</li>
+        </ol>
+      </div>
+
+      <label class="disclosure-checkbox" for="disclosureAck">
+        <input type="checkbox" id="disclosureAck" name="disclosureAck" required>
+        <span class="disclosure-checkbox-text"><strong>I have read and agree to the terms above</strong>, the <a href="/terms" target="_blank" style="color:var(--violet-light);">full Terms of Service</a>, and the <a href="/privacy" target="_blank" style="color:var(--violet-light);">Privacy Policy</a>. I confirm my answers above are true and accurate to the best of my knowledge.</span>
+      </label>
+    </div>
+
+
+    <input type="hidden" name="intakeDisclosureVersion" value="2026-04-29-v1">
+    <input type="hidden" id="intakeUserAgent" name="intakeUserAgent" value="">
+    <input type="hidden" id="intakeTimestamp" name="intakeTimestamp" value="">
+
+    <!-- TURNSTILE + SUBMIT -->
+    <div class="turnstile-wrap">
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAADBYJ2yA225E0Gpg" data-theme="dark"></div>
+    </div>
+
+    <div class="submit-row">
+      <button type="submit" id="submitBtn" class="submit-btn">Submit Intake</button>
+      <p class="submit-note">By submitting, you confirm the information above is accurate to the best of your knowledge.<br>You will receive a confirmation email with your reference number within a few minutes.</p>
+    </div>
+
+  </form>
+</main>
+
+<footer class="page-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">ReclaimShield</div>
+    <div class="footer-text">
+      <a href="mailto:admin@reclaimshield.io">admin@reclaimshield.io</a> · <a href="https://reclaimshield.io">reclaimshield.io</a><br>
+      ReclaimShield™ is a service of Sentinel Risk Group, LLC. Non-attorney document preparation. No attorney-client relationship.<br>
+      Not affiliated with or endorsed by Meta Platforms, Inc., Instagram, Facebook, or Threads.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var WEBHOOK_URL = '/api/verify';
+  var LOAD_TS = Date.now();
+
+  var form = document.getElementById('metaIntakeForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var alertSuccess = document.getElementById('alertSuccess');
+  var alertError = document.getElementById('alertError');
+  var alertErrorMsg = document.getElementById('alertErrorMsg');
+
+  function showError(msg){
+    if(msg){ alertErrorMsg.textContent = msg; }
+    alertError.classList.remove('hidden');
+    alertSuccess.classList.add('hidden');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function showSuccess(){
+    alertSuccess.classList.remove('hidden');
+    alertError.classList.add('hidden');
+    form.style.display = 'none';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  function setLoading(on){
+    submitBtn.disabled = on;
+    submitBtn.innerHTML = on ? '<span class="spinner"></span>Submitting…' : 'Submit Intake';
+  }
+  function getQueryParam(name){
+    var u = new URL(window.location.href);
+    return u.searchParams.get(name) || '';
+  }
+
+  // Auto-uppercase country code as user types
+  var countryInput = document.getElementById('country');
+  countryInput.addEventListener('input', function(){
+    this.value = this.value.toUpperCase().replace(/[^A-Z]/g,'').slice(0,2);
+  });
+
+  var EU_EEA = ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE'];
+  function updateCountryBranch(){
+    var cc = (countryInput.value || '').toUpperCase();
+    var us = document.getElementById('usAppealBranch');
+    var eu = document.getElementById('euAppealBranch');
+    if(EU_EEA.indexOf(cc) >= 0){
+      us.style.display='none'; eu.style.display='block';
+      document.querySelectorAll('input[name="intakeAppealStatusUS"]').forEach(function(r){ r.checked = false; });
+    } else {
+      us.style.display='block'; eu.style.display='none';
+      document.querySelectorAll('input[name="intakeInternalComplaintEU"]').forEach(function(r){ r.checked = false; });
+      document.querySelectorAll('input[name="intakeAceEU"]').forEach(function(r){ r.checked = false; });
+    }
+  }
+  countryInput.addEventListener('blur', updateCountryBranch);
+  countryInput.addEventListener('input', function(){ setTimeout(updateCountryBranch, 50); });
+
+  try {
+    document.getElementById('intakeUserAgent').value = (navigator.userAgent || '').slice(0, 500);
+    document.getElementById('intakeTimestamp').value = new Date().toISOString();
+  } catch(e){}
+
+
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    alertError.classList.add('hidden');
+
+    // Honeypot
+    if(document.getElementById('website').value.trim() !== ''){
+      // silent success — bot
+      showSuccess();
+      return;
+    }
+    // Too-fast submit guard (<3s = likely bot)
+    if(Date.now() - LOAD_TS < 3000){
+      showError('Submission was flagged as automated. Please review the form and resubmit.');
+      return;
+    }
+    // Required fields manual check
+    if(!form.checkValidity()){
+      form.reportValidity();
+      return;
+    }
+    if(!document.getElementById('disclosureAck').checked){
+      showError('You must acknowledge the disclosure block to submit.');
+      return;
+    }
+
+    // Turnstile token (if widget loaded)
+    var tsToken = '';
+    try {
+      if(window.turnstile){
+        var resp = document.querySelector('[name="cf-turnstile-response"]');
+        if(resp) tsToken = resp.value || '';
+      }
+    } catch(e){}
+
+    var payload = {
+      formType: 'meta-intake',
+      sessionId: getQueryParam('session_id') || getQueryParam('cs') || '',
+      submittedAt: new Date().toISOString(),
+      turnstileToken: tsToken,
+      clientName: document.getElementById('clientName').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      phone: document.getElementById('phone').value.trim(),
+      country: document.getElementById('country').value.trim().toUpperCase(),
+      platform: document.getElementById('platform').value,
+      issueType: document.getElementById('issueType').value,
+      violationCategory: document.getElementById('violationCategory').value,
+      accountUsername: document.getElementById('accountUsername').value.trim().replace(/^@/,''),
+      accountDescription: document.getElementById('accountDescription').value.trim(),
+      revenueBucket: document.getElementById('revenueBucket').value,
+      appealDeadline: document.getElementById('appealDeadline').value,
+      clientAddress: document.getElementById('clientAddress').value.trim(),
+      disclosureAck: document.getElementById('disclosureAck').checked
+    };
+
+    setLoading(true);
+
+    fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload)
+    }).then(function(r){
+      if(!r.ok) throw new Error('HTTP ' + r.status);
+      return r.text();
+    }).then(function(){
+      setLoading(false);
+      showSuccess();
+    }).catch(function(err){
+      setLoading(false);
+      showError('We were unable to submit your intake (network error). Please try again, or email admin@reclaimshield.io.');
+      console.error('Intake submit failed:', err);
+    });
+  });
+})();
+</script>
+
+<!-- Shield Support floating chat widget -->
+<script src="/assets/shield-support-widget.js" data-product="Meta" defer></script>
+
 </body>
 </html>
