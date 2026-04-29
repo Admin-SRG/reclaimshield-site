@@ -115,6 +115,16 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
 .hidden{display:none !important}
 
 /* TURNSTILE */
+
+.file-bucket{margin-top:0.85rem}
+.file-bucket label{display:block;font-size:0.92rem;font-weight:600;color:var(--text);margin-bottom:0.35rem}
+.file-bucket .hint{font-size:0.82rem;color:var(--text-dim);line-height:1.55;margin-bottom:0.5rem}
+.file-bucket input[type=file]{width:100%;padding:0.7rem 0.8rem;background:var(--surface-3);border:1px dashed var(--border-light);border-radius:8px;color:var(--text-dim);font-size:0.88rem;cursor:pointer}
+.file-bucket input[type=file]::file-selector-button{background:var(--violet);color:#fff;border:none;border-radius:6px;padding:0.45rem 0.95rem;font-size:0.85rem;font-weight:600;margin-right:0.7rem;cursor:pointer}
+.file-bucket input[type=file]::file-selector-button:hover{background:var(--violet-light)}
+.file-bucket .opt{font-size:0.78rem;color:var(--text-dim);font-weight:400;margin-left:0.4rem;font-style:italic}
+.upload-info{background:var(--surface-2);border:1px solid var(--border-light);border-radius:8px;padding:0.95rem 1.1rem;margin-top:1.2rem;font-size:0.85rem;color:var(--text-dim);line-height:1.65}
+.upload-info strong{color:var(--text);font-weight:600}
 .turnstile-wrap{display:flex;justify-content:center;margin:1.5rem 0 0.5rem}
 
 /* HONEYPOT */
@@ -166,7 +176,7 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
 <main class="form-surface">
 
   <div id="alertSuccess" class="alert success hidden">
-    <strong>Intake received.</strong> A confirmation has been sent to the email address you provided, with a reference number and instructions for replying with any screenshots. Your appeal packet will arrive within approximately 2 hours. You may close this tab.
+    <strong>Intake received.</strong> Your evidence uploads have been received and a confirmation has been sent to the email address you provided with your reference number. Your appeal packet will arrive within approximately 2 hours. You may close this tab.
   </div>
   <div id="alertError" class="alert error hidden">
     <strong>Submission could not be completed.</strong> <span id="alertErrorMsg">Please try again. If the issue persists, email admin@reclaimshield.io with your intake details and we will process it manually.</span>
@@ -374,9 +384,26 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
         <textarea id="clientAddress" name="clientAddress" maxlength="500" style="min-height:80px"></textarea>
       </div>
 
-      <div class="upload-note">
-        <p><strong>Screenshots and supporting documents.</strong> After you submit this intake, you will receive a confirmation email with a reference number. Reply to that email with attachments of: (1) Meta's notice showing the action, (2) the content that was flagged or removed (if available), and (3) any prior appeal correspondence or supporting documents. Standard email attachment limits apply.</p>
-        <p>Attachments are optional but significantly strengthen the appeal packet. If you have no screenshots, we can still proceed with the narrative you provided above.</p>
+      <div class="file-bucket">
+        <label for="noticeScreenshots">Meta's Notice / Account Action Screenshots<span class="opt">strongly recommended</span></label>
+        <div class="hint">Screenshots of the in-app notice, email from Meta, or Account Status screen showing the disable, removal, or warning. <strong>Our scanner uses these to verify your appeal status.</strong> Up to 25&nbsp;MB per file.</div>
+        <input type="file" id="noticeScreenshots" name="noticeScreenshots" multiple accept=".pdf,.jpg,.jpeg,.png,.gif,.webp,application/pdf,image/*">
+      </div>
+
+      <div class="file-bucket">
+        <label for="contentScreenshots">Content That Was Flagged or Removed<span class="opt">optional</span></label>
+        <div class="hint">If Meta cited specific posts, comments, ads, reels, or stories, attach screenshots or download exports here. Helps us frame the policy mirror.</div>
+        <input type="file" id="contentScreenshots" name="contentScreenshots" multiple accept=".pdf,.jpg,.jpeg,.png,.gif,.webp,application/pdf,image/*">
+      </div>
+
+      <div class="file-bucket">
+        <label for="supportingDocuments">Supporting Documents<span class="opt">optional</span></label>
+        <div class="hint">Prior appeal correspondence, business registration, brand authorization letters, identity documents (only if Meta requested them), or any other relevant documentation.</div>
+        <input type="file" id="supportingDocuments" name="supportingDocuments" multiple accept=".pdf,.jpg,.jpeg,.png,.gif,.webp,.doc,.docx,.xls,.xlsx,.txt,application/pdf,image/*,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+      </div>
+
+      <div class="upload-info">
+        <strong>How uploads are handled.</strong> Files are uploaded directly and securely. Maximum 25&nbsp;MB per file. Attachments are technically optional, but uploading at least your Meta notice screenshot is strongly recommended &mdash; without it, our scanner cannot verify your stated appeal status, and we may need to route you to manual review.
       </div>
     </div>
 
@@ -436,7 +463,7 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
 <script>
 (function(){
   'use strict';
-  var WEBHOOK_URL = '/api/verify';
+  var WEBHOOK_URL = '/api/meta-intake';
   var LOAD_TS = Date.now();
 
   var form = document.getElementById('metaIntakeForm');
@@ -530,44 +557,54 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
       }
     } catch(e){}
 
-    var payload = {
-      formType: 'meta-intake',
-      sessionId: getQueryParam('session_id') || getQueryParam('cs') || '',
-      submittedAt: new Date().toISOString(),
-      turnstileToken: tsToken,
-      clientName: document.getElementById('clientName').value.trim(),
-      email: document.getElementById('email').value.trim(),
-      phone: document.getElementById('phone').value.trim(),
-      country: document.getElementById('country').value.trim().toUpperCase(),
-      platform: document.getElementById('platform').value,
-      issueType: document.getElementById('issueType').value,
-      violationCategory: document.getElementById('violationCategory').value,
-      accountUsername: document.getElementById('accountUsername').value.trim().replace(/^@/,''),
-      accountDescription: document.getElementById('accountDescription').value.trim(),
-      revenueBucket: document.getElementById('revenueBucket').value,
-      appealDeadline: document.getElementById('appealDeadline').value,
-      clientAddress: document.getElementById('clientAddress').value.trim(),
-      disclosureAck: document.getElementById('disclosureAck').checked
-    };
+    // Build multipart FormData. Native form serialization picks up all named
+    // inputs (including the intakeAppealStatusUS / intakeInternalComplaintEU /
+    // intakeAceEU radio groups, intakeDisclosureVersion, intakeUserAgent,
+    // intakeTimestamp hidden fields, and the 3 file inputs).
+    var fd = new FormData(form);
+
+    // Add fields the form doesn't already include.
+    fd.set('formType', 'meta-intake');
+    fd.set('sessionId', getQueryParam('session_id') || getQueryParam('cs') || '');
+    fd.set('submittedAt', new Date().toISOString());
+    fd.set('turnstileToken', tsToken);
+    fd.set('disclosureAck', document.getElementById('disclosureAck').checked ? 'true' : 'false');
+
+    // Normalize country to uppercase ISO 3166-1 alpha-2.
+    fd.set('country', (document.getElementById('country').value || '').trim().toUpperCase());
+
+    // Strip leading @ from Instagram handle if customer typed it.
+    var handle = document.getElementById('accountUsername').value.trim().replace(/^@/, '');
+    fd.set('accountUsername', handle);
 
     setLoading(true);
 
     fetch(WEBHOOK_URL, {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(payload)
+      // No Content-Type header — browser sets multipart boundary automatically.
+      body: fd
     }).then(function(r){
-      if(!r.ok) throw new Error('HTTP ' + r.status);
-      return r.text();
-    }).then(function(){
+      if(!r.ok){
+        return r.json().catch(function(){ return { error: 'http_' + r.status }; }).then(function(j){
+          throw new Error(j && j.error ? j.error : ('HTTP ' + r.status));
+        });
+      }
+      return r.json();
+    }).then(function(j){
       setLoading(false);
       showSuccess();
     }).catch(function(err){
       setLoading(false);
-      showError('We were unable to submit your intake (network error). Please try again, or email admin@reclaimshield.io.');
+      var msg = String(err && err.message || err || '');
+      var human = 'We were unable to submit your intake. Please try again, or email admin@reclaimshield.io.';
+      if(/file_too_large/i.test(msg)) human = 'One of your uploaded files exceeds the 25 MB per-file limit. Please reduce file size and resubmit.';
+      else if(/file_type_rejected/i.test(msg)) human = 'One of your uploaded files has an unsupported file type. Allowed: PDF, JPG, PNG, GIF, WEBP, DOC/DOCX, XLS/XLSX, TXT.';
+      else if(/turnstile/i.test(msg)) human = 'Bot-protection check failed. Please refresh the page and resubmit.';
+      else if(/invalid_email/i.test(msg)) human = 'Email address looks invalid. Please double-check and resubmit.';
+      else if(/disclosure_ack_required/i.test(msg)) human = 'You must acknowledge the disclosure block to submit.';
+      showError(human);
       console.error('Intake submit failed:', err);
     });
-  });
 })();
 </script>
 
