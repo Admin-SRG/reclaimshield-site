@@ -14,9 +14,10 @@ Policy: https://reclaimshield.io/security-policy
 # or security concern related to:
 #   - reclaimshield.io (this site)
 #   - the /meta or /amazon intake flows
-#   - the AccountShield (AS-1, AS-2, AS-3) or Amazon (AZ-1, AZ-3) pipelines
-#   - the contact, support-chat, or verify CF Pages Functions
-#   - the Stripe payment flow ($197 Meta flat-price)
+#   - the ReclaimShield Meta pipeline (AS-1, META-INTAKE-WEB, AS-3, AS-4)
+#   - the ReclaimShield Amazon pipeline (AS-1, AMAZON-INTAKE-WEB, AZ-3)
+#   - the contact, support-chat, verify, meta-intake, or amazon-intake CF Pages Functions
+#   - the Stripe payment flows
 #   - any ReclaimShield deliverable email or letter
 #
 # Please include:
