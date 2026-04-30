@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ReclaimShield — Terms of Service</title>
-<meta name="description" content="ReclaimShield Terms of Service. ReclaimShield is not a law firm and does not provide legal advice. No attorney-client relationship is formed. Results are not guaranteed.">
+<title>ReclaimShield&trade; &mdash; Terms of Service</title>
+<meta name="description" content="ReclaimShield Terms of Service. Master Terms plus per-product Schedules for Meta, Amazon, and EU/DSA appeals. ReclaimShield is not a law firm.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://reclaimshield.io/terms/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,12 +22,12 @@
   --accent-1: #7C3AED;
   --accent-2: #2DD4BF;
   --accent-3: #F472B6;
+  --accent-4: #FB923C;
   --gradient: linear-gradient(135deg, #7C3AED, #2DD4BF);
   --radius: 16px;
   --radius-sm: 10px;
 }
 
-/* a11y: focus visible */
 :focus { outline: none; }
 :focus-visible {
   outline: 2px solid var(--accent-2);
@@ -35,7 +35,6 @@
   border-radius: 4px;
 }
 
-/* a11y: skip link */
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -62,7 +61,6 @@ body {
 
 .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
 
-/* Nav */
 nav {
   position: sticky;
   top: 0;
@@ -121,8 +119,7 @@ nav {
 }
 .nav-back:hover { color: #fff; background: rgba(255,255,255,0.05); }
 
-/* Page header */
-main { padding: 64px 0 96px; }
+main { padding: 48px 0 96px; }
 
 .page-eyebrow {
   display: inline-flex;
@@ -152,41 +149,117 @@ main { padding: 64px 0 96px; }
 .page-subtitle {
   font-size: 16px;
   color: var(--text-dim);
-  margin-bottom: 40px;
+  margin-bottom: 28px;
 }
 
-/* Disclaimer card */
 .disclaimer {
   background: var(--surface);
   border: 1px solid rgba(244, 114, 182, 0.25);
   border-left: 3px solid var(--accent-3);
   border-radius: var(--radius-sm);
   padding: 20px 22px;
-  margin-bottom: 48px;
+  margin-bottom: 36px;
   font-size: 14px;
   color: var(--text);
   line-height: 1.7;
 }
 .disclaimer strong { color: var(--accent-3); font-weight: 700; letter-spacing: 0.5px; }
 
-/* Prose */
-article h2 {
+/* TOC navigation */
+.toc {
+  background: var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  margin-bottom: 48px;
+}
+.toc-title {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 22px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: -0.4px;
-  color: #fff;
-  margin-top: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-dim);
   margin-bottom: 14px;
-  line-height: 1.3;
+}
+.toc-list { display: flex; flex-direction: column; gap: 6px; }
+.toc-list a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--text);
+  text-decoration: none;
+  background: rgba(255,255,255,0.02);
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.toc-list a:hover { background: rgba(124,58,237,0.10); color: var(--accent-2); }
+.toc-list .toc-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* Schedule sections */
+.schedule-section {
+  scroll-margin-top: 80px;
+  padding-top: 8px;
+  margin-bottom: 48px;
+}
+
+.schedule-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.banner-master { background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.30); color: #A78BFA; }
+.banner-meta { background: rgba(244,114,182,0.10); border: 1px solid rgba(244,114,182,0.30); color: #F9A8D4; }
+.banner-amazon { background: rgba(251,146,60,0.12); border: 1px solid rgba(251,146,60,0.30); color: #FCA871; }
+.banner-eu { background: rgba(45,212,191,0.10); border: 1px solid rgba(45,212,191,0.30); color: #5EEAD4; }
+
+.schedule-section h2.section-h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+.schedule-section .section-meta {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 28px;
 }
 
 article h3 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 17px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #fff;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+article h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
   font-weight: 600;
   color: var(--accent-2);
-  margin-top: 24px;
+  margin-top: 22px;
   margin-bottom: 8px;
   line-height: 1.3;
 }
@@ -197,17 +270,17 @@ article p {
   margin-bottom: 16px;
 }
 
-article ul {
+article ul, article ol {
   padding-left: 22px;
   margin-bottom: 20px;
 }
-article ul li {
+article ul li, article ol li {
   font-size: 15px;
   color: var(--text);
   margin-bottom: 10px;
   padding-left: 4px;
 }
-article ul li::marker { color: var(--accent-2); }
+article ul li::marker, article ol li::marker { color: var(--accent-2); }
 
 article strong { color: #fff; font-weight: 700; }
 
@@ -221,23 +294,28 @@ article strong { color: #fff; font-weight: 700; }
   margin-bottom: 16px;
 }
 
-.ack-card {
-  background: var(--surface-2);
-  border: 1px solid rgba(45, 212, 191, 0.25);
-  border-radius: var(--radius);
-  padding: 28px;
-  margin-top: 48px;
+.callout {
+  margin: 16px 0;
+  padding: 14px 18px;
+  border-left: 3px solid var(--accent-1);
+  background: rgba(124,58,237,0.06);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text);
 }
-.ack-card h2 { margin-top: 0; }
-.sig-line {
-  display: block;
-  border-bottom: 1px solid rgba(255,255,255,0.25);
-  height: 30px;
-  margin: 24px 0 6px;
+.callout-warn {
+  border-left-color: #F59E0B;
+  background: rgba(245,158,11,0.10);
 }
-.sig-label { font-size: 12px; color: var(--text-dim); letter-spacing: 0.5px; text-transform: uppercase; }
+.callout-warn strong { color: #FCD34D; }
+.callout strong { color: #fff; font-weight: 700; }
 
-/* Footer */
+.divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  margin: 56px 0 0;
+}
+
 footer {
   padding: 40px 0;
   border-top: 1px solid rgba(255,255,255,0.05);
@@ -283,9 +361,10 @@ footer {
 .footer-legal strong { color: var(--text); font-weight: 700; }
 
 @media (max-width: 600px) {
-  main { padding: 40px 0 64px; }
-  article h2 { font-size: 20px; }
-  article p, article ul li { font-size: 14px; }
+  main { padding: 32px 0 64px; }
+  .schedule-section h2.section-h2 { font-size: 22px; }
+  article h3 { font-size: 17px; }
+  article p, article ul li, article ol li { font-size: 14px; }
 }
 </style>
 </head>
@@ -308,166 +387,304 @@ footer {
   <div class="container">
     <span class="page-eyebrow">Legal</span>
     <h1 class="page-title">Terms of Service</h1>
-    <p class="page-subtitle">Effective April 21, 2026 &middot; Version 4.1</p>
+    <p class="page-subtitle">Effective April 30, 2026 &middot; Master Terms v1.0 + Product Schedules</p>
 
     <div class="disclaimer" role="note">
       <strong>DISCLAIMER.</strong> ReclaimShield is not a law firm and does not provide legal advice. Use of ReclaimShield does not create an attorney-client relationship. Results are not guaranteed and vary based on platform policies, account history, timing, and other factors. If you require legal representation, consult a licensed attorney in your jurisdiction.
     </div>
 
+    <div class="toc" aria-label="Document contents">
+      <div class="toc-title">In this document</div>
+      <div class="toc-list">
+        <a href="#master"><span>Master Terms</span><span class="toc-tag">All Products</span></a>
+        <a href="#schedule-meta"><span>Schedule M &mdash; Meta Appeal Kit</span><span class="toc-tag">US + non-EU/EEA</span></a>
+        <a href="#schedule-amazon"><span>Schedule A &mdash; Amazon POA Kit</span><span class="toc-tag">Worldwide</span></a>
+        <a href="#schedule-eu"><span>Schedule E &mdash; EU/DSA Appeal Kit</span><span class="toc-tag">EU/EEA</span></a>
+      </div>
+    </div>
+
     <article>
 
-      <h2>1. Nature of Services</h2>
-      <!-- ENTITY-REF: entity identity paragraph. These Terms bind the entity identified below. On LLC conversion, update entity name + state of formation. Keep identity disclosure consolidated here and in §13-§17 (Liability, Indemnity, Governing Law, Entire Agreement), and in the Entity line in the Privacy Policy contact card. -->
-      <p>ReclaimShield (&ldquo;ReclaimShield,&rdquo; &ldquo;we,&rdquo; &ldquo;our&rdquo;) is a service offered by Sentinel Risk Group, LLC (&ldquo;Sentinel&rdquo;), a Florida limited liability company. ReclaimShield applies a proprietary methodology &mdash; The ReclaimShield Method &mdash; to social-media account recovery and appeals for Meta platforms (Instagram, Facebook, Threads).</p>
-      <p>ReclaimShield is a service, not a legal service. The ReclaimShield Method is an attorney-designed appeal process: it was designed by a licensed attorney as part of product development. That design pedigree does not transform ReclaimShield into a law firm, a lawyer, or a provider of legal advice, and does not create any attorney-client relationship between Sentinel, its principals, or any other person and you.</p>
-      <p>By purchasing the ReclaimShield Meta Appeal Kit, or submitting any intake form, inquiry, or application, you agree to be bound by these Terms of Service (the &ldquo;Terms&rdquo;). Your electronic acceptance &mdash; by completing checkout, by submitting an intake form, or by clicking any button affirmatively marked as acceptance &mdash; has the same force and effect as a written signature.</p>
+    <!-- ========== MASTER TERMS ========== -->
+    <section id="master" class="schedule-section">
+      <span class="schedule-banner banner-master">Master Terms</span>
+      <h2 class="section-h2">ReclaimShield&trade; Master Terms</h2>
+      <p class="section-meta">Effective April 30, 2026 &middot; Version 1.0 (replaces single-document Terms v4.1)</p>
 
-      <h2>2. No Attorney-Client Relationship</h2>
-      <p>No attorney-client relationship is formed by purchase or use of ReclaimShield. Purchase or use of any ReclaimShield product does not establish an attorney-client relationship, does not constitute the rendering of legal advice, and does not create any fiduciary, representative, or advocacy relationship between you and Sentinel, any Sentinel principal, or any other person.</p>
-      <p>You remain the author, signatory, and filer of record for every appeal, submission, letter, or other document that ReclaimShield prepares for your use. ReclaimShield products include filing instructions that you follow; you submit the materials in your own name, on your own behalf. ReclaimShield does not appear on your behalf before any court, agency, platform, or tribunal.</p>
-      <p>If your situation requires legal representation &mdash; for example, litigation, defamation, criminal attachment, contract disputes, or regulatory matters &mdash; you should consult a licensed attorney in your jurisdiction. ReclaimShield does not recommend, refer, or vouch for any specific attorney; selection and retention of an attorney is your decision alone.</p>
+      <p>These Master Terms govern your use of any ReclaimShield&trade; service (&ldquo;Service&rdquo;) offered by <strong>Sentinel Risk Group, LLC</strong>, a Florida limited liability company (&ldquo;Sentinel,&rdquo; &ldquo;we,&rdquo; &ldquo;our&rdquo;). ReclaimShield&trade; is a brand of Sentinel Risk Group, LLC.</p>
 
-      <h2>3. No Guarantees</h2>
-      <p class="caps"><strong>RECLAIMSHIELD MAKES NO GUARANTEES, WARRANTIES, OR PROMISES OF ANY SPECIFIC OUTCOME.</strong> Meta Platforms, Inc., its subsidiaries (including Instagram LLC, Facebook, and Threads), Meta Platforms Ireland Limited, and any other platform retain sole and absolute discretion over all account reinstatement, content restoration, and enforcement decisions.</p>
-      <p>Fees paid for ReclaimShield products are for the products and services described (preparation of appeal materials, filing instructions, and access to the ReclaimShield Method). Fees are not contingent on outcome, not refundable based on outcome, and not guarantees of outcome.</p>
-      <p>Results vary based on platform policies, the specific enforcement action taken, account history, the timing of the appeal, completeness of information you provide, and other factors outside Sentinel&rsquo;s control. Past results do not predict future results.</p>
+      <p>These Master Terms apply to every ReclaimShield&trade; product. Each product also has its own <strong>Product Schedule</strong> that adds product-specific provisions (covered categories, pricing, platform-specific disclosures, refund mechanics). The applicable Schedule is identified at purchase and on each product page. Master Terms + the applicable Schedule together form your agreement with us for that product.</p>
 
-      <h2>4. Service Description &mdash; Meta Appeal Kit</h2>
-      <p>ReclaimShield offers a single flat-price product: the <strong>Meta Appeal Kit</strong>, priced at US $197, covering Instagram, Facebook, and Threads. Each Appeal Kit includes:</p>
+      <p>If any provision in a Schedule conflicts with these Master Terms, the Schedule controls <em>for that product only</em>.</p>
+
+      <h3>1. Acceptance and modification</h3>
+      <p>By purchasing a ReclaimShield&trade; product or accessing a ReclaimShield&trade; Service, you accept these Master Terms and the applicable Product Schedule. If you do not agree, do not purchase or use the Service.</p>
+      <p>We may modify these Master Terms or any Schedule from time to time. Modifications become effective when posted with a new Effective Date. Material changes will be communicated by email to active customers at least ten (10) days before they take effect where practicable. Continued use after the Effective Date constitutes acceptance.</p>
+
+      <h3>2. Definitions</h3>
       <ul>
-        <li>An in-app Request Review draft, authored against the specific Community Standard or enforcement rationale cited in your action.</li>
-        <li>An escalation package tailored to your jurisdiction:
-          <ul>
-            <li><strong>United States residents:</strong> Meta Oversight Board submission materials where applicable, plus alternative escalation routes.</li>
-            <li><strong>European Union &amp; European Economic Area residents:</strong> a complaint to Meta Platforms Ireland Limited, a Digital Services Act Article 21 out-of-court dispute settlement submission prepared for the Appeals Centre Europe, and guidance on your DSA Articles 14, 17, and 20 rights.</li>
-          </ul>
-        </li>
-        <li>Step-by-step filing instructions so you submit the materials from your own verified account.</li>
-      </ul>
-      <p><strong>Coverage &mdash; the RECLAIM V-100 Method.</strong> The Meta Appeal Kit covers a defined list of violation categories &mdash; fourteen (14) covered categories as of the Effective Date, documented on our product pages. Six (6) categories are expressly out of scope and are not covered by this service. If you purchase the Meta Appeal Kit and your matter falls outside the covered categories, we will issue a full automated refund and notify you by email within twenty-four (24) hours of intake, without further obligation on either side.</p>
-      <p><strong>What is never included.</strong></p>
-      <ul>
-        <li>Legal representation in any forum (court, arbitration, administrative tribunal).</li>
-        <li>The filing of pleadings, motions, appeals, or other court documents on your behalf.</li>
-        <li>Legal advice about your specific rights, claims, or defenses.</li>
-        <li>Ongoing counsel, retainer arrangements, or any attorney-client engagement.</li>
-        <li>Submission of the prepared materials directly to Meta or any platform on your behalf.</li>
-        <li>Any form of account access, password handling, credential storage, or action taken while logged into your account.</li>
-        <li>Litigation of any kind. If your matter requires litigation, retain a licensed attorney in your jurisdiction.</li>
-      </ul>
-        <p style="margin-top:14px;padding:12px 14px;background:rgba(124,58,237,0.08);border-left:3px solid var(--violet,#7C3AED);border-radius:6px;">
-          <strong>Service path determined by your intake answers and uploaded evidence.</strong>
-          The specific deliverable bundle you receive depends on (a) your honest answer to the appeal-status question(s) at intake (United States residents: a single binary answer; European Union / European Economic Area residents: a two-part answer covering DSA Article 17 internal complaints and DSA Article 21 Appeals Centre Europe submission), and (b) a server-side AI scan of your uploaded notice and content screenshots that cross-checks your stated status. Where your stated status and your uploaded evidence agree, you receive the standard package described above. Where they disagree &mdash; for example, your screenshots clearly show Meta has already reviewed your appeal but you indicated &ldquo;Not Yet&rdquo; &mdash; ReclaimShield will route you to the appropriate post-appeal package (typically a formal letter on ReclaimShield letterhead for you to send to Meta&rsquo;s legal department, or an Appeals Centre Europe submission packet) at the same flat fee, and will email you the explanation. The fee is the same; the deliverable changes to match your actual situation.
-        </p>
-
-      <h2>5. Software-Generated &amp; AI-Assisted Documents &mdash; State Safe-Harbor Language</h2>
-      <p><strong>This product is software-generated and AI-assisted, and is not a substitute for the advice of an attorney.</strong> The Meta Appeal Kit is produced using software, including automated systems and artificial-intelligence tools directed by the ReclaimShield Method. It is a business document &mdash; specifically, professional business correspondence and administrative appeal documentation &mdash; not a legal document, pleading, brief, or filing prepared by counsel for your representation.</p>
-      <p><strong>AI disclosure.</strong> We use AI models (including large-language models) as part of the ReclaimShield Method to assemble platform-specific appeal content from your intake responses, platform policy sources, and the fixed structural templates of the ReclaimShield Method. AI-assisted generation does not change the non-legal character of the output, the no-attorney-client-relationship posture of this service, or your responsibility as the author, signatory, and filer of record. AI-generated materials can contain errors or omissions; you are expected to review any materials we deliver to you before you file them with the platform, and to correct any factual inaccuracies unique to your account or history.</p>
-      <p>The foregoing disclosure is provided in recognition of, and pursuant to the safe harbor in, Texas Government Code §81.101(c), which permits the design, creation, publication, distribution, display, and sale of computer software and similar products provided the products clearly and conspicuously state that they are not a substitute for the advice of an attorney. The same disclosure applies without geographic limitation and is intended to establish the non-legal character of the Meta Appeal Kit in every jurisdiction.</p>
-      <p>Nothing in the Meta Appeal Kit, in our emails, on our website, or in any communication from ReclaimShield constitutes legal advice or should be treated as legal advice. If you require legal advice, retain a licensed attorney in your jurisdiction.</p>
-
-      <div class="disclaimer" role="note" style="border-left-color: var(--accent-2); border-color: rgba(45, 212, 191, 0.25); margin-top: 20px;">
-        <strong style="color: var(--accent-2);">LEGAL QUESTIONS?</strong> If you have legal questions about your matter &mdash; for example, whether a platform&rsquo;s action constitutes defamation, whether you have a civil claim, how to respond to a subpoena, or what your rights are under a specific statute &mdash; those questions are outside the scope of ReclaimShield. ReclaimShield prepares administrative appeal materials; it does not evaluate civil claims, render legal opinions, or represent you before any tribunal. For those questions, consult a licensed attorney in your jurisdiction. ReclaimShield does not recommend, refer, or vouch for any specific attorney.
-      </div>
-
-      <h2>6. Eligibility</h2>
-      <p>To purchase or use ReclaimShield, you must be at least eighteen (18) years of age, or the age of majority in your jurisdiction of residence if greater than eighteen (18), and you must have the legal capacity to enter into a binding contract. By placing an order, submitting an intake form, or clicking any acceptance control, you represent and warrant that you meet these conditions.</p>
-      <p>If we determine that you do not meet these eligibility requirements, we may decline to provide the service and will refund any fees paid.</p>
-
-      <h2>7. No Account Access</h2>
-      <p><strong>ReclaimShield does not and will not access, log into, or operate any customer account on any platform.</strong> We will never request, receive, store, or use your platform passwords, login credentials, authentication tokens, one-time codes, two-factor authentication codes, recovery codes, session cookies, backup-email access, or any other credential that could be used to access your account.</p>
-      <p>All submissions, filings, appeals, and communications produced by ReclaimShield are delivered to you. You submit them yourself, from your own verified account, under your own name. The decision to submit any material is yours, and you retain sole and continuous control over your own account at all times.</p>
-      <p>This posture is part of our service design and our compliance posture under the Computer Fraud and Abuse Act (18 U.S.C. §1030) and analogous laws in other jurisdictions. Any communication claiming to be from ReclaimShield that asks for credentials or account access is fraudulent; please report it to us immediately via our <a href="/contact" style="color: var(--accent-2); text-decoration: underline;">contact form</a>.</p>
-
-      <h2>8. Your Responsibilities</h2>
-      <p>You agree to:</p>
-      <ul>
-        <li>Provide truthful, complete, and accurate information about your account, the enforcement action, any prior appeals or communications with the platform, and the circumstances surrounding the matter.</li>
-        <li>Promptly respond to any requests for additional information or clarification that ReclaimShield sends during preparation of your materials.</li>
-        <li>Review, approve, and file the prepared materials yourself, under your own name, on your own behalf, following the included instructions.</li>
-        <li>Comply with all applicable platform policies, terms of service, and laws.</li>
-        <li>Not submit false, forged, or misleading information to any platform, agency, or court in connection with ReclaimShield materials.</li>
-        <li><strong>Never share your passwords or login credentials.</strong> ReclaimShield will never request your account password, login credentials, or account access. Any communication claiming to be from ReclaimShield that asks for login credentials is fraudulent.</li>
+        <li><strong>&ldquo;Service&rdquo;</strong> means any ReclaimShield&trade; product (Meta Appeal Kit, Amazon POA Kit, EU/DSA Appeal Kit, and any future Schedules added to this Master Terms framework).</li>
+        <li><strong>&ldquo;Deliverables&rdquo;</strong> means the documents, instructions, and supporting materials we deliver to you under a Service.</li>
+        <li><strong>&ldquo;Platform&rdquo;</strong> means the third-party service against which a Deliverable is to be filed (e.g., Meta Platforms, Inc.; Amazon.com, Inc.; or others as specified in a Schedule).</li>
+        <li><strong>&ldquo;You&rdquo;</strong> or <strong>&ldquo;your&rdquo;</strong> means the natural person or entity that purchases a Service.</li>
       </ul>
 
-      <h2>9. Fees, Payment, and Refunds</h2>
-      <p>The Meta Appeal Kit is a flat-fee product, priced at US $197. Payment is due in full at the time of purchase, through our payment processor (Stripe). Fees are earned upon commencement of work on your materials.</p>
-      <p><strong>Automated delivery.</strong> After your payment clears and you complete the intake form, we prepare your Meta Appeal Kit through an automated pipeline. Typical end-to-end delivery, measured from completed intake to email delivery of your packet, is within two (2) hours. In rare cases &mdash; for example, when additional information is needed from you, or during infrastructure incidents &mdash; delivery may take up to twenty-four (24) hours.</p>
-      <p><strong>Coverage refund.</strong> If your matter falls outside the covered violation categories described in Section 4, we will issue a full automated refund of the US $197 fee and notify you by email within twenty-four (24) hours of your intake submission. No further action on your part is required.</p>
-      <p><strong>Delivery failure refund.</strong> If ReclaimShield fails to deliver your completed Meta Appeal Kit within twenty-four (24) hours after your intake is complete and your payment has cleared, you may request a full refund of the fee by replying to your order confirmation email. This guarantee covers our delivery performance only. It does not cover, and ReclaimShield cannot guarantee, the outcome or timing of the platform&rsquo;s response to any filed materials.</p>
-      <p><strong>Post-delivery refunds.</strong> Because our fees pay for the product (preparation of your Meta Appeal Kit) rather than for any particular outcome, refunds are not available once your materials have been delivered to you, except where required by applicable law.</p>
-      <p><strong>Chargebacks and disputes.</strong> If you believe a charge is in error, please contact us via our <a href="/contact" style="color: var(--accent-2); text-decoration: underline;">contact form</a> before initiating a chargeback. We will work with you in good faith to resolve any billing issue.</p>
-        <p style="margin-top:14px;padding:12px 14px;background:rgba(245,158,11,0.10);border-left:3px solid #F59E0B;border-radius:6px;">
-          <strong>Misrepresentation at intake voids refund rights.</strong>
-          ReclaimShield&rsquo;s service path and the work performed depend on your intake answers (including the appeal-status question(s) described in &sect; 4) and your uploaded evidence. If your intake answers are later determined to be inaccurate &mdash; whether by ReclaimShield&rsquo;s AI scan of your uploaded screenshots, by Meta&rsquo;s response to your submission, or by any other reasonable means &mdash; any refund right you may otherwise have under this section is void. Where the misrepresentation is detected before substantive work begins, ReclaimShield may, at its sole discretion, route you to the appropriate service path at no additional charge or refund the fee less a reasonable processing charge.
-        </p>
+      <h3>3. Nature of the Service &mdash; Not legal advice; not a law firm</h3>
+      <p><strong>ReclaimShield is not a law firm and does not provide legal advice. Use of any ReclaimShield Service does not create an attorney-client relationship.</strong> Deliverables are professional business correspondence and administrative appeal documentation prepared from your intake responses and the published policies of the Platform, applying the proprietary ReclaimShield&trade; Method.</p>
+      <p>The attorney who designed the ReclaimShield&trade; Method does not provide legal services to customers through ReclaimShield. If your matter requires legal representation, retain a licensed attorney in your own jurisdiction. Selection and retention of an attorney is your decision alone.</p>
+      <p>You are the <strong>author, signatory, and filer of record</strong> for every Deliverable submitted to a Platform. ReclaimShield prepares the materials; you submit them under your own name through the Platform&rsquo;s designated channels.</p>
 
-      <h2>10. Privacy and Confidentiality</h2>
-      <p>ReclaimShield collects information you submit through intake forms and through email correspondence, and uses that information solely to prepare your materials and to communicate with you about your order. ReclaimShield does not sell customer data.</p>
-      <p>Because no attorney-client relationship is formed, communications between you and ReclaimShield are <strong>not</strong> protected by attorney-client privilege or the attorney work product doctrine. Do not send privileged or highly sensitive material through ReclaimShield channels.</p>
-      <p>ReclaimShield will treat the information you provide as confidential in the ordinary commercial sense: we do not disclose it except as necessary to prepare your materials, to comply with law, or to respond to lawful process. For full details, including your GDPR and US state privacy rights, see our <a href="../privacy/" style="color: var(--accent-2); text-decoration: underline;">Privacy Policy</a>.</p>
+      <h3>4. AI disclosure</h3>
+      <p><strong>This Service is software-generated and AI-assisted.</strong> Deliverables are produced using software, including automated systems and large-language-model artificial-intelligence tools, directed by the ReclaimShield&trade; Method. AI-assisted generation does not change the non-legal character of the output, the no-attorney-client-relationship posture of this Service, or your responsibility as the author and filer of record.</p>
+      <p>AI-generated materials can contain errors or omissions. <strong>You are expected to review any Deliverable before you file it</strong> and to correct any factual inaccuracies unique to your account, business, or history. We provide review-and-edit guidance; you make the call before submission.</p>
+      <p>We use models from third-party providers (currently including Anthropic, Inc.) under their respective commercial usage policies. We do not train AI models on your intake content; intake content is processed for the purpose of preparing your Deliverable and retained per the ReclaimShield Privacy Policy.</p>
+      <p>The foregoing AI-disclosure is provided in recognition of, and pursuant to the safe harbor in, Texas Government Code &sect;81.101(c), which permits the design, creation, publication, distribution, display, and sale of computer software and similar products provided the products clearly and conspicuously state that they are not a substitute for the advice of an attorney. The same disclosure applies without geographic limitation and is intended to establish the non-legal character of the Deliverables in every jurisdiction.</p>
 
-      <h2>11. EU/EEA Users &mdash; DSA, GDPR, and Consumer Protection</h2>
-      <p>If you are a resident of the European Union, the European Economic Area, or the United Kingdom, the following provisions apply in addition to the other terms of this agreement.</p>
-      <p><strong>Digital Services Act.</strong> The Meta Appeal Kit includes materials supporting your rights under Regulation (EU) 2022/2065 (the Digital Services Act or &ldquo;DSA&rdquo;), including your right under Article 21 to select an out-of-court dispute settlement body &mdash; in practice, the Appeals Centre Europe &mdash; to review a decision by Meta Platforms Ireland Limited that affects your account or content. ReclaimShield prepares the submission package; you submit it to the Appeals Centre Europe under your own name. The dispute-settlement body&rsquo;s decision on a case is not binding on Meta; however, Meta is expected to engage with the process in good faith. ReclaimShield is not affiliated with the Appeals Centre Europe or with any other out-of-court dispute settlement body.</p>
-      <p><strong>GDPR.</strong> Your rights under the EU General Data Protection Regulation (Regulation (EU) 2016/679), and under the UK GDPR, are described in our <a href="../privacy/" style="color: var(--accent-2); text-decoration: underline;">Privacy Policy</a>, including rights of access, rectification, erasure, restriction, portability, objection, and withdrawal of consent.</p>
-      <p><strong>Statutory consumer rights.</strong> Nothing in these Terms limits your non-waivable rights under applicable EU or Member State consumer-protection law. Where provisions of these Terms conflict with those non-waivable rights, the statutory rights prevail.</p>
-      <p><strong>Right of withdrawal.</strong> Under Directive 2011/83/EU, EU consumers ordinarily have a fourteen (14)-day right of withdrawal for distance contracts. You acknowledge and expressly consent that the Meta Appeal Kit is a digital service whose supply begins immediately upon completed intake, at your explicit request, and that you therefore lose the right of withdrawal once performance has begun. Our coverage refund and delivery-failure refund (Section 9) remain available regardless.</p>
+      <h3>5. Identity and account responsibility</h3>
+      <p>You represent and warrant that:</p>
+      <ol type="a">
+        <li>You are the verified account holder, business owner, or legal representative of the Platform account that is the subject of the Service.</li>
+        <li>The information you provide at intake is true, accurate, and complete.</li>
+        <li>You will not use the Service to evade court orders, platform bans imposed by legal process, or the terms of service of any Platform.</li>
+      </ol>
+      <p>We may decline to deliver a Service, or refund a fee paid, if we determine in good faith that the Service is being requested for a purpose described in (c).</p>
+      <p>We never request, and you should never share with us, your Platform login credentials, passwords, two-factor codes, or session tokens. Any service that asks for these is a security risk; report it to your Platform.</p>
 
-      <h2>12. Prohibited Uses</h2>
-      <p>You may not use ReclaimShield:</p>
+      <h3>6. Prohibited uses</h3>
+      <p>You may not use any ReclaimShield Service:</p>
       <ul>
-        <li>To submit false, forged, altered, or misleading information to any platform, agency, court, or tribunal.</li>
-        <li>To harass, defame, or threaten any person, including platform employees, reviewers, or other customers.</li>
-        <li>To recover an account that was disabled for violations you actually committed and that you know to be well-founded.</li>
-        <li>To evade court orders, platform bans imposed by legal process, or the terms of service of any platform.</li>
-        <li>For any purpose prohibited by applicable law.</li>
+        <li>For an account that is not yours or for which you do not have lawful authority to act</li>
+        <li>To submit knowingly false, misleading, or fraudulent information to a Platform</li>
+        <li>To evade enforcement actions properly imposed by law enforcement or court order</li>
+        <li>To circumvent age-verification, identity-verification, or compliance requirements imposed by a Platform on the underlying account</li>
+        <li>For any purpose prohibited by applicable law in your jurisdiction or the United States</li>
       </ul>
-      <p>ReclaimShield may decline or terminate any engagement that appears to violate this section or any other provision of these Terms, and will refund any fees not yet earned.</p>
+      <p>Violation of this Section 6 is grounds for immediate termination of the Service without refund and may be reported to the Platform, law-enforcement authorities, or both.</p>
 
-      <h2>13. Limitation of Liability</h2>
-      <p class="caps"><strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, SENTINEL&rsquo;S TOTAL LIABILITY TO YOU FOR ANY AND ALL CLAIMS ARISING FROM OR RELATED TO RECLAIMSHIELD OR THESE TERMS, WHETHER IN CONTRACT, TORT, STATUTE, OR OTHERWISE, SHALL NOT EXCEED THE TOTAL FEES YOU PAID TO RECLAIMSHIELD IN THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO THE CLAIM.</strong></p>
-      <p class="caps"><strong>IN NO EVENT SHALL SENTINEL, ITS PRINCIPALS, EMPLOYEES, OR AGENTS BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOST PROFITS, LOST REVENUE, LOST FOLLOWERS, LOST BUSINESS OPPORTUNITIES, OR DAMAGE TO REPUTATION, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</strong></p>
-      <p>Some jurisdictions do not allow the exclusion or limitation of certain damages; in those jurisdictions, the foregoing exclusions and limitations apply to the maximum extent permitted by law and do not limit any non-waivable statutory rights.</p>
+      <h3>7. Pricing and refunds</h3>
+      <p>Pricing for each Service is set in the applicable Product Schedule. Payment is processed by Stripe (or, where a Schedule specifies, an alternative processor identified in that Schedule).</p>
+      <p>Where a Service has a covered-category list and your matter falls outside coverage, refund mechanics are described in the applicable Schedule. Where a Service is delivered as scoped, fees are non-refundable absent our error.</p>
+      <p>If we miss a published delivery commitment due to our error (and not due to your information being incomplete or inaccurate), you may request a full refund within 14 days of the missed delivery commitment. Contact via the Shield Support chat at <a href="/help" style="color: var(--accent-2); text-decoration: underline;">reclaimshield.io/help</a>.</p>
 
-      <h2>14. Indemnification; Class Action and Jury Trial Waivers</h2>
-      <p><strong>Indemnification.</strong> You agree to defend, indemnify, and hold harmless Sentinel Risk Group, LLC, its officers, principals, employees, and agents from any claim, demand, loss, or expense (including reasonable attorneys&rsquo; fees) arising from: (a) your breach of these Terms; (b) information you provided that was false, misleading, or incomplete; (c) your use of materials prepared by ReclaimShield in any manner not authorized by these Terms or the included filing instructions; or (d) your violation of applicable law or the terms of service of any platform.</p>
-      <p class="caps"><strong>CLASS ACTION WAIVER.</strong> TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, YOU AND SENTINEL EACH AGREE THAT ANY CLAIM ARISING FROM OR RELATED TO THESE TERMS OR RECLAIMSHIELD SHALL BE BROUGHT ONLY IN AN INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS, COLLECTIVE, CONSOLIDATED, OR REPRESENTATIVE PROCEEDING.</p>
-      <p class="caps"><strong>JURY TRIAL WAIVER.</strong> TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, YOU AND SENTINEL EACH KNOWINGLY, VOLUNTARILY, AND INTENTIONALLY WAIVE ANY RIGHT TO TRIAL BY JURY IN ANY ACTION, PROCEEDING, OR COUNTERCLAIM ARISING FROM OR RELATED TO THESE TERMS OR RECLAIMSHIELD.</p>
+      <h3>8. Intellectual property</h3>
+      <p>The ReclaimShield&trade; Method, RECLAIM V-100&trade; category framework, ReclaimShield brand, ReclaimShield logos, and all template structures, taxonomies, and methodologies are proprietary to Sentinel Risk Group, LLC.</p>
+      <p>Each Deliverable is licensed to you for the singular purpose of submitting the Deliverable to the Platform on your own behalf. You may not resell, redistribute, white-label, repurpose, or use a Deliverable as a template for unrelated matters.</p>
+      <p>Platform names, logos, and trademarks referenced in our materials (including but not limited to Instagram, Facebook, Threads, Meta, Amazon, and others identified in applicable Schedules) are trademarks of their respective owners. ReclaimShield is not affiliated with, endorsed by, or sponsored by any Platform.</p>
+
+      <h3>9. No platform-outcome guarantee</h3>
+      <p class="caps"><strong>NO REINSTATEMENT, RESTORATION, OR FAVORABLE PLATFORM DECISION IS GUARANTEED.</strong> Outcomes depend on Platform policies, your account history, the evidence you provide, the timing of submission, and many other factors outside ReclaimShield&rsquo;s control. Any Platform retains sole discretion over its enforcement decisions, subject only to applicable law.</p>
+      <p>We commit to delivering the Deliverable according to the ReclaimShield&trade; Method and the applicable Schedule. We do not commit to any specific Platform outcome.</p>
+
+      <h3>10. Limitation of liability</h3>
+      <p class="caps"><strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW, RECLAIMSHIELD&rsquo;S TOTAL CUMULATIVE LIABILITY ARISING FROM OR RELATED TO ANY SERVICE IS LIMITED TO THE FEES YOU PAID FOR THE SPECIFIC SERVICE GIVING RISE TO THE CLAIM IN THE SIX MONTHS PRECEDING THE CLAIM.</strong></p>
+      <p class="caps"><strong>WE WILL NOT BE LIABLE FOR INDIRECT, CONSEQUENTIAL, INCIDENTAL, EXEMPLARY, PUNITIVE, OR SPECIAL DAMAGES, INCLUDING LOSS OF REVENUE, LOST DATA, OR LOST PROFITS, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</strong></p>
+      <p>Some jurisdictions do not permit certain limitations of liability; in those jurisdictions our liability is limited to the maximum extent permitted by law.</p>
+
+      <h3>11. Indemnification; class-action and jury-trial waivers</h3>
+      <p>You agree to defend, indemnify, and hold harmless Sentinel Risk Group, LLC, its officers, principals, employees, and agents from any claim, demand, loss, or expense (including reasonable attorneys&rsquo; fees) arising from:</p>
+      <ol type="a">
+        <li>your breach of these Master Terms or any applicable Schedule;</li>
+        <li>information you provided that was false, misleading, or incomplete;</li>
+        <li>your use of Deliverables in any manner not authorized by these Terms or the included filing instructions;</li>
+        <li>your violation of applicable law or any Platform&rsquo;s terms of service.</li>
+      </ol>
+      <p class="caps"><strong>CLASS-ACTION WAIVER.</strong> TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, YOU AND SENTINEL EACH AGREE THAT ANY CLAIM ARISING FROM OR RELATED TO THESE TERMS OR ANY SERVICE SHALL BE BROUGHT ONLY IN AN INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS, COLLECTIVE, CONSOLIDATED, OR REPRESENTATIVE PROCEEDING.</p>
+      <p class="caps"><strong>JURY-TRIAL WAIVER.</strong> TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, YOU AND SENTINEL EACH KNOWINGLY, VOLUNTARILY, AND INTENTIONALLY WAIVE ANY RIGHT TO TRIAL BY JURY IN ANY ACTION, PROCEEDING, OR COUNTERCLAIM ARISING FROM OR RELATED TO THESE TERMS OR ANY SERVICE.</p>
       <p>The class-action waiver and jury-trial waiver do not limit any non-waivable rights under applicable consumer-protection law, and do not apply to the extent prohibited by law in your jurisdiction.</p>
 
-      <h2>15. Governing Law and Dispute Resolution</h2>
-      <p>These Terms are governed by the laws of the State of Florida, without regard to its conflict-of-laws rules. Any dispute arising from or related to these Terms or any ReclaimShield product shall be resolved exclusively in the state or federal courts located in Orange County, Florida, and you consent to the personal jurisdiction of those courts.</p>
+      <h3>12. Governing law and jurisdiction</h3>
+      <p>These Master Terms, every Schedule, and any non-contractual matters arising out of or related to them are governed by the laws of the <strong>State of Florida</strong>, USA, without regard to conflict-of-laws principles. Where a Product Schedule references a different forum (such as binding arbitration required by a Platform&rsquo;s own user agreement) for disputes between <em>you and that Platform</em>, that forum applies to <em>that</em> dispute only and does not displace Florida law for disputes between <em>you and ReclaimShield</em>.</p>
+      <p>Disputes between you and ReclaimShield must be brought in the state or federal courts located in <strong>Orange County, Florida</strong>. You consent to the personal jurisdiction of those courts.</p>
       <p>Before filing any formal claim, the parties agree to attempt in good faith to resolve the dispute through direct written negotiation for at least thirty (30) days, starting from the date written notice of the dispute is delivered by one party to the other at the contact address listed on our website.</p>
-      <p>This section does not apply where applicable consumer-protection law requires a different forum or forum selection is non-waivable; in that case, the mandatory forum applies.</p>
 
-      <h2>16. Modifications</h2>
-      <p>ReclaimShield may modify these Terms from time to time. Modifications become effective when the updated Terms are posted to the ReclaimShield website with a new Effective Date. Material changes will be communicated by email to the current address on file for active customers, at least ten (10) days before they take effect where practicable. Your continued use of ReclaimShield after the effective date of modified Terms constitutes acceptance of those modifications; if you do not agree, stop using the service.</p>
+      <h3>13. Privacy</h3>
+      <p>ReclaimShield collects information you submit through intake forms and through email correspondence, and uses that information solely to prepare your materials and to communicate with you about your order. ReclaimShield does not sell customer data.</p>
+      <p>Because no attorney-client relationship is formed, communications between you and ReclaimShield are <strong>not</strong> protected by attorney-client privilege or the attorney work product doctrine. Do not send privileged or highly sensitive material through ReclaimShield channels. For full details, including your GDPR and US state privacy rights, see our <a href="../privacy/" style="color: var(--accent-2); text-decoration: underline;">Privacy Policy</a>.</p>
 
-      <h2>17. Entire Agreement; Severability</h2>
-      <p>These Terms, together with the service description published on our website and our Privacy Policy, constitute the entire agreement between you and Sentinel with respect to ReclaimShield and supersede any prior oral or written understanding. If any provision is held unenforceable, the remaining provisions remain in effect, and the unenforceable provision shall be modified to the minimum extent necessary to make it enforceable while preserving the parties&rsquo; original intent.</p>
+      <h3>14. Entire agreement; severability; contact</h3>
+      <p>Master Terms + the applicable Product Schedule + the ReclaimShield Privacy Policy constitute the entire agreement between you and ReclaimShield with respect to the relevant Service. They supersede any prior or contemporaneous agreement.</p>
+      <p>If any provision is held unenforceable, the remainder remains in full force; the unenforceable provision will be enforced to the maximum extent permissible.</p>
+      <p>For questions about these Terms or any ReclaimShield Service, use the Shield Support chat at <strong>reclaimshield.io/help</strong> or the <a href="/contact" style="color: var(--accent-2); text-decoration: underline;">contact form</a>.</p>
+    </section>
 
-      <div class="ack-card">
-        <h2>Client Acknowledgment</h2>
-        <p>By engaging ReclaimShield, I acknowledge that:</p>
-        <ul>
-          <li>I have read and understood these Terms of Service.</li>
-          <li>ReclaimShield is not a law firm.</li>
-          <li>ReclaimShield does not provide legal advice, and no attorney-client relationship is formed by my purchase or use of the Meta Appeal Kit.</li>
-          <li>ReclaimShield has made no guarantee regarding the outcome of my matter.</li>
-          <li>The Meta Appeal Kit is a software-generated, AI-assisted business product, not a legal filing, and is not a substitute for the advice of an attorney, and I am expected to review the materials before filing them.</li>
-          <li>ReclaimShield will not access my platform account and will not request my passwords, credentials, or authentication codes.</li>
-          <li>Platforms retain sole discretion over account decisions.</li>
-          <li>My fees are for the ReclaimShield product and the services described, not for any guaranteed result.</li>
-          <li>If my matter requires legal representation, I should consult a licensed attorney in my jurisdiction.</li>
-          <li>ReclaimShield does not recommend or refer any attorney.</li>
-          <li>I am at least eighteen (18) years of age (or the age of majority in my jurisdiction) and have the legal capacity to accept these Terms.</li>
-        </ul>
-        <div class="sig-line" aria-hidden="true"></div>
-        <div class="sig-label">Client Signature / Electronic Acceptance</div>
-        <div class="sig-line" aria-hidden="true"></div>
-        <div class="sig-label">Date</div>
+    <hr class="divider">
+
+    <!-- ========== SCHEDULE M (Meta) ========== -->
+    <section id="schedule-meta" class="schedule-section">
+      <span class="schedule-banner banner-meta">Schedule M</span>
+      <h2 class="section-h2">Meta Appeal Kit &mdash; US + Worldwide non-EU/EEA</h2>
+      <p class="section-meta">Effective April 30, 2026 &middot; Version 1.0 &middot; Applies to: ReclaimShield&trade; for Meta &mdash; Instagram, Facebook, Threads &mdash; for customers outside the EU/EEA</p>
+
+      <p>This Schedule supplements the Master Terms above. Customer + Master Terms + this Schedule together govern the Meta Appeal Kit.</p>
+
+      <h3>M.1 &mdash; Service description</h3>
+      <p>The Meta Appeal Kit is a three-document professional appeal package prepared from your intake responses and current Meta Community Standards. The package includes:</p>
+      <ol>
+        <li><strong>Filing Instructions</strong> &mdash; step-by-step guidance for submission, escalation, and documentation</li>
+        <li><strong>In-App Request Review Message</strong> &mdash; drafted to the specific Meta Community Standards section cited in your enforcement action; you paste this into Instagram, Facebook, or Threads from your verified account</li>
+        <li><strong>Escalation Submission Letter</strong> &mdash; addressed to the Meta Oversight Board for eligible content cases, used only if the in-app appeal is denied</li>
+      </ol>
+
+      <h3>M.2 &mdash; Coverage: RECLAIM V-100&trade; categories</h3>
+      <p>The Meta Appeal Kit covers fourteen (14) violation categories under the RECLAIM V-100&trade; Method, as documented on the Meta product page. Six (6) categories are expressly out of scope and not covered by this Service.</p>
+      <p>If your intake reveals your matter falls outside the covered categories, we will issue a full refund within twenty-four (24) hours of intake submission and notify you by email; no further obligation on either side.</p>
+      <p>The covered-and-excluded list may be updated by us from time to time as Meta&rsquo;s policy framework changes. The list applicable to your purchase is the one in effect on the date of intake.</p>
+
+      <h3>M.3 &mdash; Pricing and payment</h3>
+      <p><strong>US $197 flat fee, one-time charge.</strong> Payment is processed by Stripe at checkout.</p>
+      <p>There are no tiers, upsells, hourly fees, or recurring charges. The fee covers the three-document Meta Appeal Kit, refund handling for out-of-scope matters, and the Shield Support chat for questions about your Deliverable.</p>
+
+      <h3>M.4 &mdash; Refund policy specific to this Service</h3>
+      <p>Refunds are issued in three circumstances:</p>
+      <ul>
+        <li><strong>Out-of-coverage refund:</strong> If your matter falls outside the RECLAIM V-100&trade; covered categories per Section M.2 above, full refund within 24 hours of intake.</li>
+        <li><strong>Delivery-failure refund:</strong> If we miss the published two-hour delivery commitment due to our error (and not due to information you provided being incomplete or inaccurate), full refund on request within 14 days.</li>
+        <li><strong>Duplicate-purchase refund:</strong> If you purchase the same Service twice for the same Platform account due to checkout error, the second charge is refunded.</li>
+      </ul>
+      <p>Beyond these three circumstances, fees are non-refundable. The Service is preparation-of-Deliverables; the Deliverable is the product. Outcomes at Meta are not within our control.</p>
+
+      <h3>M.5 &mdash; Geographic scope and venue</h3>
+      <p>This Schedule applies to customers in the <strong>United States and worldwide outside the EU/EEA</strong> (including the United Kingdom, Canada, Australia, New Zealand, and other non-EU jurisdictions).</p>
+      <p>EU/EEA residents receive a different appeal kit under DSA-statutory framework &mdash; see <a href="#schedule-eu" style="color: var(--accent-2); text-decoration: underline;">Schedule E</a>.</p>
+
+      <h3>M.6 &mdash; Disclosures specific to Meta</h3>
+      <ul>
+        <li><strong>Meta retains sole discretion</strong> over all account moderation and reinstatement decisions for Instagram, Facebook, and Threads, subject only to applicable law and any binding decision of the Meta Oversight Board within its eligibility scope.</li>
+        <li><strong>Meta Oversight Board:</strong> an independent body whose decisions on eligible content cases are binding on Meta. ReclaimShield prepares Oversight Board submissions; you submit them under your own name.</li>
+        <li><strong>No insider contacts:</strong> ReclaimShield does not have, and does not claim to have, insider contacts at Meta or its review staff. Anyone who claims such contacts is misrepresenting.</li>
+      </ul>
+
+      <h3>M.7 &mdash; Trademark notice</h3>
+      <p>Instagram, Facebook, Threads, and Meta are trademarks of Meta Platforms, Inc. ReclaimShield&trade; is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc.</p>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ========== SCHEDULE A (Amazon) ========== -->
+    <section id="schedule-amazon" class="schedule-section">
+      <span class="schedule-banner banner-amazon">Schedule A</span>
+      <h2 class="section-h2">Amazon Plan-of-Action Kit &mdash; Worldwide</h2>
+      <p class="section-meta">Effective April 30, 2026 &middot; Version 1.0 &middot; Applies to: ReclaimShield&trade; for Amazon &mdash; Standard POA ($497) and Complex POA ($997) &mdash; sellers on Amazon marketplaces worldwide</p>
+
+      <p>This Schedule supplements the Master Terms above. Customer + Master Terms + this Schedule together govern the Amazon POA Kit.</p>
+
+      <h3>A.1 &mdash; Service description</h3>
+      <p>The Amazon POA Kit is a professional Plan-of-Action package prepared from your intake responses and Amazon&rsquo;s current Seller Code of Conduct. The number of documents depends on your purchased tier:</p>
+      <h4>Standard POA ($497) &mdash; three-document kit:</h4>
+      <ol>
+        <li><strong>Plan of Action</strong> &mdash; the primary appeal artifact, drafted to the specific Code of Conduct section cited in your deactivation notice. You paste this verbatim into the Seller Central Performance Notifications Appeal field.</li>
+        <li><strong>Executive Escalation Letter</strong> &mdash; for use only if the Seller Central appeal is denied or auto-rejected within 12 hours; addressed to Amazon Services LLC Seller Performance Executive Escalation.</li>
+        <li><strong>Filing Instructions</strong> &mdash; step-by-step guidance for submission, escalation, and operational do/don&rsquo;t list during review.</li>
+      </ol>
+      <h4>Complex POA ($997) &mdash; seven-document kit:</h4>
+      <ul>
+        <li>All three documents above, plus:</li>
+        <li><strong>Rights-Holder Retraction Letter</strong> &mdash; for IP/trademark/counterfeit complaints; addressed to the rights-holder named in your Amazon notice.</li>
+        <li><strong>Multi-ASIN Brand-Level Corrective Plan</strong> &mdash; supplemental for multi-ASIN or brand-level enforcement actions.</li>
+        <li><strong>Tier-2 Executive Seller Relations (ESR) Escalation Letter</strong> &mdash; for use after the Executive Escalation Letter has been delivered and seven business days have passed without resolution.</li>
+        <li><strong>Section 2 Disbursement Appeal Letter</strong> &mdash; for use if Amazon places a hold on your seller disbursements under Section 2 of the Amazon Business Solutions Agreement.</li>
+      </ul>
+
+      <h3>A.2 &mdash; Coverage: the eight named Code of Conduct sections</h3>
+      <p>The Amazon POA Kit covers deactivations citing any of Amazon&rsquo;s eight named Seller Code of Conduct sections: Accurate Information, Acting Fairly, Ratings/Feedback/Reviews, Communications, Customer Information, Circumventing the Sales Process, Multiple Selling Accounts, and Filing Infringement Notices as an Agent.</p>
+
+      <h3>A.3 &mdash; Pricing, payment, and tier swap</h3>
+      <ul>
+        <li><strong>Standard POA: US $497 flat, one-time charge.</strong></li>
+        <li><strong>Complex POA: US $997 flat, one-time charge.</strong></li>
+      </ul>
+      <p>Payment is processed by Stripe at checkout. There are no recurring charges.</p>
+      <p><strong>Tier-swap rule:</strong> If you purchase Standard but your case on review fits Complex, we will tell you before drafting begins; you may upgrade and pay the difference, or cancel for a full refund. If you purchase Complex but your case fits Standard, we refund the difference before drafting begins.</p>
+
+      <h3>A.4 &mdash; Revision cycles</h3>
+      <ul>
+        <li>Standard POA includes <strong>one revision cycle</strong> if Amazon responds within 14 days asking for additional information.</li>
+        <li>Complex POA includes <strong>two revision cycles</strong> within 21 days.</li>
+      </ul>
+      <p>A revision means redrafting the relevant Deliverable based on Amazon&rsquo;s specific request-for-information response. Revisions outside the included number are available as a separately-priced paid revision; contact Shield Support.</p>
+
+      <h3>A.5 &mdash; Refund policy specific to this Service</h3>
+      <ul>
+        <li><strong>Tier-mismatch refund:</strong> Per Section A.3, if your case fits a different tier than purchased, the difference is refunded before drafting begins.</li>
+        <li><strong>Out-of-scope refund:</strong> If your matter is not a Code of Conduct deactivation (e.g., it is a Brand Registry suspension, FBA-only suspension, or other non-POA Amazon enforcement type), full refund within 24 hours of intake.</li>
+        <li><strong>Delivery-failure refund:</strong> If we miss our published three-business-day delivery window due to our error, full refund within 14 days of the missed delivery.</li>
+      </ul>
+      <p>Beyond these, fees are non-refundable. The Service is preparation-of-Deliverables; outcomes at Amazon are not within our control.</p>
+
+      <h3>A.6 &mdash; Amazon Business Solutions Agreement disclosures</h3>
+      <div class="callout callout-warn">
+        <strong>READ CAREFULLY.</strong> These disclosures reflect Amazon&rsquo;s Business Solutions Agreement (&ldquo;BSA&rdquo;) as updated effective <strong>March 4, 2026</strong>. Earlier section numbers used in older Amazon documentation (notably &ldquo;Section 18&rdquo; for arbitration) have been re-numbered; this Schedule references the post-March-4-2026 BSA structure.
       </div>
+      <p>You acknowledge that:</p>
+      <p>(a) <strong>Amazon retains sole discretion</strong> over all Seller account reinstatement decisions under the BSA. No reinstatement is guaranteed.</p>
+      <p>(b) <strong>BSA Section 20 (formerly Section 18)</strong> governs the dispute-resolution process between you (as a Seller) and Amazon. Section 20 requires that disputes between Sellers and Amazon resolve via <strong>binding arbitration administered by the American Arbitration Association (AAA), under its applicable rules,</strong> with arbitration commenced by sending a written demand to Amazon&rsquo;s registered agent (currently CSC Services of Nevada, Inc., 2215-B Renaissance Drive, Las Vegas, NV 89119). Section 20 also includes a <strong>class-action waiver.</strong> This is a Seller&harr;Amazon framework; it is <em>not</em> a framework between you and ReclaimShield.</p>
+      <p>(c) <strong>ReclaimShield does not represent Sellers in arbitration under BSA Section 20.</strong> The Amazon POA Kit prepares administrative-appeal documents (Plan of Action and supporting correspondence) only. If you choose to pursue AAA arbitration after exhausting Amazon&rsquo;s internal appeal channels, you must retain a licensed attorney; ReclaimShield does not initiate, prosecute, defend, or represent in any arbitration proceeding.</p>
+      <p>(d) <strong>BSA Section 2</strong> governs Amazon&rsquo;s right to hold your seller disbursements during account review. The Section 2 Disbursement Appeal Letter (included in the Complex POA Kit) is a Seller-to-Amazon administrative appeal of a disbursement hold, distinct from the reinstatement appeal. Both can run in parallel.</p>
+      <p>(e) <strong>Submission rule:</strong> Amazon&rsquo;s Seller Performance team only accepts Plans of Action submitted from inside your own Seller Central account by the authorized seller of record. Third-party agent submissions, external email tickets, and phone-support submissions are not reviewed. <strong>You submit your Deliverable from your own Seller Central session, in your own voice, under your own name.</strong></p>
+      <p>(f) <strong>Credentials rule:</strong> ReclaimShield never asks for, and you should never share with us, your Seller Central login, password, two-factor codes, or session tokens. Anyone who asks for these is violating Amazon&rsquo;s terms.</p>
+      <p>(g) <strong>Amazon Agent Policy (effective March 4, 2026) &mdash; Seller-side compliance disclosure.</strong> As of March 4, 2026, Amazon&rsquo;s BSA includes a new Agent Policy governing automated software and AI-agent access to Amazon services (Seller Central, SP-API, listings tooling, repricers, PPC automation, and similar). The Agent Policy requires, among other things, that automated tooling identify itself as automated, operate through a registered SP-API application linked to a verified developer account, comply with the Agent Policy in operation, and maintain a retrievable audit log of actions for a minimum of twelve (12) months. <strong>You acknowledge that the Agent Policy applies to <em>your</em> tooling and <em>your</em> automation choices as a Seller.</strong> ReclaimShield&rsquo;s preparation of your Plan of Action is <em>not</em> automated agent access to Amazon services within the meaning of the Agent Policy &mdash; ReclaimShield does not access your Seller Central account, does not call Amazon APIs, and does not act inside Amazon&rsquo;s services. If your underlying deactivation cites non-compliant Seller-side automation as a Code-of-Conduct violation, your Plan of Action will need to address the Agent Policy specifically, and we will draft to that framework.</p>
+
+      <h3>A.7 &mdash; Geographic scope</h3>
+      <p>This Schedule applies to Sellers on <strong>Amazon marketplaces worldwide</strong>, including amazon.com (US), amazon.co.uk (UK), amazon.de (DE), amazon.fr (FR), amazon.ca (CA), amazon.com.au (AU), and other international marketplaces. Account remedies vary by marketplace; the POA framework is consistent across them.</p>
+
+      <h3>A.8 &mdash; Trademark notice</h3>
+      <p>Amazon, Amazon.com, Seller Central, Brand Registry, Buyer-Seller Messaging, and related marks are trademarks of Amazon.com, Inc. or its affiliates. ReclaimShield&trade; is not affiliated with, endorsed by, or sponsored by Amazon.com, Inc.</p>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ========== SCHEDULE E (EU/DSA) ========== -->
+    <section id="schedule-eu" class="schedule-section">
+      <span class="schedule-banner banner-eu">Schedule E</span>
+      <h2 class="section-h2">EU/DSA Appeal Kit &mdash; EU/EEA Residents</h2>
+      <p class="section-meta">Effective April 30, 2026 &middot; Version 1.0 &middot; Applies to: ReclaimShield&trade; EU &mdash; Instagram, Facebook, Threads &mdash; for customers in the European Union and EEA (Iceland, Liechtenstein, Norway)</p>
+
+      <p>This Schedule supplements the Master Terms above. Customer + Master Terms + this Schedule together govern the EU/DSA Appeal Kit.</p>
+
+      <h3>E.1 &mdash; Service description</h3>
+      <p>The EU/DSA Appeal Kit is a four-document package built around the Digital Services Act (Regulation (EU) 2022/2065) statutory rights afforded to EU/EEA residents:</p>
+      <ol>
+        <li><strong>In-App Request Review Message (DSA Article 20)</strong> &mdash; drafted for Meta&rsquo;s free internal complaint-handling system; you file this from your verified account.</li>
+        <li><strong>Direct Letter to Meta Platforms Ireland Limited (DSA Articles 17 + 20)</strong> &mdash; formal correspondence asserting your right to a reasoned statement of reasons and a documented internal complaint, addressed to Meta Platforms Ireland Limited at Merrion Road, Dublin.</li>
+        <li><strong>Appeals Centre Europe Submission (DSA Article 21)</strong> &mdash; ready-to-file dispute referral with current Article 21 framing, your case ID, factual narrative, and Meta&rsquo;s statement of reasons attached. Submitted by you through the ACE portal.</li>
+        <li><strong>Filing Instructions</strong> &mdash; order of submission and DSA-correct timing (in-app first, Meta Platforms Ireland letter within 14 days, ACE referral after internal complaint window).</li>
+      </ol>
+
+      <h3>E.2 &mdash; Coverage</h3>
+      <p>The same fourteen (14) RECLAIM V-100&trade; violation categories covered under Schedule M apply here. Six (6) categories are out of scope.</p>
+
+      <h3>E.3 &mdash; Pricing and payment</h3>
+      <p><strong>&euro;197 flat fee, one-time charge</strong> (charged in EUR via Stripe; equivalent USD pricing displayed at checkout for non-EUR cards).</p>
+
+      <h3>E.4 &mdash; Refund policy specific to this Service</h3>
+      <p>Same three-circumstance refund framework as Schedule M (out-of-coverage, delivery-failure, duplicate-purchase).</p>
+
+      <h3>E.5 &mdash; Geographic scope and venue</h3>
+      <p>This Schedule applies to <strong>residents of the EU/EEA</strong>: Austria, Belgium, Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden.</p>
+      <p>Customers outside the EU/EEA receive <a href="#schedule-meta" style="color: var(--accent-2); text-decoration: underline;">Schedule M</a> instead.</p>
+
+      <h3>E.6 &mdash; Disclosures specific to the EU/DSA framework</h3>
+      <ul>
+        <li><strong>Meta Platforms Ireland Limited</strong> is the EU establishment of Meta Platforms, Inc. and the entity legally responsible for Meta&rsquo;s services in the EU/EEA under the DSA.</li>
+        <li><strong>DSA Article 17</strong> (Statement of Reasons): Meta is required by EU law to provide a reasoned statement of why your account or content was restricted. You have a right to challenge.</li>
+        <li><strong>DSA Article 20</strong> (Internal Complaint-Handling System): Meta is required to provide a free, electronic internal complaint-handling system reviewed by qualified personnel &mdash; not solely by automation &mdash; for six months from the moderation decision.</li>
+        <li><strong>DSA Article 21</strong> (Out-of-Court Dispute Settlement): You have the right to refer the dispute to a certified out-of-court dispute settlement body. The <strong>Appeals Centre Europe</strong> (appealscentre.eu) is the leading certified body for Meta cases, certified by Coimisi&uacute;n na Me&aacute;n (Ireland&rsquo;s media regulator). Meta is required by Article 21(2) to engage in good faith with ACE referrals; ACE decisions are non-binding on Meta unless both parties agree to make them binding.</li>
+        <li><strong>ReclaimShield is not a certified DSA Article 21 dispute body and does not provide such certification.</strong> ReclaimShield prepares submissions for filing with ACE and Meta Platforms Ireland; you submit them under your own name.</li>
+      </ul>
+
+      <h3>E.7 &mdash; Data subject rights (GDPR)</h3>
+      <p>EU/EEA residents have rights under the General Data Protection Regulation (Regulation (EU) 2016/679), including:</p>
+      <ul>
+        <li>The right to access, correct, or delete personal data we hold</li>
+        <li>The right to object to or restrict processing</li>
+        <li>The right to data portability</li>
+        <li>The right to lodge a complaint with your national data protection authority</li>
+      </ul>
+      <p>Exercise these rights via the <a href="../privacy/" style="color: var(--accent-2); text-decoration: underline;">ReclaimShield Privacy Policy</a> data-subject contact channel. Data residency, retention, and processing details are in the Privacy Policy.</p>
+
+      <h3>E.8 &mdash; Trademark notice</h3>
+      <p>Instagram, Facebook, Threads, and Meta are trademarks of Meta Platforms, Inc. The Appeals Centre Europe is a registered name of the Appeals Centre Europe Limited, an Ireland-based out-of-court dispute settlement body certified under DSA Article 21. ReclaimShield&trade; is not affiliated with, endorsed by, or sponsored by Meta Platforms, Inc., Meta Platforms Ireland Limited, the Appeals Centre Europe, or Coimisi&uacute;n na Me&aacute;n.</p>
+    </section>
 
     </article>
   </div>
@@ -483,8 +700,7 @@ footer {
       <a href="/contact">Contact</a>
       <a href="../">Home</a>
     </div>
-    <!-- ENTITY-REF: fine-print entity disclosure. On LLC conversion, replace entity line with new entity name or remove. -->
-    <div style="font-size:12px;color:var(--text-muted);margin:0 auto 14px;max-width:700px;line-height:1.6;opacity:.7">ReclaimShield is a service of Sentinel Risk Group, LLC &middot; Orlando, Florida &middot; <a href="/contact" style="color:var(--text-dim);text-decoration:none">reclaimshield.io/contact</a></div>
+    <div style="font-size:12px;color:var(--text-muted);margin:0 auto 14px;max-width:700px;line-height:1.6;opacity:.7">ReclaimShield&trade; is a brand of Sentinel Risk Group, LLC &middot; Orlando, Florida &middot; <a href="/contact" style="color:var(--text-dim);text-decoration:none">reclaimshield.io/contact</a></div>
     <div class="footer-legal">
       <strong>Disclaimer.</strong> ReclaimShield is not a law firm and does not provide legal advice. Use of ReclaimShield does not create an attorney-client relationship. Results are not guaranteed and vary based on platform policies, account history, timing, and other factors. The attorney who designed The ReclaimShield Method does not provide legal services to customers through ReclaimShield. If your matter requires legal representation, retain a licensed attorney in your own jurisdiction.
     </div>
