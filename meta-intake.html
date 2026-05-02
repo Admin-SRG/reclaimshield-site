@@ -179,7 +179,7 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
     <strong>Intake received.</strong> Your evidence uploads have been received and a confirmation has been sent to the email address you provided with your reference number. Your appeal packet will arrive within approximately 2 hours. You may close this tab.
   </div>
   <div id="alertError" class="alert error hidden">
-    <strong>Submission could not be completed.</strong> <span id="alertErrorMsg">Please try again. If the issue persists, email admin@reclaimshield.io with your intake details and we will process it manually.</span>
+    <strong>Submission could not be completed.</strong> <span id="alertErrorMsg">Please try again. If the issue persists, reach Shield Support via the chat widget at reclaimshield.io/help and we will process your intake manually.</span>
   </div>
 
   <form id="metaIntakeForm" novalidate>
@@ -453,7 +453,7 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
   <div class="footer-inner">
     <div class="footer-brand">ReclaimShield</div>
     <div class="footer-text">
-      <a href="mailto:admin@reclaimshield.io">admin@reclaimshield.io</a> · <a href="https://reclaimshield.io">reclaimshield.io</a><br>
+      <a href="https://reclaimshield.io/help">Chat with Shield Support</a> &middot; <a href="https://reclaimshield.io">reclaimshield.io</a><br>
       ReclaimShield™ is a service of Sentinel Risk Group, LLC. We prepare professional appeal documents &mdash; we are not a law firm and do not establish an attorney-client relationship.<br>
       Not affiliated with or endorsed by Meta Platforms, Inc., Instagram, Facebook, or Threads.
     </div>
@@ -535,7 +535,7 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
     }
     // Too-fast submit guard (<3s = likely bot)
     if(Date.now() - LOAD_TS < 3000){
-      showError('Submission was flagged as automated. Please review the form and resubmit.');
+      showError('Please take a moment to review the form before submitting.');
       return;
     }
     // Required fields manual check
@@ -596,7 +596,7 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
     }).catch(function(err){
       setLoading(false);
       var msg = String(err && err.message || err || '');
-      var human = 'We were unable to submit your intake. Please try again, or email admin@reclaimshield.io.';
+      var human = 'We were unable to submit your intake. Please try again, or chat with Shield Support at reclaimshield.io/help.';
       if(/file_too_large/i.test(msg)) human = 'One of your uploaded files exceeds the 25 MB per-file limit. Please reduce file size and resubmit.';
       else if(/file_type_rejected/i.test(msg)) human = 'One of your uploaded files has an unsupported file type. Allowed: PDF, JPG, PNG, GIF, WEBP, DOC/DOCX, XLS/XLSX, TXT.';
       else if(/turnstile/i.test(msg)) human = 'Bot-protection check failed. Please refresh the page and resubmit.';
