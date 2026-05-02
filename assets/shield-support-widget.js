@@ -223,7 +223,7 @@
       renderMessage('bot', answer);
     }).catch(function (err) {
       clearTyping();
-      renderError('Sorry — I hit a snag. Try again in a moment, or email admin@reclaimshield.io directly.');
+      renderError('Sorry — I hit a snag. Try again in a moment, or use the contact form at reclaimshield.io/contact.');
       console.warn('shield-support error:', err);
     }).finally(function () {
       sendEl.disabled = false;
