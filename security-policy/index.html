@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Security Disclosure Policy | ReclaimShield&trade;</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+:root{--bg:#0A0A0F;--surface:#12121A;--surface-2:#1A1A24;--border:#2A2A38;--text:#F5F5F8;--text-dim:#B0B0C0;--text-mute:#7A7A8A;--accent:#7C3AED;--accent-2:#2DD4BF;--display:'Space Grotesk',-apple-system,sans-serif;--body:'Inter',-apple-system,sans-serif;--gradient:linear-gradient(135deg,#7C3AED 0%,#2DD4BF 100%)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;color-scheme:dark only;background:var(--bg)}
+body{font-family:var(--body);color:var(--text);line-height:1.65;background:var(--bg);min-height:100vh}
+.wrap{max-width:780px;margin:0 auto;padding:48px 24px 80px}
+.brand{font-family:var(--display);font-weight:700;font-size:1.1rem;letter-spacing:-0.3px;background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:inline-block}
+.tm{font-size:0.65em;vertical-align:super;margin-left:1px;color:var(--text-dim);-webkit-text-fill-color:var(--text-dim)}
+.eyebrow{font-size:0.72rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin:24px 0 8px;font-weight:700}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.15;color:var(--text);margin-bottom:14px;letter-spacing:-0.6px}
+.lede{font-size:1.05rem;color:var(--text-dim);margin-bottom:36px;line-height:1.7}
+h2{font-family:var(--display);font-weight:600;font-size:1.3rem;color:var(--text);margin:36px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+h3{font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--text);margin:24px 0 8px}
+p{color:var(--text-dim);margin-bottom:14px}
+strong{color:var(--text);font-weight:600}
+a{color:var(--accent-2);text-decoration:none;border-bottom:1px solid rgba(45,212,191,0.3);padding-bottom:1px}
+a:hover{border-bottom-color:var(--accent-2)}
+ul{padding-left:22px;color:var(--text-dim);margin-bottom:16px}
+li{margin-bottom:6px;line-height:1.7}
+li code{background:var(--surface-2);padding:1px 6px;border-radius:3px;font-size:0.88em;color:var(--text)}
+code{font-family:'SF Mono',Consolas,monospace;font-size:0.92em}
+.callout{background:var(--surface);border-left:4px solid var(--accent);padding:16px 18px;border-radius:0 6px 6px 0;margin:20px 0;color:var(--text-dim);font-size:0.95rem}
+.callout strong{color:var(--text)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 12px}
+.cta{display:inline-block;background:var(--accent);color:#fff;padding:11px 22px;border-radius:6px;font-weight:600;font-size:0.92rem;border:0;text-decoration:none}
+.cta:hover{background:#6D28D9;border-bottom:0}
+.cta-secondary{background:transparent;border:1px solid var(--border);color:var(--text)}
+.cta-secondary:hover{border-color:var(--accent);background:var(--surface)}
+.foot{margin-top:48px;padding-top:24px;border-top:1px solid var(--border);font-size:0.82rem;color:var(--text-mute);text-align:center}
+.foot-pillars{font-weight:700;letter-spacing:0.2px;color:var(--text);font-size:0.86rem}
+.foot-sub{font-style:italic;color:var(--text-dim);font-size:0.78rem;margin-top:4px}
+.foot-attr{margin-top:14px;font-size:0.74rem;color:var(--text-mute)}
+.foot-attr a{color:var(--accent-2)}
+@media(max-width:640px){.wrap{padding:32px 18px 56px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">ReclaimShield<span class="tm">&trade;</span></div>
+  <div class="eyebrow">Security disclosure policy</div>
+  <h1>Reporting a security concern</h1>
+  <p class="lede">If you've found a vulnerability, data exposure, or security concern related to ReclaimShield&trade; or its appeal-recovery pipelines, we want to hear from you. This page tells you what's in scope, how to report, and what we commit to.</p>
+
+  <div class="callout">
+    Machine-readable version of this policy lives at <a href="/.well-known/security.txt"><code>/.well-known/security.txt</code></a> per <a href="https://www.rfc-editor.org/rfc/rfc9116" rel="noopener">RFC 9116</a>.
+  </div>
+
+  <h2>How to report</h2>
+  <p>Use the contact form on this site to file a report. Do not email findings to staff directly &mdash; the contact form ensures the report routes to the right queue.</p>
+  <div class="cta-row">
+    <a class="cta" href="/contact">Open the contact form &rarr;</a>
+    <a class="cta cta-secondary" href="/.well-known/security.txt">View security.txt</a>
+  </div>
+
+  <h2>What to include</h2>
+  <ul>
+    <li>URL or endpoint affected</li>
+    <li>Reproduction steps, if any</li>
+    <li>Your assessment of severity (low / medium / high / critical)</li>
+    <li>Whether you intend to publicly disclose, and on what timeline</li>
+  </ul>
+
+  <h2>What's in scope</h2>
+  <p>Anything ReclaimShield operates directly:</p>
+  <ul>
+    <li>This site (<code>reclaimshield.io</code>)</li>
+    <li>The <code>/meta</code> and <code>/amazon</code> intake flows</li>
+    <li>The ReclaimShield Meta pipeline (AS-1, META-INTAKE-WEB, AS-3, AS-4)</li>
+    <li>The ReclaimShield Amazon pipeline (AS-1, AMAZON-INTAKE-WEB, AZ-3)</li>
+    <li>The contact, support-chat, verify, meta-intake, or amazon-intake Cloudflare Pages Functions</li>
+    <li>The Stripe payment flows</li>
+    <li>Any ReclaimShield deliverable email or letter</li>
+  </ul>
+
+  <h2>What's out of scope</h2>
+  <ul>
+    <li>Rate-limit / DDoS reports against the public site &mdash; use your provider's process</li>
+    <li>Reports against vendor services (Cloudflare, AWS, Postmark, Airtable, Make, Stripe, Anthropic, GitHub, etc.) &mdash; please report directly to those vendors</li>
+    <li>Findings against Meta, Instagram, Threads, or Amazon themselves &mdash; those go to their respective bug bounty programs, not us</li>
+    <li>Findings that depend on social engineering of ReclaimShield personnel</li>
+  </ul>
+
+  <h2>Our commitment to you</h2>
+  <p>If you file a valid report through the contact form, we commit to:</p>
+  <ul>
+    <li>Acknowledge your report within <strong>72 hours</strong></li>
+    <li>Confirm or refute the issue within <strong>14 calendar days</strong></li>
+    <li>Coordinate a remediation timeline with you before any public disclosure</li>
+  </ul>
+
+  <p>Reports are reviewed by Sentinel Risk Group LLC personnel under the same disciplined process used to operate the appeal pipelines themselves.</p>
+
+  <div class="foot">
+    <div class="foot-pillars">AI-Assisted&nbsp;|&nbsp;Expert-Validated&nbsp;|&nbsp;Appeal-Ready</div>
+    <div class="foot-sub">Platform Guidance &mdash; not legal advice.</div>
+    <div class="foot-attr">Sentinel Risk Group LLC &middot; ReclaimShield<span class="tm">&trade;</span> &middot; <a href="/terms">Terms</a> &middot; <a href="/privacy">Privacy</a> &middot; <a href="/contact">Contact</a></div>
+  </div>
+</div>
+</body>
+</html>
