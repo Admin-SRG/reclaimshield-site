@@ -639,7 +639,7 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
       return;
     }
     if(Date.now() - LOAD_TS < 3000){
-      showError('Submission was flagged as automated. Please review and resubmit.');
+      showError('Please take a moment to review the form before submitting.');
       return;
     }
     if(!form.checkValidity()){ form.reportValidity(); return; }
