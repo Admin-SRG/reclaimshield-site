@@ -1,0 +1,13 @@
+# https://reclaimshield.io/robots.txt
+User-agent: *
+Allow: /
+
+# Pages individually marked <meta name="robots" content="noindex">
+# in their head elements:
+#   /developer-intake — Phase 2 paused
+#   /amazon-intake    — post-payment surface
+#   /meta-intake      — post-payment surface
+# Not Disallow'd here — we want crawlers to see the noindex directive.
+
+# Sitemap
+Sitemap: https://reclaimshield.io/sitemap.xml
