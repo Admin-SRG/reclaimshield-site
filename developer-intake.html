@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="ReclaimShield for Developers — Apple App Store and Google Play developer-account appeal kit. Standard $497 / Complex $997.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://reclaimshield.io/developer-intake">
+<meta property="og:site_name" content="ReclaimShield">
+<meta property="og:title" content="ReclaimShield for Developers — Intake">
+<meta property="og:description" content="Apple App Store and Google Play developer-account appeal kit intake.">
+<meta property="og:url" content="https://reclaimshield.io/developer-intake">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://reclaimshield.io/og-meta.png">
+<title>ReclaimShield for Developers — Intake</title>
+<meta name="color-scheme" content="light">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+:root{--ink:#0F0F1A;--text:#1A1A2E;--text-dim:#4A4A6A;--text-muted:#6B6B8A;--bg:#FAFAFC;--card:#FFF;--border:#E4E4F0;--accent:#6366F1;--accent-deep:#4F46E5;--err:#B91C1C;--errpale:#FEF2F2}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{color-scheme:light;background:var(--bg)}
+body{font-family:'Inter','DM Sans',-apple-system,sans-serif;font-size:16px;line-height:1.65;color:var(--text);background:var(--bg);min-height:100vh}
+.wrap{max-width:760px;margin:0 auto;padding:32px 22px 80px}
+.brand{margin-bottom:14px;text-align:center}
+.brand-mark{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--ink);letter-spacing:0.5px}
+.brand-sub{font-size:0.78rem;letter-spacing:1.4px;text-transform:uppercase;color:var(--accent);font-weight:700;margin-top:4px}
+.eyebrow{font-size:0.74rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:700;text-align:center;margin-top:18px;margin-bottom:6px}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,4vw,2.5rem);color:var(--ink);font-weight:700;text-align:center;margin-bottom:8px;line-height:1.2}
+.lede{color:var(--text-dim);text-align:center;font-size:1rem;margin-bottom:24px;line-height:1.65;max-width:560px;margin-left:auto;margin-right:auto}
+.tier-bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
+.tier-pill{background:#fff;border:1px solid var(--border);border-radius:8px;padding:14px;text-align:center}
+.tier-pill strong{color:var(--ink);font-size:0.92rem;display:block}
+.tier-pill .price{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--accent-deep);margin-top:4px}
+.tier-pill .pill-sub{font-size:0.78rem;color:var(--text-muted);margin-top:4px}
+.card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:28px}
+.section{margin-bottom:26px}
+.section-h{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--ink);font-weight:700;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid var(--accent)}
+.field{margin-bottom:14px}
+label{display:block;font-size:0.86rem;font-weight:600;color:var(--ink);margin-bottom:5px}
+.req{color:var(--err)}
+.hint{font-size:0.78rem;color:var(--text-muted);margin-top:3px;line-height:1.5}
+input[type=text],input[type=email],input[type=tel],select,textarea,input[type=date]{width:100%;padding:11px 14px;border:1px solid var(--border);border-radius:6px;font-size:15px;font-family:'Inter',sans-serif;color:var(--ink);outline:none;background:#fff}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(99,102,241,0.1)}
+textarea{min-height:90px;resize:vertical}
+.btn-submit{display:block;width:100%;background:var(--accent-deep);color:#fff;font-weight:700;font-size:1rem;padding:15px 24px;border:none;border-radius:6px;cursor:pointer;font-family:inherit;margin-top:10px}
+.btn-submit:hover{background:#4338CA}
+.btn-submit:disabled{background:var(--text-muted);cursor:not-allowed}
+.thanks{display:none;background:rgba(99,102,241,0.06);border:1px solid var(--accent);border-radius:8px;padding:24px;margin-bottom:18px;text-align:center}
+.thanks.show{display:block}
+.thanks h2{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--accent-deep);margin-bottom:8px}
+.err-msg{display:none;background:var(--errpale);border-left:4px solid var(--err);color:var(--err);padding:12px;border-radius:0 6px 6px 0;margin-bottom:14px;font-size:0.9rem}
+.err-msg.show{display:block}
+.disclaim{margin-top:18px;font-size:0.78rem;color:var(--text-dim);background:rgba(99,102,241,0.04);border-radius:6px;padding:14px;line-height:1.65}
+.disclaim strong{color:var(--ink)}
+.privacy-note{background:rgba(245,158,11,0.06);border:1px solid #FCD34D;border-radius:6px;padding:12px 14px;font-size:0.84rem;color:#78350F;line-height:1.6;margin-bottom:18px}
+.privacy-note strong{color:var(--ink)}
+.footer-block{margin-top:32px;padding-top:18px;border-top:1px solid var(--border);text-align:center;font-size:0.78rem;color:var(--text-muted)}
+.footer-pillars{font-weight:700;color:var(--ink);font-size:0.9rem;letter-spacing:0.3px}
+.footer-disclaim{font-style:italic;margin-top:4px}
+.footer-addr{font-size:0.74rem;margin-top:10px}
+.gp10-hint{display:none;background:rgba(99,102,241,0.04);border-left:3px solid var(--accent);padding:11px 14px;border-radius:0 6px 6px 0;font-size:0.86rem;color:var(--text-dim);margin-top:8px;line-height:1.55}
+.gp10-hint.show{display:block}
+</style>
+</head><body>
+<div class="wrap">
+  <div class="brand">
+    <div class="brand-mark">ReclaimShield</div>
+    <div class="brand-sub">For Developers</div>
+  </div>
+  <div class="eyebrow">Apple App Store · Google Play</div>
+  <h1>Developer appeal intake</h1>
+  <p class="lede">Tell us about your case. Drafted appeal kit delivered within three business days. You submit each document from your own developer console session, in your own name.</p>
+
+  <div class="tier-bar">
+    <div class="tier-pill"><strong>Standard</strong><div class="price">$497</div><div class="pill-sub">Plan of Action + Filing Instructions + Senior Reviewer Escalation Letter</div></div>
+    <div class="tier-pill"><strong>Complex</strong><div class="price">$997</div><div class="pill-sub">Standard kit + category-specific letters (Identity Association, IP retraction, Verification Response, multi-app, etc.)</div></div>
+  </div>
+
+  <div class="thanks" id="thanksBox">
+    <h2>Intake received</h2>
+    <p>Thank you. Your intake is in our queue. You'll get a confirmation email shortly with your reference number and the next steps. Drafted kit delivered within three business days.</p>
+  </div>
+
+  <form id="intakeForm" class="card" novalidate>
+    <div class="err-msg" id="errBox"></div>
+
+    <div class="privacy-note">
+      <strong>Important — what we DO NOT collect.</strong> Per our PII architecture lock, this intake collects only categorical and narrative information. We do NOT collect or store: government ID numbers, passport numbers, driver's license numbers, full residential or business addresses, D-U-N-S numbers, or scanned identity documents. Any verification-grade identity values appear in your delivered appeal kit as <code>[PLACEHOLDER]</code> markers for you to fill in from your own records before submission.
+    </div>
+
+    <div class="section">
+      <div class="section-h">Contact</div>
+      <div class="field"><label>Email <span class="req">*</span></label><input type="email" name="email" required></div>
+      <div class="field"><label>Name <span class="req">*</span></label><input type="text" name="customerName" required placeholder="First and last"></div>
+      <div class="field">
+        <label>Country of registration <span class="req">*</span></label>
+        <select name="country" required>
+          <option value="">Select…</option>
+          <option value="US">United States</option><option value="GB">United Kingdom</option>
+          <option value="CA">Canada</option><option value="AU">Australia</option>
+          <option value="DE">Germany</option><option value="FR">France</option>
+          <option value="IE">Ireland</option><option value="NL">Netherlands</option>
+          <option value="ES">Spain</option><option value="IT">Italy</option>
+          <option value="BR">Brazil 🟡</option><option value="ID">Indonesia 🟡</option>
+          <option value="SG">Singapore 🟡</option><option value="TH">Thailand 🟡</option>
+          <option value="JP">Japan</option><option value="KR">South Korea</option>
+          <option value="IN">India</option><option value="MX">Mexico</option>
+          <option value="OTHER">Other</option>
+        </select>
+        <div class="hint">🟡 BR / ID / SG / TH are September 2026 Android Developer Verification pilot regions; flag affects routing for GP-10 cases.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-h">Platform &amp; case classification</div>
+      <div class="field">
+        <label>Platform <span class="req">*</span></label>
+        <select name="platform" id="platform" required>
+          <option value="">Select…</option>
+          <option>Google Play</option>
+          <option>Apple App Store</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Category <span class="req">*</span></label>
+        <select name="category" required>
+          <option value="">Select…</option>
+          <option>GP-1 Identity Association</option><option>GP-2 Deceptive Behavior</option>
+          <option>GP-3 Spam / Minimum Functionality</option><option>GP-4 Restricted Content</option>
+          <option>GP-5 Intellectual Property</option><option>GP-6 User Data and Privacy</option>
+          <option>GP-7 Permissions and APIs</option><option>GP-8 Monetization and Ads</option>
+          <option>GP-9 Store Listing and Promotion</option><option>GP-10 Verification (Sept 2026)</option>
+          <option disabled>──────────</option>
+          <option>AS-1 App Completeness</option><option>AS-2 Accurate Metadata</option>
+          <option>AS-3 Payments and IAP</option><option>AS-4 Copycats and Impersonation</option>
+          <option>AS-5 Minimum Functionality</option><option>AS-6 Spam</option>
+          <option>AS-7 Intellectual Property</option><option>AS-8 Objectionable Content</option>
+          <option>AS-9 Developer Code of Conduct (Section 5.6)</option><option>AS-10 Hardware Compatibility</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Tier <span class="req">*</span></label>
+        <select name="tier" required>
+          <option value="">Select…</option>
+          <option>Standard ($497)</option>
+          <option>Complex ($997)</option>
+        </select>
+        <div class="hint">If your case actually fits a different tier, we'll tell you before drafting begins and refund the difference.</div>
+      </div>
+      <div class="field">
+        <label>Developer account type <span class="req">*</span></label>
+        <select name="developerAccountType" required>
+          <option value="">Select…</option>
+          <option>Individual</option>
+          <option>Organization (D-U-N-S registered)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Enforcement type <span class="req">*</span></label>
+        <select name="enforcementType" required>
+          <option value="">Select…</option>
+          <option>App rejection</option>
+          <option>Account termination</option>
+          <option>Account suspension</option>
+          <option>Disbursement hold (Apple Developer Program payments)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-h">Termination / rejection details</div>
+      <div class="field"><label>Enforcement date <span class="req">*</span></label><input type="date" name="enforcementDate" required></div>
+      <div class="field"><label>Cited policy section <span class="req">*</span></label><input type="text" name="citedPolicySection" required placeholder="e.g. 'Developer Program Policy 4.3 Spam' or 'App Store Review Guideline 5.6 Developer Code of Conduct'"><div class="hint">Paste the exact section reference from your enforcement notice.</div></div>
+      <div class="field"><label>Verbatim notice text <span class="req">*</span></label><textarea name="noticeText" required placeholder="Paste the full text of Google's / Apple's enforcement notice here." style="min-height:120px"></textarea></div>
+      <div class="field"><label>Your narrative <span class="req">*</span></label><textarea name="customerNarrative" required placeholder="In your own words: what happened, what you understood the policy to require, where the gap occurred. Be specific and factual." style="min-height:140px"></textarea><div class="hint"><strong>Do not include identity-verification PII in this narrative</strong> (no government ID numbers, passport numbers, addresses, D-U-N-S numbers, dates of birth). Use general descriptions; the appeal kit will use [PLACEHOLDER] markers you fill yourself.</div></div>
+    </div>
+
+    <div class="section gp10-only" id="gp10Section">
+      <div class="section-h">GP-10 verification specifics</div>
+      <div class="gp10-hint show">These fields appear because you selected GP-10 (verification framework). Categorical only — no PII.</div>
+      <div class="field">
+        <label>Verification element that failed</label>
+        <select name="verificationElementFailed">
+          <option value="">Select…</option>
+          <option>Legal name match</option>
+          <option>Business address verification</option>
+          <option>D-U-N-S number registration (Organizations only)</option>
+          <option>Government ID verification (Individuals only)</option>
+          <option>Organization website verification (Organizations only)</option>
+          <option>Date of registration / incorporation match (Organizations only)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Corrective action type</label>
+        <select name="verificationCorrectiveAction">
+          <option value="">Select…</option>
+          <option>Updated information in console</option>
+          <option>Provided updated documentation</option>
+          <option>Reorganization or entity change</option>
+          <option>Disputed Google's characterization</option>
+          <option>No corrective action available</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field"><label>Corrective plan narrative</label><textarea name="verificationCorrectivePlan" placeholder="In your own words — what corrective action you have taken or plan to take. No ID numbers; the kit will use placeholders."></textarea></div>
+    </div>
+
+    <button type="submit" class="btn-submit" id="submitBtn">Submit intake</button>
+
+    <div class="disclaim">
+      <strong>ReclaimShield (Sentinel Risk Group LLC)</strong> is not a law firm and does not provide legal advice. The Service prepares administrative-appeal documents you submit yourself. Outcomes at Apple or Google are not within our control. By submitting this intake, you agree to our <a href="/terms" style="color:var(--accent-deep)">Terms of Service</a> and <a href="/privacy" style="color:var(--accent-deep)">Privacy Policy</a>.
+    </div>
+  </form>
+
+  <div class="footer-block">
+    <div class="footer-pillars">AI-Assisted&nbsp;|&nbsp;Expert-Validated&nbsp;|&nbsp;Appeal-Ready</div>
+    <div class="footer-disclaim">Platform guidance &mdash; not legal advice.</div>
+    <div class="footer-addr">Sentinel Risk Group LLC &middot; 1125 N. Chickasaw Trail &middot; Orlando, FL 32825 &middot; USA</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var form = document.getElementById('intakeForm');
+  var thanksBox = document.getElementById('thanksBox');
+  var errBox = document.getElementById('errBox');
+  var submitBtn = document.getElementById('submitBtn');
+  var gp10Section = document.getElementById('gp10Section');
+
+  // PLACEHOLDER — paste DEV-2 webhook URL when scenario is built
+  // Phase 2 build will set this from Make Sc DEV-2 hook.url
+  var WEBHOOK_URL = 'https://hook.us2.make.com/PLACEHOLDER_DEV2_WEBHOOK';
+
+  // Show/hide GP-10 section
+  document.querySelector('select[name=category]').addEventListener('change', function(e){
+    if (/GP-10/.test(e.target.value)) gp10Section.style.display = 'block';
+    else gp10Section.style.display = 'none';
+  });
+
+  function showError(msg){ errBox.textContent = msg; errBox.classList.add('show'); errBox.scrollIntoView({behavior:'smooth',block:'start'}); }
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    errBox.classList.remove('show');
+    var data = new FormData(form);
+    var required = ['email','customerName','country','platform','category','tier','developerAccountType','enforcementType','enforcementDate','citedPolicySection','noticeText','customerNarrative'];
+    for (var k of required) {
+      if (!String(data.get(k)||'').trim()) { showError('Please complete: ' + k.replace(/([A-Z])/g,' $1').toLowerCase()); return; }
+    }
+    var email = String(data.get('email')).trim();
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { showError('Please enter a valid email address.'); return; }
+
+    var payload = {};
+    data.forEach(function(v,k){ payload[k] = v; });
+    payload.timestamp = new Date().toISOString();
+    payload.pilotRegion = ['BR','ID','SG','TH'].indexOf(data.get('country')) >= 0;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+    try {
+      var r = await fetch(WEBHOOK_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+      if (!r.ok) throw new Error('Server returned ' + r.status);
+      form.style.display = 'none';
+      thanksBox.classList.add('show');
+      window.scrollTo({top:0,behavior:'smooth'});
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit intake';
+      showError('Could not submit. Please try again or email admin@reclaimshield.io directly. Error: ' + (err.message||err));
+    }
+  });
+})();
+</script>
+</body></html>
