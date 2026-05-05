@@ -1870,7 +1870,7 @@ footer {
     </div>
     <div id="c-alert-error" style="display:none;margin-top:28px;padding:20px 24px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:14px;color:var(--text)">
       <strong style="color:#F87171;font-family:'Space Grotesk',sans-serif;font-size:14px;letter-spacing:0.5px">COULDN'T SEND MESSAGE</strong>
-      <p id="c-alert-error-msg" style="margin-top:8px;font-size:14px;line-height:1.6;color:var(--text-dim)">Please try again, or use the <a href="https://reclaimshield.io/help" style="color:var(--accent-2);text-decoration:underline">Shield Support chat</a> instead.</p>
+      <p id="c-alert-error-msg" style="margin-top:8px;font-size:14px;line-height:1.6;color:var(--text-dim)">Please try again, or use the <a href="https://reclaimshield.io/contact" style="color:var(--accent-2);text-decoration:underline">Shield Support chat</a> instead.</p>
     </div>
 
     <form id="contact-form" style="margin-top:28px;padding:28px 30px;background:rgba(18,18,26,0.6);border:1px solid rgba(255,255,255,0.06);border-radius:14px;display:grid;gap:16px" novalidate>
@@ -1984,7 +1984,7 @@ footer {
             } else if(code === 'invalid_name' || code === 'invalid_message'){
               showError('Please fill in all fields with more than a couple of characters.');
             } else {
-              showError('Couldn\u2019t send right now (' + code + '). Please use the Shield Support chat at reclaimshield.io/help instead.');
+              showError('Couldn\u2019t send right now (' + code + '). Please use the contact form at reclaimshield.io/contact instead.');
             }
             // Reset Turnstile widget so user can retry
             try { if(window.turnstile) window.turnstile.reset(); } catch(err){}
