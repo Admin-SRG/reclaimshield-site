@@ -166,7 +166,7 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
     <!-- Honeypot -->
     <div class="hp-field" aria-hidden="true">
       <label for="website">Leave this field empty</label>
-      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" data-no-autofill>
     </div>
 
     <!-- SECTION 1 — SELLER IDENTITY -->
@@ -630,21 +630,68 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
     document.getElementById('intakeTimestamp').value = new Date().toISOString();
   } catch(e){}
 
+  // Helper for visible focus + scroll to first invalid field
+  function focusFirstInvalid(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    try { el.focus({preventScroll:false}); } catch(_){ el.focus(); }
+    try { el.scrollIntoView({behavior:'smooth', block:'center'}); } catch(_){}
+    el.style.outline = '2px solid #EF4444';
+    el.style.outlineOffset = '2px';
+    setTimeout(function(){ el.style.outline=''; el.style.outlineOffset=''; }, 4000);
+  }
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     alertError.classList.add('hidden');
+    alertSuccess.classList.add('hidden');
 
+    // Honeypot — drop silently with a recoverable error message (no fake success).
     if(document.getElementById('website').value.trim() !== ''){
-      showSuccess();
+      console.warn('[intake] honeypot tripped; submission dropped');
+      showError('Submission could not be verified. Please refresh the page and try again. If the problem persists, contact reclaimshield.io/help.');
       return;
     }
     if(Date.now() - LOAD_TS < 3000){
       showError('Please take a moment to review the form before submitting.');
       return;
     }
-    if(!form.checkValidity()){ form.reportValidity(); return; }
-    if(!document.getElementById('termsAck').checked || !document.getElementById('disclaimerAck').checked || !document.getElementById('arbitrationAck').checked){
-      showError('You must acknowledge all three required acknowledgments.');
+
+    // Explicit required-field validation with named-error banner.
+    var missing = [];
+    var firstInvalidId = null;
+    function need(id, label){
+      var el = document.getElementById(id);
+      if(!el || !(el.value || '').trim()){
+        missing.push(label);
+        if(!firstInvalidId) firstInvalidId = id;
+      }
+    }
+    need('fullName', 'Your Full Legal Name (Section 1)');
+    need('email', 'Your Email Address (Section 1)');
+    need('storeName', 'Amazon Store Name (Section 2)');
+    need('marketplace', 'Marketplace (Section 2)');
+    need('accountType', 'Account Type (Section 2)');
+    need('tierSelected', 'Service Tier (Section 2)');
+    need('suspensionType', 'Suspension Type (Section 3)');
+    need('suspensionNoticeText', 'Suspension Notice Text (Section 3)');
+
+    if(!document.getElementById('termsAck').checked){
+      missing.push('Terms acknowledgment (Section 7)');
+      if(!firstInvalidId) firstInvalidId = 'termsAck';
+    }
+    if(!document.getElementById('disclaimerAck').checked){
+      missing.push('Non-legal-services acknowledgment (Section 7)');
+      if(!firstInvalidId) firstInvalidId = 'disclaimerAck';
+    }
+    if(!document.getElementById('arbitrationAck').checked){
+      missing.push('Arbitration acknowledgment (Section 7)');
+      if(!firstInvalidId) firstInvalidId = 'arbitrationAck';
+    }
+
+    if(missing.length > 0){
+      showError('Please complete the following before submitting: ' + missing.join('; ') + '.');
+      if(firstInvalidId) focusFirstInvalid(firstInvalidId);
       return;
     }
 
@@ -654,7 +701,7 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
       if(resp) tsToken = resp.value || '';
     } catch(err){}
     if(!tsToken){
-      showError('Please complete the human-verification challenge, then submit again.');
+      showError('Please complete the human-verification challenge at the bottom of the form, then submit again.');
       return;
     }
 
