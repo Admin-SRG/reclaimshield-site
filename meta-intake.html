@@ -176,7 +176,7 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
 <main class="form-surface">
 
   <div id="alertSuccess" class="alert success hidden">
-    <strong>Intake received.</strong> Your evidence uploads have been received and a confirmation has been sent to the email address you provided with your reference number. Your appeal packet will arrive within approximately 2 hours. You may close this tab.
+    <strong>Intake received.</strong> A confirmation has been sent to the email address you provided. Your appeal packet will arrive at that email within approximately 2 hours. You may close this tab.
   </div>
   <div id="alertError" class="alert error hidden">
     <strong>Submission could not be completed.</strong> <span id="alertErrorMsg">Please try again. If the issue persists, reach Shield Support via the chat widget at reclaimshield.io/help and we will process your intake manually.</span>
@@ -187,7 +187,7 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
     <!-- Honeypot -->
     <div class="hp-field" aria-hidden="true">
       <label for="website">Leave this field empty</label>
-      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" data-no-autofill>
     </div>
 
     <!-- SECTION 1 — CONTACT -->
@@ -523,14 +523,32 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
 
 
 
+  // Helpers for explicit validation
+  function focusFirstInvalid(ids){
+    for(var i=0;i<ids.length;i++){
+      var el = document.getElementById(ids[i]);
+      if(el){
+        try { el.focus({preventScroll:false}); } catch(_){ el.focus(); }
+        try { el.scrollIntoView({behavior:'smooth', block:'center'}); } catch(_){}
+        // Visible red highlight that auto-clears
+        el.style.outline = '2px solid #EF4444';
+        el.style.outlineOffset = '2px';
+        setTimeout(function(){ el.style.outline=''; el.style.outlineOffset=''; }, 4000);
+        return;
+      }
+    }
+  }
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
     alertError.classList.add('hidden');
+    alertSuccess.classList.add('hidden');
 
-    // Honeypot
+    // Honeypot — drop silently (no fake success). Bots see no acknowledgment, real users
+    // who hit this via autofill bug see... a non-response, which is recoverable on retry.
     if(document.getElementById('website').value.trim() !== ''){
-      // silent success — bot
-      showSuccess();
+      console.warn('[intake] honeypot tripped; submission dropped');
+      showError('Submission could not be verified. Please refresh the page and try again. If the problem persists, contact reclaimshield.io/help.');
       return;
     }
     // Too-fast submit guard (<3s = likely bot)
@@ -538,13 +556,62 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
       showError('Please take a moment to review the form before submitting.');
       return;
     }
-    // Required fields manual check
-    if(!form.checkValidity()){
-      form.reportValidity();
-      return;
+
+    // Explicit required-field validation with named-error banner.
+    // Replaces native checkValidity()/reportValidity() which silently shows browser
+    // tooltips that customers miss.
+    var missing = [];
+    var firstInvalidId = null;
+    function need(id, label){
+      var el = document.getElementById(id);
+      if(!el || !(el.value || '').trim()){
+        missing.push(label);
+        if(!firstInvalidId) firstInvalidId = id;
+      }
     }
+    need('clientName', 'Your Full Legal Name (Section 1)');
+    need('email', 'Your Email Address (Section 1)');
+    need('country', 'Country (Section 1)');
+
+    var country = (document.getElementById('country').value || '').trim().toUpperCase();
+    if(country && !/^[A-Z]{2}$/.test(country)){
+      missing.push('Country (must be 2-letter ISO code like US, GB, DE)');
+      if(!firstInvalidId) firstInvalidId = 'country';
+    }
+
+    var isEU = country && EU_EEA.indexOf(country) >= 0;
+    if(country){
+      if(isEU){
+        if(!document.querySelector('input[name="intakeInternalComplaintEU"]:checked')){
+          missing.push('Internal-complaint status (Section 2)');
+          if(!firstInvalidId) firstInvalidId = 'euAppealBranch';
+        }
+        if(!document.querySelector('input[name="intakeAceEU"]:checked')){
+          missing.push('Appeals Centre Europe status (Section 2)');
+          if(!firstInvalidId) firstInvalidId = 'euAppealBranch';
+        }
+      } else {
+        if(!document.querySelector('input[name="intakeAppealStatusUS"]:checked')){
+          missing.push('Where you are in Meta\'s process (Section 2)');
+          if(!firstInvalidId) firstInvalidId = 'usAppealBranch';
+        }
+      }
+    }
+
+    need('platform', 'Platform (Section 3)');
+    need('issueType', 'Issue Type (Section 3)');
+    need('violationCategory', 'Meta\'s Stated Violation (Section 3)');
+    need('accountUsername', 'Account Handle (Section 4)');
+    need('accountDescription', 'Case Narrative (Section 4)');
+
     if(!document.getElementById('disclosureAck').checked){
-      showError('You must acknowledge the disclosure block to submit.');
+      missing.push('Acknowledgment checkbox (Section 6)');
+      if(!firstInvalidId) firstInvalidId = 'disclosureAck';
+    }
+
+    if(missing.length > 0){
+      showError('Please complete the following before submitting: ' + missing.join('; ') + '.');
+      if(firstInvalidId) focusFirstInvalid([firstInvalidId]);
       return;
     }
 
