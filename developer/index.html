@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>ReclaimShield&trade; for Developers &mdash; Google Play + Apple App Store Appeal Kits. Attorney-Designed.</title>
+<meta name="description" content="Google rejected your app or Apple terminated your developer account. ReclaimShield builds the kit drafted to the exact Developer Program Policy or App Store Review Guideline section in your notice. Three business days. You file from your own account. We never see your credentials.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://reclaimshield.io/developer/">
+<meta property="og:title" content="ReclaimShield&trade; for Developers &mdash; Google Play + Apple Appeal Kits">
+<meta property="og:description" content="Drafted to your cited policy section. Three business days. You file from your own account.">
+<meta property="og:image" content="https://reclaimshield.io/assets/og/og-developer.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ReclaimShield&trade; for Developers &mdash; Appeal Kit">
+<meta name="twitter:description" content="Drafted to your cited policy section. Three business days.">
+<meta name="twitter:image" content="https://reclaimshield.io/assets/og/og-developer.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--accent-indigo);
+  outline-offset: 3px; border-radius: 4px;
+}
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent-indigo);
+  outline-offset: 3px;
+}
+.skip-link {
+  position: absolute; left: -9999px; top: 0;
+  padding: 10px 16px; background: var(--accent-indigo);
+  color: #0A0A0F; font-weight: 700; text-decoration: none;
+  z-index: 9999; border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; }
+
+:root {
+  --bg: #0A0A0F;
+  --surface: #12121A;
+  --surface-2: #1A1A25;
+  --surface-3: #22222F;
+  --text: #EEEEF0;
+  --text-dim: #9999AD;
+  --text-muted: #9B9BB0;
+  --accent-indigo: #6366F1;
+  --accent-deep: #4F46E5;
+  --accent-light: #A5B4FC;
+  --accent-2: #2DD4BF;
+  --gradient: linear-gradient(135deg, #6366F1, #4F46E5);
+  --gradient-hot: linear-gradient(135deg, #818CF8, #6366F1);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg); color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.container { max-width: 480px; margin: 0 auto; padding: 0 20px; }
+@media (min-width: 768px) { .container { max-width: 960px; } }
+@media (min-width: 1024px) { .container { max-width: 1100px; } }
+
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Nav (logo bumped to 44px) */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px; max-width: 1100px; margin: 0 auto;
+}
+.nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.nav-logo svg { width: 44px; height: 56px; flex-shrink: 0; }
+@media (max-width: 600px) {
+  .nav-logo { gap: 10px; }
+  .nav-logo svg { width: 36px; height: 46px; }
+}
+.nav-logo-text { display: flex; flex-direction: column; }
+.nav-logo-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700; font-size: 18px; letter-spacing: -0.5px;
+  color: #fff; line-height: 1.1;
+}
+.nav-logo-sub {
+  font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase;
+  color: rgba(255,255,255,0.3); font-weight: 500;
+}
+.nav-links { display: flex; align-items: center; gap: 6px; }
+.nav-links a {
+  font-size: 13px; color: rgba(255,255,255,0.7);
+  text-decoration: none; font-weight: 500;
+  padding: 10px 14px; border-radius: 8px;
+  transition: all 0.2s; display: inline-block; line-height: 1.4;
+}
+.nav-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.nav-cta {
+  padding: 10px 22px; background: var(--gradient);
+  color: white; border: none; border-radius: 100px;
+  font-weight: 600; font-size: 13px; cursor: pointer;
+  text-decoration: none; transition: all 0.2s; margin-left: 8px;
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35); }
+@media (max-width: 768px) {
+  .nav-links a:not(.nav-cta) { display: none; }
+}
+
+/* Hero */
+.hero { padding: 130px 0 60px; position: relative; overflow: hidden; }
+.hero::before {
+  content: ''; position: absolute; top: -200px; left: 50%;
+  transform: translateX(-50%);
+  width: 900px; height: 900px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-grid {
+  position: relative; z-index: 2;
+  display: grid; gap: 40px;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+@media (min-width: 900px) { .hero-grid { grid-template-columns: 1.3fr 1fr; gap: 60px; } }
+
+.hero-eyebrow {
+  display: inline-block; padding: 8px 16px;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 100px; font-size: 12px; font-weight: 600;
+  color: var(--accent-indigo); letter-spacing: 1px;
+  text-transform: uppercase; margin-bottom: 22px;
+}
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 800; letter-spacing: -1.5px;
+  line-height: 1.05; margin-bottom: 22px;
+}
+.hero-sub {
+  font-size: 17px; color: var(--text-dim);
+  margin-bottom: 22px; line-height: 1.65;
+}
+.hero-sub strong { color: var(--text); }
+
+.platform-badges { display: flex; gap: 10px; margin-bottom: 8px; flex-wrap: wrap; }
+.platform-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 100px;
+  font-size: 14px; font-weight: 700;
+  color: var(--text); letter-spacing: 0.2px;
+}
+.platform-badge::before {
+  content: ''; display: inline-block;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent-indigo);
+}
+.platform-disclaimer {
+  font-size: 10.5px; color: var(--text-muted);
+  font-style: italic; margin-bottom: 24px; line-height: 1.55;
+  max-width: 600px;
+}
+
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+.btn-primary {
+  display: inline-block; padding: 16px 28px;
+  background: var(--gradient); color: white;
+  border: none; border-radius: 100px;
+  font-weight: 700; font-size: 15px; cursor: pointer;
+  text-decoration: none; transition: all 0.2s;
+  letter-spacing: 0.2px;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99, 102, 241, 0.35); }
+.btn-outline {
+  display: inline-block; padding: 16px 28px;
+  background: transparent; color: var(--text);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 100px; font-weight: 600; font-size: 15px;
+  text-decoration: none; transition: all 0.2s;
+}
+.btn-outline:hover { border-color: var(--accent-indigo); color: var(--accent-indigo); }
+
+.hero-card {
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  position: relative;
+}
+.hero-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--gradient); border-radius: var(--radius) var(--radius) 0 0;
+}
+.hero-card-label {
+  font-size: 11px; letter-spacing: 1.3px; text-transform: uppercase;
+  color: var(--accent-indigo); font-weight: 700; margin-bottom: 18px;
+}
+.hc-row {
+  display: grid; grid-template-columns: 92px 1fr; gap: 14px;
+  padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.hc-row:last-child { border-bottom: none; }
+.hc-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 12.5px; font-weight: 700; letter-spacing: 0.3px;
+  color: var(--accent-indigo); line-height: 1.25; text-transform: uppercase;
+}
+.hc-desc { font-size: 13px; color: var(--text-dim); line-height: 1.55; }
+.hc-desc em { font-style: italic; color: var(--text); }
+
+
+/* Platform-distinct hero statements */
+.platform-statements{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:24px 0 26px}
+.ps{padding:22px 24px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:12px;border-left-width:3px;border-left-style:solid}
+.ps-apple{border-left-color:#C0C5CC}
+.ps-google{border-left-color:#0EA5E9}
+.ps-tag{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+.ps-apple .ps-tag{color:#C0C5CC}
+.ps-google .ps-tag{color:#0EA5E9}
+.ps-tag::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%}
+.ps-apple .ps-tag::before{background:#C0C5CC}
+.ps-google .ps-tag::before{background:#0EA5E9}
+.ps-line{font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,2.6vw,28px);font-weight:700;letter-spacing:-0.4px;line-height:1.18;color:#fff}
+.hero-promise{font-family:'Space Grotesk',sans-serif;font-size:clamp(32px,4.6vw,52px);font-weight:800;letter-spacing:-1.2px;line-height:1.05;margin-bottom:24px;color:#fff}
+@media (max-width:720px){
+  .platform-statements{grid-template-columns:1fr;gap:12px;margin:20px 0 22px}
+  .ps{padding:18px 20px}
+}
+
+/* Trust strip */
+.trust { padding: 36px 0; background: var(--surface); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
+.trust-grid {
+  display: grid; gap: 24px;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1100px; margin: 0 auto; padding: 0 20px;
+}
+@media (min-width: 720px) { .trust-grid { grid-template-columns: repeat(4, 1fr); } }
+.trust-item { text-align: center; }
+.trust-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 26px; font-weight: 800;
+  color: var(--accent-indigo);
+  line-height: 1; margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+.trust-label {
+  font-size: 12.5px; color: var(--text-dim);
+  line-height: 1.5;
+}
+.trust-label strong { color: var(--text); }
+
+/* Section base */
+.section { padding: 80px 0; }
+.section-header { text-align: center; margin-bottom: 48px; }
+.section-eyebrow {
+  display: inline-block; padding: 6px 14px;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 100px; font-size: 11px; font-weight: 600;
+  color: var(--accent-indigo); letter-spacing: 1.2px;
+  text-transform: uppercase; margin-bottom: 20px;
+}
+.section-header h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800; letter-spacing: -1px;
+  margin-bottom: 14px; line-height: 1.15;
+}
+.section-header p { color: var(--text-dim); font-size: 16px; max-width: 720px; margin: 0 auto; line-height: 1.6; }
+
+/* Pricing (moved up) */
+.pricing { background: var(--surface); }
+.pricing-grid {
+  display: grid; gap: 24px;
+  grid-template-columns: 1fr;
+  max-width: 920px; margin: 0 auto;
+}
+@media (min-width: 820px) { .pricing-grid { grid-template-columns: 1fr 1fr; } }
+.price-card {
+  background: var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.price-card-featured {
+  border-color: rgba(99, 102, 241, 0.4);
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0.06) 0%, var(--surface-2) 60%);
+}
+.price-card-featured::before {
+  content: 'For Complex Cases'; position: absolute; top: -14px; left: 50%;
+  transform: translateX(-50%); padding: 6px 14px;
+  background: var(--gradient); color: #fff;
+  border-radius: 100px; font-size: 10px; letter-spacing: 1.5px;
+  text-transform: uppercase; font-weight: 700;
+}
+.price-tier {
+  font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--accent-indigo); font-weight: 700; margin-bottom: 10px;
+}
+.price-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 19px; font-weight: 700;
+  color: #fff; margin-bottom: 12px; letter-spacing: -0.4px;
+  line-height: 1.3;
+}
+.price-amount {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 48px; font-weight: 800;
+  color: #fff; line-height: 1; margin: 12px 0 4px;
+  letter-spacing: -1.5px;
+}
+.price-suffix { font-size: 13px; color: var(--text-muted); margin-bottom: 22px; }
+.price-desc { color: var(--text-dim); font-size: 14px; line-height: 1.65; margin-bottom: 22px; }
+.price-list { list-style: none; margin-bottom: 28px; flex-grow: 1; }
+.price-list li {
+  padding: 7px 0; font-size: 13.5px; color: var(--text-dim);
+  padding-left: 26px; position: relative; line-height: 1.55;
+}
+.price-list li::before {
+  content: '\2713'; position: absolute; left: 0;
+  color: var(--accent-indigo); font-weight: 700; font-size: 15px; top: 5px;
+}
+.price-list li strong { color: var(--text); }
+.price-btn {
+  padding: 14px 22px; background: var(--gradient);
+  color: white; border: none; border-radius: 100px;
+  font-weight: 700; font-size: 14px; cursor: pointer;
+  text-decoration: none; transition: all 0.2s;
+  text-align: center; letter-spacing: 0.3px;
+}
+.price-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35); }
+.price-btn-outline {
+  background: transparent; color: var(--accent-indigo);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+}
+.price-btn-outline:hover {
+  background: rgba(99, 102, 241, 0.08);
+  border-color: var(--accent-indigo);
+}
+.price-fineprint {
+  font-size: 11.5px; color: var(--text-muted);
+  margin-top: 14px; line-height: 1.5;
+}
+.tier-swap-note {
+  text-align: center; margin-top: 32px;
+  color: var(--text-muted); font-size: 13px;
+  max-width: 680px; margin-left: auto; margin-right: auto; line-height: 1.6;
+}
+
+/* Method (3 steps) */
+.method-grid {
+  display: grid; gap: 18px;
+  grid-template-columns: 1fr;
+  max-width: 1000px; margin: 0 auto;
+  counter-reset: step;
+}
+@media (min-width: 720px) { .method-grid { grid-template-columns: 1fr 1fr 1fr; } }
+.method-card {
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  counter-increment: step;
+  position: relative;
+}
+.method-num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 44px; font-weight: 800;
+  background: var(--gradient);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1; margin-bottom: 12px;
+}
+.method-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px; font-weight: 700;
+  margin-bottom: 8px; color: #fff; letter-spacing: -0.3px;
+}
+.method-card p { color: var(--text-dim); font-size: 13.5px; line-height: 1.6; }
+.method-tag {
+  display: inline-block; font-size: 10.5px; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--accent-indigo);
+  font-weight: 700; margin-bottom: 8px;
+}
+
+/* Coverage accordion */
+.coverage { background: var(--surface); }
+.coverage-list { max-width: 820px; margin: 0 auto; }
+.coverage-platform-header {
+  display: flex; align-items: center; gap: 12px;
+  margin: 36px 0 14px; padding: 0 4px;
+}
+.coverage-platform-header:first-of-type { margin-top: 0; }
+.coverage-platform-header h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--text);
+}
+.coverage-platform-header .platform-tag {
+  font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase;
+  font-weight: 700; padding: 4px 10px; border-radius: 4px;
+  background: rgba(99,102,241,0.15);
+  color: var(--accent-indigo);
+}
+.coverage-card {
+  background: var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  overflow: hidden;
+  transition: all 0.18s;
+}
+.coverage-card:has(.coverage-btn[aria-expanded="true"]) {
+  border-color: rgba(99,102,241,0.4);
+  background: rgba(99,102,241,0.04);
+}
+.coverage-btn {
+  background: none; border: none;
+  padding: 14px 18px; width: 100%;
+  text-align: left; cursor: pointer;
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 14px;
+  font-family: 'Inter', sans-serif;
+  color: inherit;
+}
+.coverage-btn:hover { background: rgba(255,255,255,0.02); }
+.coverage-btn-left { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0; }
+.coverage-btn-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700; font-size: 15.5px;
+  color: var(--text); line-height: 1.3;
+}
+.coverage-tag {
+  font-size: 9.5px; letter-spacing: 1px; text-transform: uppercase;
+  font-weight: 700; padding: 3px 8px; border-radius: 4px;
+  flex-shrink: 0;
+}
+.coverage-tag.tag-standard { background: rgba(255,255,255,0.06); color: var(--text-dim); }
+.coverage-tag.tag-complex { background: rgba(99,102,241,0.18); color: var(--accent-indigo); }
+.coverage-icon {
+  font-size: 22px; color: var(--accent-indigo);
+  font-weight: 300; line-height: 1; flex-shrink: 0;
+  width: 22px; text-align: center;
+}
+.coverage-card:has(.coverage-btn[aria-expanded="true"]) .coverage-icon::before { content: '\2212'; }
+.coverage-card:not(:has(.coverage-btn[aria-expanded="true"])) .coverage-icon::before { content: '+'; }
+.coverage-panel {
+  padding: 4px 18px 18px; font-size: 14px;
+  color: var(--text-dim); line-height: 1.65;
+}
+.coverage-panel[hidden] { display: none; }
+.coverage-panel strong { color: var(--text); }
+
+/* Why our kit wins (7 short cards) */
+.why-grid {
+  display: grid; gap: 14px;
+  grid-template-columns: 1fr;
+  max-width: 1100px; margin: 0 auto;
+}
+@media (min-width: 720px) { .why-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1100px) { .why-grid { grid-template-columns: 1fr 1fr 1fr; } }
+.why-card {
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+  padding: 22px 22px;
+  position: relative;
+}
+.why-card::before {
+  content: ''; position: absolute; top: 0; left: 22px; right: 22px; height: 2px;
+  background: var(--gradient);
+  border-radius: 0 0 4px 4px;
+}
+.why-card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 16.5px; font-weight: 700;
+  color: var(--text); margin-bottom: 10px;
+  letter-spacing: -0.2px; line-height: 1.3;
+}
+.why-card p { font-size: 13.5px; color: var(--text-dim); line-height: 1.6; }
+.why-card p strong { color: var(--text); }
+
+/* EU/EEA callout */
+.eu-callout { padding: 60px 0; }
+.eu-callout-inner {
+  max-width: 820px; margin: 0 auto;
+  background: rgba(45, 212, 191, 0.04);
+  border: 1px solid rgba(45, 212, 191, 0.2);
+  border-radius: var(--radius);
+  padding: 28px 28px;
+}
+.eu-flag {
+  display: inline-block; padding: 4px 10px;
+  background: rgba(45, 212, 191, 0.12);
+  border-radius: 6px; font-size: 11px;
+  letter-spacing: 1.4px; text-transform: uppercase;
+  color: var(--accent-2); font-weight: 700; margin-bottom: 14px;
+}
+.eu-callout-inner h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px; font-weight: 700;
+  color: #fff; margin-bottom: 12px; letter-spacing: -0.3px; line-height: 1.3;
+}
+.eu-callout-inner p { color: var(--text-dim); font-size: 14px; line-height: 1.65; margin-bottom: 10px; }
+.eu-callout-inner p:last-child { margin-bottom: 0; }
+.eu-callout-inner strong { color: var(--text); }
+
+/* No-PII callout */
+.nopii-callout { background: var(--surface); padding: 60px 0; }
+.nopii-inner {
+  max-width: 820px; margin: 0 auto;
+  background: var(--surface-2);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 28px 28px;
+}
+.nopii-label {
+  font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase;
+  color: var(--accent-indigo); font-weight: 700; margin-bottom: 12px;
+}
+.nopii-inner h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px; font-weight: 700;
+  color: #fff; margin-bottom: 12px; letter-spacing: -0.3px; line-height: 1.3;
+}
+.nopii-inner p { color: var(--text-dim); font-size: 14px; line-height: 1.65; margin-bottom: 10px; }
+.nopii-inner p:last-child { margin-bottom: 0; }
+.nopii-inner strong { color: var(--text); }
+
+/* FAQ accordion */
+.faq-list { max-width: 820px; margin: 0 auto; display: grid; gap: 10px; }
+.faq-item {
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: all 0.18s;
+}
+.faq-item:has(.faq-q[aria-expanded="true"]) {
+  border-color: rgba(99,102,241,0.4);
+  background: rgba(99,102,241,0.04);
+}
+.faq-q {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 22px; cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600; font-size: 15.5px; color: #fff;
+  background: none; border: none; width: 100%;
+  text-align: left; letter-spacing: -0.2px; line-height: 1.4;
+}
+.faq-q:hover { background: rgba(255,255,255,0.02); }
+.faq-q-icon { color: var(--accent-indigo); font-size: 22px; flex-shrink: 0; margin-left: 12px; line-height: 1; }
+.faq-a { padding: 0 22px 18px; color: var(--text-dim); font-size: 14px; line-height: 1.7; }
+.faq-a strong { color: var(--text); }
+.faq-a[hidden] { display: none; }
+
+/* Final CTA */
+.cta-final { padding: 90px 0; text-align: center; position: relative; overflow: hidden; }
+.cta-final::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.cta-final-inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
+.cta-final h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800; letter-spacing: -1px;
+  line-height: 1.15; margin-bottom: 20px;
+}
+.cta-final p { font-size: 16px; color: var(--text-dim); margin-bottom: 32px; line-height: 1.6; }
+
+/* Footer */
+footer { padding: 56px 0 36px; background: var(--surface); border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700; font-size: 22px;
+  letter-spacing: -0.5px; color: #fff;
+  margin-bottom: 6px;
+}
+.footer-parent {
+  font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--text-dim); margin-bottom: 22px;
+}
+.footer-links {
+  display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-bottom: 18px;
+}
+.footer-links a {
+  font-size: 13px; color: var(--text-dim); text-decoration: none;
+  padding: 6px 10px; border-radius: 6px; transition: all 0.2s;
+}
+.footer-links a:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.footer-legal {
+  font-size: 11px; color: var(--text-dim);
+  max-width: 820px; margin: 14px auto 0;
+  line-height: 1.6; letter-spacing: 0.1px;
+}
+.footer-legal strong { color: var(--text); }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<nav aria-label="Primary">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo" aria-label="ReclaimShield&trade; home">
+      <svg viewBox="35 0 140 180" style="filter:drop-shadow(0 2px 4px rgba(0,0,0,0.4))" aria-hidden="true"><defs><linearGradient id="navRsDevBorder" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6366F1"/><stop offset="100%" stop-color="#4F46E5"/></linearGradient><linearGradient id="navRsDevBevel" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#A5B4FC" stop-opacity="0.55"/><stop offset="55%" stop-color="#6366F1" stop-opacity="0"/></linearGradient><clipPath id="navRsDevClip"><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z"/></clipPath></defs><path d="M 40 18 Q 40 8 50 8 L 160 8 Q 170 8 170 18 L 170 80 Q 170 140 105 170 Q 40 140 40 80 Z" fill="#0A0A0F" stroke="url(#navRsDevBorder)" stroke-width="4"/><g clip-path="url(#navRsDevClip)"><rect x="40" y="10" width="130" height="26" fill="url(#navRsDevBevel)"/></g><text x="105" y="108" text-anchor="middle" font-family="'Space Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="96" font-weight="700" fill="#FFFFFF" letter-spacing="-3">R</text></svg>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name">ReclaimShield&trade;</span>
+        <span class="nav-logo-sub">Platform Appeal Recovery</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="../">Home</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#how">How it works</a>
+      <a href="#coverage">What we cover</a>
+      <a href="#faq">FAQ</a>
+      <a href="#pricing" class="nav-cta">Get My Kit</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">Professional Account Recovery</div>
+        <div class="platform-statements">
+          <div class="ps ps-google">
+            <span class="ps-tag">Google Play</span>
+            <div class="ps-line">Your app got rejected.</div>
+          </div>
+          <div class="ps ps-apple">
+            <span class="ps-tag">Apple App Store</span>
+            <div class="ps-line">Your developer account is terminated.</div>
+          </div>
+        </div>
+        <h1 class="hero-promise"><span class="gradient-text">Here&rsquo;s the kit that gets you back.</span></h1>
+        <p class="hero-sub">No phone number to call. No support rep. No second chance after a poorly-written first appeal. The reviewer panel reads what you submit against the exact policy section in your notice &mdash; and if your appeal doesn&rsquo;t address that section directly, it fails. <strong>We draft the kit they actually read.</strong> You file from your own account. We never see your credentials.</p>
+        <p class="platform-disclaimer">Not affiliated with, endorsed by, or sponsored by Apple Inc. or Google LLC. Apple, App Store, App Store Connect, App Review Board, and the Apple logo are trademarks of Apple Inc. Google, Google Play, Google Play Console, and the Google Play badge are trademarks of Google LLC.</p>
+        <div class="hero-actions">
+          <a href="https://buy.stripe.com/eVqbJ3dvL5yT2Pj5hc5EY0x" class="btn-primary">Start Standard &mdash; $497 &rarr;</a>
+          <a href="https://buy.stripe.com/8x228tdvL3qL3Tn9xs5EY0w" class="btn-outline">Complex &mdash; $997 &rarr;</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">Why most developer appeals fail</div>
+        <div class="hc-row">
+          <div class="hc-label">Wrong<br>Section</div>
+          <div class="hc-desc">Answers &ldquo;the rejection&rdquo; in general terms instead of the specific Guideline or Policy section cited. Reviewers scan for the section. If it isn&rsquo;t directly addressed, the appeal fails regardless of writing quality.</div>
+        </div>
+        <div class="hc-row">
+          <div class="hc-label">Wrong<br>Submitter</div>
+          <div class="hc-desc">Third-party agent submission. Apple Developer Program License Agreement &sect; 2.1 prohibits credential-sharing; Google&rsquo;s Console only accepts submissions from inside the developer&rsquo;s own session. <em>We never ask for your credentials. You submit from your own account.</em></div>
+        </div>
+        <div class="hc-row">
+          <div class="hc-label">One<br>Shot</div>
+          <div class="hc-desc">Apple allows one Resolution Center appeal per rejected build. Google Play has a 180-day window with a single in-app appeal flow per termination. The first submission is the strongest submission.</div>
+        </div>
+        <div class="hc-row">
+          <div class="hc-label">Wrong<br>Voice</div>
+          <div class="hc-desc">Generic &ldquo;we apologize&rdquo; template language pasted from Amazon Seller POAs that don&rsquo;t translate. The reviewer panel is looking for category-specific operational diagnosis tied to the cited section, not a contrition letter.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<section class="trust">
+  <div class="trust-grid">
+    <div class="trust-item">
+      <div class="trust-num">3 days</div>
+      <div class="trust-label"><strong>Intake to kit</strong><br>Three business days, no rush tier.</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-num">Section</div>
+      <div class="trust-label"><strong>Drafted to your cited section</strong><br>Not a generic POA template.</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-num">You file</div>
+      <div class="trust-label"><strong>From your own account</strong><br>We never log in for you.</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-num">No keys</div>
+      <div class="trust-label"><strong>We never see credentials</strong><br>DPLA &sect; 2.1 compliant.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing (moved up) -->
+<section class="section pricing" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Pricing</div>
+      <h2>Two tiers. Flat fee. No hourly.</h2>
+      <p>Boutique tech-litigation firms charge $5,000 to $15,000 for the same work product. Fiverr operators charge $100&ndash;$300 for templates that don&rsquo;t cite the section in your notice. We sit in between &mdash; flat fee, attorney-designed methodology.</p>
+    </div>
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <div class="price-tier">Standard Kit</div>
+        <h3>Single-app, single-section policy violations</h3>
+        <div class="price-amount">$497</div>
+        <div class="price-suffix">one-time &middot; delivered in 3 business days</div>
+        <p class="price-desc">Routine Apple App Store Review Guideline or Google Play Developer Program Policy cases &mdash; the categories most first-time developer rejections fall into.</p>
+        <ul class="price-list">
+          <li>Plan of Action (Google) or Resolution Center submission (Apple)</li>
+          <li>Drafted to the specific section cited in your notice</li>
+          <li>Filing Instructions tuned to your platform&rsquo;s timing rules</li>
+          <li>Reserve Escalation Letter included for use if your first appeal is denied</li>
+          <li>One revision cycle if the platform asks for more information within 14 days</li>
+        </ul>
+        <a href="https://buy.stripe.com/eVqbJ3dvL5yT2Pj5hc5EY0x" class="price-btn price-btn-outline">Start Standard Kit</a>
+        <div class="price-fineprint">One-time Stripe charge. No subscription. Secure intake link delivered by email immediately.</div>
+      </div>
+
+      <div class="price-card price-card-featured">
+        <div class="price-tier">Complex Kit</div>
+        <h3>Identity-association, IP, verification, multi-app, or disbursement-hold cases</h3>
+        <div class="price-amount">$997</div>
+        <div class="price-suffix">one-time &middot; delivered in 3 business days</div>
+        <p class="price-desc">Documentation-heavy categories where the kit grows to 5&ndash;7 documents calibrated to your case. The case-specific letters template-mill providers don&rsquo;t draft.</p>
+        <ul class="price-list">
+          <li><strong>Everything in the Standard Kit</strong></li>
+          <li>Up to 7 documents, shaped at intake by your category</li>
+          <li>Case-specific response letters for identity-association, copycat, IP, and verification framework cases</li>
+          <li>Multi-app brand-level corrective plan (where applicable)</li>
+          <li>Tier-2 escalation letter held in reserve</li>
+          <li>Apple Developer Program disbursement-hold appeal letter (where applicable)</li>
+          <li>Two revision cycles within 21 days</li>
+        </ul>
+        <a href="https://buy.stripe.com/8x228tdvL3qL3Tn9xs5EY0w" class="price-btn">Start Complex Kit</a>
+        <div class="price-fineprint">One-time Stripe charge. If your case fits Standard, the difference is refunded before drafting begins (Schedule APP &sect; APP.3 tier-swap rule).</div>
+      </div>
+
+    </div>
+    <p class="tier-swap-note">Not sure which tier? Start with Standard and describe your situation in the intake. If your case is Complex, we&rsquo;ll tell you before drafting begins and only charge the difference.</p>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">How it works</div>
+      <h2>From intake to kit in three business days.</h2>
+      <p>Fully asynchronous. No calls, no scheduling, no consultation. You give us the facts; we draft the kit; you file from your own account.</p>
+    </div>
+    <div class="method-grid">
+
+      <div class="method-card">
+        <div class="method-num">01</div>
+        <div class="method-tag">Pay</div>
+        <h3>Pick your tier and pay</h3>
+        <p>Standard ($497) or Complex ($997) through Stripe checkout. No subscription. Secure intake link delivered by email immediately after checkout.</p>
+      </div>
+
+      <div class="method-card">
+        <div class="method-num">02</div>
+        <div class="method-tag">Intake</div>
+        <h3>Tell us what happened</h3>
+        <p>Paste your termination or rejection notice. Tell us the cited section. Upload supporting documents. Most developers finish in 15&ndash;25 minutes. We never ask for your Console or App Store Connect credentials.</p>
+      </div>
+
+      <div class="method-card">
+        <div class="method-num">03</div>
+        <div class="method-tag">Kit Delivered</div>
+        <h3>Three business days later</h3>
+        <p>Your complete kit arrives by email and as a one-click ZIP. You log into your own Console or App Store Connect, paste, attach, submit. We don&rsquo;t touch your account.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Coverage accordion -->
+<section class="section coverage" id="coverage">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">What we cover</div>
+      <h2>Twenty categories. Click to expand.</h2>
+      <p>Ten categories on the Apple App Store. Ten on Google Play. Each one drafted to the specific Review Guideline or Developer Program Policy section your notice cites. Standard tier covers routine policy violations; Complex tier covers documentation-heavy categories that need a richer kit.</p>
+    </div>
+    <div class="coverage-list">
+
+      <div class="coverage-platform-header">
+        <span class="platform-tag">Apple</span>
+        <h3>Apple App Store &mdash; Review Guidelines</h3>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-as-9">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Developer Code of Conduct &mdash; Section 5.6</span>
+            <span class="coverage-tag tag-complex">Complex</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-as-9" hidden>Apple&rsquo;s account-level enforcement mechanism. &ldquo;Connected to a previously terminated account&rdquo; without disclosure of which one, fraud-flag false positives (gift-card patterns, VPN-during-signup, refund-rate threshold trips), or multi-account violations. Apple&rsquo;s analog to Google&rsquo;s Identity Association. The Complex kit includes a Developer Code of Conduct Response Letter &mdash; an affidavit-style narrative documenting legitimate identity, business banking, and the connection-flag refutation, formatted for the App Review Board.</div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-as-4">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Copycats and Impersonation &mdash; Guideline 4.1</span>
+            <span class="coverage-tag tag-complex">Complex</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-as-4" hidden>Original-app issues, impersonation, branding without approval, design lifted from another app. The reviewer is judging whether your app is a derivative work or an original. The Complex kit includes an Original-App Authentication Letter documenting your prior creation with code-commit timestamps, earlier-version screenshots, and third-party citations referencing your work &mdash; addressed to the App Review Board.</div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-as-7">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Intellectual Property &mdash; Guideline 5.2</span>
+            <span class="coverage-tag tag-complex">Complex</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-as-7" hidden>Third-party material without permission, false endorsements, IP-holder disputes. Two-track approach: a Rights-Holder Retraction Letter drafted on RS letterhead and sent <strong>by you</strong> to the complainant, and a Resolution Center submission addressed to Apple demonstrating the complaint is resolved or inaccurate. <strong>The platform usually defers to the rights-holder.</strong> When the rights-holder withdraws, Apple follows.</div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-as-1">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">App Completeness &mdash; Guideline 2.1</span>
+            <span class="coverage-tag tag-standard">Standard</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-as-1" hidden>Placeholder text, non-functional URLs, crashes, bugs at first launch, missing demo accounts for review. The reviewer was unable to evaluate the app as a finished product. Resolution Center submission documents the specific completeness issue, the build correction made (or new build queued), and the reviewer-access information that was missing.</div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-as-2">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Accurate Metadata &mdash; Guideline 2.3</span>
+            <span class="coverage-tag tag-standard">Standard</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-as-2" hidden>Misleading descriptions, hidden features, incomplete IAP descriptions, inaccurate age ratings. Apple&rsquo;s reviewer compares your metadata against actual app behavior; mismatches trigger this category. Resolution Center submission addresses the specific metadata field flagged and documents the corrected text, screenshot, age rating, or IAP description.</div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-as-3">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Payments and IAP &mdash; Guideline 3.1</span>
+            <span class="coverage-tag tag-standard">Standard</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-as-3" hidden>IAP requirement violations, alternative-payment-mechanism rejections, subscription grace-period issues. Apple is aggressive on payments &mdash; redirecting users out of Apple&rsquo;s IAP system, or failing to use IAP for unlock-features, lands here. Resolution Center submission documents the IAP routing change made and the affected feature flow going forward.</div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-as-5">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Minimum Functionality &mdash; Guideline 4.2</span>
+            <span class="coverage-tag tag-standard">Standard</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-as-5" hidden>Repackaged websites, lack of utility or lasting value, low-effort wrappers. Apple wants apps that justify their place on the device. Resolution Center submission addresses the specific functionality the reviewer cited as missing and documents the new build&rsquo;s expanded functionality.</div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-as-6">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Spam &mdash; Guideline 4.3</span>
+            <span class="coverage-tag tag-standard">Standard</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-as-6" hidden>Multiple Bundle IDs for similar apps, saturated-category variations, repeat submissions of essentially the same app. Apple treats this as developer-level enforcement, not just an individual-app rejection. Resolution Center submission documents the distinguishing functionality of the app or the consolidation plan where multiple are flagged.</div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-as-8">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Objectionable Content (with remediation path) &mdash; Guideline 1.1</span>
+            <span class="coverage-tag tag-standard">Standard</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-as-8" hidden>Content that can be remediated by editing &mdash; offensive material removal, age-rating correction, sensitive-content gating. Different from Guidelines 1.2 / 1.4 / 1.6, which Apple treats as non-remediable and which we don&rsquo;t cover. Resolution Center submission documents what specific content was flagged and the build changes made to satisfy the guideline.</div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-as-10">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Hardware Compatibility and Performance</span>
+            <span class="coverage-tag tag-standard">Standard</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-as-10" hidden>Performance issues, hardware-specific bugs, incompatibility with current iOS / iPadOS, freezing on specific device classes. Resolution Center submission addresses the specific device or iOS version where the issue surfaced, the root-cause diagnosis, and the new build with the compatibility fix.</div>
+      </div>
+
+      <div class="coverage-platform-header">
+        <span class="platform-tag">Google Play</span>
+        <h3>Google Play &mdash; Developer Program Policies</h3>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-gp-1">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Identity Association</span>
+            <span class="coverage-tag tag-complex">Complex</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-gp-1" hidden>Account-level association detection: device fingerprint, IP subnet, payment method, or phone number flagged as connecting your account to a previously terminated developer. <strong>Google&rsquo;s #1 false-positive trigger in 2026</strong> per its own enforcement reporting. Common scenarios: shared coworking IP, family-shared payment method, prior-employer device fingerprint, ISP-reassigned phone number. The Complex kit includes an Identity Association Response Letter &mdash; an affidavit-style narrative documenting the legitimate-or-no-connection story with the explicit request for manual review.</div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-gp-5">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Intellectual Property</span>
+            <span class="coverage-tag tag-complex">Complex</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-gp-5" hidden>Trademark, copyright, or counterfeit-app accusations from a rights-holder. Two-track approach: a Rights-Holder Retraction Letter drafted on RS letterhead and sent <strong>by you</strong> to the complaining party, and a Plan of Action addressed to Google explaining why the complaint should be withdrawn or is inaccurate.</div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-gp-10">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Verification &mdash; September 30, 2026 framework</span>
+            <span class="coverage-tag tag-complex">Complex</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-gp-10" hidden>The Android Developer Verification framework, with enforcement beginning <strong>September 30, 2026</strong> in Brazil, Indonesia, Singapore, and Thailand and expanding globally through 2027. Verification requires legal name, address, email, and phone for individuals; D-U-N-S number, organization-website verification, and possibly government-ID upload for organizations. The Complex kit includes a Verification Response Letter drafted with placeholders &mdash; you fill them in from your own records before submitting to Google. <strong>We never collect, store, or transmit verification documentation.</strong></div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-gp-2">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Deceptive Behavior</span>
+            <span class="coverage-tag tag-standard">Standard</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-gp-2" hidden>Misleading metadata, fake claims, hidden functionality, impersonation. The reviewer flags listings where what the user sees in the Store doesn&rsquo;t match what the app does &mdash; hidden capabilities, false advertising claims, business names implying a relationship that doesn&rsquo;t exist. Plan of Action ties the deception flag to the specific listing field or in-app behavior and documents the corrective change.</div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-gp-3">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Spam and Minimum Functionality</span>
+            <span class="coverage-tag tag-standard">Standard</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-gp-3" hidden>Multiple package names for similar apps, low-effort or repackaged content, saturated-category variants. POA documents what was actually published, why each app is distinguishable, and the consolidation plan if multiple are flagged together.</div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-gp-4">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Restricted Content (non-CSAM)</span>
+            <span class="coverage-tag tag-standard">Standard</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-gp-4" hidden>Adult content, gambling, alcohol / tobacco / cannabis policy violations, dangerous-products listings. Categories where remediation is contractually permitted but the listing must satisfy specific gating, age-rating, and regional-availability rules. POA addresses which restricted-content rule was breached and how the listing has been corrected.</div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-gp-6">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">User Data and Privacy</span>
+            <span class="coverage-tag tag-standard">Standard</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-gp-6" hidden>Data-collection-without-disclosure, missing or non-compliant privacy policy, SDK privacy violations, Data Safety section breaches. POA documents the data the app actually collects, the disclosure that has been corrected, and the compliance plan going forward.</div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-gp-7">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Permissions and APIs</span>
+            <span class="coverage-tag tag-standard">Standard</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-gp-7" hidden>Misuse of high-risk permissions: SMS, Call Log, Accessibility Service, all-files access, background location. Google publishes use-case-specific gating for each high-risk permission. POA documents the permission&rsquo;s legitimate function, removes uses that don&rsquo;t fit, and demonstrates remaining usage matches an approved use case.</div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-gp-8">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Monetization and Ads</span>
+            <span class="coverage-tag tag-standard">Standard</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-gp-8" hidden>Disruptive ads, deceptive ad placements, in-app-purchase circumvention, off-Google-Play payment redirection. POA addresses the specific monetization element flagged and documents the corrective placement, disclosure, or IAP routing change.</div>
+      </div>
+
+      <div class="coverage-card">
+        <button class="coverage-btn" type="button" aria-expanded="false" aria-controls="cov-gp-9">
+          <span class="coverage-btn-left">
+            <span class="coverage-btn-name">Store Listing and Promotion</span>
+            <span class="coverage-tag tag-standard">Standard</span>
+          </span>
+          <span class="coverage-icon" aria-hidden="true"></span>
+        </button>
+        <div class="coverage-panel" id="cov-gp-9" hidden>Misleading screenshots, exaggerated functionality claims, prohibited promotional language, manipulative calls-to-action in metadata. The Store-listing page is policed separately from in-app behavior. POA addresses the specific listing element flagged and documents the corrective change.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Why our kit wins -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Why our kit wins</div>
+      <h2>Seven things baked into the methodology that average DIY doesn&rsquo;t have.</h2>
+      <p>None of these are claims about reverse-engineering platform AI. They&rsquo;re about how an attorney-designed methodology, built from a careful read of every published policy section, gives you a structurally better submission than a Fiverr template or a self-drafted letter.</p>
+    </div>
+    <div class="why-grid">
+
+      <div class="why-card">
+        <h3>Drafted to your cited section</h3>
+        <p>The reviewer panel literally scans for the section your notice cites. A Plan of Action that doesn&rsquo;t address Section 4.1 / 5.6 / Identity Association directly fails on the first read &mdash; <strong>regardless of writing quality.</strong> Section-citation discipline is the methodology floor.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>Reserve Escalation Letter included</h3>
+        <p>Most providers deliver only the Plan of Action. Our kit always includes the Senior Reviewer or App Review Board Escalation Letter pre-drafted, held back unless the first appeal is denied. <strong>Most appeals that eventually reinstate do so at this step</strong> &mdash; not at the first POA.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>Built from a direct read of every published policy</h3>
+        <p>An attorney with platform-enforcement experience read every Apple App Store Review Guideline section and every Google Play Developer Program Policy category, then designed the kit around them. <strong>Not a translated Amazon Seller POA.</strong></p>
+      </div>
+
+      <div class="why-card">
+        <h3>Two-track IP approach</h3>
+        <p>For trademark and copyright cases, we draft both a Rights-Holder Retraction Letter (you send it to the complainant) and the platform-facing appeal, designed to run in parallel. The platform usually defers to the rights-holder. <strong>When the rights-holder withdraws, the platform follows.</strong></p>
+      </div>
+
+      <div class="why-card">
+        <h3>We never ask for your credentials</h3>
+        <p>Apple Developer Program License Agreement &sect; 2.1 specifically prohibits sharing developer-account access. Many Fiverr operators ask for your Console login. <strong>Our refusal isn&rsquo;t a courtesy &mdash; it&rsquo;s contractually correct.</strong> You file from your own session, in your own voice, under your own name.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>Bi-weekly platform-change monitoring</h3>
+        <p>We track Google&rsquo;s September 30, 2026 Android Developer Verification framework rollout on a bi-weekly schedule &mdash; new countries added, framework changes, document-requirement shifts. The kit stays current with what the platform is actually doing.</p>
+      </div>
+
+      <div class="why-card">
+        <h3>Pre-flight refund on unappealable cases</h3>
+        <p>If your case is in a category Apple or Google has made non-appealable &mdash; a permanent &ldquo;cannot be reopened&rdquo; closure, an exhausted Apple ARB, a TestFlight closure &mdash; we refund you within 24 hours rather than take the money. Detailed in our Schedule APP &sect; APP.4.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EU/EEA callout -->
+<section class="eu-callout">
+  <div class="container">
+    <div class="eu-callout-inner">
+      <div class="eu-flag">For EU and EEA Developers</div>
+      <h3>Same kit and pricing. Different forum if a dispute proceeds past the platform.</h3>
+      <p>Schedule APP applies to developers worldwide per &sect; APP.5. The Digital Services Act gives EU and EEA developers additional statutory rights: <strong>Article 17</strong> (reasoned statement of reasons), <strong>Article 20</strong> (internal complaint-handling reviewed by qualified personnel &mdash; not solely automation), and <strong>Article 21</strong> (referral to certified out-of-court dispute-settlement bodies, where the developer-platform Article 21 ecosystem is still maturing).</p>
+      <p>If a dispute proceeds past the platform&rsquo;s internal channels: <strong>Apple DPLA &sect; 14.10(d)</strong> routes EU and EEA developer matters to the exclusive jurisdiction of Irish courts under Irish law. <strong>Google DDA &sect; 16.8</strong> applies California law and Santa Clara County jurisdiction uniformly worldwide &mdash; no EU split in Google&rsquo;s contract. Our kit&rsquo;s deliverables can support the exercise of DSA rights but are not Article 21 dispute-settlement-body submissions and don&rsquo;t substitute for representation before any EU regulator. Developers seeking a fully DSA-tailored deliverable should consult counsel familiar with EU platform-regulation practice.</p>
+    </div>
+  </div>
+</section>
+
+<!-- No-PII Architecture -->
+<section class="nopii-callout">
+  <div class="container">
+    <div class="nopii-inner">
+      <div class="nopii-label">Identity-Verification Posture</div>
+      <h3>We never collect, store, or transmit your identity-verification documentation.</h3>
+      <p>Across every ReclaimShield product &mdash; Apple Developer Program, Google Play, Amazon Seller Central &mdash; the rule is the same. <strong>Credentials are yours alone, and identity-verification documentation never leaves your hands.</strong> We don&rsquo;t ask for, and you should never share with us, your Console or App Store Connect credentials, your two-factor codes, your government ID, your passport, your driver&rsquo;s license, your address proof, your D-U-N-S registration documents, your date of birth, or your residential address.</p>
+      <p>This posture is contractually mandated by the platforms themselves. <strong>Apple DPLA &sect; 2.1</strong> specifically prohibits sharing developer-account access. <strong>Google Play Console</strong> only accepts submissions from inside the developer&rsquo;s own session. ReclaimShield Master Terms &sect; 5 (Identity-Verification Document Parity Rule) extends the same rule across every product&rsquo;s verification framework, current and future.</p>
+      <p>For September 30, 2026 Android Developer Verification cases, the Verification Response Letter is drafted with placeholders. <strong>You complete them from your own records before submitting to Google&rsquo;s verification portal.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">FAQ</div>
+      <h2>Questions developers ask before they buy.</h2>
+      <p>If your question isn&rsquo;t here, use the <a href="https://reclaimshield.io/help" style="color:var(--accent-indigo);font-weight:600;text-decoration:underline">Shield Support chat</a> on the help page or the contact form on the homepage.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="dev-faq-1">
+          <span>Can you guarantee Apple or Google reinstates my account?</span><span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a" id="dev-faq-1" hidden>
+          No. Apple Inc. and Google LLC retain sole discretion over all developer-account reinstatement and app-approval decisions, and anyone who guarantees reinstatement is lying. What we do is put the strongest, best-structured Plan of Action or Resolution Center submission in front of the platform&rsquo;s reviewer panel &mdash; drafted to the specific Developer Program Policy or App Store Review Guideline section cited, with the documentation each platform&rsquo;s reviewer is trained to read. Outcomes vary with the section cited, account history, available evidence, and case facts.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="dev-faq-2">
+          <span>Do you submit the appeal for me through Play Console / App Store Connect?</span><span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a" id="dev-faq-2" hidden>
+          No. We deliver the kit and the Filing Instructions. You log into your own account and submit from your own session. That is both the right process (Apple DPLA &sect; 2.1 prohibits credential-sharing; Google Play Console only accepts in-session submissions) and the right security posture (we never see, request, or need your Console or App Store Connect credentials). Anyone who asks for your developer credentials is violating the platform&rsquo;s own contract.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="dev-faq-3">
+          <span>Apple already rejected my Resolution Center appeal. Can you still help?</span><span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a" id="dev-faq-3" hidden>
+          Possibly &mdash; the path is different. Apple&rsquo;s rule is one Resolution Center appeal per rejected build. If you&rsquo;ve used yours, the only Apple-internal escalation is the App Review Board, which is a separate ARB track rather than a re-attempt of Resolution Center. The kit&rsquo;s App Review Board Escalation Letter is what we&rsquo;ll draft for that path. If you&rsquo;ve already escalated to ARB and ARB has denied, and no new build is feasible, the case is unappealable and we issue a full refund within 24 hours per Schedule APP &sect; APP.4.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="dev-faq-4">
+          <span>Google Play denied my first POA. Can you rebuild the appeal?</span><span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a" id="dev-faq-4" hidden>
+          Yes &mdash; this is a Complex case by definition. A rejected first POA changes the case dynamics: Google&rsquo;s Senior Reviewer panel is now tracking a pattern, not a first response. We rebuild the Plan of Action from scratch, identify why the first submission was rejected (wrong section addressed, wrong evidence, wrong structure), and draft a Senior Reviewer Escalation Letter framed for the Tier-2 review. Send the original termination notice, your prior POA, and any rejection reply with the intake.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="dev-faq-5">
+          <span>Is the September 30, 2026 verification rollout going to terminate my account?</span><span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a" id="dev-faq-5" hidden>
+          Only if you&rsquo;re in Brazil, Indonesia, Singapore, or Thailand and you fail to complete or sustain Android Developer Verification. The framework expands globally through 2027 &mdash; Google has not published the post-pilot country list. Verification requires legal name, address, email, phone (individuals); D-U-N-S, organization website, possibly government-ID upload (organizations). If your account is terminated for a verification failure, that&rsquo;s a Complex case. The kit includes a Verification Response Letter you complete from your own records before submitting to Google&rsquo;s verification portal. <strong>We never collect or transmit any verification documentation.</strong>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="dev-faq-6">
+          <span>Are you a law firm? Are you an attorney?</span><span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a" id="dev-faq-6" hidden>
+          ReclaimShield&trade; is an attorney-designed Developer-Platform Appeal Kit service. The method, the intake, and the document structure were designed by a licensed attorney with platform-enforcement experience. <strong>ReclaimShield is not a law firm and does not provide legal advice, legal representation, or an attorney-client relationship.</strong> For drafting and structuring an appeal package for Console or App Store Connect submission, most developers don&rsquo;t need a law firm and most can&rsquo;t afford one &mdash; that&rsquo;s the gap we fill. If your matter has progressed to a contested arbitration, civil litigation, an ICC proceeding, or a regulatory complaint, hire an attorney licensed in the appropriate jurisdiction.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="dev-faq-7">
+          <span>How soon will I have the kit?</span><span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a" id="dev-faq-7" hidden>
+          Three business days from intake submission. Monday intake, Thursday delivery. We don&rsquo;t offer a rush tier &mdash; the work takes the time it takes to do correctly, and a rushed kit that omits the right section analysis or the right evidence is a denied appeal, which costs you more than the time saved.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="dev-faq-8">
+          <span>What kinds of cases don&rsquo;t you take?</span><span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a" id="dev-faq-8" hidden>
+          Per Schedule APP &sect; APP.4, we issue a full refund within 24 hours of intake if your matter is in any of these categories: malware or malicious code; CSAM (mandatory reporting category); terrorism, weapons, or sanctioned-jurisdiction operators; fraud-as-a-service or repeat-scammer-pattern enforcement; court-ordered or law-enforcement-driven account closures; permanent &ldquo;cannot be reopened&rdquo; closures; Apple TestFlight closures; or Apple Developer Program enrollments rejected at signup. <strong>We don&rsquo;t take money on cases that can&rsquo;t win.</strong> The intake screens for these categories before drafting begins.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="dev-faq-9">
+          <span>What&rsquo;s the difference between an account termination and an app rejection?</span><span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a" id="dev-faq-9" hidden>
+          An app rejection is build-level &mdash; your specific submission failed review, but your developer account remains active. Resolution Center (Apple) or Play Console (Google) gets you back. An account termination is developer-level &mdash; the entire account, all your apps, gone. Both flow through the same kit structure, but account terminations involve account-level documentation (Identity Association Response, Section 5.6 Response) that build-level rejections don&rsquo;t need. Intake routes you to the right kit composition.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="dev-faq-10">
+          <span>What about Apple Developer Program payments held during enforcement?</span><span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a" id="dev-faq-10" hidden>
+          Held disbursements are separate from app or account enforcement. Apple&rsquo;s Developer Program payment-hold appeal channel is distinct &mdash; different letter, different evidence standard. The Disbursement Hold Appeal Letter is included in the Complex tier kit when the case involves a payment hold. Both appeals can run in parallel &mdash; you don&rsquo;t have to wait for one to resolve before starting the other.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="dev-faq-11">
+          <span>What if I&rsquo;m an EU or EEA developer?</span><span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a" id="dev-faq-11" hidden>
+          Schedule APP applies to developers worldwide per &sect; APP.5 &mdash; same kit, same pricing. EU and EEA developers also have rights under DSA Articles 17, 20, and 21. For Apple disputes specifically, Apple DPLA &sect; 14.10(d) routes EU developer matters to Irish courts under Irish law; for Google, DDA &sect; 16.8 applies California law and Santa Clara County jurisdiction uniformly. Our kit&rsquo;s deliverables can support the exercise of DSA rights but are not Article 21 dispute-settlement-body submissions and don&rsquo;t substitute for representation before any EU regulator. EU developers seeking a fully DSA-tailored deliverable should consult counsel familiar with EU platform-regulation practice.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" type="button" aria-expanded="false" aria-controls="dev-faq-12">
+          <span>Do you handle ICC arbitration or civil litigation in Santa Clara County?</span><span class="faq-q-icon">+</span>
+        </button>
+        <div class="faq-a" id="dev-faq-12" hidden>
+          No. ReclaimShield does not represent developers in any contested proceeding &mdash; Apple DPLA &sect; 14.10 arbitration (ICC London for intergovernmental organizations, federal courts in Northern District of California, Irish courts for EU developers), Google DDA &sect; 16.8 civil litigation in Santa Clara County, or any regulatory complaint. What we produce is the pre-handoff record &mdash; Plan of Action, escalation correspondence, evidence index, documented exhaustion of platform-internal channels. Developers who proceed to litigation through their own retained attorney commonly use that record as the factual predicate for the demand.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="cta-final" id="contact">
+  <div class="container">
+    <div class="cta-final-inner">
+      <h2>Get your <span class="gradient-text">appeal kit</span> in three business days.</h2>
+      <p>Stop waiting on the Console. Start a structured intake and have a complete, section-aligned, evidence-backed kit in your inbox this week.</p>
+      <div class="hero-actions" style="justify-content:center">
+        <a href="https://buy.stripe.com/eVqbJ3dvL5yT2Pj5hc5EY0x" class="btn-primary">Start Standard &mdash; $497 &rarr;</a>
+        <a href="https://buy.stripe.com/8x228tdvL3qL3Tn9xs5EY0w" class="btn-outline">Complex &mdash; $997 &rarr;</a>
+      </div>
+      <p style="font-size:12px;margin-top:22px;color:var(--text-muted)">Intake links activate within 24 hours of Stripe product provisioning. If you arrive before they&rsquo;re live, the <a href="https://reclaimshield.io/help" style="color:var(--accent-indigo);font-weight:600;text-decoration:underline">Shield Support chat</a> answers questions immediately, or use the <a href="https://reclaimshield.io/contact" style="color:var(--accent-indigo);font-weight:600;text-decoration:underline">contact form</a> with your termination or rejection notice for a one-business-day reply.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container" style="text-align:center">
+    <div class="footer-brand">ReclaimShield&trade;</div>
+    <div class="footer-parent">Platform enforcement response. Attorney-designed.</div>
+    <div class="footer-links">
+      <a href="../">Home</a>
+      <a href="../meta/">Meta</a>
+      <a href="../amazon/">Amazon</a>
+      <a href="../terms/">Terms of Service</a>
+      <a href="../privacy/">Privacy Policy</a>
+    </div>
+    <div class="footer-legal"><strong>Disclaimer.</strong> ReclaimShield&trade; is a brand of Sentinel Risk Group, LLC, a Florida limited liability company. ReclaimShield is not a law firm and does not provide legal advice. Use of ReclaimShield does not create an attorney-client relationship. Results are not guaranteed and vary based on platform policies, account history, evidence, timing, and other factors. Apple Inc. and Google LLC retain sole discretion over all Apple Developer Program and Google Play Developer Program reinstatement and app-approval decisions under Apple Developer Program License Agreement &sect; 14.10 and Google Play Developer Distribution Agreement &sect; 16.8 respectively. Apple, App Store, App Store Connect, App Review Board, and the Apple logo are trademarks of Apple Inc. Google, Google Play, Google Play Console, the Google Play badge, and the Google logo are trademarks of Google LLC. ReclaimShield&trade; is not affiliated with, endorsed by, or sponsored by Apple Inc. or Google LLC. The attorney who designed the ReclaimShield&trade; method does not provide legal services to customers through ReclaimShield. If your matter requires legal representation, consult a licensed attorney in your own jurisdiction. ReclaimShield&trade; 2026.</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Coverage accordion + FAQ toggles (single handler for both .coverage-btn and .faq-q buttons)
+  document.querySelectorAll('.coverage-btn, .faq-q').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      var panelId = btn.getAttribute('aria-controls');
+      var panel = panelId ? document.getElementById(panelId) : null;
+      if (panel) {
+        if (expanded) panel.setAttribute('hidden', '');
+        else panel.removeAttribute('hidden');
+      }
+      var icon = btn.querySelector('.faq-q-icon');
+      if (icon) icon.textContent = expanded ? '+' : '−';
+    });
+  });
+})();
+</scr
