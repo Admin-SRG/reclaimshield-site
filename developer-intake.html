@@ -171,8 +171,20 @@ textarea{min-height:90px;resize:vertical}
       <div class="section-h">Termination / rejection details</div>
       <div class="field"><label>Enforcement date <span class="req">*</span></label><input type="date" name="enforcementDate" required></div>
       <div class="field"><label>Cited policy section <span class="req">*</span></label><input type="text" name="citedPolicySection" required placeholder="e.g. 'Developer Program Policy 4.3 Spam' or 'App Store Review Guideline 5.6 Developer Code of Conduct'"><div class="hint">Paste the exact section reference from your enforcement notice.</div></div>
-      <div class="field"><label>Verbatim notice text <span class="req">*</span></label><textarea name="noticeText" required placeholder="Paste the full text of Google's / Apple's enforcement notice here." style="min-height:120px"></textarea></div>
-      <div class="field"><label>Your narrative <span class="req">*</span></label><textarea name="customerNarrative" required placeholder="In your own words: what happened, what you understood the policy to require, where the gap occurred. Be specific and factual." style="min-height:140px"></textarea><div class="hint"><strong>Do not include identity-verification PII in this narrative</strong> (no government ID numbers, passport numbers, addresses, D-U-N-S numbers, dates of birth). Use general descriptions; the appeal kit will use [PLACEHOLDER] markers you fill yourself.</div></div>
+      <div class="field"><label>Verbatim notice text <span class="req">*</span></label><textarea name="noticeText" required placeholder="Paste the full text of Google's / Apple's enforcement notice here." style="min-height:120px"></textarea><details class="intake-examples" style="margin-top:8px;background:#EEF2FF;border:1px solid #C7D2FE;border-radius:8px;padding:10px 14px;">
+<summary style="font-weight:600;color:#4338CA;cursor:pointer;font-size:13px;">See example notice text — Apple + Google ↓</summary>
+<div style="margin-top:10px;font-size:13px;line-height:1.55;color:#1F2937;">
+<p style="margin-bottom:10px;"><strong>Apple example (Resolution Center):</strong><br>"Guideline 4.3(a) - Design - Spam. We noticed that your app provides the same feature set as many other apps on the App Store. Apps that are simply a website packaged as an app, or that do not provide unique features, are not appropriate for the App Store..."</p>
+<p style="margin-bottom:0;"><strong>Google Play example (Play Console):</strong><br>"Your app, com.example.appname, has been removed from Google Play for violating Google Play Developer Program Policies — specifically, the Deceptive Behavior policy under section 4.5. The app's metadata and descriptions misrepresent its functionality..."</p>
+</div>
+</details></div>
+      <div class="field"><label>Your narrative <span class="req">*</span></label><textarea name="customerNarrative" required placeholder="In your own words: what happened, what you understood the policy to require, where the gap occurred. Be specific and factual." style="min-height:140px"></textarea><details class="intake-examples" style="margin-top:8px;background:#EEF2FF;border:1px solid #C7D2FE;border-radius:8px;padding:10px 14px;">
+<summary style="font-weight:600;color:#4338CA;cursor:pointer;font-size:13px;">See example narratives — Apple + Google ↓</summary>
+<div style="margin-top:10px;font-size:13px;line-height:1.55;color:#1F2937;">
+<p style="margin-bottom:10px;"><strong>Example 1 — Google Play GP-3 (Spam):</strong><br>"My app is a budget tracker (com.example.budgettracker). Google says 'minimum functionality.' What I built: a one-screen budget calculator that pulls from my SaaS API. I understood Google's spam policy to require the app to do more than just open a webpage — and my app does perform calculations locally and persists data to device. Where I see the gap: the app's first launch defaults to a webview while loading, which may have made review think it's just a wrapper."</p>
+<p style="margin-bottom:0;"><strong>Example 2 — Apple Guideline 4.3 (Spam):</strong><br>"My app is a meditation timer with custom soundscapes I composed myself. Apple cited 4.3(a) — duplicate functionality. What I built: 8 unique meditation tracks I composed in Logic Pro X, plus a timer with breath-pacing visuals. I understood 4.3 to apply to apps that are clones — mine has unique audio content. Where I see the gap: my app metadata didn't emphasize the unique audio content, and the screenshots only showed the timer."</p>
+</div>
+</details><div class="hint"><strong>Do not include identity-verification PII in this narrative</strong> (no government ID numbers, passport numbers, addresses, D-U-N-S numbers, dates of birth). Use general descriptions; the appeal kit will use [PLACEHOLDER] markers you fill yourself.</div></div>
     </div>
 
     <div class="section gp10-only" id="gp10Section">
@@ -202,7 +214,12 @@ textarea{min-height:90px;resize:vertical}
           <option>Other</option>
         </select>
       </div>
-      <div class="field"><label>Corrective plan narrative</label><textarea name="verificationCorrectivePlan" placeholder="In your own words — what corrective action you have taken or plan to take. No ID numbers; the kit will use placeholders."></textarea></div>
+      <div class="field"><label>Corrective plan narrative</label><textarea name="verificationCorrectivePlan" placeholder="In your own words — what corrective action you have taken or plan to take. No ID numbers; the kit will use placeholders."></textarea><details class="intake-examples" style="margin-top:8px;background:#EEF2FF;border:1px solid #C7D2FE;border-radius:8px;padding:10px 14px;">
+<summary style="font-weight:600;color:#4338CA;cursor:pointer;font-size:13px;">See example corrective plan ↓</summary>
+<div style="margin-top:10px;font-size:13px;line-height:1.55;color:#1F2937;">
+<p style="margin-bottom:0;"><strong>Example — D-U-N-S mismatch fix:</strong><br>"Verification element flagged: D-U-N-S registration. Corrective: I have updated my Play Console developer profile to use my new D-U-N-S number. The previous D-U-N-S referenced an old company name from 2022 that I changed. I requested an updated D&B record on April 1, received the new D-U-N-S on April 8, and submitted it through Play Console verification on April 10. The new D-U-N-S now matches my legal company name as registered with [State] Secretary of State."<br><br>Don't include the actual D-U-N-S number — the kit will use a placeholder you fill in yourself.</p>
+</div>
+</details></div>
     </div>
 
     <button type="submit" class="btn-submit" id="submitBtn">Submit intake</button>
