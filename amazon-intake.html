@@ -289,7 +289,14 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
       <div class="field">
         <label for="suspensionNoticeText">Full Suspension Notice Text<span class="req">*</span></label>
         <div class="hint">Paste the complete text of the enforcement notice Amazon sent you. Include every policy section they cite.</div>
-        <textarea id="suspensionNoticeText" name="suspensionNoticeText" required maxlength="10000"></textarea>
+        <textarea id="suspensionNoticeText" name="suspensionNoticeText" required maxlength="10000"></textarea><details class="intake-examples" style="margin-top:8px;background:#FFF7ED;border:1px solid #FDBA74;border-radius:8px;padding:10px 14px;">
+<summary style="font-weight:600;color:#C2410C;cursor:pointer;font-size:13px;">See example of a complete notice paste ↓</summary>
+<div style="margin-top:10px;font-size:13px;line-height:1.55;color:#1F2937;">
+<p style="margin-bottom:0;"><strong>Strong paste includes the full notice text — header, cited sections, every paragraph:</strong><br><br>
+"Hello, We have removed your selling privileges as a result of violating Amazon's Code of Conduct, specifically Section 3 — Acting Fairly. Your account is associated with a previously deactivated account belonging to [name]. As stated in our Code of Conduct: 'You may not establish multiple selling accounts without our authorization...' To appeal, submit a Plan of Action that addresses the root cause and details corrective action. Funds in your account will be held for 90 days..."<br><br>
+Include the FULL notice. The cited section, the dates, the sub-paragraphs. Don't summarize.</p>
+</div>
+</details>
       </div>
 
       <div class="field">
@@ -306,7 +313,13 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
       <div class="field">
         <label for="complaintDetails">Complaint Details<span class="req">*</span></label>
         <div class="hint">In your own words, describe the underlying complaint or customer issue that led to the enforcement action. Include buyer claims, quality issues, IP accusations, or anything Amazon's notice referenced.</div>
-        <textarea id="complaintDetails" name="complaintDetails" required maxlength="6000"></textarea>
+        <textarea id="complaintDetails" name="complaintDetails" required maxlength="6000"></textarea><details class="intake-examples" style="margin-top:8px;background:#FFF7ED;border:1px solid #FDBA74;border-radius:8px;padding:10px 14px;">
+<summary style="font-weight:600;color:#C2410C;cursor:pointer;font-size:13px;">See example of strong root-cause detail ↓</summary>
+<div style="margin-top:10px;font-size:13px;line-height:1.55;color:#1F2937;">
+<p style="margin-bottom:10px;"><strong>Example 1 — Inauthenticity / used-as-new:</strong><br>"In Q3 2024, I sourced ASIN B0XXXXXXXX from a wholesale supplier I've used for 3 years. The product arrived with retail packaging that had small tears on 12% of units. I shipped these as 'New' instead of marking them 'New (open box)'. 4 customers complained between Sept 1-15. Amazon flagged my account on Sept 22."</p>
+<p style="margin-bottom:0;"><strong>Example 2 — IP claim (counterfeit):</strong><br>"I sourced ASIN B0YYYYYYYY from [supplier name], a Brand X authorized distributor. My July 2024 invoice (PO #12345) shows 200 units purchased. On Oct 4, Brand X filed an IP claim alleging counterfeits. I have the full chain of authorization letters from Brand X to my supplier and from my supplier to me."</p>
+</div>
+</details>
       </div>
 
       <div class="field-grid">
@@ -397,7 +410,12 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
       <div class="field">
         <label for="lastAmazonResponse">Amazon's most recent response<span class="opt">if applicable</span></label>
         <div class="hint">If you've already appealed, paste the latest response Amazon sent back.</div>
-        <textarea id="lastAmazonResponse" name="lastAmazonResponse" maxlength="5000"></textarea>
+        <textarea id="lastAmazonResponse" name="lastAmazonResponse" maxlength="5000"></textarea><details class="intake-examples" style="margin-top:8px;background:#FFF7ED;border:1px solid #FDBA74;border-radius:8px;padding:10px 14px;">
+<summary style="font-weight:600;color:#C2410C;cursor:pointer;font-size:13px;">See example ↓</summary>
+<div style="margin-top:10px;font-size:13px;line-height:1.55;color:#1F2937;">
+<p style="margin-bottom:0;">"Hello, We received your appeal but it does not address the issue. Please provide: (1) supplier invoices for ALL units of ASIN B0XXXXXXXX sold in the past 365 days, and (2) a brand authorization letter dated before your first listing. We will not accept generic supplier statements." — paste the full response Amazon sent you, verbatim. Useful for the kit to address each item Amazon asked for.</p>
+</div>
+</details>
       </div>
     </div>
 
