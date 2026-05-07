@@ -45,6 +45,62 @@ function newId() {
   return Array.from(a).map(function (b) { return b.toString(16).padStart(2, '0'); }).join('');
 }
 
+
+// ───────────────────────────────────────────────────────────────────────
+// PII SCANNER — parity with /api/meta-intake. Locked rule:
+// ReclaimShield never stores license/SSN/credit-card/EIN/DOB.
+// ───────────────────────────────────────────────────────────────────────
+const PII_PATTERNS = [
+  { name: 'Social Security Number',
+    re: /\b(?!000|666|9\d{2})\d{3}-(?!00)\d{2}-(?!0000)\d{4}\b/,
+    hint: 'looks like a Social Security number' },
+  { name: 'Credit Card Number',
+    re: /\b(?:\d[ -]*?){13,19}\b/,
+    hint: 'looks like a credit card number' },
+  { name: 'Professional License Number',
+    re: /\b(?:license|lic\.?|dre|npi|state\s*bar|bar\s*number|registration|reg\.?\s*#|cert\.?\s*#)\s*[:#]?\s*[A-Z]{0,3}-?\d{5,15}\b/i,
+    hint: 'looks like a professional license/credential number' },
+  { name: 'Employer Identification Number (EIN)',
+    re: /\b\d{2}-\d{7}\b/,
+    hint: 'looks like an EIN' },
+  { name: 'Generic identifier',
+    re: /\b(?:my\s+)?(?:id|identifier|number|account\s*#)\s*[:#=]?\s*\d{8,15}\b/i,
+    hint: 'looks like an identifier' }
+];
+
+function detectPII(value) {
+  if (typeof value !== 'string' || value.length === 0) return null;
+  for (const p of PII_PATTERNS) {
+    if (p.re.test(value)) return p;
+  }
+  return null;
+}
+
+const FIELD_LABELS = {
+  fullName: 'Your Full Legal Name',
+  email: 'Your Email Address',
+  phoneNumber: 'Phone',
+  businessLegalEntityName: 'Business Legal Entity Name',
+  storeName: 'Amazon Store Name',
+  sellerId: 'Seller ID',
+  marketplace: 'Marketplace',
+  accountType: 'Account Type',
+  tierSelected: 'Service Tier',
+  suspensionType: 'Suspension Type',
+  suspensionDate: 'Suspension Date',
+  suspensionNoticeText: 'Suspension Notice Text',
+  asinList: 'ASIN List',
+  complaintDetails: 'Complaint Details',
+  rightsHolderName: 'Rights Holder Name',
+  rightsHolderContact: 'Rights Holder Contact',
+  performanceMetrics: 'Performance Metrics',
+  yearsSelling: 'Years Selling',
+  annualRevenue: 'Annual Revenue',
+  previousAppeal: 'Previous Appeal',
+  lastAmazonResponse: 'Last Amazon Response',
+  mailingAddress: 'Mailing Address'
+};
+
 async function onRequestPost({ request, env }) {
   const origin = new URL(request.url).origin;
   const cors = {
@@ -66,7 +122,49 @@ async function onRequestPost({ request, env }) {
   try {
     fd = await request.formData();
   } catch (_e) {
-    return new Response(JSON.stringify({ error: 'invalid_multipart' }), { status: 400, headers: cors });
+    return new Response(JSON.stringify({ error: 'invalid_multipart' }), { status: 400, headers: cors }
+
+  // PII SCANNER — block submissions containing license/SSN/credit-card/EIN/credential numbers.
+  // Customer fills these in via bracketed placeholders in their own copy of the appeal,
+  // never in our system. Same locked rule as meta-intake.
+  const PII_SCAN_FIELDS = [
+    'fullName', 'phoneNumber', 'businessLegalEntityName', 'storeName',
+    'sellerId', 'mailingAddress', 'suspensionNoticeText', 'asinList',
+    'complaintDetails', 'rightsHolderName', 'performanceMetrics',
+    'previousAppeal', 'lastAmazonResponse'
+  ];
+  for (const fieldKey of PII_SCAN_FIELDS) {
+    const v = fd.get(fieldKey);
+    if (typeof v === 'string') {
+      const hit = detectPII(v);
+      if (hit) {
+        const label = FIELD_LABELS[fieldKey] || fieldKey;
+        // Fire-and-forget customer retry email + admin alert via the same Make webhook used for meta-intake.
+        try {
+          fetch('https://hook.us2.make.com/y6ydei99vogke2isqpf2cgoe1tqtglzu', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email: fd.get('email') || '',
+              clientName: fd.get('fullName') || '',
+              accountUsername: fd.get('storeName') || fd.get('sellerId') || '',
+              fieldLabel: label,
+              detected: hit.name,
+              submittedAt: new Date().toISOString()
+            })
+          }).catch(function(){});
+        } catch (_) {}
+        return new Response(JSON.stringify({
+          error: 'pii_detected',
+          field: fieldKey,
+          fieldLabel: label,
+          detected: hit.name,
+          message: `The "${label}" field contains what ${hit.hint}. ReclaimShield does not store identification numbers. Please remove it and submit again — we just sent you a quick retry guide by email. When you receive your appeal, it will have a bracketed placeholder you fill in yourself before sending it to Amazon.`
+        }), { status: 400, headers: cors });
+      }
+    }
+  }
+);
   }
 
   const token = fd.get('turnstileToken');
