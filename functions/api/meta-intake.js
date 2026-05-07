@@ -165,7 +165,9 @@ async function onRequestPost({ request, env }) {
     'credentialCategory', 'accountNameType', 'serviceLanguagePattern', 'scopeDisclaimersUsed',
     // Verbatim notice + customer position fields
     'noticeTextVerbatim', 'citedPolicySection', 'accountPurpose', 'accountAge',
-    'priorWarnings', 'customerPosition'
+    'priorWarnings', 'customerPosition',
+    // Category-specific defense context (Sections 3.6 / 3.7 / 3.8 / 3.9 / 3.10)
+    'ipDefenseContext', 'adultCarveoutContext', 'speechContext', 'spamContext', 'privacyContext'
   ];
   for (const k of textKeys) {
     const v = fd.get(k);
@@ -190,7 +192,8 @@ async function onRequestPost({ request, env }) {
     'clientName', 'phone', 'country', 'accountDescription', 'accountUsername',
     'clientAddress', 'appealDeadline', 'revenueBucket',
     'credentialCategory', 'serviceLanguagePattern', 'scopeDisclaimersUsed',
-    'noticeTextVerbatim', 'customerPosition'
+    'noticeTextVerbatim', 'customerPosition',
+    'ipDefenseContext', 'adultCarveoutContext', 'speechContext', 'spamContext', 'privacyContext'
   ];
   for (const fieldKey of PII_SCAN_FIELDS) {
     const v = textFields[fieldKey];
