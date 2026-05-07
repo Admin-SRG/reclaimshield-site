@@ -712,7 +712,13 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
     }).then(function(r){
       if(!r.ok){
         return r.json().catch(function(){ return { error: 'http_' + r.status }; }).then(function(j){
-          throw new Error(j && j.error ? j.error : ('HTTP ' + r.status));
+          // For pii_detected, the server returns a detailed `message` field — use it directly.
+          var richMsg = (j && j.message) ? j.message : null;
+          var err = new Error(j && j.error ? j.error : ('HTTP ' + r.status));
+          err.serverMessage = richMsg;
+          err.serverField = j && j.field;
+          err.serverFieldLabel = j && j.fieldLabel;
+          throw err;
         });
       }
       return r.json();
@@ -722,13 +728,23 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
     }).catch(function(err){
       setLoading(false);
       var msg = String(err && err.message || err || '');
-      var human = 'We were unable to submit your intake. Please try again, or chat with Shield Support at reclaimshield.io/help.';
-      if(/file_too_large/i.test(msg)) human = 'One of your uploaded files exceeds the 25 MB per-file limit. Please reduce file size and resubmit.';
-      else if(/file_type_rejected/i.test(msg)) human = 'One of your uploaded files has an unsupported file type. Allowed: PDF, JPG, PNG, GIF, WEBP, DOC/DOCX, XLS/XLSX, TXT.';
-      else if(/turnstile/i.test(msg)) human = 'Bot-protection check failed. Please refresh the page and resubmit.';
-      else if(/invalid_email/i.test(msg)) human = 'Email address looks invalid. Please double-check and resubmit.';
-      else if(/disclosure_ack_required/i.test(msg)) human = 'You must acknowledge the disclosure block to submit.';
+      var human = err && err.serverMessage ? err.serverMessage
+        : 'We were unable to submit your intake. Please try again, or chat with Shield Support at reclaimshield.io/help.';
+      if(!err.serverMessage){
+        if(/file_too_large/i.test(msg)) human = 'One of your uploaded files exceeds the 25 MB per-file limit. Please reduce file size and resubmit.';
+        else if(/file_type_rejected/i.test(msg)) human = 'One of your uploaded files has an unsupported file type. Allowed: PDF, JPG, PNG, GIF, WEBP, DOC/DOCX, XLS/XLSX, TXT.';
+        else if(/turnstile/i.test(msg)) human = 'Bot-protection check failed. Please refresh the page and resubmit.';
+        else if(/invalid_email/i.test(msg)) human = 'Email address looks invalid. Please double-check and resubmit.';
+        else if(/disclosure_ack_required/i.test(msg)) human = 'You must acknowledge the disclosure block to submit.';
+      }
       showError(human);
+      // If server told us which field is the offender, scroll to it and highlight
+      if(err && err.serverField){
+        try {
+          var el = document.getElementById(err.serverField);
+          if(el && typeof focusFirstInvalid === 'function') focusFirstInvalid([err.serverField]);
+        } catch(_){}
+      }
       console.error('Intake submit failed:', err);
     });
 })();
