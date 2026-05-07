@@ -338,6 +338,45 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
       </div>
     </div>
 
+    
+    <!-- SECTION 3.5 — IDENTITY & SCOPE (conditional, shown when relevant) -->
+    <div class="form-card" id="identityScopeSection" style="display:none;">
+      <h2><span class="section-num">3.5</span> Your role &amp; scope of practice</h2>
+      <p class="hint" style="margin-bottom:14px;">Meta enforcement under Account Integrity, Impersonation, and related categories often turns on identity and scope-of-practice questions. Answer these in your own words. <strong>Do NOT include license/ID/credential numbers — we will use a bracketed placeholder you fill in yourself before submitting to Meta.</strong></p>
+
+      <div class="field">
+        <label for="credentialCategory">Your role / profession<span class="opt">recommended</span></label>
+        <div class="hint">Plain English description (e.g., "life coach", "licensed real estate agent in California", "physical therapist", "registered nurse", "ICF-certified executive coach"). Do not include the actual license number.</div>
+        <input type="text" id="credentialCategory" name="credentialCategory" maxlength="200" placeholder="e.g., life coach">
+      </div>
+
+      <div class="field">
+        <label for="accountNameType">Account name type<span class="opt">recommended</span></label>
+        <div class="hint">What does the disabled account display as your name?</div>
+        <select id="accountNameType" name="accountNameType">
+          <option value="">Select…</option>
+          <option value="Real legal name">My real legal name</option>
+          <option value="Business name (registered)">A registered business name (LLC, DBA filed)</option>
+          <option value="Stage/professional name (DBA)">A professional / stage name</option>
+          <option value="Handle/pseudonym">A handle or pseudonym</option>
+          <option value="Mixed / partial real name">Some mix of real name and stage name</option>
+          <option value="Not applicable">Not applicable</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="serviceLanguagePattern">How do you describe your services on the account?<span class="opt">recommended for coach/therapist, medical/wellness, legal/advice cases</span></label>
+        <div class="hint">If you are in a profession where there's a regulated/licensed adjacent practice (e.g., coaching adjacent to therapy, wellness adjacent to medical, paralegal adjacent to attorney), it really helps the appeal to know how you describe your services. Stick to coaching/wellness/general language? Or do you ever use clinical/medical/legal language? Give a 1–2 sentence example. <em>Honesty here matters — Meta will look at this. We will quote it verbatim with light grammar polish.</em></div>
+        <textarea id="serviceLanguagePattern" name="serviceLanguagePattern" maxlength="2000" placeholder="e.g., I describe my work as 'guidance and accountability for life transitions.' I never use the words 'treat', 'diagnose', 'therapy', or 'mental illness'. I have a posted disclaimer that says coaching is not therapy."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="scopeDisclaimersUsed">Scope-of-practice disclaimers on your account<span class="opt">recommended</span></label>
+        <div class="hint">Did your account or content carry any disclaimer about what you are NOT (e.g., "Not a therapist", "Not medical advice", "Not legal advice", "For educational purposes only")? Quote them as accurately as you can remember.</div>
+        <textarea id="scopeDisclaimersUsed" name="scopeDisclaimersUsed" maxlength="2000" placeholder="e.g., 'Not a substitute for therapy. Coaching only. If you are in crisis, contact 988.'"></textarea>
+      </div>
+    </div>
+
     <!-- SECTION 4 — ACCOUNT & NARRATIVE -->
     <div class="form-card">
       <h2><span class="section-num">4</span> Account &amp; Case Narrative</h2>
@@ -515,6 +554,26 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
   }
   countryInput.addEventListener('blur', updateCountryBranch);
   countryInput.addEventListener('input', function(){ setTimeout(updateCountryBranch, 50); });
+
+  // Show/hide identity/scope section based on violation category
+  // Triggered for cases where identity, role, or scope-of-practice is the central question
+  var IDENTITY_TRIGGER_CATEGORIES = [
+    'Account Integrity',
+    'Impersonation',
+    'Inauthentic Behavior',
+    'Other / not sure'
+  ];
+  var violationSel = document.getElementById('violationCategory');
+  var identitySection = document.getElementById('identityScopeSection');
+  function updateIdentitySection(){
+    var cat = violationSel.value || '';
+    if(IDENTITY_TRIGGER_CATEGORIES.indexOf(cat) >= 0){
+      identitySection.style.display = 'block';
+    } else {
+      identitySection.style.display = 'none';
+    }
+  }
+  violationSel.addEventListener('change', updateIdentitySection);
 
   try {
     document.getElementById('intakeUserAgent').value = (navigator.userAgent || '').slice(0, 500);
