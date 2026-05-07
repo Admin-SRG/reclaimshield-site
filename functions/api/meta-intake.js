@@ -197,12 +197,31 @@ async function onRequestPost({ request, env }) {
     const hit = detectPII(v);
     if (hit) {
       const label = FIELD_LABELS[fieldKey] || fieldKey;
+      // Fire-and-forget customer retry email + admin alert via Make webhook AS-INTAKE-PII-REJECT.
+      // We do NOT await — we want the 400 to return fast, the email is best-effort.
+      try {
+        const piiNotifyPayload = {
+          email: textFields.email || '',
+          clientName: textFields.clientName || '',
+          accountUsername: textFields.accountUsername || '',
+          fieldLabel: label,
+          detected: hit.name,
+          submittedAt: new Date().toISOString()
+        };
+        // Don't await — let it run in the background.
+        fetch('https://hook.us2.make.com/y6ydei99vogke2isqpf2cgoe1tqtglzu', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(piiNotifyPayload)
+        }).catch(function(){ /* swallow */ });
+      } catch (_) { /* swallow */ }
+
       return new Response(JSON.stringify({
         error: 'pii_detected',
         field: fieldKey,
         fieldLabel: label,
         detected: hit.name,
-        message: `The "${label}" field contains what ${hit.hint}. ReclaimShield does not store identification numbers. Please remove it and submit again — when you receive your appeal, it will have a bracketed placeholder you fill in yourself before sending it to Meta.`
+        message: `The "${label}" field contains what ${hit.hint}. ReclaimShield does not store identification numbers. Please remove it and submit again — we just sent you a quick retry guide by email. When you receive your appeal, it will have a bracketed placeholder you fill in yourself before sending it to Meta.`
       }), { status: 400, headers: cors });
     }
   }
