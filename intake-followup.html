@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Add details to your appeal — ReclaimShield&trade;</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<style>
+:root{
+  --bg:#0A0A0F;--surface:#12121A;--surface-2:#1A1A24;--surface-3:#22222E;
+  --border:#2A2A38;--border-light:#3A3A4A;--text:#F5F5F8;--text-dim:#B0B0C0;--text-mute:#7A7A8A;
+  --violet:#7C3AED;--violet-light:#A78BFA;--teal:#2DD4BF;--success:#10B981;--success-bg:rgba(16,185,129,0.08);
+  --danger:#EF4444;--danger-bg:rgba(239,68,68,0.08);
+  --display:'Space Grotesk',-apple-system,sans-serif;--body:'Inter',-apple-system,sans-serif;
+  --gradient:linear-gradient(135deg,#7C3AED 0%,#2DD4BF 100%);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;color-scheme:dark only;background:var(--bg)}
+body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.65;-webkit-font-smoothing:antialiased}
+header{padding:2.5rem 0 2rem;border-bottom:1px solid var(--border);background:radial-gradient(ellipse at 80% 20%,rgba(124,58,237,0.12) 0%,transparent 55%)}
+.inner{max-width:720px;margin:0 auto;padding:0 2rem}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-0.5px;margin-bottom:0.5rem}
+.eyebrow{font-size:0.72rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:0.8rem;background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lead{font-size:0.95rem;color:var(--text-dim);max-width:600px;line-height:1.7;margin-top:0.5rem}
+main{max-width:720px;margin:0 auto;padding:2.5rem 2rem 5rem}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:2.2rem 2rem;margin-bottom:1.4rem;box-shadow:0 4px 24px rgba(0,0,0,0.35)}
+h2{font-family:var(--display);font-weight:600;font-size:1.2rem;margin-bottom:1rem;padding-bottom:0.7rem;border-bottom:1px solid var(--border)}
+label{display:block;font-size:0.85rem;font-weight:600;margin-bottom:0.4rem}
+.hint{font-size:0.78rem;color:var(--text-mute);margin-top:0.35rem;margin-bottom:0.45rem;line-height:1.55}
+textarea{width:100%;padding:14px;border:1px solid var(--border-light);border-radius:8px;background:var(--surface-2);color:var(--text);font-family:var(--body);font-size:1rem;line-height:1.55;min-height:240px;resize:vertical}
+textarea:focus{outline:none;border-color:var(--teal);background:var(--surface-3);box-shadow:0 0 0 3px rgba(45,212,191,0.12)}
+.privacy-note{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid #F59E0B;border-radius:8px;padding:1rem 1.2rem;margin-bottom:1rem;font-size:0.86rem;color:var(--text-dim);line-height:1.65}
+.privacy-note strong{color:var(--text)}
+.submit-row{margin-top:1.5rem;text-align:center}
+.submit-btn{display:inline-block;padding:14px 44px;background:var(--gradient);color:#fff;font-size:0.85rem;letter-spacing:1.2px;text-transform:uppercase;font-weight:700;border-radius:8px;border:none;cursor:pointer;font-family:var(--body);transition:all 0.2s;min-width:240px;box-shadow:0 4px 14px rgba(124,58,237,0.25)}
+.submit-btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 8px 24px rgba(124,58,237,0.45)}
+.submit-btn:disabled{background:var(--surface-3);color:var(--text-mute);cursor:not-allowed}
+.alert{padding:1rem 1.2rem;border-radius:8px;margin-bottom:1.2rem;font-size:0.9rem;line-height:1.6}
+.alert.success{background:var(--success-bg);border:1px solid var(--success);color:var(--text)}
+.alert.error{background:var(--danger-bg);border:1px solid var(--danger);color:var(--text)}
+.alert strong{font-weight:700}
+.hidden{display:none !important}
+.spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,0.3);border-top-color:#fff;border-radius:50%;animation:spin 0.8s linear infinite;vertical-align:middle;margin-right:8px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.turnstile-wrap{display:flex;justify-content:center;margin:1.2rem 0 0.5rem}
+footer{padding:2rem 0;border-top:1px solid var(--border);text-align:center;color:var(--text-mute);font-size:0.78rem}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="inner">
+    <div class="eyebrow">Add details to your appeal</div>
+    <h1>Tell us a bit more, so we can write your strongest appeal.</h1>
+    <p class="lead">Our quality auditor flagged your intake as needing a little more detail before we draft. Refer to the email titled <em>"A few more details to make your appeal as strong as possible"</em> for the specific questions, then type your answers below. We will integrate them automatically and resume drafting within ~15 minutes.</p>
+  </div>
+</header>
+
+<main>
+
+  <div id="alertSuccess" class="alert success hidden">
+    <strong>Thank you — your reply has been received.</strong> Our system is re-evaluating your intake now. If everything looks good, your appeal kit will arrive within approximately 2 hours of this confirmation. You can close this tab.
+  </div>
+
+  <div id="alertError" class="alert error hidden">
+    <strong>Submission could not be completed.</strong> <span id="alertErrorMsg">Please try again. If the issue persists, contact reclaimshield.io/help.</span>
+  </div>
+
+  <form id="followupForm" novalidate>
+
+    <div class="card">
+      <h2>Your reply</h2>
+
+      <div class="privacy-note">
+        <strong>Privacy note:</strong> please do <strong>not</strong> include license numbers, government IDs, SSNs, EINs, or financial details in your reply. Just confirm the categories (e.g., "I have an active California real estate license", "I am ICF-credentialed"). When we draft your appeal, we use a bracketed placeholder you fill in yourself before submitting it to Meta. Our scanner will reject the form if it detects an ID-pattern number.
+      </div>
+
+      <div>
+        <label for="customerReply">Your answers to the questions in your email</label>
+        <div class="hint">Number them 1, 2, 3 to match the bullets in the email if that helps. Free text is fine. The more specific the better — but if you are unsure about a question, say so.</div>
+        <textarea id="customerReply" name="customerReply" required maxlength="20000" placeholder="1. ...&#10;2. ...&#10;3. ..."></textarea>
+      </div>
+
+      <div class="turnstile-wrap">
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAADBYJ2yA225E0Gpg" data-theme="dark"></div>
+      </div>
+
+      <div class="submit-row">
+        <button type="submit" id="submitBtn" class="submit-btn">Submit my reply</button>
+        <p style="font-size:0.78rem;color:var(--text-mute);margin-top:0.9rem;line-height:1.6">When you click Submit, we'll re-run our completeness audit. If your reply still needs more detail, you'll receive another email; otherwise we proceed to drafting.</p>
+      </div>
+    </div>
+
+  </form>
+</main>
+
+<footer>
+  <div class="inner">
+    ReclaimShield&trade; is a Sentinel Risk Group, LLC product. We prepare professional appeal documents — we are not a law firm.
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var WEBHOOK_URL = '/api/intake-followup-submit';
+  var u = new URL(window.location.href);
+  var recordId = u.searchParams.get('id') || '';
+  var token = u.searchParams.get('token') || '';
+
+  var form = document.getElementById('followupForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var alertSuccess = document.getElementById('alertSuccess');
+  var alertError = document.getElementById('alertError');
+  var alertErrorMsg = document.getElementById('alertErrorMsg');
+
+  function showError(msg){ if(msg){ alertErrorMsg.textContent = msg; } alertError.classList.remove('hidden'); alertSuccess.classList.add('hidden'); window.scrollTo({top:0,behavior:'smooth'}); }
+  function showSuccess(){ alertSuccess.classList.remove('hidden'); alertError.classList.add('hidden'); form.style.display='none'; window.scrollTo({top:0,behavior:'smooth'}); }
+  function setLoading(on){ submitBtn.disabled=on; submitBtn.innerHTML = on ? '<span class="spinner"></span>Submitting…' : 'Submit my reply'; }
+
+  if(!recordId || !token){
+    showError('This follow-up link is missing required parameters. Please use the link in your email — or contact reclaimshield.io/help if it is not working.');
+    submitBtn.disabled = true;
+    return;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    alertError.classList.add('hidden');
+    alertSuccess.classList.add('hidden');
+
+    var reply = document.getElementById('customerReply').value.trim();
+    if(reply.length < 20){
+      showError('Please write at least one or two complete sentences answering the questions in your email.');
+      return;
+    }
+
+    var tsToken = '';
+    try { var resp = document.querySelector('[name="cf-turnstile-response"]'); if(resp) tsToken = resp.value || ''; } catch(_){}
+
+    setLoading(true);
+
+    fetch(WEBHOOK_URL, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        recordId: recordId,
+        token: token,
+        customerReply: reply,
+        turnstileToken: tsToken,
+        submittedAt: new Date().toISOString()
+      })
+    }).then(function(r){
+      if(!r.ok){
+        return r.json().catch(function(){ return { error: 'http_'+r.status }; }).then(function(j){
+          var err = new Error(j.error || ('HTTP '+r.status));
+          err.serverMessage = j && j.message;
+          throw err;
+        });
+      }
+      return r.json();
+    }).then(function(){
+      setLoading(false);
+      showSuccess();
+    }).catch(function(err){
+      setLoading(false);
+      var msg = String(err && err.message || err || '');
+      var human = err && err.serverMessage ? err.serverMessage
+        : 'We were unable to submit your reply. Please try again or contact reclaimshield.io/help.';
+      if(!err.serverMessage){
+        if(/turnstile/i.test(msg)) human = 'Bot-protection check failed. Please refresh the page and resubmit.';
+        else if(/invalid_token/i.test(msg)) human = 'This follow-up link is invalid or has already been used. If you need to submit a new reply, contact reclaimshield.io/help.';
+        else if(/pii_detected/i.test(msg)) human = 'Your reply contains what looks like an ID number (license, SSN, etc.). Please remove it — we use a bracketed placeholder you fill in yourself before submitting to Meta.';
+      }
+      showError(human);
+      console.error('Followup submit failed:', err);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
