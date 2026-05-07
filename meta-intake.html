@@ -377,6 +377,62 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
       </div>
     </div>
 
+    
+    <!-- SECTION 3.6 — IP DEFENSE (conditional, IP cases) -->
+    <div class="form-card" id="ipDefenseSection" style="display:none;">
+      <h2><span class="section-num">3.6</span> Intellectual property &amp; ownership</h2>
+      <p class="hint" style="margin-bottom:14px;">Meta IP enforcement turns on whether you can show ownership, written permission, fair use, or a procedural defect in the takedown. Don't paste contracts or signed permissions here — describe the basis in your own words.</p>
+      <div class="field">
+        <label for="ipDefenseContext">Your ownership / permission / fair-use basis<span class="opt">recommended</span></label>
+        <div class="hint">Describe (a) Did you create the work yourself? When? (b) If you have license/permission, who granted it and what's the scope? (c) Is this fair use — commentary, criticism, news reporting, education, parody? (d) Have you received prior DMCA takedowns on this account or filed a counter-notice? <em>Do NOT paste actual signed contracts or licensee numbers. Describe the basis.</em></div>
+        <textarea id="ipDefenseContext" name="ipDefenseContext" maxlength="3000" placeholder="e.g., I created this image myself in 2024 using Adobe Photoshop. I have the original PSD file and unedited source photos. The DMCA notice came from someone claiming the design — I have no prior interaction with this person and no record of having licensed any work to them."></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 3.7 — ADULT NUDITY CARVEOUT (conditional) -->
+    <div class="form-card" id="adultCarveoutSection" style="display:none;">
+      <h2><span class="section-num">3.7</span> Carveout context</h2>
+      <p class="hint" style="margin-bottom:14px;">Meta's Adult Nudity &amp; Sexual Activity policy has explicit carveouts. If the content fits a carveout, your appeal hinges on showing it.</p>
+      <div class="field">
+        <label for="adultCarveoutContext">Which carveout applies and how<span class="opt">recommended</span></label>
+        <div class="hint">Which of these best describes the content: (a) medical / clinical / educational, (b) breastfeeding, (c) post-mastectomy / cancer / scar education, (d) art / photography critique, (e) trans healthcare, (f) news / journalism, (g) other / none. Then describe how the carveout context was indicated in the post itself (caption, hashtags, account theme).</div>
+        <textarea id="adultCarveoutContext" name="adultCarveoutContext" maxlength="3000" placeholder="e.g., Post-mastectomy education. The post was a side-by-side photograph showing a healed scar with a caption explaining the recovery timeline for other survivors. Account bio identifies me as a breast cancer survivor and the account is dedicated to reconstruction education."></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 3.8 — SPEECH CONTEXT (conditional, Hate Speech / Bullying / Misinformation) -->
+    <div class="form-card" id="speechContextSection" style="display:none;">
+      <h2><span class="section-num">3.8</span> Speech context</h2>
+      <p class="hint" style="margin-bottom:14px;">Meta enforcement on hateful or harassing speech distinguishes the content itself from its context. Context can defeat the policy match.</p>
+      <div class="field">
+        <label for="speechContext">Context for the flagged content<span class="opt">recommended</span></label>
+        <div class="hint">Which best frames the post: (a) satire / parody, (b) news commentary or report on a public figure / public event, (c) reciprocal exchange — was someone harassing you first?, (d) counter-speech directed against the position, not the person, (e) educational / historical reference, (f) other. Then describe the actual context.</div>
+        <textarea id="speechContext" name="speechContext" maxlength="3000" placeholder="e.g., Counter-speech. The post quoted a public figure's verbatim statement and explained why it was harmful, with sources. I did not name or target individual users. The post was a critical analysis, not an attack."></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 3.9 — SPAM / INAUTHENTIC (conditional) -->
+    <div class="form-card" id="spamContextSection" style="display:none;">
+      <h2><span class="section-num">3.9</span> Account legitimacy</h2>
+      <p class="hint" style="margin-bottom:14px;">Spam / Inauthentic Behavior takedowns hinge on engagement-pattern claims. Address the specific concern.</p>
+      <div class="field">
+        <label for="spamContext">Account legitimacy facts<span class="opt">recommended</span></label>
+        <div class="hint">Describe: (a) is the account operated by a single real person or a verified team, (b) is engagement organic — no purchased likes/followers, no third-party engagement-pod automation, (c) is the business model legitimate (real product/service/content), (d) approximately how many followers and what's the engagement rate, (e) any ad spend or business verification evidence.</div>
+        <textarea id="spamContext" name="spamContext" maxlength="3000" placeholder="e.g., Single-operator account. I post 2-3 times per week about my home-decor business. All engagement comes from organic reach and customers who found me through Etsy and word-of-mouth. I have never used third-party engagement tools, follower-purchase services, or post-automation. The account has been verified by Meta Business Suite."></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 3.10 — PRIVACY (conditional) -->
+    <div class="form-card" id="privacyContextSection" style="display:none;">
+      <h2><span class="section-num">3.10</span> Consent &amp; public-interest basis</h2>
+      <p class="hint" style="margin-bottom:14px;">Privacy enforcement turns on consent or a recognized public-interest basis. State yours clearly.</p>
+      <div class="field">
+        <label for="privacyContext">Privacy basis<span class="opt">recommended</span></label>
+        <div class="hint">Describe: (a) did you have consent from the people depicted (and how — written, verbal, implicit), (b) is there a public-interest basis (news reporting, academic research, accountability journalism), (c) was the subject in a public place / public event with no expectation of privacy, (d) was there a right-to-publish basis (e.g., journalist credentials, court record).</div>
+        <textarea id="privacyContext" name="privacyContext" maxlength="3000" placeholder="e.g., Public event. The image was captured at a public political rally where the subject was a speaker. No expectation of privacy applies. The post was a news commentary on the speaker's stated positions — accountability journalism, not personal targeting."></textarea>
+      </div>
+    </div>
+
     <!-- SECTION 4 — ACCOUNT & NARRATIVE -->
     <div class="form-card">
       <h2><span class="section-num">4</span> Account &amp; Case Narrative</h2>
@@ -555,25 +611,38 @@ select optgroup{background:var(--surface);color:var(--text-dim);font-style:norma
   countryInput.addEventListener('blur', updateCountryBranch);
   countryInput.addEventListener('input', function(){ setTimeout(updateCountryBranch, 50); });
 
-  // Show/hide identity/scope section based on violation category
-  // Triggered for cases where identity, role, or scope-of-practice is the central question
-  var IDENTITY_TRIGGER_CATEGORIES = [
-    'Account Integrity',
-    'Impersonation',
-    'Inauthentic Behavior',
-    'Other / not sure'
+  // Show/hide category-specific sections based on violation category
+  var CATEGORY_SECTION_MAP = {
+    'Account Integrity':                         ['identityScopeSection'],
+    'Impersonation':                             ['identityScopeSection'],
+    'Inauthentic Behavior':                      ['identityScopeSection', 'spamContextSection'],
+    'Spam / platform manipulation':              ['spamContextSection'],
+    'Intellectual Property':                     ['ipDefenseSection'],
+    'Adult Nudity & Sexual Activity':            ['adultCarveoutSection'],
+    'Hate Speech':                               ['speechContextSection'],
+    'Bullying & Harassment':                     ['speechContextSection'],
+    'Misinformation':                            ['speechContextSection'],
+    'Privacy':                                   ['privacyContextSection'],
+    'Regulated Goods':                           [],  // future Section 3.11
+    'Suicide / Self-Injury':                     [],
+    'Violent & Graphic':                         [],
+    'Other / not sure':                          ['identityScopeSection']  // fallback to identity defense
+  };
+  var ALL_CONDITIONAL_SECTIONS = [
+    'identityScopeSection', 'ipDefenseSection', 'adultCarveoutSection',
+    'speechContextSection', 'spamContextSection', 'privacyContextSection'
   ];
   var violationSel = document.getElementById('violationCategory');
-  var identitySection = document.getElementById('identityScopeSection');
-  function updateIdentitySection(){
+  function updateConditionalSections(){
     var cat = violationSel.value || '';
-    if(IDENTITY_TRIGGER_CATEGORIES.indexOf(cat) >= 0){
-      identitySection.style.display = 'block';
-    } else {
-      identitySection.style.display = 'none';
-    }
+    var visible = CATEGORY_SECTION_MAP[cat] || [];
+    ALL_CONDITIONAL_SECTIONS.forEach(function(id){
+      var el = document.getElementById(id);
+      if(!el) return;
+      el.style.display = (visible.indexOf(id) >= 0) ? 'block' : 'none';
+    });
   }
-  violationSel.addEventListener('change', updateIdentitySection);
+  violationSel.addEventListener('change', updateConditionalSections);
 
   try {
     document.getElementById('intakeUserAgent').value = (navigator.userAgent || '').slice(0, 500);
