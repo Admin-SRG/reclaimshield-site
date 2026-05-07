@@ -23,6 +23,68 @@ const ALLOWED_MIME = new Set([
   'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
   'text/plain'
 ]);
+// ───────────────────────────────────────────────────────────────────────
+// PII SCANNER — server-side detection of identifiers we refuse to store.
+// Locked rule: ReclaimShield never stores license/SSN/credit-card/DOB.
+// If a customer pastes one (deliberately or by autofill), reject and ask
+// them to remove it. They use a bracketed placeholder in their own appeal.
+// ───────────────────────────────────────────────────────────────────────
+const PII_PATTERNS = [
+  // SSN — strict 3-2-4 format (high confidence, rare false positives)
+  { name: 'Social Security Number',
+    re: /\b(?!000|666|9\d{2})\d{3}-(?!00)\d{2}-(?!0000)\d{4}\b/,
+    hint: 'looks like a Social Security number' },
+  // Credit card — Luhn-checkable shape (we don't run Luhn; pattern is enough to flag)
+  { name: 'Credit Card Number',
+    re: /\b(?:\d[ -]*?){13,19}\b/,
+    hint: 'looks like a credit card number' },
+  // License/credential lines — keyword + nearby digits
+  { name: 'Professional License Number',
+    re: /\b(?:license|lic\.?|dre|npi|state\s*bar|bar\s*number|registration|reg\.?\s*#|cert\.?\s*#|md\s*license|rn\s*license|cna)\s*[:#]?\s*[A-Z]{0,3}-?\d{5,15}\b/i,
+    hint: 'looks like a professional license/credential number' },
+  // EIN (federal employer ID) — strict XX-XXXXXXX format
+  { name: 'Employer Identification Number (EIN)',
+    re: /\b\d{2}-\d{7}\b/,
+    hint: 'looks like an EIN' },
+  // Standalone long ID near "number" / "id" / "#" keyword
+  { name: 'Generic identifier',
+    re: /\b(?:my\s+)?(?:id|identifier|number|account\s*#)\s*[:#=]?\s*\d{8,15}\b/i,
+    hint: 'looks like an identifier' }
+];
+
+function detectPII(value) {
+  if (typeof value !== 'string' || value.length === 0) return null;
+  for (const p of PII_PATTERNS) {
+    if (p.re.test(value)) return p;
+  }
+  return null;
+}
+
+// Friendly field-label lookup so the error references the form label, not the API key.
+const FIELD_LABELS = {
+  clientName: 'Your Full Legal Name',
+  email: 'Your Email Address',
+  phone: 'Phone',
+  country: 'Country',
+  platform: 'Platform',
+  issueType: 'Issue Type',
+  violationCategory: 'Violation Category',
+  accountUsername: 'Account Handle',
+  accountDescription: 'Case Narrative',
+  revenueBucket: 'Monthly Account Revenue',
+  appealDeadline: 'Appeal Deadline',
+  clientAddress: 'Mailing Address',
+  intakeAppealStatusUS: 'Appeal Status',
+  intakeInternalComplaintEU: 'Internal Complaint Status',
+  intakeAceEU: 'Appeals Centre Europe Status',
+  credentialCategory: 'Your Role / Profession',
+  accountNameType: 'Account Name Type',
+  serviceLanguagePattern: 'Service Language Pattern',
+  scopeDisclaimersUsed: 'Scope-of-Practice Disclaimers',
+  noticeTextVerbatim: "Meta's Notice Text",
+  customerPosition: 'Your Position'
+};
+
 
 function sanitize(s, maxLen) {
   if (typeof s !== 'string') return '';
@@ -98,7 +160,12 @@ async function onRequestPost({ request, env }) {
     'revenueBucket', 'appealDeadline', 'clientAddress',
     'disclosureAck',
     'intakeAppealStatusUS', 'intakeInternalComplaintEU', 'intakeAceEU',
-    'intakeDisclosureVersion', 'intakeUserAgent', 'intakeTimestamp'
+    'intakeDisclosureVersion', 'intakeUserAgent', 'intakeTimestamp',
+    // Conditional identity/scope-of-practice fields (Misrepresentation/Account Integrity/Impersonation cases)
+    'credentialCategory', 'accountNameType', 'serviceLanguagePattern', 'scopeDisclaimersUsed',
+    // Verbatim notice + customer position fields
+    'noticeTextVerbatim', 'citedPolicySection', 'accountPurpose', 'accountAge',
+    'priorWarnings', 'customerPosition'
   ];
   for (const k of textKeys) {
     const v = fd.get(k);
@@ -114,6 +181,30 @@ async function onRequestPost({ request, env }) {
   }
   if (textFields.disclosureAck !== 'true') {
     return new Response(JSON.stringify({ error: 'disclosure_ack_required' }), { status: 400, headers: cors });
+  }
+
+  // PII SCANNER — reject submissions that contain license/ID/SSN/credit-card patterns.
+  // Customer fills these in via bracketed placeholders in their own copy of the appeal,
+  // never in our system. This protects them and us.
+  const PII_SCAN_FIELDS = [
+    'clientName', 'phone', 'country', 'accountDescription', 'accountUsername',
+    'clientAddress', 'appealDeadline', 'revenueBucket',
+    'credentialCategory', 'serviceLanguagePattern', 'scopeDisclaimersUsed',
+    'noticeTextVerbatim', 'customerPosition'
+  ];
+  for (const fieldKey of PII_SCAN_FIELDS) {
+    const v = textFields[fieldKey];
+    const hit = detectPII(v);
+    if (hit) {
+      const label = FIELD_LABELS[fieldKey] || fieldKey;
+      return new Response(JSON.stringify({
+        error: 'pii_detected',
+        field: fieldKey,
+        fieldLabel: label,
+        detected: hit.name,
+        message: `The "${label}" field contains what ${hit.hint}. ReclaimShield does not store identification numbers. Please remove it and submit again — when you receive your appeal, it will have a bracketed placeholder you fill in yourself before sending it to Meta.`
+      }), { status: 400, headers: cors });
+    }
   }
 
   // Upload files to R2
